@@ -1,0 +1,3 @@
+{
+  "extends": "@vitus-labs/tools-typescript/nextjs"
+}

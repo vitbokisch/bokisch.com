@@ -1,7 +1,8 @@
 import list from '~/components/core/list'
-import Badge from '~/components/base/Badge'
+import Box from '~/components/base/Box'
 
 export default list.attrs({
-  component: Badge,
+  component: Box,
+  rootElement: false,
   contentDirection: 'inline',
 })

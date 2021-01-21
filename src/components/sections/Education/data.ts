@@ -1,0 +1,57 @@
+export default [
+  {
+    name: 'Beihang University',
+    field: 'Economics & Management',
+    year: '2016',
+    courses: [
+      'Applied Statistics',
+      'Financial Management',
+      'Statistics',
+      'Chinese Culture',
+      'Chinese Language',
+    ],
+  },
+  {
+    name: 'Gent Universiteit',
+    field: 'Economics & Business Administration',
+    year: '2013 - 2014',
+    courses: [
+      'Consumer Behaviour',
+      'Marketing Communication',
+      'Total Quality Management',
+      'Applied Operational Research',
+      'ICT Management',
+      'Project Management',
+      'Management Coontrol',
+      'Dutch Language',
+    ],
+  },
+  {
+    name: 'Czech Technical University',
+    field: 'Economics & Management  of Electrical Engineering',
+    year: '2013 - 2016',
+    courses: [
+      'Supply Chain Management',
+      'Accountancy',
+      'Quality Management',
+      'Statistical methods in Economy',
+      'Financial Management',
+      'Information System Engineering',
+      'Ecology and Economy',
+    ],
+  },
+  {
+    name: 'Czech Technical University',
+    field: 'Software Technology & Management',
+    year: '2009 - 2013',
+    courses: [
+      'Corporate Performance Management',
+      'Business Process Management',
+      'Programming in Java',
+      'Marketing',
+      'Management in IT',
+      'Design Patterns',
+      'Analysis of Algorythms',
+    ],
+  },
+] as const

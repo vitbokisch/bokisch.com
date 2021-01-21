@@ -1,3 +1,3 @@
-import React from 'react'
+import component from '~/components/pages/Home'
 
-export default () => <div>hello world</div>
+export default component

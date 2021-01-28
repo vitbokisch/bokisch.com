@@ -10,50 +10,50 @@ const Wrapper = element
     marginBottom: 80,
     height: '',
   }))
+  .variants({
+    odd: {
+      paddingRight: 80,
+    },
+    even: {
+      paddingLeft: 80,
+    },
+  })
   .states((t) => ({
     first: {
-      marginTop: 90,
+      marginTop: 160,
     },
     last: {
       marginBottom: 0,
-    },
-  }))
-  .variants((t) => ({
-    odd: {
-      paddingLeft: 40,
-    },
-    even: {
-      paddingRight: 40,
     },
   }))
 
 const Point = symbol
   .theme({
     position: 'absolute',
+    top: 0,
+    zIndex: 1,
   })
   .variants((t) => ({
     odd: {
-      position: 'absolute',
-      top: 0,
-      left: '100%',
-      transform: 'translateX(58px)',
+      right: 0,
+      transform: 'translateX(50%)',
     },
     even: {
-      position: 'absolute',
-      top: 0,
-      right: '100%',
-      transform: 'translateX(-58px)',
+      left: 0,
+      transform: 'translateX(-50%)',
     },
   }))
   .config({
     consumer: (ctx) => ctx<typeof Wrapper>(({ variant }) => ({ variant })),
   })
 
-const component = ({ odd, even, children }) => (
-  <Wrapper odd={odd} even={even}>
-    <Point large primary />
-    {children}
-  </Wrapper>
-)
+const component = ({ children, ...props }) => {
+  return (
+    <Wrapper {...props}>
+      <Point large primary />
+      {children}
+    </Wrapper>
+  )
+}
 
 export default component

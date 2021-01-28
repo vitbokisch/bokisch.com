@@ -1,12 +1,10 @@
+import { FC, ReactText } from 'react'
 import box, { Header as header, Body } from '../Box'
 import Heading from '../Heading'
 import Text from '../Text'
 import TextList from '../TextList'
-import { FC, ReactText } from 'react'
-import Wrapper from './Wrapper'
 
 const Box = box.theme((t) => ({
-  marginBottom: 80,
   height: '',
 }))
 
@@ -36,30 +34,26 @@ const component: FC<Props> = ({
     'Bulding new features & rewriting old app to a brand new web app',
     'Fixing bugs, code reviews, sharing knowledge, supporting colleagues and other common stuff',
   ],
-  odd,
-  even,
 }) => (
-  <Wrapper odd={odd} even={even}>
-    <Box medium tag="article">
-      <Header contentDirection="inline" contentAlignX="spaceBetween">
-        <Heading level5>{company}</Heading>
-        <Text small neutral>
-          {date}
-        </Text>
-      </Header>
-      <Subheader contentAlignX="left">
-        <Heading level4>{position}</Heading>
-      </Subheader>
-      <Body>
-        <TextList
-          itemProps={{ contentAlign: 'left', centered: false }}
-          gap="medium"
-          data={responsibilities}
-          valueName="label"
-        />
-      </Body>
-    </Box>
-  </Wrapper>
+  <Box medium tag="article">
+    <Header contentDirection="inline" contentAlignX="spaceBetween">
+      <Heading level5>{company}</Heading>
+      <Text small neutral>
+        {date}
+      </Text>
+    </Header>
+    <Subheader contentAlignX="left">
+      <Heading level4>{position}</Heading>
+    </Subheader>
+    <Body>
+      <TextList
+        itemProps={() => ({ contentAlign: 'left', centered: false })}
+        gap="medium"
+        data={responsibilities}
+        valueName="label"
+      />
+    </Body>
+  </Box>
 )
 
 component.displayName = 'base/timeline/Box'

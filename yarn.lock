@@ -1280,14 +1280,14 @@
     lodash "^4.17.15"
 
 "@vitus-labs/elements@^0.8.0-alpha.6":
-  version "0.8.0-alpha.31"
-  resolved "https://registry.yarnpkg.com/@vitus-labs/elements/-/elements-0.8.0-alpha.31.tgz#fa08d5571d0ec9c817deb4f9a7aa8b3451f035e2"
-  integrity sha512-HpZayoW6hRiSbUGUR0x8iAhoVwChqDVzice7aY/wpe7uiRCyNGbrjKQ7ItYWspT7rs8WhZx+anWOYoZOz2WqEQ==
+  version "0.8.0-alpha.32"
+  resolved "https://registry.yarnpkg.com/@vitus-labs/elements/-/elements-0.8.0-alpha.32.tgz#fb11ca3cecd3825efb1e240b50830cad8fbcdfad"
+  integrity sha512-dEBqgUflHr8vaf1J5P+XkbE2Jusb5IkbwI5WavVvrMsdUl/k9P2YUF2PL+rqV5Qxr13MqpHkYQaTHOyoXUti2w==
 
 "@vitus-labs/rocketstyle@^0.8.0-alpha.6":
-  version "0.8.0-alpha.31"
-  resolved "https://registry.yarnpkg.com/@vitus-labs/rocketstyle/-/rocketstyle-0.8.0-alpha.31.tgz#a060aa6d8e51e0dfd704eef9981c99c13806ade9"
-  integrity sha512-DrGaAybgiW5Jz6rfRj0IiForlZf2gSR+WF2cV6Xhu2iBTUP5F+tlHJA7txDyuZKMsIjdtVtdZdC9Bh9KRZ3qGg==
+  version "0.8.0-alpha.32"
+  resolved "https://registry.yarnpkg.com/@vitus-labs/rocketstyle/-/rocketstyle-0.8.0-alpha.32.tgz#37ca64094800faf632eb30b18182bec458f3da66"
+  integrity sha512-6aD+wgq/vo+N09IPPX0USwK05lweZ9i+wNgh+U28Im17t5ZacX90YkyyG4w5f/miU2lb4UT27Q46sNVPRcN4HA==
   dependencies:
     hoist-non-react-statics "^3.1.0"
     lodash.merge "^4.6.2"

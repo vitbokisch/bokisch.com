@@ -2,14 +2,12 @@ import React, { FC, ReactNode } from 'react'
 import Box, { Header, Body } from '~/components/base/Box'
 import heading from '~/components/base/Heading'
 import Text from '~/components/base/Text'
-import TextList from '~/components/base/TextList'
+import List from '~/components/base/List'
 import Line from '~/components/base/Line'
 import Icon from '~/components/base/Icon'
 
-const Heading = heading.variants((t) => ({
-  space: {
-    marginTop: t.space.large,
-  },
+const Heading = heading.theme((t) => ({
+  marginTop: t.space.large,
 }))
 
 const SubHeading = Text.theme((t) => ({
@@ -37,7 +35,7 @@ const component: FC<Props> = ({
   <Box large tag="article">
     <Header>
       <Icon xLarge name={icon} />
-      <Heading level3 space={!subtitle && !note} label={title} />
+      <Heading level3 label={title} />
       {subtitle && <SubHeading label={subtitle} centered />}
       {note && <Text small>{note}</Text>}
     </Header>
@@ -45,7 +43,7 @@ const component: FC<Props> = ({
     <Line />
 
     <Body>
-      {list && <TextList data={list} valueName="label" gap="large" />}
+      {list && <List data={list} valueName="label" gap="large" />}
 
       {children && <Text paragraph>{children}</Text>}
     </Body>

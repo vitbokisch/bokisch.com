@@ -20,7 +20,7 @@ const component = () => (
         Having a broad knowledge important to understand from several is.
       </Header>
 
-      <Container size={4} gap={40}>
+      <Container size={4} gap={40} gutter={0}>
         <Row>
           <BoxList data={transformedData} wrapComponent={Col} />
         </Row>

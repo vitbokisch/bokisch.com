@@ -2,7 +2,7 @@ import { FC, ReactText } from 'react'
 import box, { Header as header, Body } from '../Box'
 import Heading from '../Heading'
 import Text from '../Text'
-import TextList from '../TextList'
+import List from '../List'
 
 const Box = box.theme((t) => ({
   height: '',
@@ -46,8 +46,8 @@ const component: FC<Props> = ({
       <Heading level4>{position}</Heading>
     </Subheader>
     <Body>
-      <TextList
-        itemProps={() => ({ contentAlign: 'left', centered: false })}
+      <List
+        itemProps={() => ({ contentAlignX: 'left', centered: false })}
         gap="medium"
         data={responsibilities}
         valueName="label"

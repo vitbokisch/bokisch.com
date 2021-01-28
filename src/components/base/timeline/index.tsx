@@ -1,8 +1,7 @@
 import React from 'react'
-import { Container, Row, Col } from '~/components/base/grid'
 import element from '~/components/core/element'
-import line from '~/components/base/Line'
 import list from '~/components/core/list'
+import { Container, Row, Col } from '~/components/base/grid'
 import Box from './Box'
 import Wrapper from './Wrapper'
 

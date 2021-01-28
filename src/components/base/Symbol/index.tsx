@@ -2,6 +2,13 @@ import element from '~/components/core/element'
 
 export default element
   .config({ name: 'base/Symbol' })
+  .attrs({
+    tag: 'span',
+  })
+  .theme((t) => ({
+    borderRadius: t.borderRadius.extra,
+    size: 12,
+  }))
   .states((t) => ({
     primary: {
       backgroundColor: t.color.primary.base,
@@ -44,9 +51,7 @@ export default element
       },
     },
   }))
-  .theme({
-    size: 12,
-  })
+
   .sizes((t) => ({
     large: {
       size: 44,

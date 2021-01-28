@@ -22,7 +22,8 @@ const theme = {
   },
   space: {
     reset: 0,
-    small: 8,
+    xSmall: 8,
+    small: 12,
     medium: 16,
     large: 24,
     xLarge: 32,

@@ -1,20 +1,12 @@
 import React from 'react'
 import { Container, Row, Col } from '~/components/base/grid'
 import Box from '~/components/fragments/section/Box'
-import Quote from '~/components/base/Quote'
 import Background from '~/components/base/Background'
 import Link from '~/components/base/Link'
 import Section from '~/components/base/Section'
 
 const component = () => (
   <Background primary>
-    <Container width={980}>
-      <Quote>
-        “If I had an hour to solve a problem I'd spend 55 minutes thinking about
-        the problem and 5 minutes thinking about solutions.”
-      </Quote>
-    </Container>
-
     <Section>
       <Container columns={3} gap={40} gutter={0} size={1}>
         <Row>

@@ -14,21 +14,20 @@ const transformedData = data.map((item) => ({
 }))
 
 const component = () => (
-  <Background primary>
-    <Section>
-      <Header title="Education">
-        An abroad experience is something I am really proud of. I have studied
-        in Belgium and China. Different approaches, different cultures... what
-        an eye openers. Bachelor degree
-      </Header>
+  <Section>
+    <Header title="Education">
+      An abroad experience is something I am really proud of. I have studied in
+      Belgium and China. Different approaches, different cultures... what an eye
+      openers. Bachelor degree
+    </Header>
 
-      <Container width={980} columns={2} size={1} gap={64} gutter={0}>
-        <Row>
-          <BoxList data={transformedData} wrapComponent={Col} />
-        </Row>
-      </Container>
-    </Section>
-  </Background>
+    <Container width={980} columns={2} size={1} gap={64} gutter={0}>
+      <Row>
+        <BoxList data={transformedData} wrapComponent={Col} />
+      </Row>
+    </Container>
+    <Background triangle />
+  </Section>
 )
 
 component.displayName = 'sections/Knowledge'

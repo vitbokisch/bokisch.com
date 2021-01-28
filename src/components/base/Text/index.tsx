@@ -8,6 +8,20 @@ export default text
     fontSize: t.fontSize.base,
     lineHeight: t.lineHeight.base,
   }))
+  .states((t) => ({
+    primary: {
+      color: t.color.primary.base,
+    },
+    secondary: {
+      color: t.color.secondary.base,
+    },
+    tertiary: {
+      color: t.color.tertiary.base,
+    },
+    neutral: {
+      color: t.color.neutral.base,
+    },
+  }))
   .sizes((t) => ({
     small: {
       fontSize: t.fontSize.small,

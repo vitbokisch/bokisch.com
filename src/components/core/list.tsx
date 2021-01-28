@@ -1,20 +1,21 @@
 import rocketstyle from '@vitus-labs/rocketstyle'
-import { styles, makeItResponsive } from '@vitus-labs/unistyle'
 import { List } from '@vitus-labs/elements'
+import { styles, makeItResponsive, value } from '@vitus-labs/unistyle'
 import type { Theme } from '~/config/theme'
 
 type ComponentTheme = Parameters<typeof styles>[0]['theme']
 type ComponentThemeDefinition = ComponentTheme
 
 const listStyles = ({ theme: t, css, rootSize }) => css`
-  margin: ${t.gap / 2}px;
+  margin: ${value(rootSize, [t.gap / 2])};
 `
 
 export default rocketstyle<
   Theme,
   ComponentThemeDefinition & { gap?: number }
 >()({
-  dimensions: { gaps: 'gap' },
+  dimensions: { gaps: 'gap', gapsY: 'gapY' } as const,
+  useBooleans: false,
 })({
   component: List,
   name: 'core/List',
@@ -22,7 +23,6 @@ export default rocketstyle<
   .attrs({
     rootElement: true,
     contentDirection: 'rows',
-    vertical: true,
   })
   .theme((t) => ({
     boxSizing: 'border-box',
@@ -32,8 +32,8 @@ export default rocketstyle<
   }))
   .gaps((t) => ({
     small: {
-      margin: (t.space.small * -1) / 2,
-      gap: t.space.small,
+      margin: (t.space.xSmall * -1) / 2,
+      gap: t.space.xSmall,
     },
     medium: {
       margin: (t.space.medium * -1) / 2,
@@ -52,9 +52,29 @@ export default rocketstyle<
       gap: t.space.xxLarge,
     },
   }))
+  .gapsY((t) => ({
+    xSmall: {
+      margin: t.space.xSmall,
+    },
+    small: {
+      margin: t.space.small,
+    },
+    medium: {
+      margin: t.space.medium,
+    },
+    large: {
+      margin: t.space.large,
+    },
+    xLarge: {
+      margin: t.space.xLarge,
+    },
+    xxLarge: {
+      margin: t.space.xxLarge,
+    },
+  }))
   .styles(
     (css) => css`
-      ${({ $rocketstyle, rootElement }) => {
+      ${({ $rocketstyle, rootElement }: any) => {
         const { gap, ...restStyles } = $rocketstyle
 
         const baseTheme = makeItResponsive({

@@ -16,12 +16,11 @@ const component = () => (
   <Background primary>
     <Section>
       <Header title="Certificates & Hobbies">
-        Having a broaad knowledge from several fields is important to
-        understand. Having a broad knowledge important to understand from
-        several is.
+        Having a broad knowledge from several fields is important to understand.
+        Having a broad knowledge important to understand from several is.
       </Header>
 
-      <Container size={4} gap={24}>
+      <Container size={4} gap={40}>
         <Row>
           <BoxList data={transformedData} wrapComponent={Col} />
         </Row>

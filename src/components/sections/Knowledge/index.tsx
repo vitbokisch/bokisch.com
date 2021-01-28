@@ -3,7 +3,8 @@ import { Container, Row, Col } from '~/components/base/grid'
 import Header from '~/components/fragments/section/Header'
 import Background from '~/components/base/Background'
 import Section from '~/components/base/Section'
-import ProgressBox from '~/components/fragments/section/ProgressBox'
+import ProgressBoxList from '~/components/fragments/section/ProgressBoxList'
+import data from './data'
 
 const component = () => (
   <Background primary>
@@ -15,22 +16,9 @@ const component = () => (
         can speak Czech, English and modern JavaScript ;)
       </Header>
 
-      <Container gap={24}>
+      <Container gap={60} width={740} gutter={0} columns={2} size={1}>
         <Row>
-          <Col>
-            <ProgressBox />
-          </Col>
-          <Col>
-            <ProgressBox />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <ProgressBox />
-          </Col>
-          <Col>
-            <ProgressBox />
-          </Col>
+          <ProgressBoxList data={data} wrapComponent={Col} />
         </Row>
       </Container>
     </Section>

@@ -1,17 +1,29 @@
 import element from '~/components/core/element'
+import symbol from '../Symbol'
+import Text from '../Text'
 
-const Inner = element
+const Point = symbol
   .config({
-    name: 'base/Progress/Inner',
-    // consumer: ({ state }) => {
-    //   return { state }
-    // },
+    consumer: (ctx) =>
+      ctx<typeof Progress>(({ state }) => {
+        return { state }
+      }),
   })
-  .attrs({ tag: 'span', block: true })
   .theme({
-    height: 'inherit',
-    width: '50%',
+    position: 'absolute',
+    top: '50%',
+    right: 0,
+    transform: 'translateY(-50%)',
   })
+
+const ProgressLine = element
+  .config({ name: 'base/Progress/ProgressLine' })
+  .attrs({ block: true, tag: 'span' })
+  .theme((t) => ({
+    width: '100%',
+    height: 2,
+    backgroundColor: t.color.light.base,
+  }))
   .states((t) => ({
     primary: {
       backgroundColor: t.color.primary.base,
@@ -26,37 +38,83 @@ const Inner = element
       backgroundColor: t.color.neutral.base,
     },
   }))
-  .variants({
-    '0': {
+  .sizes({
+    level0: {
       width: 0,
     },
-    '1': {
+    level1: {
       width: '10%',
     },
-    '2': {
+    level2: {
       width: '20%',
     },
-    '3': {
+    level3: {
       width: '30%',
+    },
+    level4: {
+      width: '40%',
+    },
+    level5: {
+      width: '50%',
+    },
+    level6: {
+      width: '60%',
+    },
+    level7: {
+      width: '70%',
+    },
+    level8: {
+      width: '80%',
+    },
+    level9: {
+      width: '90%',
+    },
+    level10: {
+      width: '100%',
     },
   })
 
-export default element
-  .config({ name: 'base/Progress' })
-  .attrs({
+const ProgressLineStatus = ProgressLine.config({
+  name: 'base/Progress/ProgressLine',
+  consumer: (ctx) =>
+    ctx<typeof Progress>(({ state, size }) => {
+      return { state, size }
+    }),
+}).attrs({
+  content: Point,
+})
+
+const Progress = element
+  .config({ name: 'base/Progress', provider: true })
+  .attrs(({ label }, t) => ({
+    gap: t.space.xLarge,
     block: true,
-    tag: 'div',
-    content: Inner,
-    beforeContent: 'a',
+    tag: 'span',
+    beforeContent: <Text>{label}</Text>,
+    content: () => (
+      <ProgressLine>
+        <ProgressLineStatus />
+      </ProgressLine>
+    ),
+  }))
+  .states({
+    primary: true,
+    secondary: true,
+    tertiary: true,
+    neutral: true,
   })
-  .theme((t) => ({
-    height: 2,
-    width: '100%',
-    backgroundColor: t.color.light.base,
-  }))
-  .states((t) => ({
-    primary: {},
-    secondary: {},
-    tertiary: {},
-    neutral: {},
-  }))
+  .sizes({
+    level0: true,
+    level1: true,
+    level2: true,
+    level3: true,
+    level4: true,
+    level5: true,
+    level6: true,
+    level7: true,
+    level8: true,
+    level9: true,
+    level10: true,
+  })
+
+export default Progress

@@ -6,7 +6,7 @@ export default element
     height: 40,
     borderRadius: t.borderRadius.extra,
     fontSize: t.fontSize.base,
-    paddingX: 12,
+    paddingX: t.space.small,
     backgroundColor: t.color.transparent,
     borderWidth: t.borderWidth.base,
     borderStyle: t.borderStyle.base,
@@ -17,12 +17,12 @@ export default element
       borderColor: t.color.primary.base,
 
       hover: {
-        color: t.color.light.base,
+        color: t.color.primary.hover,
         borderColor: t.color.primary.hover,
       },
 
       pressed: {
-        color: t.color.light.base,
+        color: t.color.primary.pressed,
         borderColor: t.color.primary.pressed,
       },
     },
@@ -31,12 +31,12 @@ export default element
       borderColor: t.color.secondary.base,
 
       hover: {
-        color: t.color.light.base,
+        color: t.color.secondary.hover,
         borderColor: t.color.secondary.hover,
       },
 
       pressed: {
-        color: t.color.light.base,
+        color: t.color.secondary.pressed,
         borderColor: t.color.secondary.pressed,
       },
     },
@@ -45,12 +45,12 @@ export default element
       borderColor: t.color.tertiary.base,
 
       hover: {
-        color: t.color.light.base,
+        color: t.color.tertiary.hover,
         borderColor: t.color.tertiary.hover,
       },
 
       pressed: {
-        color: t.color.light.base,
+        color: t.color.tertiary.pressed,
         borderColor: t.color.tertiary.pressed,
       },
     },
@@ -59,12 +59,12 @@ export default element
       borderColor: t.color.neutral.base,
 
       hover: {
-        color: t.color.light.base,
+        color: t.color.neutral.hover,
         borderColor: t.color.neutral.hover,
       },
 
       pressed: {
-        color: t.color.light.base,
+        color: t.color.neutral.pressed,
         borderColor: t.color.neutral.pressed,
       },
     },

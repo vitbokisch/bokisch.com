@@ -1,6 +1,7 @@
 import text from '~/components/core/text'
 
-const getTag = ({ level1, level2, level3, level4, level5 }) => {
+type GetTag = (props: Record<string, unknown>) => string
+const getTag: GetTag = ({ level1, level2, level3, level4, level5 }) => {
   if (level1) return 'h1'
   if (level2) return 'h2'
   if (level3) return 'h3'
@@ -22,10 +23,12 @@ export default text
   .theme((t) => ({
     fontSize: t.fontSize.base,
     lineHeight: t.lineHeight.reset,
+    fontWeight: 500,
   }))
   .sizes((t) => ({
     level1: {
       fontSize: t.fontSize.jumbo,
+      textTransform: 'uppercase',
     },
     level2: {
       fontSize: t.fontSize.xxLarge,

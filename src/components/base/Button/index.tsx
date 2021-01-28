@@ -15,7 +15,6 @@ export default element
   .theme((t) => ({
     height: 48,
     fontSize: t.fontSize.base,
-    textAlign: 'center',
     paddingX: t.space.large,
     borderRadius: t.borderRadius.base,
     color: t.color.light.base,
@@ -23,6 +22,8 @@ export default element
     borderStyle: 'solid',
     backgroundColor: t.color.primary.base,
     borderColor: t.color.primary.base,
+    textAlign: 'center',
+    outline: 'none',
 
     hover: {
       backgroundColor: t.color.primary.hover,

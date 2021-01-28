@@ -8,8 +8,13 @@ import Icon from '~/components/base/Icon'
 
 const Heading = heading.variants((t) => ({
   space: {
-    marginY: t.space.large,
+    marginTop: t.space.large,
   },
+}))
+
+const SubHeading = Text.theme((t) => ({
+  marginBottom: t.space.medium,
+  marginTop: t.space.xSmall,
 }))
 
 type Props = {
@@ -29,18 +34,18 @@ const component: FC<Props> = ({
   list,
   children,
 }: Props) => (
-  <Box>
+  <Box large tag="article">
     <Header>
       <Icon xLarge name={icon} />
       <Heading level3 space={!subtitle && !note} label={title} />
-      {subtitle && <Heading level4 label={subtitle} centered />}
-      {note && <Text>{note}</Text>}
+      {subtitle && <SubHeading label={subtitle} centered />}
+      {note && <Text small>{note}</Text>}
     </Header>
 
     <Line />
 
     <Body>
-      {list && <TextList data={list} valueName="label" gap="small" />}
+      {list && <TextList data={list} valueName="label" gap="large" />}
 
       {children && <Text paragraph>{children}</Text>}
     </Body>

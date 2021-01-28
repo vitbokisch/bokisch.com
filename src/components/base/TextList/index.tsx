@@ -1,10 +1,23 @@
 import list from '~/components/core/list'
 import element from '~/components/core/element'
 
+const Item = element
+  .attrs({
+    block: true,
+    tag: 'li',
+    contentAlignX: 'center',
+  })
+  .multiple((t) => ({
+    centered: {
+      textAlign: 'center',
+    },
+  }))
+
 export default list.config({ name: 'base/TextList' }).attrs({
-  rootElement: true,
   tag: 'ul',
-  component: element,
+  component: Item,
   contentAlignX: 'block',
-  itemProps: { block: true, tag: 'li', contentDirection: 'center' },
+  itemProps: {
+    centered: true,
+  },
 })

@@ -81,6 +81,7 @@ export default rocketstyle<Theme, ComponentThemeDefinition>()()({
         /* -------------------------------------------------------- */
         ${!disabled &&
           !active &&
+          isDynamic &&
           css`
             &:hover {
               ${hoverTheme};

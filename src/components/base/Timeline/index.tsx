@@ -1,9 +1,7 @@
 import React from 'react'
 import element from '~/components/core/element'
-import list from '~/components/core/list'
 import { Container, Row, Col } from '~/components/base/grid'
-import Box from './Box'
-import Wrapper from './Wrapper'
+import BoxList from './BoxList'
 
 type SplitData = <T extends Array<unknown>>(
   data: T
@@ -32,8 +30,6 @@ const Line = element.attrs({ tag: 'span' }).theme((t) => ({
   backgroundColor: '#F3F3F3',
 }))
 
-const List = list.attrs({ component: Box })
-
 const component = ({ data }) => {
   const { leftSide, rightSide } = splitData(data)
 
@@ -42,19 +38,15 @@ const component = ({ data }) => {
       <Container columns={2} size={1} width={960} gutter={0}>
         <Row>
           <Col>
-            <List
+            <BoxList
               data={leftSide}
-              extendProps
               wrapProps={(_, { last, first }) => ({ first, last, odd: true })}
-              wrapComponent={Wrapper}
             />
           </Col>
           <Col>
-            <List
+            <BoxList
               data={rightSide}
-              extendProps
               wrapProps={(_, { last }) => ({ last, even: true })}
-              wrapComponent={Wrapper}
             />
           </Col>
         </Row>
@@ -64,5 +56,4 @@ const component = ({ data }) => {
   )
 }
 
-export { Wrapper, Box }
 export default component

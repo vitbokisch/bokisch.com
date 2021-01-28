@@ -1,8 +1,7 @@
 import React from 'react'
 import Background from '~/components/base/Background'
-import Section from '~/components/base/Section'
-import Header from '~/components/fragments/section/Header'
-import Timeline from '~/components/base/timeline'
+import Section, { Header } from '~/components/base/Section'
+import Timeline from '~/components/base/Timeline'
 import data from './data'
 
 const component = () => (
@@ -13,7 +12,6 @@ const component = () => (
         understand. Having a broad knowledge important to understand from
         several is.
       </Header>
-
       <Timeline data={data} />
     </Section>
   </Background>

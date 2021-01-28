@@ -1,20 +1,30 @@
 import React, { FC, ReactNode } from 'react'
-import { Header as header } from '~/components/base/Section'
+import element from '~/components/core/element'
 import heading from '~/components/base/Heading'
 import Text from '~/components/base/Text'
+
+const Header = element
+  .config({
+    name: 'base/Section/Header',
+  })
+  .attrs({
+    tag: 'header',
+    contentDirection: 'rows',
+    contentAlignX: 'center',
+  })
+  .theme((t) => ({
+    marginBottom: t.space.xLarge,
+    maxWidth: '70%',
+  }))
+
+const Heading = heading.theme((t) => ({
+  marginBottom: t.space.large,
+}))
 
 type Props = {
   title: string
   children: ReactNode
 }
-
-const Header = header.theme({
-  maxWidth: '70%',
-})
-
-const Heading = heading.theme((t) => ({
-  marginBottom: t.space.large,
-}))
 
 const component: FC<Props> = ({ title, children }: Props) => (
   <Header>

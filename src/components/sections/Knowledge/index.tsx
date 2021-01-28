@@ -1,9 +1,8 @@
 import React from 'react'
 import { Container, Row, Col } from '~/components/base/grid'
-import Header from '~/components/fragments/section/Header'
 import Background from '~/components/base/Background'
-import Section from '~/components/base/Section'
-import ProgressBoxList from '~/components/fragments/section/ProgressBoxList'
+import Section, { Header } from '~/components/base/Section'
+import ProgressBoxList from '~/components/base/ProgressBoxList'
 import data from './data'
 
 const component = () => (

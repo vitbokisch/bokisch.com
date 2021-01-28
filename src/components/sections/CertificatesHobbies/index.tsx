@@ -1,9 +1,8 @@
 import React from 'react'
 import Background from '~/components/base/Background'
-import Section from '~/components/base/Section'
+import Section, { Header } from '~/components/base/Section'
 import { Container, Row, Col } from '~/components/base/grid'
-import Header from '~/components/fragments/section/Header'
-import BoxList from '~/components/fragments/section/BoxList'
+import CardList from '~/components/base/CardList'
 import data from './data'
 
 const transformedData = data.map((item) => ({
@@ -22,7 +21,7 @@ const component = () => (
 
       <Container size={4} gap={40} gutter={0}>
         <Row>
-          <BoxList data={transformedData} wrapComponent={Col} />
+          <CardList data={transformedData} wrapComponent={Col} />
         </Row>
       </Container>
     </Section>

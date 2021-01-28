@@ -1,11 +1,8 @@
 import React from 'react'
-import { Element } from '@vitus-labs/elements'
-import Header from '~/components/fragments/section/Header'
 import Background from '~/components/base/Background'
-import Section from '~/components/base/Section'
+import Section, { Header } from '~/components/base/Section'
 import Heading from '~/components/base/Heading'
 import Button from '~/components/base/Button'
-import IconLogo from '~/components/base/IconLogo'
 import IconLogoList from '~/components/base/IconLogoList'
 import data from './data'
 

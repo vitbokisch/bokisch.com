@@ -15,7 +15,13 @@ const component = () => (
         can speak Czech, English and modern JavaScript ;)
       </Header>
 
-      <Container gap={60} width={740} gutter={0} columns={2} size={1}>
+      <Container
+        gap={60}
+        width={{ xs: '80%', md: 740 }}
+        gutter={0}
+        columns={2}
+        size={{ xs: 2, md: 1 }}
+      >
         <Row>
           <ProgressBoxList data={data} wrapComponent={Col} />
         </Row>

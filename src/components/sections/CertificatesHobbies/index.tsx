@@ -19,7 +19,7 @@ const component = () => (
         Having a broad knowledge important to understand from several is.
       </Header>
 
-      <Container size={4} gap={40} gutter={0}>
+      <Container columns={6} size={{ xs: 6, md: 3, lg: 2 }} gap={40} gutter={0}>
         <Row>
           <CardList data={transformedData} wrapComponent={Col} />
         </Row>

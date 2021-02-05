@@ -9,7 +9,7 @@ import Section from '~/components/base/Section'
 const component = () => (
   <Background primary>
     <Section>
-      <Container columns={3} gap={40} gutter={0} size={1}>
+      <Container columns={6} gap={40} gutter={0} size={{ xs: 6, md: 3, lg: 2 }}>
         <Row>
           <CardList rootElement={false} wrapComponent={Col}>
             <Card icon="personality" title="INTJ-A Personality">

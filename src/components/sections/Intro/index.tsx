@@ -1,77 +1,46 @@
 import React from 'react'
 import { Container } from '~/components/base/grid'
 import section from '~/components/base/Section'
-import box from '~/components/base/Box'
-import Link from '~/components/base/Link'
-import Heading from '~/components/base/Heading'
-import Text from '~/components/base/Text'
-import IconList from '~/components/base/IconList'
+import element from '~/components/base/Element'
+import Header from './Header'
+import Content from './Content'
+import Footer from './Footer'
 
-const Box = box
-  .attrs({
-    contentDirection: 'inline',
-    contentAlignX: 'spaceAround',
+const Element = element.theme({ height: 'inherit' })
+
+const Section = section
+  .attrs({ contentAlignY: 'top' })
+  .theme({
+    height: '95vh',
   })
-  .theme((t) => ({
-    width: '60%',
-  }))
-
-const Section = section.styles(
-  (css) => css`
-    background: linear-gradient(
-      180deg,
-      #a5aead 0%,
-      #b1bab9 52.08%,
-      #b0b8b7 100%
-    );
-  `
-)
-
-const data = [
-  {
-    name: 'github',
-    href: 'https://github.com',
-  },
-  {
-    name: 'linkedin',
-    link: 'https://github.com',
-  },
-  {
-    name: 'medium',
-    link: 'https://github.com',
-  },
-  {
-    name: 'twitter',
-    link: 'https://github.com',
-  },
-  {
-    name: 'stackoverflow',
-    link: 'https://github.com',
-  },
-]
+  .styles(
+    (css) => css`
+      background: linear-gradient(
+        281.95deg,
+        rgba(0, 0, 0, 0.5) 1.84%,
+        rgba(0, 0, 0, 0.37) 98.24%
+      );
+    `
+  )
 
 const component = () => (
   <Section>
-    <Container>
-      <Heading level1 label="Hello" />
-      <Text xLarge>
-        I'm a person with The Architect personality, analytical mind and passion
-        for discovering the undiscovered.
-      </Text>
-      <IconList data={data} gap="large" itemProps={{ size: 'medium' }} />
-
-      <Box small>
-        <Link
-          label="vit@bokisch.cz"
-          icon="github"
-          href="mailto: vit@bokisch.cz"
-        />
-        <Link
-          label="vit@bokisch.cz"
-          icon="github"
-          href="mailto: vit@bokisch.cz"
-        />
-      </Box>
+    <Container
+      css={`
+        height: 100%;
+      `}
+    >
+      <Element
+        block
+        direction="rows"
+        beforeContent={Header}
+        beforeContentDirection="rows"
+        beforeContentAlignX="block"
+        content={Content}
+        contentDirection="rows"
+        afterContent={Footer}
+        afterContentAlignX="center"
+      />
     </Container>
   </Section>
 )

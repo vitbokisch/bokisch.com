@@ -2,12 +2,15 @@ import element from '~/components/core/element'
 
 export default element
   .config({ name: 'base/Icon' })
-  .attrs<{ name: string }>(({ name = 'analytics' }) => ({
+  .attrs<{ name: string }>(({ name, link }) => ({
     block: true,
-    tag: 'span',
-    dangerouslySetInnerHTML: {
-      __html: require(`~/assets/icons/${name}.svg?include`),
-    },
+    tag: link ? 'a' : 'span',
+    href: link,
+    dangerouslySetInnerHTML: name
+      ? {
+          __html: require(`~/assets/icons/${name}.svg?include`),
+        }
+      : undefined,
   }))
   .theme((t) => ({
     backgroundColor: t.color.transparent,

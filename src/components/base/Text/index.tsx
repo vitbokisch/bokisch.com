@@ -33,3 +33,11 @@ export default text
       fontSize: t.fontSize.xLarge,
     },
   }))
+  .multiple({
+    uppercase: {
+      textTransform: 'uppercase',
+    },
+    italic: {
+      fontStyle: 'italic',
+    },
+  })

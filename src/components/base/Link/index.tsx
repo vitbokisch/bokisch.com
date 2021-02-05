@@ -1,32 +1,60 @@
+import dynamic from 'next/dynamic'
 import element from '~/components/core/element'
-import Icon from '../Icon'
+
+const Icon = dynamic(() => import('../Icon'))
 
 export default element
   .config({
     name: 'base/Link',
   })
   .attrs<{ href?: string; onClick?: MouseEvent; icon?: string }>(
-    ({ href, onClick, icon }) => {
+    ({ href, onClick, icon }, theme) => {
       return {
         tag: href ? 'a' : onClick ? 'button' : 'span',
         beforeContent: icon ? <Icon name={icon} size="small" /> : undefined,
+        gap: icon ? theme.space.medium : undefined,
       }
     }
   )
   .theme((t) => ({
     fontSize: 'inherit',
-    color: t.color.primary.base,
     textDecoration: 'none',
+    color: t.color.dark.base,
 
     hover: {
-      color: t.color.primary.hover,
+      color: t.color.dark.hover,
     },
     pressed: {
-      color: t.color.primary.pressed,
+      color: t.color.dark.pressed,
     },
   }))
   .states((t) => ({
+    primary: {
+      color: t.color.primary.base,
+
+      hover: {
+        color: t.color.primary.hover,
+      },
+      pressed: {
+        color: t.color.primary.pressed,
+      },
+    },
+    secondary: {
+      color: t.color.secondary.base,
+
+      hover: {
+        color: t.color.secondary.hover,
+      },
+      pressed: {
+        color: t.color.secondary.pressed,
+      },
+    },
     transparent: {
       backgroundColor: t.color.transparent,
+    },
+  }))
+  .sizes((t) => ({
+    large: {
+      fontSize: t.fontSize.xLarge,
     },
   }))

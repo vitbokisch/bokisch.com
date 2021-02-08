@@ -7,19 +7,25 @@ import {
   types as t,
 } from 'mobx-state-tree'
 import { observer } from 'mobx-react-lite'
-import knowledge, { mockup as knowledgeMockup } from './knowledge'
-import technologies, { mockup as technologiesMockup } from './technologies'
+import runtime from './runtime'
+import knowledge, { mockup as knowledgeMockup } from './data/knowledge'
+import technologies, { mockup as technologiesMockup } from './data/technologies'
+import socials, { mockup as socialsMockup } from './data/socials'
 
 const initialState = {
+  runtime: { theme: { variant: 'dark' }, menu: { isOpen: false } },
   knowledge: knowledgeMockup,
   technologies: technologiesMockup,
+  socials: socialsMockup,
 }
 
 let store: IStore | undefined
 
 const Store = t.model('Store', {
+  runtime,
   knowledge: t.maybeNull(knowledge),
   technologies: t.maybeNull(technologies),
+  socials: t.maybeNull(socials),
 })
 
 export type IStore = Instance<typeof Store>

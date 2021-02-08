@@ -1,17 +1,17 @@
 import { types as t } from 'mobx-state-tree'
 import mockup from './data'
 
-const Item = t.model('technologies/Item', {
-  title: t.string,
-  level: t.number,
+const Item = t.model('socials/Item', {
+  type: t.string,
+  username: t.string,
   link: t.maybeNull(t.string),
 })
 
-export { mockup }
-
-const model = t.model('technologies/Model', {
+const model = t.model('socials/Model', {
   data: t.array(Item),
 })
+
+export { mockup }
 
 export default t.snapshotProcessor(model, {
   preProcessor(sn) {

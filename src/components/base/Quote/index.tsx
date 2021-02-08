@@ -29,19 +29,18 @@ const Text = text
     textAlign: 'center',
   }))
 
-const Author = element
+const Author = text
   .config({
     name: 'base/Quote/Author',
   })
   .attrs({
     tag: 'figcaption',
-    block: true,
-    contentAlignX: 'right',
   })
   .theme((t) => ({
     marginTop: t.space.xSmall,
     fontSize: t.fontSize.base,
     fontWeight: 500,
+    textAlign: 'right',
   }))
 
 export default base

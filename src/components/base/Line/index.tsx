@@ -13,7 +13,7 @@ export default element
     border: '0',
     borderWidthTop: t.borderWidth.base,
     borderStyle: t.borderStyle.base,
-    borderColor: t.isDark ? t.color.dark.base : t.color.light[200],
+    borderColor: t.isDark ? t.color.dark[200] : t.color.light[200],
     marginTop: t.space.large,
     marginBottom: t.space.xLarge,
   }))

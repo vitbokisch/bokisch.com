@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { FC } from 'react'
+import { IStore, useStore, observer } from '~/store'
 import { Container, Row, Col } from '~/components/base/grid'
 import section from '~/components/base/Section'
 import LinkList from '~/components/base/LinkList'
@@ -10,6 +11,7 @@ const Section = section
     contentAlignY: 'top',
   })
   .theme({
+    fullScreen: true,
     width: '100%',
     height: '100vh',
   })
@@ -60,30 +62,40 @@ const print = [
   { label: 'Print Document', href: '', icon: 'home' },
 ]
 
-const component = () => (
-  <Section>
-    <Background />
-    <Header />
-    <Container columns={7}>
-      <Row
-        css={`
-          margin-top: 64px;
-        `}
-      >
-        <Col size={5}>
-          <LinkList data={data} gap="xLarge" itemProps={{ size: 'large' }} />
-        </Col>
-        <Col size={2}>
-          <LinkList data={socials} gap="large" />
-          <LinkList
-            data={print}
-            gap="large"
-            itemProps={{ state: 'secondary' }}
-          />
-        </Col>
-      </Row>
-    </Container>
-  </Section>
-)
+type Props = {
+  store?: IStore
+}
 
-export default component
+const component: FC<Props> = () => {
+  const store = useStore('')
+
+  if (!store.runtime.menu.isOpen) return null
+
+  return (
+    <Section>
+      <Background />
+      <Header />
+      <Container columns={7}>
+        <Row
+          css={`
+            margin-top: 64px;
+          `}
+        >
+          <Col size={5}>
+            <LinkList data={data} gap="xLarge" itemProps={{ size: 'large' }} />
+          </Col>
+          <Col size={2}>
+            <LinkList data={socials} gap="large" />
+            <LinkList
+              data={print}
+              gap="large"
+              itemProps={{ state: 'secondary' }}
+            />
+          </Col>
+        </Row>
+      </Container>
+    </Section>
+  )
+}
+
+export default observer(component)

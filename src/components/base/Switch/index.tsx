@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { FC } from 'react'
 import element from '~/components/core/element'
 import Icon from '~/components/base/Icon'
 
@@ -53,13 +53,17 @@ const Inner = base
     consumer: (ctx) => ctx<typeof Wrapper>(({ variant }) => ({ variant })),
   })
 
-const component = () => {
-  const [active, setActive] = useState(false)
-  const variant = active ? 'dark' : 'light'
-  const iconVariant = active ? 'moon' : 'sun'
+type Props = {
+  state: string
+  onChange: () => void
+}
+
+const component: FC<Props> = ({ state = 'light', onChange }) => {
+  const variant = state === 'dark' ? 'dark' : 'light'
+  const iconVariant = state === 'dark' ? 'moon' : 'sun'
 
   return (
-    <Wrapper onClick={() => setActive(!active)} variant={variant}>
+    <Wrapper onClick={onChange} variant={variant}>
       <Inner content={<Icon name={iconVariant} />} contentAlignX="center" />
     </Wrapper>
   )

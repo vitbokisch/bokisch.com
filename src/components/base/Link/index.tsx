@@ -19,13 +19,13 @@ export default element
   .theme((t) => ({
     fontSize: 'inherit',
     textDecoration: 'none',
-    color: t.color.dark.base,
+    color: t.isDark ? t.color.light.base : t.color.dark.base,
 
     hover: {
-      color: t.color.dark.hover,
+      color: t.isDark ? t.color.light.hover : t.color.dark.hover,
     },
     pressed: {
-      color: t.color.dark.pressed,
+      color: t.isDark ? t.color.light.pressed : t.color.dark.pressed,
     },
   }))
   .states((t) => ({

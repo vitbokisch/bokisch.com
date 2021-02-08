@@ -27,7 +27,7 @@ const Line = element.attrs({ tag: 'span' }).theme((t) => ({
   width: 4,
   height: '100%',
   transform: 'translateX(-50%)',
-  backgroundColor: '#F3F3F3',
+  backgroundColor: t.isDark ? '#3f3f3f' : '#F3F3F3',
 }))
 
 const component = ({ data }) => {

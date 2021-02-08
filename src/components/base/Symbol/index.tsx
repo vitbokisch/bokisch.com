@@ -60,7 +60,7 @@ const Component = element
     medium: {
       size: 36,
       borderWidth: 4,
-      borderColor: '#fff',
+      borderColor: t.isDark ? '#000' : '#fff',
       borderStyle: 'solid',
     },
     large: {

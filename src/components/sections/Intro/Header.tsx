@@ -1,9 +1,9 @@
 import React from 'react'
 import Element from '~/components/base/Element'
 import List from '~/components/base/List'
-import Icon from '~/components/base/Icon'
 import Logo, { LogoHeading } from '~/components/base/Logo'
-import Switch from '~/components/base/Switch'
+import ThemeSwitch from '~/components/sections/theme/ThemeSwitch'
+import MenuTrigger from '~/components/sections/menu/MenuTrigger'
 
 const component = () => {
   return (
@@ -14,8 +14,8 @@ const component = () => {
         afterContent={
           <>
             <List contentDirection="inline" gap="xLarge">
-              <Switch />
-              <Icon name="menu" medium href="/" />
+              <ThemeSwitch />
+              <MenuTrigger />
             </List>
           </>
         }

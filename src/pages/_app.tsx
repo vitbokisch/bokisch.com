@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import { Provider as StoreProvider } from 'mobx-react'
-import { Provider } from '@vitus-labs/unistyle'
-import GlobalStyle from '~/config/globalStyles'
-import theme from '~/config/theme'
+import ThemeProvider from '~/config/ThemeProvider'
 import { useStore } from '~/store'
 // import Meta from '~/components/meta/Meta'
 import GoogleFonts from '~/components/meta/GoogleFonts'
@@ -24,10 +22,9 @@ const component = ({ Component, pageProps }: AppProps) => {
       <Pwa /> */}
       </Head>
       <StoreProvider store={store}>
-        <Provider theme={theme}>
-          <GlobalStyle theme={theme} />
+        <ThemeProvider>
           <Component {...pageProps} />
-        </Provider>
+        </ThemeProvider>
       </StoreProvider>
     </>
   )

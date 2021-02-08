@@ -71,6 +71,8 @@ const theme = {
       base: '#272727',
       hover: '',
       pressed: '',
+      100: '#212121',
+      200: '#3F3F3F',
     },
     primary: {
       base: '#954EA4',
@@ -88,7 +90,7 @@ const theme = {
       pressed: '#285E65',
     },
     neutral: {
-      base: 'rgba(39, 39, 39, 0.2)',
+      base: '#C5C5C5',
       hover: '#A9A9A9',
       pressed: '#696969',
     },

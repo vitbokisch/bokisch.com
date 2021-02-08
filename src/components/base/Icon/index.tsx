@@ -17,7 +17,7 @@ export default element
   }))
   .states((t) => ({
     base: {
-      color: t.color.dark.base,
+      color: t.isDark ? t.color.light.base : t.color.dark.base,
     },
   }))
   .sizes({

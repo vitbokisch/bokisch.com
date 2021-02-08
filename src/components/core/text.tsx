@@ -31,7 +31,7 @@ export default rocketstyle<Theme, ComponentThemeDefinition>()()({
     },
   }))
   .styles(
-    (css) => css`
+    (css) => css<any>`
       ${({
         href,
         onClick,

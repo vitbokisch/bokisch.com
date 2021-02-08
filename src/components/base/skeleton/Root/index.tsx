@@ -9,3 +9,6 @@ export default element
     contentDirection: 'rows',
     contentAlignX: 'block',
   })
+  .theme({
+    overflowX: 'hidden',
+  })

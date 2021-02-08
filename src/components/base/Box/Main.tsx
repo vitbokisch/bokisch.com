@@ -9,7 +9,7 @@ export default element
     contentAlignY: 'block',
   })
   .theme((t) => ({
-    backgroundColor: t.isDark ? t.color.dark.base : t.color.light[100],
+    backgroundColor: t.isDark ? t.color.dark.base : t.color.light.base,
     borderRadius: t.borderRadius.base,
     height: '100%',
   }))

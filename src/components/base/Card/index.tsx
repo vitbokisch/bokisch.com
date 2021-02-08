@@ -5,6 +5,7 @@ import Text from '~/components/base/Text'
 import List from '~/components/base/List'
 import Line from '~/components/base/Line'
 import Icon from '~/components/base/Icon'
+import IconLogo from '~/components/base/IconLogo'
 
 const Heading = heading.theme((t) => ({
   marginTop: t.space.large,
@@ -19,7 +20,8 @@ type Props = {
   title: string
   subtitle?: string
   note?: string
-  icon: string
+  icon?: string
+  logo?: string
   children: ReactNode
   list?: Array<ReactNode>
 }
@@ -29,12 +31,14 @@ const component: FC<Props> = ({
   subtitle,
   note,
   icon,
+  logo,
   list,
   children,
 }: Props) => (
   <Box large tag="article">
     <Header>
-      <Icon xLarge name={icon} />
+      {icon && <Icon xLarge name={icon} />}
+      {logo && <IconLogo circle name={logo} />}
       <Heading level3 label={title} />
       {subtitle && <SubHeading label={subtitle} centered />}
       {note && <Text small>{note}</Text>}

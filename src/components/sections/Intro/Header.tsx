@@ -13,10 +13,10 @@ const component = () => {
         beforeContent={<Logo />}
         afterContent={
           <>
-            {/* // <List contentDirection="inline" gap="xLarge"> */}
-            <Switch />
-            <Icon name="menu" medium href="/" />
-            {/* // </List> */}
+            <List contentDirection="inline" gap="xLarge">
+              <Switch />
+              <Icon name="menu" medium href="/" />
+            </List>
           </>
         }
       />

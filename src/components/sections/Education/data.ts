@@ -3,6 +3,7 @@ export default [
     name: 'Beihang University',
     field: 'Economics & Management',
     year: '2016',
+    logo: 'beihang-uni',
     courses: [
       'Applied Statistics',
       'Financial Management',
@@ -15,6 +16,7 @@ export default [
     name: 'Gent Universiteit',
     field: 'Economics & Business Administration',
     year: '2013 - 2014',
+    logo: 'ugent-uni',
     courses: [
       'Consumer Behaviour',
       'Marketing Communication',
@@ -30,6 +32,7 @@ export default [
     name: 'Czech Technical University',
     field: 'Economics & Management  of Electrical Engineering',
     year: '2013 - 2016',
+    logo: 'ctu-uni',
     courses: [
       'Supply Chain Management',
       'Accountancy',
@@ -44,6 +47,7 @@ export default [
     name: 'Czech Technical University',
     field: 'Software Technology & Management',
     year: '2009 - 2013',
+    logo: 'ctu-uni',
     courses: [
       'Corporate Performance Management',
       'Business Process Management',

@@ -1,10 +1,12 @@
 import element from '~/components/core/element'
 
-export default element
+const Component = element
   .config({ name: 'base/Symbol' })
-  .attrs({
+  .attrs(({ large }) => ({
     tag: 'span',
-  })
+    contentAlignX: 'center',
+    content: large ? <Component medium /> : undefined,
+  }))
   .theme((t) => ({
     borderRadius: t.borderRadius.extra,
     size: 12,
@@ -51,9 +53,19 @@ export default element
       },
     },
   }))
-
   .sizes((t) => ({
+    small: {
+      size: 12,
+    },
+    medium: {
+      size: 36,
+      borderWidth: 4,
+      borderColor: '#fff',
+      borderStyle: 'solid',
+    },
     large: {
       size: 44,
     },
   }))
+
+export default Component

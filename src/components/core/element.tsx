@@ -5,10 +5,33 @@ import type { Theme } from '~/config/theme'
 import withLink from './withLink'
 
 type ComponentTheme = Parameters<typeof styles>[0]['theme']
-type ComponentThemeDefinition = ComponentTheme & { hover: ComponentTheme } & {
-  active: ComponentTheme
+type ResponsiveThemeDefinition = {
+  [I in keyof ComponentTheme]:
+    | ComponentTheme[I]
+    | Partial<{
+        xs: ComponentTheme[I]
+        sm: ComponentTheme[I]
+        md: ComponentTheme[I]
+        lg: ComponentTheme[I]
+        xl: ComponentTheme[I]
+        xxl: ComponentTheme[I]
+      }>
+    | [
+        xs?: ComponentTheme[I],
+        sm?: ComponentTheme[I],
+        md?: ComponentTheme[I],
+        lg?: ComponentTheme[I],
+        xl?: ComponentTheme[I],
+        xxl?: ComponentTheme[I]
+      ]
+}
+
+type ComponentThemeDefinition = ResponsiveThemeDefinition & {
+  hover: ResponsiveThemeDefinition
 } & {
-  pressed: ComponentTheme
+  active: ResponsiveThemeDefinition
+} & {
+  pressed: ResponsiveThemeDefinition
 }
 
 export default rocketstyle<Theme, ComponentThemeDefinition>()()({
@@ -21,7 +44,7 @@ export default rocketstyle<Theme, ComponentThemeDefinition>()()({
     fontFamily: t.fontFamily.base,
   }))
   .styles(
-    (css) => css`
+    (css) => css<any>`
       ${({
         href,
         onClick,

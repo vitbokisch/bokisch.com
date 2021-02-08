@@ -17,7 +17,7 @@ const component = () => (
       </Header>
 
       <Heading level3>Companies I have collaborated with:</Heading>
-      <IconLogoList data={data} />
+      <IconLogoList data={data} itemProps={{ variant: 'box' }} />
       <Button primary inversed label="Show career timeline" />
     </Section>
   </Background>

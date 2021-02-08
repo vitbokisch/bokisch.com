@@ -13,10 +13,10 @@ export default element
   }))
   .states((t, css) => ({
     primary: {
-      backgroundColor: t.color.light[100],
+      backgroundColor: t.color.light.base,
     },
     secondary: {
-      backgroundColor: t.color.light[200],
+      backgroundColor: t.color.light[100],
     },
     triangle: {
       position: 'absolute',

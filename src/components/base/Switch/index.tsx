@@ -39,13 +39,13 @@ const Inner = base
     light: {
       backgroundColor: '#FBFBFB',
       color: '#000',
-      left: 0,
+      left: -1,
       // transform: 'translateX(0)',
     },
     dark: {
       backgroundColor: '#0D0D0D',
       color: '#fff',
-      left: 'calc(100% - 36px)',
+      left: 'calc(100% - 35px)',
       // transform: 'translateX(-100%)',
     },
   }))

@@ -10,6 +10,7 @@ const transformedData = data.map((item) => ({
   subtitle: item.field,
   note: item.year,
   list: item.courses,
+  logo: item.logo,
 }))
 
 const component = () => (

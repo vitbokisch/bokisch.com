@@ -22,7 +22,7 @@ const ProgressLine = element
   .theme((t) => ({
     width: '100%',
     height: 2,
-    backgroundColor: t.color.light.base,
+    backgroundColor: t.color.light[200],
   }))
   .states((t) => ({
     primary: {

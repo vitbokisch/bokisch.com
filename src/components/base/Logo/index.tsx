@@ -3,7 +3,7 @@ import image from '~/components/base/Image'
 import Text from '../Text'
 
 const Image = image.attrs({
-  src: require(`~/assets/logo/logo-vit-bokisch.svg`),
+  src: require('~/assets/logo/logo-vit-bokisch.svg'),
 })
 
 const Logo = element

@@ -25,14 +25,34 @@ const data = [
 ]
 
 const socials = [
-  { label: 'vit@bokisch.com', href: '', icon: 'email' },
-  { label: 'bokisch.com', href: '', icon: 'home' },
-  { label: '/vitbokisch', href: '', icon: 'linkedin' },
-  { label: '/vitbokisch', href: '', icon: 'github' },
-  { label: '/vitbokisch', href: '', icon: 'medium' },
-  { label: '/vitbokisch', href: '', icon: 'twitter' },
-  { label: '/vitbokisch', href: '', icon: 'stackoverflow' },
-  { label: 'vitbokisch', href: '', icon: 'skype' },
+  { label: 'vit@bokisch.com', href: 'mailto:vit@bokisch.com', icon: 'email' },
+  { label: 'bokisch.com', href: 'https://bokisch.com', icon: 'home' },
+  {
+    label: '/vitbokisch',
+    href: 'https://www.linkedin.com/in/vitbokisch/',
+    icon: 'linkedin',
+  },
+  {
+    label: '/vitbokisch',
+    href: 'https://github.com/vitbokisch',
+    icon: 'github',
+  },
+  {
+    label: '/vitbokisch',
+    href: 'https://medium.com/@vitbokisch',
+    icon: 'medium',
+  },
+  {
+    label: '/vitbokisch',
+    href: 'https://twitter.com/vitbokisch',
+    icon: 'twitter',
+  },
+  {
+    label: '/vitbokisch',
+    href: 'https://stackoverflow.com/users/9223826/v%c3%adt-bokisch',
+    icon: 'stackoverflow',
+  },
+  // { label: 'vitbokisch', href: '', icon: 'skype' },
 ]
 
 const print = [

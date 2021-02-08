@@ -2,7 +2,7 @@ import element from '~/components/core/element'
 
 export default element
   .config({ name: 'base/Icon' })
-  .attrs<{ name: string }>(({ name, link }) => ({
+  .attrs<{ name: string; link?: string }>(({ name, link }) => ({
     block: true,
     tag: link ? 'a' : 'span',
     href: link,
@@ -14,7 +14,11 @@ export default element
   }))
   .theme((t) => ({
     backgroundColor: t.color.transparent,
-    color: t.color.dark.base,
+  }))
+  .states((t) => ({
+    base: {
+      color: t.color.dark.base,
+    },
   }))
   .sizes({
     small: {

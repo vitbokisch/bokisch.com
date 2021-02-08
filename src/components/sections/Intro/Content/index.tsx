@@ -16,7 +16,11 @@ const component = () => (
       I'm a person with The Architect personality, analytical mind and passion
       for discovering the undiscovered.
     </Text>
-    <IconList data={socials} gap="large" itemProps={{ size: 'medium' }} />
+    <IconList
+      data={socials}
+      gap="large"
+      itemProps={{ size: 'medium', base: true, external: true }}
+    />
   </>
 )
 

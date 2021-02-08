@@ -60,11 +60,11 @@ const theme = {
   color: {
     transparent: 'transparent',
     light: {
-      base: '#F1F1F1',
+      base: '#FFF',
       hover: '',
       pressed: '',
-      100: '#FFF',
-      200: '#FBFBFB',
+      100: '#FBFBFB',
+      200: '#F1F1F1',
     },
     dark: {
       base: '#272727',

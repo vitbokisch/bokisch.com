@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import element from '~/components/core/element'
 import symbol from '../Symbol'
 
@@ -6,10 +6,10 @@ const Wrapper = element
   .config({
     provider: true,
   })
-  .theme((t) => ({
+  .theme({
     marginBottom: 80,
     height: '',
-  }))
+  })
   .variants({
     odd: {
       paddingRight: 80,
@@ -18,14 +18,14 @@ const Wrapper = element
       paddingLeft: 80,
     },
   })
-  .states((t) => ({
+  .states({
     first: {
       marginTop: 160,
     },
     last: {
       marginBottom: 0,
     },
-  }))
+  })
 
 const Point = symbol
   .theme({
@@ -33,7 +33,7 @@ const Point = symbol
     top: 0,
     zIndex: 1,
   })
-  .variants((t) => ({
+  .variants({
     odd: {
       right: 0,
       transform: 'translateX(50%)',
@@ -42,12 +42,12 @@ const Point = symbol
       left: 0,
       transform: 'translateX(-50%)',
     },
-  }))
+  })
   .config({
     consumer: (ctx) => ctx<typeof Wrapper>(({ variant }) => ({ variant })),
   })
 
-const component = ({ children, ...props }) => {
+const component: FC = ({ children, ...props }) => {
   return (
     <Wrapper {...props}>
       <Point large primary />

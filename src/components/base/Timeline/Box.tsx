@@ -24,16 +24,10 @@ type Props = {
 }
 
 const component: FC<Props> = ({
-  company = 'Cinnamon',
-  date = 'Dc 2020 - Jan 2021',
-  position = 'Vitus Labs',
-  responsibilities = [
-    'Designing a complete monorepo structure + documentation, including confuguration ESLint, Typescript, Rollup.js, Storybook,... ',
-    'Designed automation processes and possible solutions for CI/CD Involved in UI design & developed UI library',
-    'Responsible for collaboration with colleagues from an external agency',
-    'Bulding new features & rewriting old app to a brand new web app',
-    'Fixing bugs, code reviews, sharing knowledge, supporting colleagues and other common stuff',
-  ],
+  company,
+  date,
+  position,
+  responsibilities,
 }) => (
   <Box medium tag="article">
     <Header contentDirection="inline" contentAlignX="spaceBetween">

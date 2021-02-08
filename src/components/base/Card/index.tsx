@@ -54,5 +54,5 @@ const component: FC<Props> = ({
   </Box>
 )
 
-component.displayName = 'fragments/section/Box'
+component.displayName = 'base/Card'
 export default component

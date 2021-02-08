@@ -7,7 +7,7 @@ export default list
   })
   .attrs({
     block: true,
-    alignContentX: 'block',
+    contentAlignX: 'block',
     component: Progress,
   })
   .styles(

@@ -13,7 +13,7 @@ import CareerTimeline from '~/components/sections/CareerTimeline'
 
 const component = () => (
   <Root>
-    <MainMenu />
+    {/* <MainMenu /> */}
     <Intro />
     <Quote />
     <Personality />

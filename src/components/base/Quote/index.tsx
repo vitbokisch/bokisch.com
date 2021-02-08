@@ -8,9 +8,13 @@ const base = element
   })
   .theme((t) => ({ margin: t.space.reset }))
 
-const Quote = base.attrs({
-  tag: 'blockquote',
-})
+const Quote = base
+  .config({
+    name: 'base/Quote/Quote',
+  })
+  .attrs({
+    tag: 'blockquote',
+  })
 
 const Text = text
   .config({
@@ -20,7 +24,7 @@ const Text = text
     paragraph: true,
   })
   .theme((t) => ({
-    fontSize: 32,
+    fontSize: t.fontSize.xxLarge,
     fontStyle: 'italic',
     textAlign: 'center',
   }))

@@ -38,7 +38,8 @@ const theme = {
     medium: 20,
     large: 24,
     xLarge: 28,
-    xxLarge: 54,
+    xxLarge: 32,
+    xxxLarge: 54,
     jumbo: 120,
   },
   lineHeight: {

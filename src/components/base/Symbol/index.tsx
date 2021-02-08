@@ -2,7 +2,7 @@ import element from '~/components/core/element'
 
 const Component = element
   .config({ name: 'base/Symbol' })
-  .attrs(({ large }) => ({
+  .attrs<{ large?: boolean }>(({ large }) => ({
     tag: 'span',
     contentAlignX: 'center',
     content: large ? <Component medium /> : undefined,

@@ -1,6 +1,7 @@
 import element from '~/components/core/element'
 
 export default element
+  .config({ name: 'base/Button' })
   .attrs<{ href?: string; onClick?: MouseEvent }>(({ href, onClick }) => {
     const isLink = !!href
     const isStatic = !!href || !!onClick

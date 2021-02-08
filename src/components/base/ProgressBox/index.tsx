@@ -14,17 +14,16 @@ const Box = element.attrs({
   block: true,
 })
 
-type Item = {
-  label: string
-  level: number
-}
-
 type Props = {
+  state: string
   title: string
-  data: Array<Item>
+  data: Array<{
+    label: string
+    level: number
+  }>
 }
 
-const transformData = (data: Array<Item>) =>
+const transformData = (data: Props['data']) =>
   data.map((item) => ({
     label: item.label,
     size: `level${item.level}`,

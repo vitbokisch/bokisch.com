@@ -6,7 +6,7 @@ const Image = image.attrs<{ name: string }>(({ name }) => ({
 }))
 
 export default element
-  .config({ name: 'fragments/Logo' })
+  .config({ name: 'base/IconLogo' })
   .attrs<{ name: string }>(({ name = 'strv' }) => ({
     contentAlignX: 'center',
     contentAlignY: 'center',

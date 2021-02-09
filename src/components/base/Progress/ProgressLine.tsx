@@ -6,7 +6,7 @@ export default element
   .theme((t) => ({
     width: '100%',
     height: 2,
-    backgroundColor: t.color.light[200],
+    backgroundColor: t.isDark ? t.color.dark[200] : t.color.light[200],
   }))
   .states((t) => ({
     primary: {

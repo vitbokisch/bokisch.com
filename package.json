@@ -18,11 +18,11 @@
     "pkgs:build": "lerna run build --stream"
   },
   "dependencies": {
-    "@vitus-labs/coolgrid": "^0.10.4",
-    "@vitus-labs/core": "^0.10.4",
-    "@vitus-labs/elements": "^0.10.4",
-    "@vitus-labs/rocketstyle": "^0.10.4",
-    "@vitus-labs/unistyle": "^0.10.4",
+    "@vitus-labs/coolgrid": "^0.10.5",
+    "@vitus-labs/core": "^0.10.5",
+    "@vitus-labs/elements": "^0.10.5",
+    "@vitus-labs/rocketstyle": "^0.10.5",
+    "@vitus-labs/unistyle": "^0.10.5",
     "mobx": "^6.1.5",
     "mobx-react": "^7.1.0",
     "mobx-state-tree": "^5.0.1",

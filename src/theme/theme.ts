@@ -58,19 +58,35 @@ const theme = {
     base: 8,
     extra: 180,
   },
+  gradient: {
+    base: {
+      light: 'linear-gradient(180deg, #FBFBFB 0%, #FFFFFF 100%)',
+      dark: 'linear-gradient(180deg, #212121 0%, #272727 100%)',
+    },
+    triangle: {
+      light: 'linear-gradient(143.05deg, #F7FCFF 22.41%, #D6F1FF 158.6%)',
+      dark: 'linear-gradient(143.05deg, #313D44 22.41%, #273034 158.6%)',
+    },
+  },
+  shadow: {
+    light: {
+      small: '0px 2px 16px rgba(211, 211, 211, 0.5)',
+      large: '0px 2px 44px rgba(211, 211, 211, 0.5)',
+    },
+    dark: {
+      small: '0px 2px 16px rgba(61, 61, 61, 0.5)',
+      large: '0px 2px 44px rgba(61, 61, 61, 0.5)',
+    },
+  },
   color: {
     transparent: 'transparent',
     light: {
-      base: '#FFF',
-      hover: '',
-      pressed: '',
+      base: '#FFFFFF',
       100: '#FBFBFB',
       200: '#F1F1F1',
     },
     dark: {
       base: '#272727',
-      hover: '',
-      pressed: '',
       100: '#212121',
       200: '#3F3F3F',
     },

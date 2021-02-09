@@ -33,6 +33,7 @@ const component = () => (
       <Container gap={32} size={3}>
         <Row>
           <IconLogoList
+            rootElement={false}
             data={normalizeData(data)}
             itemProps={{ variant: 'box' }}
             wrapComponent={Col}

@@ -11,33 +11,22 @@ export default element
     margin: t.space.reset,
     padding: t.space.reset,
   }))
-  .states((t, css) => ({
+  .states((t) => ({
     primary: {
       backgroundColor: t.isDark ? t.color.dark.base : t.color.light.base,
     },
     secondary: {
       backgroundColor: t.isDark ? t.color.dark[100] : t.color.light[100],
     },
+    gradient: {
+      background: t.isDark ? t.gradient.base.dark : t.gradient.base.light,
+    },
     triangle: {
       position: 'absolute',
-      extendCss: t.isDark
-        ? css`
-            background: linear-gradient(
-              143.05deg,
-              #313d44 22.41%,
-              #273034 158.6%
-            );
-            clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
-            inset: 150px 0px 0px;
-          `
-        : css`
-            background: linear-gradient(
-              143.05deg,
-              #f7fcff 22.41%,
-              #d6f1ff 158.6%
-            );
-            clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
-            inset: 150px 0px 0px;
-          `,
+      background: t.isDark
+        ? t.gradient.triangle.dark
+        : t.gradient.triangle.light,
+      clipPath: 'polygon(0 0, 100% 15%, 100% 85%, 0 100%)',
+      inset: '150px 0px 0px',
     },
   }))

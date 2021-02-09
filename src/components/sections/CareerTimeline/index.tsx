@@ -5,7 +5,7 @@ import Timeline from '~/components/base/Timeline'
 import data from './data'
 
 const component = () => (
-  <Background secondary>
+  <Background gradient>
     <Section>
       <Header title="Career Timeline">
         Having a broaad knowledge from several fields is important to

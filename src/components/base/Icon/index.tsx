@@ -20,11 +20,11 @@ export default element
       color: t.isDark ? t.color.light.base : t.color.dark.base,
 
       hover: {
-        color: t.isDark ? t.color.light.hover : t.color.dark.hover,
+        color: t.isDark ? t.color.tertiary.base : t.color.tertiary.base,
       },
 
       active: {
-        color: t.isDark ? t.color.light.pressed : t.color.dark.pressed,
+        color: t.isDark ? t.color.tertiary.medium : t.color.tertiary.medium,
       },
     },
   }))

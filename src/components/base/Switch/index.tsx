@@ -40,13 +40,11 @@ const Inner = base
       backgroundColor: '#FBFBFB',
       color: '#000',
       left: -1,
-      // transform: 'translateX(0)',
     },
     dark: {
       backgroundColor: '#0D0D0D',
       color: '#fff',
       left: 'calc(100% - 35px)',
-      // transform: 'translateX(-100%)',
     },
   }))
   .config({

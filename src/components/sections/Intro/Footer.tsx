@@ -1,6 +1,6 @@
 import React from 'react'
 import box from '~/components/base/Box'
-import Link from '~/components/base/Link'
+import SocialList from '~/components/sections/socials/SocialList'
 
 const Box = box
   .attrs({
@@ -14,8 +14,11 @@ const Box = box
 
 const component = () => (
   <Box small>
-    <Link label="bokisch.com" icon="home" href="/" />
-    <Link label="vit@bokisch.cz" icon="email" href="mailto: vit@bokisch.cz" />
+    <SocialList
+      rootElement={false}
+      contentDirection="inline"
+      types={['email', 'home']}
+    />
   </Box>
 )
 

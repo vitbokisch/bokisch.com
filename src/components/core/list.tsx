@@ -1,12 +1,12 @@
 import rocketstyle from '@vitus-labs/rocketstyle'
 import { List } from '@vitus-labs/elements'
 import { styles, makeItResponsive, value } from '@vitus-labs/unistyle'
-import type { Theme } from '~/config/theme'
+import type { Theme } from '~/theme'
 
 type ComponentTheme = Parameters<typeof styles>[0]['theme']
 type ComponentThemeDefinition = ComponentTheme
 
-const listStyles = ({ theme: t, css, rootSize }) => css`
+const listStyles = ({ theme: t, css, rootSize }: any) => css`
   margin: ${value(rootSize, [t.gap / 2])};
 `
 

@@ -10,5 +10,6 @@ export default element
     responsive: {
       width: '100%',
       height: 'auto',
+      objectFit: 'scale-down',
     },
   })

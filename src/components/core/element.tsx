@@ -1,7 +1,7 @@
 import rocketstyle from '@vitus-labs/rocketstyle'
 import { Element } from '@vitus-labs/elements'
 import { styles, makeItResponsive } from '@vitus-labs/unistyle'
-import type { Theme } from '~/config/theme'
+import type { Theme } from '~/theme'
 import withLink from './withLink'
 
 type ComponentTheme = Parameters<typeof styles>[0]['theme']

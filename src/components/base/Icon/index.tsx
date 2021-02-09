@@ -18,6 +18,14 @@ export default element
   .states((t) => ({
     base: {
       color: t.isDark ? t.color.light.base : t.color.dark.base,
+
+      hover: {
+        color: t.isDark ? t.color.light.hover : t.color.dark.hover,
+      },
+
+      active: {
+        color: t.isDark ? t.color.light.pressed : t.color.dark.pressed,
+      },
     },
   }))
   .sizes({

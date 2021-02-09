@@ -24,8 +24,9 @@ const model = t
     },
   }))
   .actions((self) => ({
-    setLevel: (level: number) => {
-      self.filter = level
+    setFilter: (level: number) => {
+      if (level === self.filter) self.filter = null
+      else self.filter = level
     },
   }))
 

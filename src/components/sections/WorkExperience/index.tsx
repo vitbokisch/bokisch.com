@@ -1,10 +1,22 @@
 import React from 'react'
+import { Container, Row, Col } from '~/components/base/grid'
 import Background from '~/components/base/Background'
 import Section, { Header } from '~/components/base/Section'
 import Heading from '~/components/base/Heading'
 import Button from '~/components/base/Button'
 import IconLogoList from '~/components/base/IconLogoList'
 import data from './data'
+
+const normalizeData = (data: Array<any>) =>
+  data.reduce((acc, item, i) => {
+    acc.push(item)
+
+    if (i === 3 || i === 6) {
+      acc.push({ component: <Col size={1.5} /> })
+    }
+
+    return acc
+  }, [])
 
 const component = () => (
   <Background primary>
@@ -17,7 +29,17 @@ const component = () => (
       </Header>
 
       <Heading level3>Companies I have collaborated with:</Heading>
-      <IconLogoList data={data} itemProps={{ variant: 'box' }} />
+
+      <Container gap={32} size={3}>
+        <Row>
+          <IconLogoList
+            data={normalizeData(data)}
+            itemProps={{ variant: 'box' }}
+            wrapComponent={Col}
+          />
+        </Row>
+      </Container>
+
       <Button primary inversed label="Show career timeline" />
     </Section>
   </Background>

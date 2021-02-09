@@ -10,29 +10,27 @@ type Props = {
 const component: FC<Props> = () => {
   const store = useStore('')
 
-  console.log(store.technologies?.filter)
-
   return (
     <TabList block contentAlignX="center" gap="large" gapY="medium">
       <Tab
         primary
         label="In love with"
-        onClick={() => store.technologies?.setLevel(1)}
+        onClick={() => store.technologies?.setFilter(1)}
       />
       <Tab
         secondary
         label="Experience with"
-        onClick={() => store.technologies?.setLevel(2)}
+        onClick={() => store.technologies?.setFilter(2)}
       />
       <Tab
         tertiary
         label="A little experience"
-        onClick={() => store.technologies?.setLevel(3)}
+        onClick={() => store.technologies?.setFilter(3)}
       />
       <Tab
         neutral
         label="Things o the past"
-        onClick={() => store.technologies?.setLevel(4)}
+        onClick={() => store.technologies?.setFilter(4)}
       />
     </TabList>
   )

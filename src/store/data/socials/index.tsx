@@ -7,14 +7,21 @@ const Item = t.model('socials/Item', {
   link: t.maybeNull(t.string),
 })
 
-const model = t.model('socials/Model', {
-  data: t.array(Item),
-})
+const model = t
+  .model('socials/Model', {
+    data: t.array(Item),
+  })
+  .views((self) => ({
+    pickDataByType(types?: Array<string>) {
+      if (!types) return self.data
+      return self.data.filter((item) => types.includes(item.type))
+    },
+  }))
 
 export { mockup }
 
 export default t.snapshotProcessor(model, {
-  preProcessor(sn) {
+  preProcessor(sn: any) {
     return { data: sn }
   },
 })

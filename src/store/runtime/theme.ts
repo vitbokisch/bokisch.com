@@ -10,6 +10,9 @@ const model = t
     },
   }))
   .actions((self) => ({
+    setTheme: (theme: string) => {
+      self.variant = theme
+    },
     toggleTheme: () => {
       if (self.variant === 'light') self.variant = 'dark'
       else self.variant = 'light'

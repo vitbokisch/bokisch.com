@@ -1,12 +1,18 @@
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
 import { Provider as StoreProvider } from 'mobx-react'
-import { useStore } from '~/store'
+import { useStore, observer } from '~/store'
 import { ThemeProvider } from '~/theme'
+import themeListener from '~/hooks/themeListener'
 import GoogleFonts from '~/components/meta/GoogleFonts'
 
 const component = ({ Component, pageProps }: AppProps) => {
   const store = useStore(pageProps.initialState)
+
+  themeListener({
+    theme: store.runtime.theme.variant,
+    setTheme: store.runtime.theme.setTheme,
+  })
 
   return (
     <>
@@ -26,4 +32,4 @@ const component = ({ Component, pageProps }: AppProps) => {
   )
 }
 
-export default component
+export default observer(component)

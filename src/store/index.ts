@@ -33,7 +33,7 @@ export type IStoreSnapshotIn = SnapshotIn<typeof Store>
 export type IStoreSnapshotOut = SnapshotOut<typeof Store>
 
 function initializeStore(snapshot = null) {
-  const _store = store ?? Store.create(initialState)
+  const _store = store ?? Store.create(initialState as any)
 
   // If your page has Next.js data fetching methods that use a Mobx store, it will
   // get hydrated here, check `pages/ssg.tsx` and `pages/ssr.tsx` for more details

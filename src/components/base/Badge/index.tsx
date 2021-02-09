@@ -17,13 +17,13 @@ export default element
       borderColor: t.color.primary.base,
 
       hover: {
-        color: t.color.primary.hover,
-        borderColor: t.color.primary.hover,
+        color: t.color.primary.medium,
+        borderColor: t.color.primary.medium,
       },
 
       pressed: {
-        color: t.color.primary.pressed,
-        borderColor: t.color.primary.pressed,
+        color: t.color.primary.dark,
+        borderColor: t.color.primary.dark,
       },
     },
     secondary: {
@@ -31,13 +31,13 @@ export default element
       borderColor: t.color.secondary.base,
 
       hover: {
-        color: t.color.secondary.hover,
-        borderColor: t.color.secondary.hover,
+        color: t.color.secondary.medium,
+        borderColor: t.color.secondary.medium,
       },
 
       pressed: {
-        color: t.color.secondary.pressed,
-        borderColor: t.color.secondary.pressed,
+        color: t.color.secondary.dark,
+        borderColor: t.color.secondary.dark,
       },
     },
     tertiary: {
@@ -45,13 +45,13 @@ export default element
       borderColor: t.color.tertiary.base,
 
       hover: {
-        color: t.color.tertiary.hover,
-        borderColor: t.color.tertiary.hover,
+        color: t.color.tertiary.medium,
+        borderColor: t.color.tertiary.medium,
       },
 
       pressed: {
-        color: t.color.tertiary.pressed,
-        borderColor: t.color.tertiary.pressed,
+        color: t.color.tertiary.dark,
+        borderColor: t.color.tertiary.dark,
       },
     },
     neutral: {
@@ -59,13 +59,13 @@ export default element
       borderColor: t.color.neutral.base,
 
       hover: {
-        color: t.color.neutral.hover,
-        borderColor: t.color.neutral.hover,
+        color: t.color.neutral.medium,
+        borderColor: t.color.neutral.medium,
       },
 
       pressed: {
-        color: t.color.neutral.pressed,
-        borderColor: t.color.neutral.pressed,
+        color: t.color.neutral.dark,
+        borderColor: t.color.neutral.dark,
       },
     },
   }))

@@ -33,20 +33,20 @@ export default element
       color: t.color.primary.base,
 
       hover: {
-        color: t.color.primary.hover,
+        color: t.color.primary.medium,
       },
       pressed: {
-        color: t.color.primary.pressed,
+        color: t.color.primary.dark,
       },
     },
     secondary: {
       color: t.color.secondary.base,
 
       hover: {
-        color: t.color.secondary.hover,
+        color: t.color.secondary.medium,
       },
       pressed: {
-        color: t.color.secondary.pressed,
+        color: t.color.secondary.dark,
       },
     },
     transparent: {

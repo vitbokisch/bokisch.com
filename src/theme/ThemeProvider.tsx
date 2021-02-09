@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import { Provider } from '@vitus-labs/unistyle'
 import { IStore, useStore, observer } from '~/store'
-import theme from '~/config/theme'
-import GlobalStyle from '~/config/globalStyles'
+import theme from './theme'
+import GlobalStyle from './globalStyles'
 
 type Props = {
   store?: IStore

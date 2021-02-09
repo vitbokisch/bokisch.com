@@ -76,23 +76,23 @@ const theme = {
     },
     primary: {
       base: '#954EA4',
-      hover: '#71307E',
-      pressed: '#461950',
+      medium: '#71307E',
+      dark: '#461950',
     },
     secondary: {
       base: '#5066B3',
-      hover: '#374C96',
-      pressed: '#27366C',
+      medium: '#374C96',
+      dark: '#27366C',
     },
     tertiary: {
       base: '#91C8CF',
-      hover: '#45939D',
-      pressed: '#285E65',
+      medium: '#45939D',
+      dark: '#285E65',
     },
     neutral: {
       base: '#C5C5C5',
-      hover: '#A9A9A9',
-      pressed: '#696969',
+      medium: '#A9A9A9',
+      dark: '#696969',
     },
   },
 } as const

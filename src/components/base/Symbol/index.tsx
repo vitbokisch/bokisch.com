@@ -16,40 +16,40 @@ const Component = element
       backgroundColor: t.color.primary.base,
 
       hover: {
-        backgroundColor: t.color.primary.hover,
+        backgroundColor: t.color.primary.medium,
       },
       pressed: {
-        backgroundColor: t.color.primary.pressed,
+        backgroundColor: t.color.primary.dark,
       },
     },
     secondary: {
       backgroundColor: t.color.secondary.base,
 
       hover: {
-        backgroundColor: t.color.secondary.hover,
+        backgroundColor: t.color.secondary.medium,
       },
       pressed: {
-        backgroundColor: t.color.secondary.pressed,
+        backgroundColor: t.color.secondary.dark,
       },
     },
     tertiary: {
       backgroundColor: t.color.tertiary.base,
 
       hover: {
-        backgroundColor: t.color.tertiary.hover,
+        backgroundColor: t.color.tertiary.medium,
       },
       pressed: {
-        backgroundColor: t.color.tertiary.pressed,
+        backgroundColor: t.color.tertiary.dark,
       },
     },
     neutral: {
       backgroundColor: t.color.neutral.base,
 
       hover: {
-        backgroundColor: t.color.neutral.hover,
+        backgroundColor: t.color.neutral.medium,
       },
       pressed: {
-        backgroundColor: t.color.neutral.pressed,
+        backgroundColor: t.color.neutral.dark,
       },
     },
   }))

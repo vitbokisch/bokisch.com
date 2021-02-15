@@ -1,7 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components'
 import type { Theme } from './theme'
 
-const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
+const GlobalStyle = createGlobalStyle<{ theme: Theme; blocked: boolean }>`
   body {
     box-sizing: border-box;
     margin: 0;
@@ -9,9 +9,15 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
+    ${({ blocked }) =>
+      blocked &&
+      css`
+        overflow-y: hidden;
+      `};
+
     ${({ theme: t }) => css`
       font-size: ${t.rootSize}px;
-    `}
+    `};
   }
 `
 

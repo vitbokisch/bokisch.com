@@ -13,12 +13,12 @@ const Header = element
     contentAlignX: 'center',
   })
   .theme((t) => ({
-    marginBottom: t.space.xLarge,
+    marginBottom: { xs: t.space.large, md: t.space.xLarge },
     maxWidth: '70%',
   }))
 
 const Heading = heading.theme((t) => ({
-  marginBottom: t.space.large,
+  marginBottom: { xs: t.space.medium, md: t.space.large },
 }))
 
 type Props = {
@@ -28,7 +28,7 @@ type Props = {
 
 const component: FC<Props> = ({ title, children }: Props) => (
   <Header>
-    <Heading level2 label={title} />
+    <Heading centered level2 label={title} />
     <Text large centered>
       {children}
     </Text>

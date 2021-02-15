@@ -5,7 +5,7 @@ export default text
     name: 'base/Text',
   })
   .theme((t) => ({
-    fontSize: t.fontSize.base,
+    fontSize: { xs: t.fontSize.small, md: t.fontSize.base },
     lineHeight: t.lineHeight.base,
   }))
   .states((t) => ({
@@ -27,10 +27,10 @@ export default text
       fontSize: t.fontSize.small,
     },
     large: {
-      fontSize: t.fontSize.medium,
+      fontSize: { xs: t.fontSize.base, md: t.fontSize.medium },
     },
     xLarge: {
-      fontSize: t.fontSize.xLarge,
+      fontSize: { xs: t.fontSize.large, md: t.fontSize.xLarge },
     },
   }))
   .multiple({

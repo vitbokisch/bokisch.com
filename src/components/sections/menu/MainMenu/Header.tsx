@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from '~/components/base/grid'
-import Element from '~/components/base/Logo'
+import Element from '~/components/base/Element'
 import Logo, { LogoHeading } from '~/components/base/Logo'
 import MenuTrigger from '../MenuTrigger'
 

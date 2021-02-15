@@ -8,8 +8,14 @@ export default element
     block: true,
     tag: 'section',
     contentDirection: 'rows',
+    contentAlignY: 'top',
     contentAlignX: 'center',
   })
   .theme((t) => ({
-    paddingY: t.space.xxLarge,
+    paddingY: { xs: t.space.xLarge, md: t.space.xxLarge },
   }))
+  .variants({
+    fullScreen: {
+      height: '100vh',
+    },
+  })

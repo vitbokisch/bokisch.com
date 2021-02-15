@@ -30,7 +30,7 @@ export default element
       backgroundColor: t.color.primary.medium,
       borderColor: t.color.primary.medium,
     },
-    pressed: {
+    active: {
       backgroundColor: t.color.primary.dark,
       borderColor: t.color.primary.dark,
     },
@@ -44,7 +44,7 @@ export default element
         backgroundColor: t.color.primary.medium,
         borderColor: t.color.primary.medium,
       },
-      pressed: {
+      active: {
         backgroundColor: t.color.primary.dark,
         borderColor: t.color.primary.dark,
       },
@@ -57,7 +57,7 @@ export default element
         backgroundColor: t.color.secondary.medium,
         borderColor: t.color.secondary.medium,
       },
-      pressed: {
+      active: {
         backgroundColor: t.color.secondary.dark,
         borderColor: t.color.secondary.dark,
       },
@@ -70,7 +70,7 @@ export default element
         backgroundColor: t.color.tertiary.medium,
         borderColor: t.color.tertiary.medium,
       },
-      pressed: {
+      active: {
         backgroundColor: t.color.tertiary.dark,
         borderColor: t.color.tertiary.dark,
       },
@@ -83,7 +83,7 @@ export default element
         backgroundColor: t.color.neutral.medium,
         borderColor: t.color.neutral.medium,
       },
-      pressed: {
+      active: {
         backgroundColor: t.color.neutral.dark,
         borderColor: t.color.neutral.dark,
       },

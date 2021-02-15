@@ -27,14 +27,14 @@ export default text
   }))
   .sizes((t) => ({
     level1: {
-      fontSize: t.fontSize.jumbo,
+      fontSize: { xs: t.fontSize.xxxLarge, md: t.fontSize.jumbo },
       textTransform: 'uppercase',
     },
     level2: {
-      fontSize: t.fontSize.xxxLarge,
+      fontSize: { xs: t.fontSize.xxLarge, md: t.fontSize.xxxLarge },
     },
     level3: {
-      fontSize: t.fontSize.large,
+      fontSize: { xs: t.fontSize.medium, md: t.fontSize.large },
     },
     level4: {
       fontSize: t.fontSize.medium,

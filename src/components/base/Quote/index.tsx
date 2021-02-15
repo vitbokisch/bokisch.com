@@ -24,7 +24,11 @@ const Text = text
     paragraph: true,
   })
   .theme((t) => ({
-    fontSize: t.fontSize.xxLarge,
+    fontSize: {
+      xs: t.fontSize.medium,
+      sm: t.fontSize.large,
+      md: t.fontSize.xxLarge,
+    },
     fontStyle: 'italic',
     textAlign: 'center',
   }))
@@ -38,7 +42,7 @@ const Author = text
   })
   .theme((t) => ({
     marginTop: t.space.xSmall,
-    fontSize: t.fontSize.base,
+    fontSize: { xs: t.fontSize.small, md: t.fontSize.base },
     fontWeight: 500,
     textAlign: 'right',
   }))

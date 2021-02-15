@@ -12,7 +12,7 @@ const theme = {
   grid: {
     columns: 12,
     container: {
-      xs: '100%',
+      xs: '90%',
       sm: 540,
       md: 720,
       lg: 960,
@@ -57,6 +57,9 @@ const theme = {
   borderRadius: {
     base: 8,
     extra: 180,
+  },
+  transition: {
+    base: 'all .15s ease-in-out',
   },
   gradient: {
     base: {

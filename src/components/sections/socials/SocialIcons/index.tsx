@@ -17,13 +17,13 @@ const component: FC<Props> = () => {
       'twitter',
       'stackoverflow',
     ])
-    .map((item) => ({ name: item.type, link: item.link }))
+    .map((item) => ({ name: item.type, href: item.link }))
 
   return (
     <IconList
       data={socials}
       gap="large"
-      itemProps={{ size: 'medium', base: true, external: true }}
+      itemProps={{ size: 'medium', external: true }}
     />
   )
 }

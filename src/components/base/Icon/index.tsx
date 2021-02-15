@@ -1,11 +1,9 @@
-import element from '~/components/core/element'
+import link from '~/components/core/link'
 
-export default element
+export default link
   .config({ name: 'base/Icon' })
-  .attrs<{ name: string; link?: string }>(({ name, link }) => ({
+  .attrs<{ name: string }>(({ name }) => ({
     block: true,
-    tag: link ? 'a' : 'span',
-    href: link,
     dangerouslySetInnerHTML: name
       ? {
           __html: require(`~/assets/icons/${name}.svg?include`),
@@ -14,18 +12,12 @@ export default element
   }))
   .theme((t) => ({
     backgroundColor: t.color.transparent,
-  }))
-  .states((t) => ({
-    base: {
-      color: t.isDark ? t.color.light.base : t.color.dark.base,
-
-      hover: {
-        color: t.isDark ? t.color.tertiary.base : t.color.tertiary.base,
-      },
-
-      active: {
-        color: t.isDark ? t.color.tertiary.medium : t.color.tertiary.medium,
-      },
+    color: t.isDark ? t.color.light.base : t.color.dark.base,
+    hover: {
+      color: t.isDark ? t.color.tertiary.base : t.color.tertiary.base,
+    },
+    active: {
+      color: t.isDark ? t.color.tertiary.medium : t.color.tertiary.medium,
     },
   }))
   .sizes({

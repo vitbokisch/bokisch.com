@@ -2,7 +2,6 @@ import rocketstyle from '@vitus-labs/rocketstyle'
 import { Element } from '@vitus-labs/elements'
 import { styles, makeItResponsive } from '@vitus-labs/unistyle'
 import type { Theme } from '~/theme'
-import withLink from './withLink'
 
 type ComponentTheme = Parameters<typeof styles>[0]['theme']
 type ResponsiveThemeDefinition = {
@@ -31,27 +30,24 @@ type ComponentThemeDefinition = ResponsiveThemeDefinition & {
 } & {
   active: ResponsiveThemeDefinition
 } & {
-  pressed: ResponsiveThemeDefinition
+  focus: ResponsiveThemeDefinition
 }
 
 export default rocketstyle<Theme, ComponentThemeDefinition>()()({
   component: Element,
   name: 'core/Element',
 })
-  .compose({ withLink })
   .theme((t) => ({
-    boxSizing: 'border-box',
     fontFamily: t.fontFamily.base,
   }))
   .styles(
     (css) => css<any>`
-      ${({
-        href,
-        onClick,
-        $rocketstyle,
-        $rocketstate: { disabled, active, hover, focus, pressed },
-      }) => {
+      ${({ href, onClick, $rocketstyle, $rocketstate }) => {
         const isDynamic = onClick || href
+        const { disabled, active, pseudo = {} } = $rocketstate
+        const { hover, pressed, focus } = pseudo
+
+        console.log()
 
         const {
           hover: hoverStyles = {},
@@ -97,12 +93,12 @@ export default rocketstyle<Theme, ComponentThemeDefinition>()()({
           isDynamic &&
           css`
             cursor: pointer;
-          `}
+          `};
 
           /* -------------------------------------------------------- */
-        /* HOVER STATE */
-        /* -------------------------------------------------------- */
-        ${!disabled &&
+          /* HOVER STATE */
+          /* -------------------------------------------------------- */
+          ${!disabled &&
           !active &&
           isDynamic &&
           css`

@@ -1,31 +1,32 @@
-import dynamic from 'next/dynamic'
-import element from '~/components/core/element'
+import link from '~/components/core/link'
+import icon from '../Icon'
 
-const Icon = dynamic(() => import('../Icon'))
+const Icon = icon.config({
+  name: 'base/Link/Icon',
+  consumer: (ctx) => ctx<typeof Link>(({ pseudo }) => ({ pseudo })),
+})
 
-export default element
+const Link = link
   .config({
     name: 'base/Link',
+    provider: true,
   })
-  .attrs<{ href?: string; onClick?: MouseEvent; icon?: string }>(
-    ({ href, onClick, icon }, theme) => {
-      return {
-        tag: href ? 'a' : onClick ? 'button' : 'span',
-        beforeContent: icon ? <Icon name={icon} size="small" /> : undefined,
-        gap: icon ? theme.space.medium : undefined,
-      }
+  .attrs<{ icon?: string }>(({ icon }, theme) => {
+    return {
+      beforeContent: icon ? <Icon name={icon} size="small" /> : undefined,
+      gap: icon ? theme.space.medium : undefined,
     }
-  )
+  })
   .theme((t) => ({
     fontSize: 'inherit',
-    textDecoration: 'none',
     color: t.isDark ? t.color.light.base : t.color.dark.base,
 
     hover: {
-      color: t.isDark ? t.color.light.hover : t.color.dark.hover,
+      color: t.isDark ? t.color.tertiary.base : t.color.tertiary.base,
     },
-    pressed: {
-      color: t.isDark ? t.color.light.pressed : t.color.dark.pressed,
+
+    active: {
+      color: t.isDark ? t.color.tertiary.medium : t.color.tertiary.medium,
     },
   }))
   .states((t) => ({
@@ -35,7 +36,7 @@ export default element
       hover: {
         color: t.color.primary.medium,
       },
-      pressed: {
+      active: {
         color: t.color.primary.dark,
       },
     },
@@ -45,7 +46,7 @@ export default element
       hover: {
         color: t.color.secondary.medium,
       },
-      pressed: {
+      active: {
         color: t.color.secondary.dark,
       },
     },
@@ -58,3 +59,5 @@ export default element
       fontSize: t.fontSize.xLarge,
     },
   }))
+
+export default Link

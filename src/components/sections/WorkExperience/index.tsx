@@ -12,7 +12,7 @@ const normalizeData = (data: Array<any>) =>
     acc.push(item)
 
     if (i === 3 || i === 6) {
-      acc.push({ component: <Col size={1.5} /> })
+      acc.push({ component: <Col size={{ xs: 0, md: 1.5 }} /> })
     }
 
     return acc
@@ -30,7 +30,7 @@ const component = () => (
 
       <Heading level3>Companies I have collaborated with:</Heading>
 
-      <Container gap={32} size={3} contentAlignX="center">
+      <Container gap={32} size={{ xs: 12, md: 3 }} contentAlignX="center">
         <Row>
           <IconLogoList
             rootElement={false}

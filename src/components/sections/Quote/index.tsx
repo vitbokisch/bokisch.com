@@ -7,7 +7,7 @@ import Section from '~/components/base/Section'
 const component = () => (
   <Background primary>
     <Section>
-      <Container width={980}>
+      <Container width={{ xs: '90%', lg: 980 }}>
         <Quote
           author="Albert Einstein"
           quote="“If I had an hour to solve a problem I'd spend 55 minutes thinking

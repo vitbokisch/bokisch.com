@@ -3,10 +3,10 @@ import element from '~/components/core/element'
 export default element
   .config({ name: 'base/Badge' })
   .theme((t) => ({
-    height: 40,
+    height: { xs: 32, md: 40 },
     borderRadius: t.borderRadius.extra,
-    fontSize: t.fontSize.base,
-    paddingX: t.space.small,
+    fontSize: { xs: t.fontSize.small, md: t.fontSize.base },
+    paddingX: { xs: t.space.xSmall, md: t.space.small },
     backgroundColor: t.color.transparent,
     borderWidth: t.borderWidth.base,
     borderStyle: t.borderStyle.base,
@@ -21,7 +21,7 @@ export default element
         borderColor: t.color.primary.medium,
       },
 
-      pressed: {
+      active: {
         color: t.color.primary.dark,
         borderColor: t.color.primary.dark,
       },
@@ -35,7 +35,7 @@ export default element
         borderColor: t.color.secondary.medium,
       },
 
-      pressed: {
+      active: {
         color: t.color.secondary.dark,
         borderColor: t.color.secondary.dark,
       },
@@ -49,7 +49,7 @@ export default element
         borderColor: t.color.tertiary.medium,
       },
 
-      pressed: {
+      active: {
         color: t.color.tertiary.dark,
         borderColor: t.color.tertiary.dark,
       },
@@ -63,7 +63,7 @@ export default element
         borderColor: t.color.neutral.medium,
       },
 
-      pressed: {
+      active: {
         color: t.color.neutral.dark,
         borderColor: t.color.neutral.dark,
       },

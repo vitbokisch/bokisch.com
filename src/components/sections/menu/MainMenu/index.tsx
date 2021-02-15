@@ -27,10 +27,10 @@ const data = [
   { label: 'Career Timeline', href: '/something' },
 ]
 
-const print = [
-  { label: 'Download PDF', href: '', icon: 'email' },
-  { label: 'Print Document', href: '', icon: 'home' },
-]
+// const print = [
+//   { label: 'Download PDF', href: '', icon: 'email' },
+//   { label: 'Print Document', href: '', icon: 'home' },
+// ]
 
 type Props = {
   store?: IStore
@@ -57,11 +57,11 @@ const component: FC<Props> = () => {
           <Col size={2}>
             <SocialList />
 
-            <LinkList
+            {/* <LinkList
               data={print}
               gap="large"
               itemProps={{ state: 'secondary' }}
-            />
+            /> */}
           </Col>
         </Row>
       </Container>

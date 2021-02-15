@@ -3,42 +3,21 @@ import { Container } from '~/components/base/grid'
 import section from '~/components/base/Section'
 import image from '~/components/base/Image'
 import element from '~/components/base/Element'
+import Background from '~/components/base/Background'
 import Header from './Header'
 import Content from './Content'
 import Footer from './Footer'
 
 const Element = element.theme({ height: 'inherit' })
 
-const Section = section
-  .attrs({ contentAlignY: 'top' })
-  .theme({
-    height: '100vh',
-  })
-  .styles(
-    (css) => css`
-      background: linear-gradient(
-        180deg,
-        #a5aead 0%,
-        #b1bab9 52.08%,
-        #b0b8b7 100%
-      );
-    `
-  )
-
-const OverlayWrapper = element
-  .theme({
-    fullScreen: true,
-    position: 'absolute',
-  })
-  .styles(
-    (css) => css`
-      background: linear-gradient(
-        281.95deg,
-        rgba(0, 0, 0, 0.5) 1.84%,
-        rgba(0, 0, 0, 0.37) 98.24%
-      );
-    `
-  )
+const Section = section.theme({
+  background: `linear-gradient(
+      180deg,
+      #a5aead 0%,
+      #b1bab9 52.08%,
+      #b0b8b7 100%
+    )`,
+})
 
 const ProfileImageWrapper = element.theme({
   position: 'absolute',
@@ -52,11 +31,11 @@ const ProfileImage = image.attrs({
 })
 
 const component = () => (
-  <Section>
+  <Section fullScreen>
     <ProfileImageWrapper>
       <ProfileImage />
     </ProfileImageWrapper>
-    <OverlayWrapper />
+    <Background overlay />
     <Container
       css={`
         height: 100%;

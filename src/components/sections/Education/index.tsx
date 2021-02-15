@@ -23,7 +23,13 @@ const component = () => (
         an eye openers. Bachelor degree
       </Header>
 
-      <Container width={980} columns={2} size={1} gap={64} gutter={0}>
+      <Container
+        width={{ xs: '90%', lg: 980 }}
+        columns={2}
+        size={{ xs: 2, md: 1 }}
+        gap={{ xs: 32, md: 64 }}
+        gutter={0}
+      >
         <Row>
           <CardList data={transformedData} wrapComponent={Col} />
         </Row>

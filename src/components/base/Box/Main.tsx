@@ -20,11 +20,11 @@ export default element
       boxShadow: t.isDark ? t.shadow.dark.small : t.shadow.light.small,
     },
     medium: {
-      padding: 36,
+      padding: { xs: 18, md: 36 },
       boxShadow: t.isDark ? t.shadow.dark.large : t.shadow.light.large,
     },
     large: {
-      padding: 40,
+      padding: { xs: 24, md: 40 },
       boxShadow: t.isDark ? t.shadow.dark.large : t.shadow.light.large,
     },
   }))

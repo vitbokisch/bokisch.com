@@ -39,8 +39,8 @@ const component: FC<Props> = ({
     <Header>
       {icon && <Icon xLarge name={icon} />}
       {logo && <IconLogo circle name={logo} />}
-      <Heading level3 label={title} />
-      {subtitle && <SubHeading label={subtitle} centered />}
+      <Heading level3 centered label={title} />
+      {subtitle && <SubHeading centered label={subtitle} />}
       {note && <Text small>{note}</Text>}
     </Header>
 

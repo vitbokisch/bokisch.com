@@ -18,7 +18,7 @@ const Component = element
       hover: {
         backgroundColor: t.color.primary.medium,
       },
-      pressed: {
+      active: {
         backgroundColor: t.color.primary.dark,
       },
     },
@@ -28,7 +28,7 @@ const Component = element
       hover: {
         backgroundColor: t.color.secondary.medium,
       },
-      pressed: {
+      active: {
         backgroundColor: t.color.secondary.dark,
       },
     },
@@ -38,7 +38,7 @@ const Component = element
       hover: {
         backgroundColor: t.color.tertiary.medium,
       },
-      pressed: {
+      active: {
         backgroundColor: t.color.tertiary.dark,
       },
     },
@@ -48,7 +48,7 @@ const Component = element
       hover: {
         backgroundColor: t.color.neutral.medium,
       },
-      pressed: {
+      active: {
         backgroundColor: t.color.neutral.dark,
       },
     },

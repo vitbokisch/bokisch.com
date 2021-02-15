@@ -21,6 +21,15 @@ export default element
     gradient: {
       background: t.isDark ? t.gradient.base.dark : t.gradient.base.light,
     },
+    overlay: {
+      fullScreen: true,
+      position: 'absolute',
+      background: `linear-gradient(
+        281.95deg,
+        rgba(0, 0, 0, 0.5) 1.84%,
+        rgba(0, 0, 0, 0.37) 98.24%
+      )`,
+    },
     triangle: {
       position: 'absolute',
       background: t.isDark

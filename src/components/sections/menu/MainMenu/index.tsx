@@ -51,9 +51,10 @@ const component: FC<Props> = () => {
             margin-top: 64px;
           `}
         >
-          <Col size={5}>
+          <Col size={3}>
             <LinkList data={data} gap="xLarge" itemProps={{ size: 'large' }} />
           </Col>
+          <Col size={2} />
           <Col size={2}>
             <SocialList />
 

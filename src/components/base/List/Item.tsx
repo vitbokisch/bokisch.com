@@ -7,7 +7,11 @@ export default element
   .attrs({
     block: true,
     tag: 'li',
-    contentAlignX: 'center',
+    contentAlignX: 'block',
+    contentDirection: 'rows',
+  })
+  .theme({
+    listStyleType: 'none',
   })
   .variants((t) => ({
     centered: {

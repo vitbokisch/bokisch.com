@@ -47,8 +47,6 @@ export default rocketstyle<Theme, ComponentThemeDefinition>()()({
         const { disabled, active, pseudo = {} } = $rocketstate
         const { hover, pressed, focus } = pseudo
 
-        console.log()
-
         const {
           hover: hoverStyles = {},
           focus: focusStyles = {},

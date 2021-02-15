@@ -6,7 +6,7 @@ import {
   SnapshotOut,
   types as t,
 } from 'mobx-state-tree'
-import { observer } from 'mobx-react-lite'
+import { observer } from 'mobx-react'
 import runtime from './runtime'
 import knowledge, { mockup as knowledgeMockup } from './data/knowledge'
 import technologies, { mockup as technologiesMockup } from './data/technologies'

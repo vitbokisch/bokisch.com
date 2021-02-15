@@ -1,9 +1,11 @@
 import list from '~/components/core/list'
-import Item from './Item'
+import component from './Item'
+
+export { component }
 
 export default list.config({ name: 'base/List' }).attrs({
   tag: 'ul',
-  component: Item,
+  block: true,
+  component,
   contentAlignX: 'block',
-  itemProps: () => ({ centered: true }),
 })

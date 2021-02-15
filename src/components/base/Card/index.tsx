@@ -47,7 +47,14 @@ const component: FC<Props> = ({
     <Line />
 
     <Body>
-      {list && <List data={list} valueName="label" gap="large" />}
+      {list && (
+        <List
+          data={list}
+          valueName="label"
+          gap="large"
+          itemProps={{ contentAlignX: 'center', centered: true }}
+        />
+      )}
 
       {children && <Text paragraph>{children}</Text>}
     </Body>

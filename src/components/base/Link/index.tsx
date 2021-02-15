@@ -11,12 +11,10 @@ const Link = link
     name: 'base/Link',
     provider: true,
   })
-  .attrs<{ icon?: string }>(({ icon }, theme) => {
-    return {
-      beforeContent: icon ? <Icon name={icon} size="small" /> : undefined,
-      gap: icon ? theme.space.medium : undefined,
-    }
-  })
+  .attrs<{ icon?: string }>(({ icon }, theme) => ({
+    beforeContent: icon ? <Icon name={icon} size="small" /> : undefined,
+    gap: icon ? theme.space.medium : undefined,
+  }))
   .theme((t) => ({
     fontSize: 'inherit',
     color: t.isDark ? t.color.light.base : t.color.dark.base,

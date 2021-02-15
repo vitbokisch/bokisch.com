@@ -30,7 +30,7 @@ const component = () => (
 
       <Heading level3>Companies I have collaborated with:</Heading>
 
-      <Container gap={32} size={3}>
+      <Container gap={32} size={3} contentAlignX="center">
         <Row>
           <IconLogoList
             rootElement={false}

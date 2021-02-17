@@ -11,15 +11,15 @@ export default element
     margin: t.space.reset,
     padding: t.space.reset,
   }))
-  .states((t) => ({
+  .states((t, _, v) => ({
     primary: {
-      backgroundColor: t.isDark ? t.color.dark.base : t.color.light.base,
+      backgroundColor: v(t.color.light.base, t.color.dark.base),
     },
     secondary: {
-      backgroundColor: t.isDark ? t.color.dark[100] : t.color.light[100],
+      backgroundColor: v(t.color.light[100], t.color.dark[100]),
     },
     gradient: {
-      background: t.isDark ? t.gradient.base.dark : t.gradient.base.light,
+      background: v(t.gradient.base.light, t.gradient.base.dark),
     },
     overlay: {
       fullScreen: true,
@@ -32,9 +32,7 @@ export default element
     },
     triangle: {
       position: 'absolute',
-      background: t.isDark
-        ? t.gradient.triangle.dark
-        : t.gradient.triangle.light,
+      background: v(t.gradient.triangle.light, t.gradient.triangle.dark),
       clipPath: 'polygon(0 0, 100% 15%, 100% 85%, 0 100%)',
       inset: '150px 0px 0px',
     },

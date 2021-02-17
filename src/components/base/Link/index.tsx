@@ -15,16 +15,16 @@ const Link = link
     beforeContent: icon ? <Icon name={icon} size="small" /> : undefined,
     gap: icon ? theme.space.medium : undefined,
   }))
-  .theme((t) => ({
+  .theme((t, _, v) => ({
     fontSize: 'inherit',
-    color: t.isDark ? t.color.light.base : t.color.dark.base,
+    color: v(t.color.dark.base, t.color.light.base),
 
     hover: {
-      color: t.isDark ? t.color.tertiary.base : t.color.tertiary.base,
+      color: v(t.color.tertiary.base, t.color.tertiary.base),
     },
 
     active: {
-      color: t.isDark ? t.color.tertiary.medium : t.color.tertiary.medium,
+      color: v(t.color.tertiary.base, t.color.tertiary.medium),
     },
   }))
   .states((t) => ({

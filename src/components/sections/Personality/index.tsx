@@ -19,11 +19,17 @@ const component = () => (
         <Row>
           <CardList rootElement={false} wrapComponent={Col}>
             <Card icon="personality" title="INTJ-A Personality">
-              I'm a person with <Link href="">The Architect personality</Link>{' '}
-              and mind. They say that people with this personality type are
-              imaginative yet decisive, ambitious yet private, amazingly
-              curious, but they do not squander their energy. They are probably
-              right.
+              I'm a person with{' '}
+              <Link
+                primary
+                href="https://www.16personalities.com/profiles/2d5836f3f4526"
+              >
+                The Architect
+              </Link>{' '}
+              personality and mind. They say that people with this personality
+              type are imaginative yet decisive, ambitious yet private,
+              amazingly curious, but they do not squander their energy. They are
+              probably right.
             </Card>
 
             <Card icon="analytics" title="Analytical Mind">

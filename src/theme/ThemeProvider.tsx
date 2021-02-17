@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
-import { Provider } from '@vitus-labs/unistyle'
+import { Provider } from '@vitus-labs/rocketstyle'
+import { Provider as provider } from '@vitus-labs/unistyle'
 import { IStore, useStore, observer } from '~/store'
 import theme from './theme'
 import GlobalStyle from './globalStyles'
@@ -41,17 +42,13 @@ type Props = {
 const component: FC<Props> = ({ children }) => {
   const store = useStore('')
 
-  const newTheme = { ...theme, isDark: store.runtime.theme.isDark }
-
-  // const result = createVariables(newTheme)
-  // const variableTheme = createTheme(newTheme)
-  // createVariables(newTheme)
-
-  // console.log(result)
-
   return (
-    <Provider theme={newTheme}>
-      <GlobalStyle theme={newTheme} blocked={store.runtime.menu.isOpen} />
+    <Provider
+      theme={theme}
+      variant={store.runtime.theme.variant as any}
+      provider={provider}
+    >
+      <GlobalStyle theme={theme} blocked={store.runtime.menu.isOpen} />
       {children}
     </Provider>
   )

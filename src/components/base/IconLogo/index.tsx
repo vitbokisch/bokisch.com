@@ -12,15 +12,15 @@ export default element
     contentAlignY: 'center',
     content: <Image name={name} responsive />,
   }))
-  .theme((t) => ({
-    backgroundColor: t.isDark ? t.color.dark.base : t.color.light.base,
+  .theme((t, _, v) => ({
+    backgroundColor: v(t.color.light.base, t.color.dark.base),
     borderRadius: t.borderRadius.base,
   }))
-  .variants((t) => ({
+  .variants((t, _, v) => ({
     box: {
       height: 100,
       padding: t.space.xLarge,
-      backgroundColor: t.isDark ? t.color.light.base : t.color.transparent,
+      backgroundColor: v(t.color.transparent, t.color.light.base),
     },
     circle: {
       width: 72,

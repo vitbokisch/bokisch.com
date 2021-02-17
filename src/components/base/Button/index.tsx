@@ -89,6 +89,3 @@ export default element
       },
     },
   }))
-  .variants({
-    inversed: true,
-  })

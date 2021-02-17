@@ -6,9 +6,9 @@ export default element
     component: Text,
     name: 'core/Element',
   })
-  .theme((t) => ({
+  .theme((t, _, v) => ({
     lineHeight: t.lineHeight.base,
-    color: t.isDark ? t.color.light.base : t.color.dark.base,
+    color: v(t.color.dark.base, t.color.light.base),
     fontFamily: t.fontFamily.base,
     margin: t.space.reset,
     padding: t.space.reset,

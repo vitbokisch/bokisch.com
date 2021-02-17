@@ -8,23 +8,23 @@ export default element
     contentAlignX: 'block',
     contentAlignY: 'block',
   })
-  .theme((t) => ({
+  .theme((t, _, v) => ({
     height: '100%',
-    backgroundColor: t.isDark ? t.color.dark.base : t.color.light.base,
+    backgroundColor: v(t.color.light.base, t.color.dark.base),
     borderRadius: t.borderRadius.base,
-    color: t.isDark ? t.color.light[100] : t.color.dark.base,
+    color: v(t.color.dark.base, t.color.light[100]),
   }))
-  .sizes((t) => ({
+  .sizes((t, _, v) => ({
     small: {
       padding: t.space.xSmall,
-      boxShadow: t.isDark ? t.shadow.dark.small : t.shadow.light.small,
+      boxShadow: v(t.shadow.light.small, t.shadow.dark.small),
     },
     medium: {
       padding: { xs: 18, md: 36 },
-      boxShadow: t.isDark ? t.shadow.dark.large : t.shadow.light.large,
+      boxShadow: v(t.shadow.light.large, t.shadow.dark.large),
     },
     large: {
       padding: { xs: 24, md: 40 },
-      boxShadow: t.isDark ? t.shadow.dark.large : t.shadow.light.large,
+      boxShadow: v(t.shadow.light.large, t.shadow.dark.large),
     },
   }))

@@ -10,14 +10,14 @@ export default link
         }
       : undefined,
   }))
-  .theme((t) => ({
+  .theme((t, _, v) => ({
     backgroundColor: t.color.transparent,
-    color: t.isDark ? t.color.light.base : t.color.dark.base,
+    color: v(t.color.dark.base, t.color.light.base),
     hover: {
-      color: t.isDark ? t.color.tertiary.base : t.color.tertiary.base,
+      color: v(t.color.tertiary.base, t.color.tertiary.base),
     },
     active: {
-      color: t.isDark ? t.color.tertiary.medium : t.color.tertiary.medium,
+      color: v(t.color.tertiary.medium, t.color.tertiary.medium),
     },
   }))
   .sizes({
@@ -34,9 +34,9 @@ export default link
       size: 96,
     },
   })
-  .variants((t) => ({
+  .variants((t, _, v) => ({
     circle: {
-      backgroundColor: t.isDark ? t.color.light[200] : t.color.dark.base,
+      backgroundColor: v(t.color.dark.base, t.color.light[200]),
     },
   }))
   .styles(

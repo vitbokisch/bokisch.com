@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { Provider } from '@vitus-labs/rocketstyle'
 import { IStore, useStore, observer } from '~/store'
 import { Container, Row, Col } from '~/components/base/grid'
 import section from '~/components/base/Section'
@@ -42,31 +43,37 @@ const component: FC<Props> = () => {
   if (!store.runtime.menu.isOpen) return null
 
   return (
-    <Section>
-      <Background />
-      <Header />
-      <Container columns={7}>
-        <Row
-          css={`
-            margin-top: 64px;
-          `}
-        >
-          <Col size={3}>
-            <LinkList data={data} gap="xLarge" itemProps={{ size: 'large' }} />
-          </Col>
-          <Col size={2} />
-          <Col size={2}>
-            <SocialList />
+    <Provider inversed>
+      <Section>
+        <Background />
+        <Header />
+        <Container columns={7}>
+          <Row
+            css={`
+              margin-top: 64px;
+            `}
+          >
+            <Col size={3}>
+              <LinkList
+                data={data}
+                gap="xLarge"
+                itemProps={{ size: 'large' }}
+              />
+            </Col>
+            <Col size={2} />
+            <Col size={2}>
+              <SocialList />
 
-            {/* <LinkList
+              {/* <LinkList
               data={print}
               gap="large"
               itemProps={{ state: 'secondary' }}
             /> */}
-          </Col>
-        </Row>
-      </Container>
-    </Section>
+            </Col>
+          </Row>
+        </Container>
+      </Section>
+    </Provider>
   )
 }
 

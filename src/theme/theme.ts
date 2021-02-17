@@ -1,5 +1,4 @@
 const theme = {
-  isDark: false,
   rootSize: 16,
   breakpoints: {
     xs: 0,

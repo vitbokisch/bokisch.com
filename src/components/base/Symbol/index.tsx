@@ -53,14 +53,14 @@ const Component = element
       },
     },
   }))
-  .sizes((t) => ({
+  .sizes((t, _, v) => ({
     small: {
       size: 12,
     },
     medium: {
       size: 36,
       borderWidth: 4,
-      borderColor: t.isDark ? '#000' : '#fff',
+      borderColor: v(t.color.light.base, t.color.dark.base),
       borderStyle: 'solid',
     },
     large: {

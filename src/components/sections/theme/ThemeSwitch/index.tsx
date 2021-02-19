@@ -11,7 +11,7 @@ const component: FC<Props> = () => {
 
   return (
     <Switch
-      state={store.runtime.theme.variant}
+      active={store.runtime.theme.isDark}
       onChange={store.runtime.theme.toggleTheme}
     />
   )

@@ -23,7 +23,7 @@ type Props = {
   icon?: string
   logo?: string
   children: ReactNode
-  list?: Array<ReactNode>
+  list?: Array<string>
 }
 
 const component: FC<Props> = ({

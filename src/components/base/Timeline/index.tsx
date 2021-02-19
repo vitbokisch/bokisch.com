@@ -21,13 +21,13 @@ const splitData: SplitData = (data) => {
 
 const Timeline = element
 
-const Line = element.attrs({ tag: 'span' }).theme((t) => ({
+const Line = element.attrs({ tag: 'span' }).theme((t, _, v) => ({
   position: 'absolute',
   left: '50%',
   width: 4,
   height: '100%',
   transform: 'translateX(-50%)',
-  backgroundColor: t.isDark ? '#3f3f3f' : '#F3F3F3',
+  backgroundColor: v('#F3F3F3', '#3f3f3f'),
 }))
 
 const component = ({ data }) => {

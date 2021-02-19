@@ -6,6 +6,8 @@ import Document, {
   DocumentContext,
 } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import GoogleFonts from '~/components/meta/GoogleFonts'
+import Meta from '~/components/meta/Meta'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -37,7 +39,10 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en" dir="ltr">
-        <Head />
+        <Head>
+          <Meta />
+          <GoogleFonts />
+        </Head>
         <body>
           <Main />
           <NextScript />

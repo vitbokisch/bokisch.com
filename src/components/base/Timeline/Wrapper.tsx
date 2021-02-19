@@ -4,6 +4,7 @@ import symbol from '../Symbol'
 
 const Wrapper = element
   .config({
+    name: 'base/Timeline/Wrapper',
     provider: true,
   })
   .theme({

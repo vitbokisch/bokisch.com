@@ -13,9 +13,9 @@ const Logo = element
     contentAlignY: 'center',
     content: <Image responsive />,
   })
-  .theme((t) => ({
+  .theme({
     width: 250,
-  }))
+  })
 
 const LogoHeading = Text.attrs({
   label: 'Frontend Engineer | Architect | Innovator',

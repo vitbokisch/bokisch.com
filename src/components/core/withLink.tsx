@@ -1,4 +1,4 @@
-import React, { ComponentType } from 'react'
+import React, { FC, ComponentType } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import routes from '~/config/routes'
@@ -15,15 +15,14 @@ type Props = Partial<{
 const component = (
   WrappedComponent: ComponentType<Partial<{ active: boolean; href: string }>>
 ) => {
-  const Enhance = ({
+  const Enhance: FC<Props> = ({
     href,
-    external,
     prefetch = false,
     replace,
     scroll,
     shallow,
     ...props
-  }: Props) => {
+  }) => {
     const { route } = useRouter()
 
     if (!href) return <WrappedComponent {...props} />
@@ -36,7 +35,7 @@ const component = (
     }
 
     const destination = goTo()
-    const externalProps = external
+    const externalProps = destination.startsWith('http')
       ? {
           rel: 'noopener noreferrer',
           target: '_blank',

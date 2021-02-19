@@ -45,7 +45,7 @@ const component: FC<Props> = ({ children }) => {
   return (
     <Provider
       theme={theme}
-      variant={store.runtime.theme.variant as any}
+      mode={store.runtime.theme.variant as any}
       provider={provider}
     >
       <GlobalStyle theme={theme} blocked={store.runtime.menu.isOpen} />

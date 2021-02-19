@@ -8,8 +8,9 @@ const Component = element
     content: large ? <Component medium /> : undefined,
   }))
   .theme((t) => ({
-    borderRadius: t.borderRadius.extra,
     size: 12,
+    borderRadius: t.borderRadius.extra,
+    transition: t.transition.base,
   }))
   .states((t) => ({
     primary: {

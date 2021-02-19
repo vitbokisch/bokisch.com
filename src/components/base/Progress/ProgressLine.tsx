@@ -3,10 +3,10 @@ import element from '~/components/core/element'
 export default element
   .config({ name: 'base/Progress/ProgressLine' })
   .attrs({ block: true, tag: 'span' })
-  .theme((t) => ({
+  .theme((t, _, v) => ({
     width: '100%',
     height: 2,
-    backgroundColor: t.isDark ? t.color.dark[200] : t.color.light[200],
+    backgroundColor: v(t.color.light[200], t.color.dark[200]),
   }))
   .states((t) => ({
     primary: {

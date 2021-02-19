@@ -6,63 +6,46 @@ const base = element.attrs({
   tag: 'span',
 })
 
-const Wrapper = base
-  .theme((t) => ({
-    width: 64,
-    height: 24,
-    borderRadius: t.borderRadius.extra,
-    borderWidth: t.borderWidth.base,
-    borderStyle: 'solid',
-  }))
-  .variants((t) => ({
-    light: {
-      backgroundColor: '#f1f1f1',
-      borderColor: '#f1f1f1',
-    },
-    dark: {
-      backgroundColor: '#0D0D0D',
-      borderColor: '#0D0D0D',
-    },
-  }))
-  .config({
-    provider: true,
-  })
+const Wrapper = base.attrs<{ onClick?: () => void }>({}).theme((t, _, v) => ({
+  width: 64,
+  height: 24,
+  borderRadius: t.borderRadius.extra,
+  borderWidth: t.borderWidth.base,
+  borderStyle: 'solid',
+  backgroundColor: v(t.color.light[200], t.color.dark[200]),
+  borderColor: v(t.color.light[200], t.color.dark[200]),
+}))
 
 const Inner = base
-  .theme((t) => ({
+  .theme((t, _, v) => ({
     position: 'absolute',
     size: 36,
-    backgroundColor: '#FBFBFB',
     borderRadius: t.borderRadius.extra,
+    backgroundColor: v(t.color.light[100], t.color.dark[100]),
+    color: v(t.color.dark[100], t.color.light[100]),
+    left: -1,
   }))
-  .variants((t) => ({
-    light: {
-      backgroundColor: '#FBFBFB',
-      color: '#000',
-      left: -1,
-    },
-    dark: {
-      backgroundColor: '#0D0D0D',
-      color: '#fff',
+  .variants({
+    active: {
       left: 'calc(100% - 35px)',
     },
-  }))
-  .config({
-    consumer: (ctx) => ctx<typeof Wrapper>(({ variant }) => ({ variant })),
   })
 
 type Props = {
-  state: string
+  active: boolean
   onChange: () => void
 }
 
-const component: FC<Props> = ({ state = 'light', onChange }) => {
-  const variant = state === 'dark' ? 'dark' : 'light'
-  const iconVariant = state === 'dark' ? 'moon' : 'sun'
+const component: FC<Props> = ({ active, onChange }) => {
+  const iconVariant = active ? 'moon' : 'sun'
 
   return (
-    <Wrapper onClick={onChange} variant={variant}>
-      <Inner content={<Icon name={iconVariant} />} contentAlignX="center" />
+    <Wrapper onClick={onChange}>
+      <Inner
+        active={active}
+        content={<Icon name={iconVariant} />}
+        contentAlignX="center"
+      />
     </Wrapper>
   )
 }

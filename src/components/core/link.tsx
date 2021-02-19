@@ -18,6 +18,7 @@ export default element
   .theme((t) => ({
     transition: t.transition.base,
     border: 'none',
+    backgroundColor: t.color.transparent,
     textDecoration: 'none',
     outline: 'none',
     padding: 0,

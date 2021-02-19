@@ -4,7 +4,6 @@ import { Provider as StoreProvider } from 'mobx-react'
 import { useStore, observer } from '~/store'
 import { ThemeProvider } from '~/theme'
 import themeListener from '~/hooks/themeListener'
-import GoogleFonts from '~/components/meta/GoogleFonts'
 
 const component = ({ Component, pageProps }: AppProps) => {
   const store = useStore(pageProps.initialState)
@@ -17,7 +16,6 @@ const component = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <GoogleFonts />
         {/* <Meta />
       <Favicons />
       <Social />

@@ -4,11 +4,12 @@ import Card from '~/components/base/Card'
 import CardList from '~/components/base/CardList'
 import Background from '~/components/base/Background'
 import Link from '~/components/base/Link'
-import Section from '~/components/base/Section'
+import Section, { Header } from '~/components/base/Section'
 
 const component = () => (
   <Background primary>
     <Section>
+      <Header title="About me" />
       <Container
         columns={6}
         gap={40}

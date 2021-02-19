@@ -10,6 +10,7 @@ import WorkExperience from '~/components/sections/WorkExperience'
 import Education from '~/components/sections/Education'
 import CertificatesHobbies from '~/components/sections/CertificatesHobbies'
 import CareerTimeline from '~/components/sections/CareerTimeline'
+import Footer from '~/components/sections/Footer'
 
 const component = () => (
   <Root>
@@ -22,6 +23,7 @@ const component = () => (
     <Education />
     <CertificatesHobbies />
     <CareerTimeline />
+    <Footer />
     <MainMenu />
   </Root>
 )

@@ -48,6 +48,26 @@ const Link = link
         color: t.color.secondary.dark,
       },
     },
+    tertiary: {
+      color: t.color.tertiary.base,
+
+      hover: {
+        color: t.color.tertiary.medium,
+      },
+      active: {
+        color: t.color.tertiary.dark,
+      },
+    },
+    neutral: {
+      color: t.color.neutral.base,
+
+      hover: {
+        color: t.color.neutral.medium,
+      },
+      active: {
+        color: t.color.neutral.dark,
+      },
+    },
     transparent: {
       backgroundColor: t.color.transparent,
     },

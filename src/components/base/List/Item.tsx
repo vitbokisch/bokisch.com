@@ -13,8 +13,8 @@ export default element
   .theme({
     listStyleType: 'none',
   })
-  .variants((t) => ({
+  .variants({
     centered: {
       textAlign: 'center',
     },
-  }))
+  })

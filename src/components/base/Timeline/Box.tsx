@@ -4,17 +4,19 @@ import Heading from '../Heading'
 import Text from '../Text'
 import List from '../List'
 
-const Box = box.theme((t) => ({
+const Box = box.config({ name: 'base/Timeline/Box' }).theme({
   height: '',
-}))
+})
 
-const Header = header.theme((t) => ({
+const Header = header.config({ name: 'base/Timeline/Header' }).theme((t) => ({
   marginBottom: t.space.large,
 }))
 
-const Subheader = header.theme((t) => ({
-  marginBottom: t.space.medium,
-}))
+const Subheader = header
+  .config({ name: 'base/Timeline/Subheader' })
+  .theme((t) => ({
+    marginBottom: t.space.medium,
+  }))
 
 type Props = {
   company: ReactText

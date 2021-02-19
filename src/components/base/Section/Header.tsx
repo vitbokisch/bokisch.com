@@ -16,6 +16,11 @@ const Header = element
     marginBottom: { xs: t.space.large, md: t.space.xLarge },
     maxWidth: '70%',
   }))
+  .multiple({
+    hidden: {
+      display: 'none',
+    },
+  })
 
 const Heading = heading.theme((t) => ({
   marginBottom: { xs: t.space.medium, md: t.space.large },
@@ -23,11 +28,12 @@ const Heading = heading.theme((t) => ({
 
 type Props = {
   title: string
-  children: ReactNode
+  children?: ReactNode
+  hidden?: boolean
 }
 
-const component: FC<Props> = ({ title, children }: Props) => (
-  <Header>
+const component: FC<Props> = ({ title, children, hidden }: Props) => (
+  <Header hidden={hidden}>
     <Heading centered level2 label={title} />
     <Text large centered>
       {children}

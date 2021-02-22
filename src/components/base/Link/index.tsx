@@ -3,7 +3,8 @@ import icon from '../Icon'
 
 const Icon = icon.config({
   name: 'base/Link/Icon',
-  consumer: (ctx) => ctx<typeof Link>(({ pseudo }) => ({ pseudo })),
+  consumer: (ctx) =>
+    ctx<typeof Link>(({ pseudo, state }) => ({ pseudo, state })),
 })
 
 const Link = link
@@ -20,61 +21,16 @@ const Link = link
     color: v(t.color.dark.base, t.color.light.base),
 
     hover: {
-      color: v(t.color.tertiary.base, t.color.tertiary.base),
+      color: t.color.tertiary.base,
     },
 
     active: {
-      color: v(t.color.tertiary.base, t.color.tertiary.medium),
-    },
-  }))
-  .states((t) => ({
-    primary: {
-      color: t.color.primary.base,
-
-      hover: {
-        color: t.color.primary.medium,
-      },
-      active: {
-        color: t.color.primary.dark,
-      },
-    },
-    secondary: {
-      color: t.color.secondary.base,
-
-      hover: {
-        color: t.color.secondary.medium,
-      },
-      active: {
-        color: t.color.secondary.dark,
-      },
-    },
-    tertiary: {
-      color: t.color.tertiary.base,
-
-      hover: {
-        color: t.color.tertiary.medium,
-      },
-      active: {
-        color: t.color.tertiary.dark,
-      },
-    },
-    neutral: {
-      color: t.color.neutral.base,
-
-      hover: {
-        color: t.color.neutral.medium,
-      },
-      active: {
-        color: t.color.neutral.dark,
-      },
-    },
-    transparent: {
-      backgroundColor: t.color.transparent,
+      color: t.color.tertiary.medium,
     },
   }))
   .sizes((t) => ({
     large: {
-      fontSize: t.fontSize.xLarge,
+      fontSize: { xs: t.fontSize.medium, lg: t.fontSize.xLarge },
     },
   }))
 

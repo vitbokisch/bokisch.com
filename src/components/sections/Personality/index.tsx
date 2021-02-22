@@ -15,7 +15,7 @@ const component = () => (
         gap={40}
         gutter={0}
         contentAlignX="center"
-        size={{ xs: 6, md: 3, lg: 2 }}
+        size={{ xs: 6, sm: 4, md: 3, lg: 2 }}
       >
         <Row>
           <CardList rootElement={false} wrapComponent={Col}>

@@ -31,7 +31,7 @@ export default text
       textTransform: 'uppercase',
     },
     level2: {
-      fontSize: { xs: t.fontSize.xxLarge, md: t.fontSize.xxxLarge },
+      fontSize: { xs: t.fontSize.xxLarge, sm: 48, md: t.fontSize.xxxLarge },
     },
     level3: {
       fontSize: { xs: t.fontSize.medium, md: t.fontSize.large },

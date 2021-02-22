@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Container } from '~/components/base/grid'
+import { Container, Row, Col } from '~/components/base/grid'
 import Background from '~/components/base/Background'
 import button from '~/components/base/Button'
 import Text from '~/components/base/Text'
@@ -25,13 +25,18 @@ const component: FC = () => (
         <Tabs />
         <Badges />
       </Container>
-
-      <Text centered>
-        …and many more. Checkout my <Link href="">GitHub stars</Link> to see
-        what an interesting stuff have caught my attention. <br />
-        Uhm, what will come next?
-      </Text>
-      <Button label="Give me a new challenge" />
+      <Container contentAlignX="center">
+        <Row>
+          <Col size={8}>
+            <Text centered>
+              …and many more. Checkout my <Link href="">GitHub stars</Link> to
+              see what an interesting stuff have caught my attention. <br />
+              Uhm, what will come next?
+            </Text>
+            <Button label="Give me a new challenge" />
+          </Col>
+        </Row>
+      </Container>
     </Section>
   </Background>
 )

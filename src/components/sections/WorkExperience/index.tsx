@@ -28,9 +28,17 @@ const component = () => (
         production. My work has helped thousands of people around the world.
       </Header>
 
-      <Heading level3>Companies I have collaborated with:</Heading>
+      <Container>
+        <Heading level3 centered>
+          Companies I have collaborated with:
+        </Heading>
+      </Container>
 
-      <Container gap={32} size={{ xs: 12, md: 3 }} contentAlignX="center">
+      <Container
+        gap={32}
+        size={{ xs: 12, sm: 6, md: 3 }}
+        contentAlignX="center"
+      >
         <Row>
           <IconLogoList
             rootElement={false}
@@ -41,7 +49,7 @@ const component = () => (
         </Row>
       </Container>
 
-      <Button primary inversed label="Show career timeline" />
+      <Button primary label="Show career timeline" />
     </Section>
   </Background>
 )

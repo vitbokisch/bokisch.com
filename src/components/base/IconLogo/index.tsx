@@ -18,8 +18,8 @@ export default element
   }))
   .variants((t, _, v) => ({
     box: {
-      height: 100,
-      padding: t.space.xLarge,
+      height: { xs: 80, md: 100 },
+      padding: { xs: t.space.medium, lg: t.space.xLarge },
       backgroundColor: v(t.color.transparent, t.color.light.base),
     },
     circle: {

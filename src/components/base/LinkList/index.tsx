@@ -11,7 +11,7 @@ export default list
   .config({ name: 'base/LinkList' })
   .attrs(({ rootElement }) => ({
     tag: 'ul',
-    wrapComponent: rootElement ? wrapComponent : undefined,
+    wrapComponent: rootElement === false ? undefined : wrapComponent,
     component,
     contentAlignX: 'block',
   }))

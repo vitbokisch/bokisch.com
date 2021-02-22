@@ -10,16 +10,6 @@ export default link
         }
       : undefined,
   }))
-  .theme((t, _, v) => ({
-    backgroundColor: t.color.transparent,
-    color: v(t.color.dark.base, t.color.light.base),
-    hover: {
-      color: v(t.color.tertiary.base, t.color.tertiary.base),
-    },
-    active: {
-      color: v(t.color.tertiary.medium, t.color.tertiary.medium),
-    },
-  }))
   .sizes({
     small: {
       size: 20,
@@ -31,7 +21,7 @@ export default link
       size: 72,
     },
     xLarge: {
-      size: 96,
+      size: { xs: 64, md: 80, lg: 96 },
     },
   })
   .variants((t, _, v) => ({

@@ -21,7 +21,7 @@ const component = () => (
 
       <Container
         columns={6}
-        size={{ xs: 6, md: 3, lg: 2 }}
+        size={{ xs: 6, sm: 4, md: 3, lg: 2 }}
         gap={40}
         gutter={0}
         contentAlignX="center"

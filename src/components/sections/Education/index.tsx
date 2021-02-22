@@ -25,10 +25,11 @@ const component = () => (
 
       <Container
         width={{ xs: '90%', lg: 980 }}
-        columns={2}
-        size={{ xs: 2, md: 1 }}
+        columns={6}
+        size={{ xs: 6, sm: 4, md: 3 }}
         gap={{ xs: 32, md: 64 }}
         gutter={0}
+        contentAlignX="center"
       >
         <Row>
           <CardList data={transformedData} wrapComponent={Col} />

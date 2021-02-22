@@ -27,7 +27,7 @@ const component: FC<Props> = () => {
           width={{ xs: '80%', md: 740 }}
           gutter={0}
           columns={2}
-          size={{ xs: 2, md: 1 }}
+          size={{ xs: 2, sm: 1 }}
         >
           <Row>
             <ProgressBoxList

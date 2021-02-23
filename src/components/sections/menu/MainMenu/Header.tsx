@@ -13,8 +13,8 @@ const component = () => (
       </Col>
       <Col size={2}>
         <Element block contentAlignX="spaceBetween">
-          <span>CZ | EN</span>
-          <MenuTrigger />
+          <span>&nbsp;</span>
+          <MenuTrigger light />
         </Element>
       </Col>
     </Row>

@@ -28,5 +28,5 @@ const component = () => (
   </Root>
 )
 
-component.displayName = 'components/pages/Home'
+component.displayName = 'components/pages/Resume'
 export default component

@@ -1,5 +1,10 @@
 import element from '~/components/core/element'
 
+const BackgroundMobile = element.theme((t) => ({
+  fullScreen: true,
+  backgroundColor: t.color.dark[100],
+}))
+
 const BackgroundLeft = element.theme({
   position: 'absolute',
   width: '60%',
@@ -29,6 +34,7 @@ const BackgroundRight = element.theme({
 
 const component = () => (
   <>
+    {/* <BackgroundMobile /> */}
     <BackgroundLeft />
     <BackgroundRight />
   </>

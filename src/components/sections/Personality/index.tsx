@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { VFC } from 'react'
 import { Container, Row, Col } from '~/components/base/grid'
 import Card from '~/components/base/Card'
 import CardList from '~/components/base/CardList'
@@ -6,10 +6,10 @@ import Background from '~/components/base/Background'
 import Link from '~/components/base/Link'
 import Section, { Header } from '~/components/base/Section'
 
-const component = () => (
+const component: VFC = () => (
   <Background primary>
-    <Section>
-      <Header title="About me" />
+    <Section name="about-me">
+      <Header title="About me" hidden />
       <Container
         columns={6}
         gap={40}

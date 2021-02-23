@@ -1,12 +1,39 @@
-export default {
+type Config = {
+  url: string
+  title: string
+  description: string
+  favicon?: {
+    src: string
+  }
+  googleFonts: string
+  openGraph?: Partial<{
+    url: string
+    image: string
+    title: string
+    description: string
+  }>
+  twitter?: Partial<{
+    title: string
+    image: string
+    url: string
+    description: string
+    card: string
+  }>
+}
+
+const config: Config = {
+  url: 'https://bokisch.com',
+  title: 'Vit Bokisch',
+  description: `I'm a person with The Architect personality, analytical mind and passion for discovering the undiscovered.`,
   favicon: {
-    src: `${__dirname}/../assets/favicon/favicon.svg`,
+    src: require('~/assets/public/favicon-light.svg'),
   },
   googleFonts:
     'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap',
   openGraph: {
-    url: '',
-    title: '',
-    description: '',
+    url: 'https://bokisch.com',
+    image: require('~/assets/public/preview.jpg'),
   },
 }
+
+export default config

@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { VFC } from 'react'
 import { IStore, useStore, observer } from '~/store'
 import { Container, Row, Col } from '~/components/base/grid'
 import Background from '~/components/base/Background'
@@ -9,12 +9,12 @@ type Props = {
   store?: IStore
 }
 
-const component: FC<Props> = () => {
+const component: VFC<Props> = () => {
   const store = useStore('')
 
   return (
     <Background primary>
-      <Section>
+      <Section name="knowledge">
         <Header title="Knowledge">
           The preparation is the key for a smooth website design and development
           project. Broad knowledge from planning to launch stage is key for
@@ -23,11 +23,12 @@ const component: FC<Props> = () => {
         </Header>
 
         <Container
-          gap={60}
+          gap={64}
           width={{ xs: '80%', md: 740 }}
           gutter={0}
-          columns={2}
-          size={{ xs: 2, sm: 1 }}
+          columns={12}
+          size={{ xs: 11, sm: 6 }}
+          contentAlignX="center"
         >
           <Row>
             <ProgressBoxList

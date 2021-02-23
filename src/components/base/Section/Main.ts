@@ -4,7 +4,7 @@ export default element
   .config({
     name: 'base/Section',
   })
-  .attrs({
+  .attrs<{ name?: string }>({
     block: true,
     tag: 'section',
     contentDirection: 'rows',

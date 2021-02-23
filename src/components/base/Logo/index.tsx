@@ -1,31 +1,42 @@
 import element from '~/components/base/Element'
-import image from '~/components/base/Image'
 import Text from '../Text'
-
-const Image = image.attrs({
-  src: require('~/assets/logo/logo-vit-bokisch.svg'),
-})
 
 const Logo = element
   .config({ name: 'base/Logo' })
   .attrs({
     contentAlignX: 'left',
     contentAlignY: 'center',
-    content: <Image responsive />,
+    dangerouslySetInnerHTML: {
+      __html: require(`~/assets/logo/logo-vit-bokisch.svg?include`),
+    },
   })
-  .theme({
-    width: 250,
-  })
+  .theme((t, _, v) => ({
+    width: { xs: 120, md: 250 },
+    color: v(t.color.light.base, t.color.dark.base),
+  }))
+  .styles(
+    (css) => css`
+      & > svg {
+        width: 100%;
+        height: auto;
+
+        & * {
+          fill: currentColor;
+        }
+      }
+    `
+  )
 
 const LogoHeading = Text.attrs({
   label: 'Frontend Engineer | Architect | Innovator',
-}).theme({
-  color: 'rgba(255, 255, 255, 0.6)',
+}).theme((t, _, v) => ({
+  color: v(t.color.light[100], t.color.dark[100]),
+  opacity: 0.6,
   textTransform: 'uppercase',
-  fontSize: 18,
-  marginTop: 8,
+  fontSize: { xs: 10, sm: 12, md: 18 },
+  marginTop: { xs: 2, sm: 4, md: 8 },
   fontWeight: 500,
-})
+}))
 
 export { LogoHeading }
 

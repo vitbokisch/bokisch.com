@@ -12,10 +12,10 @@ export default link
   }))
   .sizes({
     small: {
-      size: 20,
+      size: { xs: 16, md: 20 },
     },
     medium: {
-      size: 32,
+      size: { xs: 24, md: 32 },
     },
     large: {
       size: 72,

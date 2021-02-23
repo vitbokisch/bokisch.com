@@ -1,4 +1,4 @@
-import React from 'react'
+import { VFC } from 'react'
 import { Container } from '~/components/base/grid'
 import section from '~/components/base/Section'
 import image from '~/components/base/Image'
@@ -11,6 +11,9 @@ import Footer from './Footer'
 const Element = element.theme({ height: 'inherit' })
 
 const Section = section.theme({
+  height: '100vh',
+  maxHeight: { xs: 520, md: 800 },
+  minHeight: { md: 600 },
   background: `linear-gradient(
       180deg,
       #a5aead 0%,
@@ -21,17 +24,22 @@ const Section = section.theme({
 
 const ProfileImageWrapper = element.theme({
   position: 'absolute',
-  right: -100,
-  bottom: 0,
-  height: 500,
+  right: { xs: -350, sm: -260, lg: -100 },
+  bottom: { xs: -70, md: 0 },
+  height: { xs: 460, md: 500 },
 })
 
-const ProfileImage = image.attrs({
-  src: require(`~/assets/images/vit-profile.png`),
-})
+const ProfileImage = image
+  .attrs({
+    src: require(`~/assets/images/vit-profile.png`),
+  })
+  .theme({
+    width: 'auto',
+    height: '100%',
+  })
 
-const component = () => (
-  <Section fullScreen>
+const component: VFC = () => (
+  <Section>
     <ProfileImageWrapper>
       <ProfileImage />
     </ProfileImageWrapper>
@@ -42,6 +50,7 @@ const component = () => (
       `}
     >
       <Element
+        gap={36}
         block
         direction="rows"
         beforeContent={Header}
@@ -49,6 +58,7 @@ const component = () => (
         beforeContentAlignX="block"
         content={Content}
         contentDirection="rows"
+        // contentAlignX={{ xs: 'center', sm: 'left' }}
         afterContent={Footer}
         afterContentAlignX="center"
       />

@@ -6,11 +6,22 @@ type Props = {
   store?: IStore
 }
 
-const component: FC<Props> = () => {
+const component: FC = (props) => {
   const store = useStore('')
   const icon = store.runtime.menu.isOpen ? 'close' : 'menu'
 
-  return <Icon name={icon} medium onClick={store.runtime.menu.toggleMenu} />
+  return (
+    <Icon
+      {...props}
+      name={icon}
+      medium
+      onClick={store.runtime.menu.toggleMenu}
+    />
+  )
 }
 
 export default observer(component)
+
+// export default Icon.config({ component })
+//   .compose({ observer })
+//   .attrs<{ name: never }>({})

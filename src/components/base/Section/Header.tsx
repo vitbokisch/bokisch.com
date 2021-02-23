@@ -7,14 +7,14 @@ const Header = element
   .config({
     name: 'base/Section/Header',
   })
-  .attrs({
+  .attrs<{ name?: string }>({
     tag: 'header',
     contentDirection: 'rows',
     contentAlignX: 'center',
   })
   .theme((t) => ({
     marginBottom: { xs: t.space.large, md: t.space.xLarge },
-    maxWidth: '70%',
+    maxWidth: { xs: '90%', lg: '70%' },
   }))
   .variants({
     hidden: {
@@ -30,11 +30,12 @@ type Props = {
   title: string
   children?: ReactNode
   hidden?: boolean
+  name?: string
 }
 
-const component: FC<Props> = ({ title, children, hidden }: Props) => {
+const component: FC<Props> = ({ title, children, hidden, name }: Props) => {
   return (
-    <Header hidden={hidden}>
+    <Header hidden={hidden} name={name}>
       <Heading centered level2 label={title} />
       <Text large centered>
         {children}

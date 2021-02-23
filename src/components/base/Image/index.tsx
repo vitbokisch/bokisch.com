@@ -9,7 +9,7 @@ export default element
   .variants({
     responsive: {
       width: '100%',
-      height: 'auto',
+      height: '100%',
       objectFit: 'scale-down',
     },
   })

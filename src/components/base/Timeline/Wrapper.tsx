@@ -33,6 +33,10 @@ const Point = symbol
     position: 'absolute',
     top: 0,
     zIndex: 1,
+    display: {
+      xs: 'none',
+      md: 'inline-flex',
+    },
   })
   .variants({
     odd: {

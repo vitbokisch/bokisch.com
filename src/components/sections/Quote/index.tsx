@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { VFC } from 'react'
 import { Container } from '~/components/base/grid'
 import Quote from '~/components/base/Quote'
 import Background from '~/components/base/Background'
 import Section from '~/components/base/Section'
 
-const component = () => (
+const component: VFC = () => (
   <Background primary>
     <Section>
       <Container width={{ xs: '90%', lg: 980 }}>

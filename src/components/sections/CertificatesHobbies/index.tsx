@@ -1,4 +1,4 @@
-import React from 'react'
+import { VFC } from 'react'
 import Background from '~/components/base/Background'
 import Section, { Header } from '~/components/base/Section'
 import { Container, Row, Col } from '~/components/base/grid'
@@ -11,9 +11,9 @@ const transformedData = data.map((item) => ({
   list: item.data,
 }))
 
-const component = () => (
+const component: VFC = () => (
   <Background primary>
-    <Section>
+    <Section name="certificates-and-hobbies">
       <Header title="Certificates & Hobbies">
         Having a broad knowledge from several fields is important to understand.
         Having a broad knowledge important to understand from several is.

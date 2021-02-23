@@ -8,13 +8,14 @@ type ComponentThemeDefinition = ComponentTheme
 
 const listStyles = ({ theme: t, css, rootSize }: any) => css`
   margin: ${value(rootSize, [t.gap / 2])};
+  padding: ${value(rootSize, [t.indent / 2])};
 `
 
 export default rocketstyle<
   Theme,
-  ComponentThemeDefinition & { gap?: number }
+  ComponentThemeDefinition & Partial<{ gap: number; indent: number }>
 >()({
-  dimensions: { gaps: 'gap', gapsY: 'gapY' } as const,
+  dimensions: { indent: 'indent', gaps: 'gap', gapsY: 'gapY' } as const,
   useBooleans: false,
 })({
   component: List,
@@ -29,6 +30,23 @@ export default rocketstyle<
     margin: t.space.reset,
     padding: t.space.reset,
     listStyleType: 'none',
+  }))
+  .indent((t) => ({
+    small: {
+      indent: t.space.xSmall / 2,
+    },
+    medium: {
+      indent: t.space.medium / 2,
+    },
+    large: {
+      indent: t.space.large / 2,
+    },
+    xLarge: {
+      indent: t.space.xLarge / 2,
+    },
+    xxLarge: {
+      indent: t.space.xxLarge / 2,
+    },
   }))
   .gaps((t) => ({
     small: {
@@ -75,7 +93,7 @@ export default rocketstyle<
   .styles(
     (css) => css`
       ${({ $rocketstyle, rootElement }: any) => {
-        const { gap, ...restStyles } = $rocketstyle
+        const { gap, indent, ...restStyles } = $rocketstyle
 
         const baseTheme = makeItResponsive({
           theme:
@@ -87,7 +105,7 @@ export default rocketstyle<
         })
 
         const listTheme = makeItResponsive({
-          theme: { gap },
+          theme: { gap, indent },
           styles: listStyles,
           css,
         })

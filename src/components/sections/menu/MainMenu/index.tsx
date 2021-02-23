@@ -16,22 +16,18 @@ const Section = section
     fullScreen: true,
     width: '100%',
     height: '100vh',
+    overflowY: 'scroll',
   })
 
 const data = [
-  { label: 'About Me', href: '/something' },
-  { label: 'Knowledge', href: '/something' },
-  { label: 'Technologies', href: '/something' },
-  { label: 'Work Experience', href: '/something' },
-  { label: 'Education', href: '/something' },
-  { label: 'Certificates & Hobbies', href: '/something' },
-  { label: 'Career Timeline', href: '/something' },
+  { label: 'About Me', href: '#about-me' },
+  { label: 'Knowledge', href: '#knowledge' },
+  { label: 'Technologies', href: '#technologies' },
+  { label: 'Work Experience', href: '#work-experience' },
+  { label: 'Education', href: '#education' },
+  { label: 'Certificates & Hobbies', href: '#certificates-and-hobbies' },
+  { label: 'Career Timeline', href: '#career-timeline' },
 ]
-
-// const print = [
-//   { label: 'Download PDF', href: '', icon: 'email' },
-//   { label: 'Print Document', href: '', icon: 'home' },
-// ]
 
 type Props = {
   store?: IStore
@@ -47,22 +43,26 @@ const component: FC<Props> = () => {
       <Section>
         <Background />
         <Header />
-        <Container columns={7}>
+        <Container
+          gutter={0}
+          gap={{ xs: 36, md: 0 }}
+          columns={{ xs: 1, md: 7 }}
+        >
           <Row
             css={`
               margin-top: 64px;
             `}
           >
-            <Col size={3}>
+            <Col size={{ xs: 1, md: 3 }}>
               <LinkList
                 data={data}
                 gap="xLarge"
                 itemProps={{ size: 'large' }}
               />
             </Col>
-            <Col size={2} />
-            <Col size={2}>
-              <SocialList />
+            <Col size={{ xs: 1, md: 1 }} />
+            <Col size={{ xs: 1, md: 2 }}>
+              <SocialList itemProps={{ light: true }} />
 
               {/* <LinkList
               data={print}

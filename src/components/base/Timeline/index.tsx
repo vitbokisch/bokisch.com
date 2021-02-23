@@ -1,23 +1,23 @@
 import React from 'react'
+import { useWindowResize } from '@vitus-labs/unistyle'
 import element from '~/components/core/element'
 import { Container, Row, Col } from '~/components/base/grid'
 import BoxList from './BoxList'
 
-type SplitData = <T extends Array<unknown>>(
+type SplitData = <T extends Array<any>>(
   data: T
-) => { leftSide: Partial<T>; rightSide: Partial<T> }
+) => { leftSide: Array<any>; rightSide: Array<any> }
 
-const splitData: SplitData = (data) => {
-  const leftSide = []
-  const rightSide = []
+const splitData: SplitData = (data) =>
+  data.reduce(
+    (acc, item, i) => {
+      if (i % 2 === 0) acc.rightSide.push(item)
+      else acc.leftSide.push(item)
 
-  data.forEach((item, i) => {
-    if (i % 2 === 0) rightSide.push(item)
-    else leftSide.push(item)
-  })
-
-  return { leftSide, rightSide }
-}
+      return acc
+    },
+    { leftSide: [], rightSide: [] }
+  )
 
 const Timeline = element
 
@@ -31,11 +31,25 @@ const Line = element.attrs({ tag: 'span' }).theme((t, _, v) => ({
 }))
 
 const component = ({ data }) => {
+  const { width } = useWindowResize()
+
+  if (width < 992) {
+    return (
+      <Timeline>
+        <Container columns={12} size={8} contentAlignX="center" gap={32}>
+          <Row>
+            <BoxList data={data} wrapComponent={Col} />
+          </Row>
+        </Container>
+      </Timeline>
+    )
+  }
+
   const { leftSide, rightSide } = splitData(data)
 
   return (
     <Timeline>
-      <Container columns={2} size={1} width={960} gutter={0}>
+      <Container columns={2} size={1} width={{ xs: '90%', lg: 960 }} gutter={0}>
         <Row>
           <Col>
             <BoxList

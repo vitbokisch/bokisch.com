@@ -10,6 +10,7 @@ export { component }
 export default list
   .config({ name: 'base/LinkList' })
   .attrs(({ rootElement }) => ({
+    block: true,
     tag: 'ul',
     wrapComponent: rootElement === false ? undefined : wrapComponent,
     component,

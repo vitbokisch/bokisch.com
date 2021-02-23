@@ -27,20 +27,20 @@ export default text
   }))
   .sizes((t) => ({
     level1: {
-      fontSize: { xs: t.fontSize.xxxLarge, md: t.fontSize.jumbo },
+      fontSize: { xs: t.fontSize.xxxLarge, sm: 96, lg: t.fontSize.jumbo },
       textTransform: 'uppercase',
     },
     level2: {
-      fontSize: { xs: t.fontSize.xxLarge, sm: 48, md: t.fontSize.xxxLarge },
+      fontSize: { xs: t.fontSize.xxLarge, sm: 48, lg: t.fontSize.xxxLarge },
     },
     level3: {
-      fontSize: { xs: t.fontSize.medium, md: t.fontSize.large },
+      fontSize: { xs: t.fontSize.medium, lg: t.fontSize.large },
     },
     level4: {
-      fontSize: t.fontSize.medium,
+      fontSize: { xs: 18, lg: t.fontSize.medium },
     },
     level5: {
-      fontSize: t.fontSize.base,
+      fontSize: { xs: t.fontSize.small, md: t.fontSize.base },
     },
   }))
   .variants((t) => ({

@@ -1,4 +1,4 @@
-import { FC, ReactText } from 'react'
+import { VFC, ReactText } from 'react'
 import box, { Header as header, Body } from '../Box'
 import Heading from '../Heading'
 import Text from '../Text'
@@ -25,7 +25,7 @@ type Props = {
   responsibilities: Array<ReactText>
 }
 
-const component: FC<Props> = ({
+const component: VFC<Props> = ({
   company,
   date,
   position,

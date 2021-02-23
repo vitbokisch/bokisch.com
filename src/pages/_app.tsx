@@ -4,6 +4,8 @@ import { Provider as StoreProvider } from 'mobx-react'
 import { useStore, observer } from '~/store'
 import { ThemeProvider } from '~/theme'
 import themeListener from '~/hooks/themeListener'
+import Meta from '~/components/meta/Meta'
+import Social from '~/components/meta/Social'
 
 const component = ({ Component, pageProps }: AppProps) => {
   const store = useStore(pageProps.initialState)
@@ -16,8 +18,9 @@ const component = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        {/* <Meta />
-      <Favicons />
+        <Meta />
+        <Social />
+        {/* <Favicons />
       <Social />
       <Pwa /> */}
       </Head>

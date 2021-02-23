@@ -3,7 +3,6 @@ import element from '~/components/core/element'
 export default element
   .config({ name: 'base/Line' })
   .attrs({
-    block: true,
     tag: 'hr',
   })
   .theme((t, _, v) => ({

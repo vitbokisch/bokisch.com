@@ -17,4 +17,4 @@ const component: FC<Props> = () => {
   )
 }
 
-export default observer(component)
+export default Switch.config({ component }).compose({ observer })

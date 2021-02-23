@@ -6,20 +6,25 @@ const base = element.attrs({
   tag: 'span',
 })
 
-const Wrapper = base.attrs<{ onClick?: () => void }>({}).theme((t, _, v) => ({
-  width: 64,
-  height: 24,
-  borderRadius: t.borderRadius.extra,
-  borderWidth: t.borderWidth.base,
-  borderStyle: 'solid',
-  backgroundColor: v(t.color.light[200], t.color.dark[200]),
-  borderColor: v(t.color.light[200], t.color.dark[200]),
-}))
+const Wrapper = base
+  .config({ name: 'base/Switch/Wrapper' })
+  .attrs<{ onClick?: () => void }>({})
+  .theme((t, _, v) => ({
+    width: { xs: 48, md: 64 },
+    height: { xs: 16, md: 24 },
+    borderRadius: t.borderRadius.extra,
+    borderWidth: t.borderWidth.base,
+    borderStyle: 'solid',
+    backgroundColor: v(t.color.light[200], t.color.dark[200]),
+    borderColor: v(t.color.light[200], t.color.dark[200]),
+  }))
 
 const Inner = base
+  .config({ name: 'base/Switch/Inner' })
   .theme((t, _, v) => ({
     position: 'absolute',
-    size: 36,
+    padding: 6,
+    size: { xs: 24, md: 36 },
     borderRadius: t.borderRadius.extra,
     backgroundColor: v(t.color.light[100], t.color.dark[100]),
     color: v(t.color.dark[100], t.color.light[100]),
@@ -27,7 +32,7 @@ const Inner = base
   }))
   .variants({
     active: {
-      left: 'calc(100% - 35px)',
+      transform: 'translateX(100%)',
     },
   })
 
@@ -50,4 +55,4 @@ const component: FC<Props> = ({ active, onChange }) => {
   )
 }
 
-export default component
+export default element.config({ component })

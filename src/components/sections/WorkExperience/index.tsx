@@ -1,4 +1,4 @@
-import React from 'react'
+import { VFC } from 'react'
 import { Container, Row, Col } from '~/components/base/grid'
 import Background from '~/components/base/Background'
 import Section, { Header } from '~/components/base/Section'
@@ -18,9 +18,9 @@ const normalizeData = (data: Array<any>) =>
     return acc
   }, [])
 
-const component = () => (
+const component: VFC = () => (
   <Background primary>
-    <Section>
+    <Section name="work-eperience">
       <Header title="Work Experience">
         I am a freelancer with more than 6 years of experience in the business
         at various positions. I have participated on several mid-large
@@ -35,8 +35,8 @@ const component = () => (
       </Container>
 
       <Container
-        gap={32}
-        size={{ xs: 12, sm: 6, md: 3 }}
+        gap={{ xs: 8, sm: 16, md: 32 }}
+        size={{ xs: 8, sm: 6, md: 3 }}
         contentAlignX="center"
       >
         <Row>

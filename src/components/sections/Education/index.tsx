@@ -1,4 +1,4 @@
-import React from 'react'
+import { VFC } from 'react'
 import { Container, Row, Col } from '~/components/base/grid'
 import Background from '~/components/base/Background'
 import Section, { Header } from '~/components/base/Section'
@@ -13,10 +13,10 @@ const transformedData = data.map((item) => ({
   logo: item.logo,
 }))
 
-const component = () => (
+const component: VFC = () => (
   <Background primary>
     <Background triangle />
-    <Section>
+    <Section name="education">
       <Header title="Education">
         An abroad experience is something I am really proud of. I have studied
         in Belgium and China. Different approaches, different cultures... what

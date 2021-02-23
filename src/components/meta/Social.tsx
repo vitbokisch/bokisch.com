@@ -2,7 +2,7 @@ import React from 'react'
 import config from '~/config'
 
 const component = () => {
-  if (process.env.NODE_ENV !== 'production') return null
+  // if (process.env.NODE_ENV !== 'production') return null
 
   return (
     <>

@@ -6,6 +6,7 @@ import { ThemeProvider } from '~/theme'
 import themeListener from '~/hooks/themeListener'
 import Meta from '~/components/meta/Meta'
 import Social from '~/components/meta/Social'
+import Favicons from '~/components/meta/Favicons'
 
 const component = ({ Component, pageProps }: AppProps) => {
   const store = useStore(pageProps.initialState)
@@ -20,9 +21,7 @@ const component = ({ Component, pageProps }: AppProps) => {
       <Head>
         <Meta />
         <Social />
-        {/* <Favicons />
-      <Social />
-      <Pwa /> */}
+        <Favicons />
       </Head>
       <StoreProvider store={store}>
         <ThemeProvider>

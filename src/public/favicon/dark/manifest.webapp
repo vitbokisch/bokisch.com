@@ -1,14 +1,14 @@
 {
   "version": "1.0",
-  "name": null,
-  "description": null,
+  "name": "Vit Bokisch",
+  "description": "My personal space",
   "icons": {
     "60": "/public/favicon/dark/firefox_app_60x60.png",
     "128": "/public/favicon/dark/firefox_app_128x128.png",
     "512": "/public/favicon/dark/firefox_app_512x512.png"
   },
   "developer": {
-    "name": null,
-    "url": null
+    "name": "Vit Bokisch <vit@bokisch.cz>",
+    "url": "https://bokisch.com"
   }
 }

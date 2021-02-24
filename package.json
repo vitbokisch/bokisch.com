@@ -15,7 +15,8 @@
     "pkgs": "rm -rf node_modules/ package-lock.json yarn.lock && yarn",
     "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && cp CNAME out/CNAME && git add out/ && git commit -m \"Deploy new version to gh-pages\" && git subtree push --prefix out origin gh-pages",
     "pkgs:clean": "rm -rf node_modules/ yarn.lock && yarn",
-    "pkgs:build": "lerna run build --stream"
+    "pkgs:build": "lerna run build --stream",
+    "make:favicon": "node scripts/favicon"
   },
   "dependencies": {
     "@vitus-labs/coolgrid": "^0.10.9-alpha.0",
@@ -39,7 +40,6 @@
     "@vitus-labs/tools-lint": "^0.6.0",
     "@vitus-labs/tools-typescript": "^0.6.0",
     "favicons": "^6.2.1",
-    "favicons-webpack-plugin": "^5.0.1",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
     "next-compose-plugins": "^2.2.1",

@@ -1,14 +1,15 @@
-import React, { FC } from 'react'
+import { VFC } from 'react'
+import { ExtractProps } from '~/types'
 import { IStore, useStore, observer } from '~/store'
 import LinkList from '~/components/base/LinkList'
 
-type Props = typeof LinkList['propTypes'] &
+type Props = ExtractProps<typeof LinkList> &
   Partial<{
     store: IStore
     types: Array<string>
   }>
 
-const component: FC<Props> = ({ types, ...props }) => {
+const component: VFC<Props> = ({ types, ...props }) => {
   const store = useStore('')
 
   const socials = store.socials?.pickDataByType(types).map((item) => ({

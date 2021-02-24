@@ -1,4 +1,5 @@
-import React from 'react'
+import { VFC } from 'react'
+import { List } from '@vitus-labs/elements'
 import { useWindowResize } from '@vitus-labs/unistyle'
 import element from '~/components/core/element'
 import { Container, Row, Col } from '~/components/base/grid'
@@ -21,7 +22,7 @@ const splitData: SplitData = (data) =>
 
 const Timeline = element
 
-const Line = element.attrs({ tag: 'span' }).theme((t, _, v) => ({
+const Line = element.attrs({ tag: 'span' }).theme((_, __, v) => ({
   position: 'absolute',
   left: '50%',
   width: 4,
@@ -30,42 +31,60 @@ const Line = element.attrs({ tag: 'span' }).theme((t, _, v) => ({
   backgroundColor: v('#F3F3F3', '#3f3f3f'),
 }))
 
-const component = ({ data }) => {
+type Props = {
+  data: Array<Record<string, unknown>>
+}
+
+const component: VFC<Props> = ({ data }) => {
   const { width } = useWindowResize()
 
-  if (width < 992) {
+  if (width >= 992) {
+    const { leftSide, rightSide } = splitData(data)
+
     return (
       <Timeline>
-        <Container columns={12} size={8} contentAlignX="center" gap={32}>
+        <Container
+          columns={2}
+          size={1}
+          width={{ xs: '90%', lg: 960 }}
+          gutter={0}
+        >
           <Row>
-            <BoxList data={data} wrapComponent={Col} />
+            <Col>
+              <List
+                data={leftSide}
+                wrapProps={(_, { last, first }) => ({ first, last, odd: true })}
+              />
+              <BoxList
+                data={leftSide}
+                wrapProps={(_, { last, first }) => ({ first, last, odd: true })}
+              />
+            </Col>
+            <Col>
+              <BoxList
+                data={rightSide}
+                wrapProps={(_, { last }) => ({ last, even: true })}
+              />
+            </Col>
           </Row>
         </Container>
+        <Line />
       </Timeline>
     )
   }
 
-  const { leftSide, rightSide } = splitData(data)
-
   return (
     <Timeline>
-      <Container columns={2} size={1} width={{ xs: '90%', lg: 960 }} gutter={0}>
+      <Container
+        columns={12}
+        size={{ xs: 10, sm: 8 }}
+        contentAlignX="center"
+        gap={32}
+      >
         <Row>
-          <Col>
-            <BoxList
-              data={leftSide}
-              wrapProps={(_, { last, first }) => ({ first, last, odd: true })}
-            />
-          </Col>
-          <Col>
-            <BoxList
-              data={rightSide}
-              wrapProps={(_, { last }) => ({ last, even: true })}
-            />
-          </Col>
+          <BoxList data={data} wrapComponent={Col} />
         </Row>
       </Container>
-      <Line />
     </Timeline>
   )
 }

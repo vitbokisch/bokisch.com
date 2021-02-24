@@ -1,9 +1,9 @@
 import element from '~/components/core/element'
 
-const BackgroundMobile = element.theme((t) => ({
-  fullScreen: true,
-  backgroundColor: t.color.dark[100],
-}))
+// const BackgroundMobile = element.theme((t) => ({
+//   fullScreen: true,
+//   backgroundColor: t.color.dark[100],
+// }))
 
 const BackgroundLeft = element.theme({
   position: 'absolute',

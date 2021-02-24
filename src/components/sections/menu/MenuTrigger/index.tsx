@@ -1,12 +1,11 @@
-import React, { FC } from 'react'
-import { IStore, useStore, observer } from '~/store'
+import { VFC } from 'react'
+import { ExtractProps } from '~/types'
+import { useStore, observer } from '~/store'
 import Icon from '~/components/base/Icon'
 
-type Props = {
-  store?: IStore
-}
+type Props = ExtractProps<typeof Icon>
 
-const component: FC = (props) => {
+const component: VFC<Omit<Props, 'name'>> = (props) => {
   const store = useStore('')
   const icon = store.runtime.menu.isOpen ? 'close' : 'menu'
 
@@ -20,8 +19,5 @@ const component: FC = (props) => {
   )
 }
 
+component.displayName = 'sections/menu/MenuTrigger'
 export default observer(component)
-
-// export default Icon.config({ component })
-//   .compose({ observer })
-//   .attrs<{ name: never }>({})

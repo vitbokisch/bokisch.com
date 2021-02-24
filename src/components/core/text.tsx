@@ -13,7 +13,7 @@ export default element
     margin: t.space.reset,
     padding: t.space.reset,
   }))
-  .multiple((t) => ({
+  .multiple({
     left: {
       textAlign: 'left',
     },
@@ -23,4 +23,4 @@ export default element
     right: {
       textAlign: 'right',
     },
-  }))
+  })

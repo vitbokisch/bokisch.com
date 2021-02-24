@@ -19,7 +19,7 @@ const model = t.model('knowledge/Model', {
 })
 
 export default t.snapshotProcessor(model, {
-  preProcessor(sn) {
+  preProcessor(sn: any) {
     return { data: sn }
   },
 })

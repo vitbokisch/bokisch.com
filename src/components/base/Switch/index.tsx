@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { VFC } from 'react'
 import element from '~/components/core/element'
 import Icon from '~/components/base/Icon'
 
@@ -41,7 +41,7 @@ type Props = {
   onChange: () => void
 }
 
-const component: FC<Props> = ({ active, onChange }) => {
+const component: VFC<Props> = ({ active, onChange }) => {
   const iconVariant = active ? 'moon' : 'sun'
 
   return (
@@ -55,4 +55,5 @@ const component: FC<Props> = ({ active, onChange }) => {
   )
 }
 
-export default element.config({ component })
+component.displayName = 'base/Switch'
+export default component

@@ -9,7 +9,11 @@ const states = {
   4: 'neutral',
 }
 
-const transformedData = (data) =>
+type TransformedData = (
+  data: Array<{ title: string; level: 1 | 2 | 3 | 4; link?: string }>
+) => Array<{ label: string; state: string; href?: string }>
+
+const transformedData: TransformedData = (data) =>
   data.map((item) => ({
     label: item.title,
     state: states[item.level],
@@ -25,7 +29,7 @@ const component: FC<Props> = () => {
 
   return (
     <BadgeList
-      data={transformedData(store.technologies?.dataByLevel)}
+      data={transformedData(store.technologies?.dataByLevel as any)}
       gap="medium"
       gapY="medium"
       contentAlignX="center"

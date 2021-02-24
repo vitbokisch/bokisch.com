@@ -39,41 +39,37 @@ const component: FC<Props> = () => {
   if (!store.runtime.menu.isOpen) return null
 
   return (
-    <Provider inversed>
-      <Section>
-        <Background />
-        <Header />
-        <Container
-          gutter={0}
-          gap={{ xs: 36, md: 0 }}
-          columns={{ xs: 1, md: 7 }}
+    <Section>
+      <Background />
+      <Header />
+      <Container gutter={0} gap={{ xs: 36, md: 0 }} columns={{ xs: 1, md: 7 }}>
+        <Row
+          css={`
+            margin-top: 64px;
+          `}
         >
-          <Row
-            css={`
-              margin-top: 64px;
-            `}
-          >
-            <Col size={{ xs: 1, md: 3 }}>
+          <Col size={{ xs: 1, md: 3 }}>
+            <Provider inversed>
               <LinkList
                 data={data}
                 gap="xLarge"
                 itemProps={{ size: 'large' }}
               />
-            </Col>
-            <Col size={{ xs: 1, md: 1 }} />
-            <Col size={{ xs: 1, md: 2 }}>
-              <SocialList itemProps={{ light: true }} />
+            </Provider>
+          </Col>
+          <Col size={{ xs: 1, md: 1 }} />
+          <Col size={{ xs: 1, md: 2 }}>
+            <SocialList itemProps={{ light: true }} />
 
-              {/* <LinkList
+            {/* <LinkList
               data={print}
               gap="large"
               itemProps={{ state: 'secondary' }}
             /> */}
-            </Col>
-          </Row>
-        </Container>
-      </Section>
-    </Provider>
+          </Col>
+        </Row>
+      </Container>
+    </Section>
   )
 }
 

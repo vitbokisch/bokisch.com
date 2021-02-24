@@ -1,13 +1,13 @@
-import React from 'react'
+import { VFC } from 'react'
 import box from '~/components/base/Box'
 import SocialList from '~/components/sections/socials/SocialList'
 
-const Box = box.theme((t) => ({
+const Box = box.theme({
   width: '100%',
   maxWidth: { xs: '80%', md: 600 },
-}))
+})
 
-const component = () => (
+const component: VFC = () => (
   <Box small>
     <SocialList
       contentDirection={{ xs: 'rows', sm: 'inline' }}

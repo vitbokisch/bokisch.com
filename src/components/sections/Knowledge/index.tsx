@@ -24,7 +24,7 @@ const component: VFC<Props> = () => {
 
         <Container
           gap={64}
-          width={{ xs: '80%', md: 740 }}
+          width={{ xs: '80%', md: 700, lg: 740 }}
           gutter={0}
           columns={12}
           size={{ xs: 11, sm: 6 }}

@@ -6,7 +6,6 @@ const component = () => {
 
   return (
     <>
-      <title title="hello"></title>
       <link
         rel="preconnect"
         href="https://fonts.gstatic.com"

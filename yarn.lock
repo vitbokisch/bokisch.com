@@ -1528,27 +1528,27 @@
     eslint-visitor-keys "^2.0.0"
 
 "@vitus-labs/coolgrid@^0.10.9-alpha.0":
-  version "0.10.9-alpha.51"
-  resolved "https://registry.yarnpkg.com/@vitus-labs/coolgrid/-/coolgrid-0.10.9-alpha.51.tgz#1c04f8f2f44b83a0439e683f86d6d8c3cb27d858"
-  integrity sha512-q8vSkPWghyuy3FNF/if3faIQyL3egidmj/1Xz6Il0+GqPo72BaN7J9A0VNqAcujuvmz2CSgcQxKaboIfAmkVpQ==
+  version "0.10.9-alpha.54"
+  resolved "https://registry.yarnpkg.com/@vitus-labs/coolgrid/-/coolgrid-0.10.9-alpha.54.tgz#c96f3f7ffed18dc38c97181ca36b14d3987d4fb2"
+  integrity sha512-H13WBs9PbStRGxCG4IlVjlL9kwxl+goC7G2gVyhet7JgLsDRCW4MUYs9/cuaWjsmpNZOi1144sV6pZADOC1TRA==
 
 "@vitus-labs/core@^0.10.9-alpha.0":
-  version "0.10.9-alpha.51"
-  resolved "https://registry.yarnpkg.com/@vitus-labs/core/-/core-0.10.9-alpha.51.tgz#9607397b2909bd433f306f978c2c543fbb1be65c"
-  integrity sha512-1noUhjKXbsNTIPhQUNDwOZEG2n4HGiIn5gqTfGbXVzR/mfHZE5QN/MlCJAPXVGkLMwbPi0Z3ruLJbLNYo18HPg==
+  version "0.10.9-alpha.54"
+  resolved "https://registry.yarnpkg.com/@vitus-labs/core/-/core-0.10.9-alpha.54.tgz#979c9eea8888628c9839d2b93720e0175d2ef3d4"
+  integrity sha512-2JUQTwd9FNqL4KZd1vFpmKuufV9DiMIJQEWV+bU7GUxVWJk1/wvUfWwmC/eZxKMVtJwo0+4MmfqJYzftEmf4FQ==
   dependencies:
     lodash "^4.17.15"
     moize "^6.0.0"
 
 "@vitus-labs/elements@^0.10.9-alpha.0":
-  version "0.10.9-alpha.51"
-  resolved "https://registry.yarnpkg.com/@vitus-labs/elements/-/elements-0.10.9-alpha.51.tgz#593958558bbbe675a6e02e635f1ca466d8734940"
-  integrity sha512-7wdldq2J/wkCCLKwORHW25XWLFXLWZplp59OUj+GlYUmMntP1wwtlQArxB/NJXgsKwrABExOvCrMusAuzmUpnA==
+  version "0.10.9-alpha.54"
+  resolved "https://registry.yarnpkg.com/@vitus-labs/elements/-/elements-0.10.9-alpha.54.tgz#fb156dc08b0c6b1214f321c098efe0e5479a97d7"
+  integrity sha512-wWhsW7UMrjON//aw1qzao8W7eN1EYe4muOcPi5+vBcgMTilvT1wEkkYXYORrpOszffExmVy8W5Eeo0q1s2Dwbg==
 
 "@vitus-labs/rocketstyle@^0.10.9-alpha.0":
-  version "0.10.9-alpha.51"
-  resolved "https://registry.yarnpkg.com/@vitus-labs/rocketstyle/-/rocketstyle-0.10.9-alpha.51.tgz#525a665c698aadc802a526f7ac2381c3a867cc73"
-  integrity sha512-9Y43C0YOrSSbcGSLiAem6emfS5sTJkHSu3ULk2ITfgTsk/ppQP9fI2OILyqWQgh2fWPbiOw0pH72cHlW5udCoA==
+  version "0.10.9-alpha.54"
+  resolved "https://registry.yarnpkg.com/@vitus-labs/rocketstyle/-/rocketstyle-0.10.9-alpha.54.tgz#04b59f068ce813b05df15bfb86963ef132e7cb2c"
+  integrity sha512-VkgXTNWVxcxBh4SNFdZO1jYLyz3/52vzVu/P/8eyvJdOmuOBXGeZrIjSbU5CKA5hS1iMchar1KaJciGn4+1/wg==
   dependencies:
     hoist-non-react-statics "^3.1.0"
 
@@ -1596,9 +1596,9 @@
     typescript-styled-plugin "^0.15.0"
 
 "@vitus-labs/unistyle@^0.10.9-alpha.0":
-  version "0.10.9-alpha.51"
-  resolved "https://registry.yarnpkg.com/@vitus-labs/unistyle/-/unistyle-0.10.9-alpha.51.tgz#6eb750f7d21219147910558783d1860fee1506a5"
-  integrity sha512-rSiGECCymUgfIUN7VLUR6kZG26A30tj9exLZ8JwaQ/qegGTnKXwP6x3LSisj6FDPjoyou9sGyrImKoBcIEtxZg==
+  version "0.10.9-alpha.54"
+  resolved "https://registry.yarnpkg.com/@vitus-labs/unistyle/-/unistyle-0.10.9-alpha.54.tgz#b3709b9e303add777a49df0b13ec19558854ee67"
+  integrity sha512-FGKHQtdMyugrL3Kka87okRpcnsORJpNTR7InTTfgu3B8l9AScKlaDVnt2RHesuPkPEQTzKC/rXPdXttnj+xdIA==
 
 acorn-jsx@^5.3.1:
   version "5.3.1"

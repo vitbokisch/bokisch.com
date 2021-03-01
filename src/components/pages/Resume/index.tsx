@@ -1,6 +1,6 @@
 import React from 'react'
+import dynamic from 'next/dynamic'
 import Root from '~/components/base/skeleton/Root'
-import MainMenu from '~/components/sections/menu/MainMenu'
 import Intro from '~/components/sections/Intro'
 import Quote from '~/components/sections/Quote'
 import Personality from '~/components/sections/Personality'
@@ -9,8 +9,13 @@ import Technologies from '~/components/sections/Technologies'
 import WorkExperience from '~/components/sections/WorkExperience'
 import Education from '~/components/sections/Education'
 import CertificatesHobbies from '~/components/sections/CertificatesHobbies'
-import CareerTimeline from '~/components/sections/CareerTimeline'
 import Footer from '~/components/sections/Footer'
+
+const MainMenu = dynamic(() => import('~/components/sections/menu/MainMenu'))
+
+const CareerTimeline = dynamic(
+  () => import('~/components/sections/CareerTimeline')
+)
 
 const component = () => (
   <Root>

@@ -8,6 +8,7 @@ module.exports = {
         minify: true,
         pure: true,
         ssr: true,
+        preprocess: false,
       },
     ],
   ],

@@ -11,11 +11,13 @@ import runtime from './runtime'
 import knowledge, { mockup as knowledgeMockup } from './data/knowledge'
 import technologies, { mockup as technologiesMockup } from './data/technologies'
 import socials, { mockup as socialsMockup } from './data/socials'
+import career, { mockup as careerMockup } from './data/career'
 
 const initialState = {
-  runtime: { theme: { variant: 'dark' }, menu: { isOpen: false } },
+  runtime: { theme: { variant: 'light' }, menu: { isOpen: false } },
   knowledge: knowledgeMockup,
   technologies: technologiesMockup,
+  career: careerMockup,
   socials: socialsMockup,
 }
 
@@ -25,6 +27,7 @@ const Store = t.model('Store', {
   runtime,
   knowledge: t.maybeNull(knowledge),
   technologies: t.maybeNull(technologies),
+  career: t.maybeNull(career),
   socials: t.maybeNull(socials),
 })
 

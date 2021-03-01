@@ -12,7 +12,7 @@ const Element = element.theme({ height: 'inherit' })
 
 const Section = section.theme({
   height: '100vh',
-  maxHeight: { xs: 520, md: 800 },
+  maxHeight: { xs: 520, md: 800, lg: 1000 },
   minHeight: { md: 600 },
   background: `linear-gradient(
       180deg,

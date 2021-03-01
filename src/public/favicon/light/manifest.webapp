@@ -3,9 +3,9 @@
   "name": "Vit Bokisch",
   "description": "My personal space",
   "icons": {
-    "60": "/public/favicon/light/firefox_app_60x60.png",
-    "128": "/public/favicon/light/firefox_app_128x128.png",
-    "512": "/public/favicon/light/firefox_app_512x512.png"
+    "60": "/favicon/light/firefox_app_60x60.png",
+    "128": "/favicon/light/firefox_app_128x128.png",
+    "512": "/favicon/light/firefox_app_512x512.png"
   },
   "developer": {
     "name": "Vit Bokisch <vit@bokisch.cz>",

@@ -17,6 +17,7 @@ const Wrapper = base
     borderStyle: 'solid',
     backgroundColor: v(t.color.light[200], t.color.dark[200]),
     borderColor: v(t.color.light[200], t.color.dark[200]),
+    transition: t.transition.base,
   }))
 
 const Inner = base
@@ -29,6 +30,7 @@ const Inner = base
     backgroundColor: v(t.color.light[100], t.color.dark[100]),
     color: v(t.color.dark[100], t.color.light[100]),
     left: -1,
+    transition: t.transition.base,
   }))
   .variants({
     active: {

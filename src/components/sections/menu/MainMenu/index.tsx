@@ -6,11 +6,12 @@ import section from '~/components/base/Section'
 import LinkList from '~/components/base/LinkList'
 import SocialList from '~/components/sections/socials/SocialList'
 import Background from './Background'
-import Header from './Header'
+import Header from './HeaderA'
 
 const Section = section
   .attrs({
     contentAlignY: 'top',
+    contentAlignX: 'block',
   })
   .theme({
     fullScreen: true,
@@ -41,14 +42,11 @@ const component: FC<Props> = () => {
   return (
     <Section>
       <Background />
-      <Header />
-      <Container gutter={0} gap={{ xs: 36, md: 0 }} columns={{ xs: 1, md: 7 }}>
-        <Row
-          css={`
-            margin-top: 64px;
-          `}
-        >
-          <Col size={{ xs: 1, md: 3 }}>
+      <Container gutter={0} gap={{ xs: 48, sm: 0 }} columns={{ xs: 1, sm: 7 }}>
+        <Header />
+
+        <Row gutter={64}>
+          <Col size={{ xs: 1, sm: 3 }}>
             <Provider inversed>
               <LinkList
                 data={data}
@@ -57,15 +55,9 @@ const component: FC<Props> = () => {
               />
             </Provider>
           </Col>
-          <Col size={{ xs: 1, md: 1 }} />
-          <Col size={{ xs: 1, md: 2 }}>
+          <Col size={{ xs: 0, sm: 2 }} />
+          <Col size={{ xs: 1, sm: 2 }}>
             <SocialList itemProps={{ light: true }} />
-
-            {/* <LinkList
-              data={print}
-              gap="large"
-              itemProps={{ state: 'secondary' }}
-            /> */}
           </Col>
         </Row>
       </Container>

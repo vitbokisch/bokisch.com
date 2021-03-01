@@ -1,6 +1,8 @@
 import BoxList from '~/components/base/BoxList'
-import ProgressBox from '../ProgressBox'
+import component from '../ProgressBox'
+
+export { component }
 
 export default BoxList.config({ name: 'base/ProgressBoxList' }).attrs({
-  component: ProgressBox,
+  component,
 })

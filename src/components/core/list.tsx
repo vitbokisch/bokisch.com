@@ -7,8 +7,8 @@ type ComponentTheme = Parameters<typeof styles>[0]['theme']
 type ComponentThemeDefinition = ComponentTheme
 
 const listStyles = ({ theme: t, css, rootSize }: any) => css`
-  margin: ${value(rootSize, [t.gap / 2])};
-  padding: ${value(rootSize, [t.indent / 2])};
+  ${t.gap && `margin: ${value(rootSize, [t.gap / 2])} !important;`};
+  ${t.indent && `padding: ${value(rootSize, [t.indent / 2])} !important;`};
 `
 
 export default rocketstyle<

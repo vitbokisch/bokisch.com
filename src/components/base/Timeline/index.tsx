@@ -43,12 +43,7 @@ const component: VFC<Props> = ({ data }) => {
 
     return (
       <Timeline>
-        <Container
-          columns={2}
-          size={1}
-          width={{ xs: '90%', lg: 960 }}
-          gutter={0}
-        >
+        <Container columns={2} size={1} width={{ xs: '90%', lg: 960 }}>
           <Row>
             <Col>
               <List

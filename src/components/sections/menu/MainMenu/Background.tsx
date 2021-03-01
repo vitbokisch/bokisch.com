@@ -1,9 +1,10 @@
+import { useWindowResize } from '@vitus-labs/unistyle'
 import element from '~/components/core/element'
 
-// const BackgroundMobile = element.theme((t) => ({
-//   fullScreen: true,
-//   backgroundColor: t.color.dark[100],
-// }))
+const BackgroundMobile = element.theme((t) => ({
+  fullScreen: true,
+  backgroundColor: t.color.dark[100],
+}))
 
 const BackgroundLeft = element.theme({
   position: 'absolute',
@@ -32,12 +33,18 @@ const BackgroundRight = element.theme({
   background: `linear-gradient(180deg, #303030 0%, #1b1b1b 100%)`,
 })
 
-const component = () => (
-  <>
-    {/* <BackgroundMobile /> */}
-    <BackgroundLeft />
-    <BackgroundRight />
-  </>
-)
+const component = () => {
+  const { width } = useWindowResize()
+
+  if (width < 576) {
+    return <BackgroundMobile />
+  }
+  return (
+    <>
+      <BackgroundLeft />
+      <BackgroundRight />
+    </>
+  )
+}
 
 export default component

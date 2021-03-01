@@ -13,8 +13,8 @@ const theme = {
     container: {
       xs: '90%',
       sm: 540,
-      md: 720,
-      lg: 960,
+      md: 700,
+      lg: 940,
       xl: 1140,
       xxl: 1280,
     },
@@ -55,6 +55,7 @@ const theme = {
   },
   borderRadius: {
     base: 8,
+    large: 12,
     extra: 180,
   },
   transition: {

@@ -5,7 +5,7 @@ const favicons = require('favicons')
 const sources = ['dark', 'light']
 
 const configuration = (variant) => ({
-  path: `/public/favicon/${variant}/`, // Path for overriding default icons path. `string`
+  path: `/favicon/${variant}/`, // Path for overriding default icons path. `string`
   appName: 'Vit Bokisch', // Your application's name. `string`
   // appShortName: null, // Your application's short_name. `string`. Optional. If not set, appName will be used
   appDescription: 'My personal space', // Your application's description. `string`

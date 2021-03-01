@@ -11,7 +11,7 @@ const Logo = element
     },
   })
   .theme((t, _, v) => ({
-    width: { xs: 120, md: 250 },
+    width: { xs: 120, sm: 180, lg: 250 },
     color: v(t.color.light.base, t.color.dark.base),
   }))
   .styles(
@@ -33,8 +33,8 @@ const LogoHeading = Text.attrs({
   color: v(t.color.light[100], t.color.dark[100]),
   opacity: 0.6,
   textTransform: 'uppercase',
-  fontSize: { xs: 10, sm: 12, md: 18 },
-  marginTop: { xs: 2, sm: 4, md: 8 },
+  fontSize: { xs: 10, sm: 12, lg: 18 },
+  marginTop: { xs: 2, sm: 4, lg: 8 },
   fontWeight: 500,
 }))
 

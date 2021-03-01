@@ -33,11 +33,14 @@ export default text
       fontSize: { xs: t.fontSize.large, md: t.fontSize.xLarge },
     },
   }))
-  .multiple({
+  .multiple((t) => ({
+    strong: {
+      fontWeight: 500,
+    },
     uppercase: {
       textTransform: 'uppercase',
     },
     italic: {
       fontStyle: 'italic',
     },
-  })
+  }))

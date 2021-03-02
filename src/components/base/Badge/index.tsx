@@ -10,6 +10,7 @@ export default element
     backgroundColor: t.color.transparent,
     borderWidth: t.borderWidth.base,
     borderStyle: t.borderStyle.base,
+    transition: t.transition.base,
   }))
   .states((t) => ({
     primary: {

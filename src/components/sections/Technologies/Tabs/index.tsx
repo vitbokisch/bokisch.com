@@ -1,12 +1,16 @@
 import { VFC } from 'react'
 import { useStore, observer } from '~/store'
 import TabList from '~/components/base/TabList'
-import Text from '~/components/base/Text'
+import text from '~/components/base/Text'
 import Tab from '~/components/base/Tab'
 import Popover from '~/components/base/Popover'
 
+const Text = text.config({ inversed: true })
+
 const Item = ({ children, ...props }) => (
-  <Popover trigger={<Tab {...props} />}>{children}</Popover>
+  <Popover trigger={<Tab {...props} />}>
+    <Text>{children}</Text>
+  </Popover>
 )
 
 const component: VFC = () => {

@@ -38,6 +38,8 @@ type Props = {
 const component: VFC<Props> = ({ data }) => {
   const { width } = useWindowResize()
 
+  if (width === 0) return null
+
   if (width >= 992) {
     const { leftSide, rightSide } = splitData(data)
 

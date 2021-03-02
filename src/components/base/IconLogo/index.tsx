@@ -2,7 +2,7 @@ import element from '~/components/core/element'
 import image from '~/components/base/Image'
 
 const Image = image.attrs<{ name: string }>(({ name }) => ({
-  src: require(`~/assets/images/logo-${name}-light.png`),
+  src: name ? require(`~/assets/images/logo-${name}.png`) : undefined,
 }))
 
 export default element

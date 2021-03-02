@@ -4,7 +4,7 @@ export default element
   .config({ name: 'base/Button' })
   .attrs<{ href?: string; onClick?: MouseEvent }>(({ href, onClick }) => {
     const isLink = !!href
-    const isStatic = !!href || !!onClick
+    const isStatic = !href && !onClick
     const dynamicTag = isLink ? 'a' : 'button'
 
     const tag = isStatic ? 'span' : dynamicTag
@@ -25,6 +25,9 @@ export default element
     borderColor: t.color.primary.base,
     textAlign: 'center',
     outline: 'none',
+    textDecoration: 'none',
+    transition: t.transition.base,
+    userSelect: 'none',
 
     hover: {
       backgroundColor: t.color.primary.medium,

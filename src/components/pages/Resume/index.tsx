@@ -1,5 +1,4 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
 import Root from '~/components/base/skeleton/Root'
 import Intro from '~/components/sections/Intro'
 import Quote from '~/components/sections/Quote'
@@ -10,12 +9,18 @@ import WorkExperience from '~/components/sections/WorkExperience'
 import Education from '~/components/sections/Education'
 import CertificatesHobbies from '~/components/sections/CertificatesHobbies'
 import Footer from '~/components/sections/Footer'
+import MainMenu from '~/components/sections/menu/MainMenu'
+import CareerTimeline from '~/components/sections/CareerTimeline'
 
-const MainMenu = dynamic(() => import('~/components/sections/menu/MainMenu'))
-
-const CareerTimeline = dynamic(
-  () => import('~/components/sections/CareerTimeline')
-)
+const data = [
+  { label: 'About Me', href: '#about-me' },
+  { label: 'Knowledge', href: '#knowledge' },
+  { label: 'Technologies', href: '#technologies' },
+  { label: 'Work Experience', href: '#work-experience' },
+  { label: 'Education', href: '#education' },
+  { label: 'Certificates & Hobbies', href: '#certificates-and-hobbies' },
+  { label: 'Career Timeline', href: '#career-timeline' },
+]
 
 const component = () => (
   <Root>
@@ -29,7 +34,7 @@ const component = () => (
     <CertificatesHobbies />
     <CareerTimeline />
     <Footer />
-    <MainMenu />
+    <MainMenu menu={data} />
   </Root>
 )
 

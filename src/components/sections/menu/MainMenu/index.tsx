@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { Provider } from '@vitus-labs/rocketstyle'
-import { IStore, useStore, observer } from '~/store'
+import { useStore, observer } from '~/store'
 import { Container, Row, Col } from '~/components/base/grid'
 import section from '~/components/base/Section'
 import LinkList from '~/components/base/LinkList'
@@ -20,21 +20,11 @@ const Section = section
     overflowY: 'scroll',
   })
 
-const data = [
-  { label: 'About Me', href: '#about-me' },
-  { label: 'Knowledge', href: '#knowledge' },
-  { label: 'Technologies', href: '#technologies' },
-  { label: 'Work Experience', href: '#work-experience' },
-  { label: 'Education', href: '#education' },
-  { label: 'Certificates & Hobbies', href: '#certificates-and-hobbies' },
-  { label: 'Career Timeline', href: '#career-timeline' },
-]
-
 type Props = {
-  store?: IStore
+  menu: Array<{ label: string; href: string }>
 }
 
-const component: FC<Props> = () => {
+const component: FC<Props> = ({ menu }) => {
   const store = useStore('')
 
   if (!store.runtime.menu.isOpen) return null
@@ -49,9 +39,12 @@ const component: FC<Props> = () => {
           <Col size={{ xs: 1, sm: 3 }}>
             <Provider inversed>
               <LinkList
-                data={data}
+                data={menu}
                 gap="xLarge"
-                itemProps={{ size: 'large' }}
+                itemProps={{
+                  size: 'large',
+                  onClick: store.runtime.menu.closeMenu,
+                }}
               />
             </Provider>
           </Col>

@@ -9,7 +9,7 @@ const component: VFC = () => {
 
   return (
     <Background gradient>
-      <Section name="career-timeline">
+      <Section id="career-timeline">
         <Header title="Career Timeline">
           Having a broaad knowledge from several fields is important to
           understand. Having a broad knowledge important to understand from

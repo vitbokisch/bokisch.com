@@ -14,7 +14,7 @@ const Button = button.theme((t) => ({
 
 const component: VFC = () => (
   <Background secondary>
-    <Section name="technologies">
+    <Section id="technologies">
       <Header title="Technologies">
         Choosing the right tools might be overhelming. By continuous learning,
         endless experimenting and following new trends and best practices help

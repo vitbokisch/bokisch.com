@@ -8,7 +8,7 @@ import Section, { Header } from '~/components/base/Section'
 
 const component: VFC = () => (
   <Background primary>
-    <Section name="about-me">
+    <Section id="about-me">
       <Header title="About me" hidden />
       <Container
         columns={6}

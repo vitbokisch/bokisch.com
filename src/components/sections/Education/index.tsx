@@ -16,7 +16,7 @@ const transformedData = data.map((item) => ({
 const component: VFC = () => (
   <Background primary>
     <Background triangle />
-    <Section name="education">
+    <Section id="education">
       <Header title="Education">
         An abroad experience is something I am really proud of. I have studied
         in Belgium and China. Different approaches, different cultures... what
@@ -24,7 +24,7 @@ const component: VFC = () => (
       </Header>
 
       <Container
-        width={{ xs: '90%', lg: 980 }}
+        width={{ xs: '90%', xl: 980 }}
         columns={6}
         size={{ xs: 6, sm: 4, md: 3 }}
         gap={{ xs: 32, md: 64 }}

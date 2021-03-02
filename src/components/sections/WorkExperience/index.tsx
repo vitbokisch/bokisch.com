@@ -20,7 +20,7 @@ const normalizeData = (data: Array<any>) =>
 
 const component: VFC = () => (
   <Background primary>
-    <Section name="work-eperience">
+    <Section id="work-experience">
       <Header title="Work Experience">
         I am a freelancer with more than 6 years of experience in the business
         at various positions. I have participated on several mid-large
@@ -49,7 +49,7 @@ const component: VFC = () => (
         </Row>
       </Container>
 
-      <Button primary label="Show career timeline" />
+      <Button primary label="Show career timeline" href="#career-timeline" />
     </Section>
   </Background>
 )

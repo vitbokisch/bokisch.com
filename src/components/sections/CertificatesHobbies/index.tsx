@@ -13,7 +13,7 @@ const transformedData = data.map((item) => ({
 
 const component: VFC = () => (
   <Background primary>
-    <Section name="certificates-and-hobbies">
+    <Section id="certificates-and-hobbies">
       <Header title="Certificates & Hobbies">
         Having a broad knowledge from several fields is important to understand.
         Having a broad knowledge important to understand from several is.

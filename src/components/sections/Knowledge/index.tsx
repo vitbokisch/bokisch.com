@@ -14,7 +14,7 @@ const component: VFC<Props> = () => {
 
   return (
     <Background primary>
-      <Section name="knowledge">
+      <Section id="knowledge">
         <Header title="Knowledge">
           The preparation is the key for a smooth website design and development
           project. Broad knowledge from planning to launch stage is key for

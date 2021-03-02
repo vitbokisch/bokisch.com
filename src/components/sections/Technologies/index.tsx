@@ -21,7 +21,7 @@ const component: VFC = () => (
         making the right choice easier.
       </Header>
 
-      <Container>
+      <Container width={({ lg, xl, xxl }: any) => ({ xs: '90%', lg, xl, xxl })}>
         <Tabs />
         <Badges />
       </Container>

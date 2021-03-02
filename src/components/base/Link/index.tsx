@@ -19,6 +19,7 @@ const Link = link
   .theme((t, _, v) => ({
     fontSize: 'inherit',
     color: v(t.color.dark.base, t.color.light.base),
+    userSelect: 'none',
 
     hover: {
       color: t.color.tertiary.base,

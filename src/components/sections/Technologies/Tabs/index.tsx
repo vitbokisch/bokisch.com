@@ -17,7 +17,13 @@ const component: VFC = () => {
   const store = useStore('')
 
   return (
-    <TabList block contentAlignX="center" gap="large" gapY="medium">
+    <TabList
+      block
+      contentAlignX="center"
+      gap="large"
+      gapY="medium"
+      contentDirection={{ xs: 'rows', lg: 'inline' }}
+    >
       <Item
         primary
         label="In love with"

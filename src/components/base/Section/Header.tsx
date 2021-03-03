@@ -14,7 +14,7 @@ const Header = element
   })
   .theme((t) => ({
     marginBottom: { xs: t.space.large, md: t.space.xLarge },
-    maxWidth: { xs: '90%', lg: '70%' },
+    maxWidth: { xs: '90%', lg: '70%', xxl: 1100 },
   }))
   .variants({
     hidden: {

@@ -44,7 +44,7 @@ const theme = {
   lineHeight: {
     reset: 1,
     small: 1.2,
-    base: 1.5,
+    base: 1.7,
     large: 2,
   },
   borderWidth: {

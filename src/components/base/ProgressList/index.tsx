@@ -1,7 +1,7 @@
 import list from '~/components/core/list'
-import component from '~/components/base/Progress'
+import Progress from '../Progress'
 
-export { component }
+export { Progress }
 
 export default list
   .config({
@@ -10,7 +10,7 @@ export default list
   .attrs({
     block: true,
     contentAlignX: 'block',
-    component,
+    component: Progress,
   })
   .styles(
     (css) => css`

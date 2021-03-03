@@ -1,11 +1,11 @@
 import list, { component as wrapComponent } from '../List'
 import link from '../Link'
 
-const component = link.attrs({
+const Link = link.attrs({
   block: true,
 })
 
-export { component }
+export { Link }
 
 export default list
   .config({ name: 'base/LinkList' })
@@ -13,6 +13,6 @@ export default list
     block: true,
     tag: 'ul',
     wrapComponent: rootElement === false ? undefined : wrapComponent,
-    component,
+    component: Link,
     contentAlignX: 'block',
   }))

@@ -23,7 +23,7 @@ const config: Config = {
   title: 'Vit Bokisch',
   description: `I'm a person with The Architect personality, analytical mind and passion for discovering the undiscovered.`,
   googleFonts:
-    'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap',
+    'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;1,300&display=swap',
   openGraph: {
     url: 'https://bokisch.com',
     image: require('~/assets/socials/preview.jpg'),

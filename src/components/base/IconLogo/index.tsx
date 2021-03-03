@@ -1,9 +1,16 @@
 import element from '~/components/core/element'
 import image from '~/components/base/Image'
 
-const Image = image.attrs<{ name: string }>(({ name }) => ({
-  src: name ? require(`~/assets/images/logo-${name}.png`) : undefined,
-}))
+const Image = image
+  .attrs<{ name: string }>(({ name }) => ({
+    src: name ? require(`~/assets/images/logo-${name}.png`) : undefined,
+  }))
+  .theme({
+    maxHeight: {
+      xs: 30,
+      md: 40,
+    },
+  })
 
 export default element
   .config({ name: 'base/IconLogo' })

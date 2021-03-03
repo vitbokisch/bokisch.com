@@ -20,8 +20,8 @@ const Tab = link
     gap: 16,
     beforeContent: <Symbol primary />,
   })
-// .states({
-// transparent: false,
-// })
+  .theme({
+    fontWeight: 500,
+  })
 
 export default Tab

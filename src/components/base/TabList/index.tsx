@@ -1,7 +1,7 @@
 import list from '~/components/core/list'
-import component from '../Tab'
+import Tab from '../Tab'
 
-export { component }
+export { Tab }
 
 export default list
   .config({
@@ -10,5 +10,5 @@ export default list
   .attrs({
     block: true,
     contentDirection: 'inline',
-    component,
+    component: Tab,
   })

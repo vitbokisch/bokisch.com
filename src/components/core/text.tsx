@@ -12,6 +12,7 @@ export default element
     fontFamily: t.fontFamily.base,
     margin: t.space.reset,
     padding: t.space.reset,
+    fontWeight: 300,
   }))
   .multiple({
     left: {

@@ -11,6 +11,7 @@ export default element
     borderWidth: t.borderWidth.base,
     borderStyle: t.borderStyle.base,
     transition: t.transition.base,
+    fontWeight: 500,
   }))
   .states((t) => ({
     primary: {

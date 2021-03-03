@@ -10,23 +10,30 @@ import Footer from './Footer'
 
 const Element = element.theme({ height: 'inherit' })
 
-const Section = section.theme({
-  height: '100vh',
-  maxHeight: { xs: 520, md: 800, lg: 1000 },
-  minHeight: { md: 600 },
-  background: `linear-gradient(
+const Section = section
+  .theme({
+    overflow: 'hidden',
+    background: `linear-gradient(
       180deg,
       #a5aead 0%,
       #b1bab9 52.08%,
       #b0b8b7 100%
     )`,
-})
+  })
+  .variants({
+    limitedFullScreen: {
+      height: '100vh',
+      maxHeight: { xs: 520, md: 800, lg: 1000 },
+      minHeight: { md: 600 },
+    },
+  })
 
 const ProfileImageWrapper = element.theme({
   position: 'absolute',
-  right: { xs: -350, sm: -260, lg: -100 },
+  right: { xs: -350, sm: -260, lg: -100, xxl: 'initial' },
   bottom: { xs: -70, md: 0 },
   height: { xs: 460, md: 500 },
+  left: { xxl: '55%' },
 })
 
 const ProfileImage = image
@@ -38,8 +45,12 @@ const ProfileImage = image
     height: '100%',
   })
 
-const component: VFC = () => (
-  <Section>
+type Props = {
+  fullScreen?: boolean
+}
+
+const component: VFC<Props> = ({ fullScreen }) => (
+  <Section fullScreen={fullScreen} limitedFullScreen={!fullScreen}>
     <ProfileImageWrapper>
       <ProfileImage />
     </ProfileImageWrapper>
@@ -58,7 +69,6 @@ const component: VFC = () => (
         beforeContentAlignX="block"
         content={Content}
         contentDirection="rows"
-        // contentAlignX={{ xs: 'center', sm: 'left' }}
         afterContent={Footer}
         afterContentAlignX="center"
       />

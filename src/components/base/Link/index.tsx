@@ -20,7 +20,6 @@ const Link = link
     fontSize: 'inherit',
     color: m(t.color.dark.base, t.color.light.base),
     userSelect: 'none',
-    fontWeight: 300,
 
     hover: {
       color: t.color.tertiary.base,

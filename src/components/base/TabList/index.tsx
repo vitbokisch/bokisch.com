@@ -1,4 +1,4 @@
-import list from '~/components/core/list'
+import { list } from '~/components/core'
 import Tab from '../Tab'
 
 export { Tab }

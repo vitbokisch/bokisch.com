@@ -1,4 +1,4 @@
-import element from '~/components/core/element'
+import { element } from '~/components/core'
 import Text from '../Text'
 import point from './Point'
 import ProgressLine from './ProgressLine'

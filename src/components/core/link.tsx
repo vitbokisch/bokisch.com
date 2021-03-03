@@ -15,7 +15,7 @@ export default element
       }
     }
   )
-  .theme((t, _, v) => ({
+  .theme((t, m) => ({
     transition: t.transition.base,
     border: 'none',
     backgroundColor: t.color.transparent,
@@ -23,7 +23,7 @@ export default element
     outline: 'none',
     padding: 0,
     margin: 0,
-    color: v(t.color.dark.base, t.color.light.base),
+    color: m(t.color.dark.base, t.color.light.base),
 
     hover: {
       color: t.color.tertiary.base,

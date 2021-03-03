@@ -1,4 +1,4 @@
-import element from '~/components/core/element'
+import { element } from '~/components/core'
 
 export default element
   .config({
@@ -9,9 +9,9 @@ export default element
     block: true,
     contentAlignX: 'center',
   })
-  .theme((t, _, v) => ({
+  .theme((t, m) => ({
     height: 80,
     lineHeight: t.lineHeight.reset,
-    backgroundColor: v(t.color.light[100], t.color.dark[100]),
-    color: v(t.color.dark[100], t.color.light[100]),
+    backgroundColor: m(t.color.light[100], t.color.dark[100]),
+    color: m(t.color.dark[100], t.color.light[100]),
   }))

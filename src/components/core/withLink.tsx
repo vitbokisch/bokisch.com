@@ -1,4 +1,4 @@
-import React, { FC, ComponentType } from 'react'
+import { FC, ComponentType } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import routes from '~/config/routes'

@@ -1,5 +1,5 @@
-import React, { FC } from 'react'
-import element from '~/components/core/element'
+import { FC } from 'react'
+import { element } from '~/components/core'
 import symbol from '../Symbol'
 
 const Wrapper = element

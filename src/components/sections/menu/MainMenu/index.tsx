@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { Provider } from '@vitus-labs/rocketstyle'
 import { useStore, observer } from '~/store'
 import { Container, Row, Col } from '~/components/base/grid'

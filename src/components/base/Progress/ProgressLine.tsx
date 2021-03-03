@@ -1,12 +1,12 @@
-import element from '~/components/core/element'
+import { element } from '~/components/core'
 
 export default element
   .config({ name: 'base/Progress/ProgressLine' })
   .attrs({ block: true, tag: 'span' })
-  .theme((t, _, v) => ({
+  .theme((t, m) => ({
     width: '100%',
     height: 2,
-    backgroundColor: v(t.color.light[200], t.color.dark[200]),
+    backgroundColor: m(t.color.light[200], t.color.dark[200]),
   }))
   .states((t) => ({
     primary: {

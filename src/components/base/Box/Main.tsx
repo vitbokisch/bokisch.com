@@ -1,4 +1,4 @@
-import element from '~/components/core/element'
+import { element } from '~/components/core'
 
 export default element
   .config({ name: 'base/Box' })
@@ -8,23 +8,23 @@ export default element
     contentAlignX: 'block',
     contentAlignY: 'block',
   })
-  .theme((t, _, v) => ({
+  .theme((t, m) => ({
     height: '100%',
-    backgroundColor: v(t.color.light.base, t.color.dark.base),
+    backgroundColor: m(t.color.light.base, t.color.dark.base),
     borderRadius: t.borderRadius.base,
-    color: v(t.color.dark.base, t.color.light[100]),
+    color: m(t.color.dark.base, t.color.light[100]),
   }))
-  .sizes((t, _, v) => ({
+  .sizes((t, m) => ({
     small: {
       padding: t.space.xSmall,
-      boxShadow: v(t.shadow.light.small, t.shadow.dark.small),
+      boxShadow: m(t.shadow.light.small, t.shadow.dark.small),
     },
     medium: {
       padding: { xs: 18, md: 36 },
-      boxShadow: v(t.shadow.light.large, t.shadow.dark.large),
+      boxShadow: m(t.shadow.light.large, t.shadow.dark.large),
     },
     large: {
       padding: { xs: 24, md: 40 },
-      boxShadow: v(t.shadow.light.large, t.shadow.dark.large),
+      boxShadow: m(t.shadow.light.large, t.shadow.dark.large),
     },
   }))

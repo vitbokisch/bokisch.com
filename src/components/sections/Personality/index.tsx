@@ -1,4 +1,4 @@
-import React, { VFC } from 'react'
+import { VFC } from 'react'
 import { Container, Row, Col } from '~/components/base/grid'
 import Card from '~/components/base/Card'
 import CardList from '~/components/base/CardList'

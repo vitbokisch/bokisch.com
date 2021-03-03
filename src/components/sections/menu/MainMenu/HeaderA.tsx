@@ -1,4 +1,3 @@
-import React from 'react'
 import { useWindowResize } from '@vitus-labs/unistyle'
 import { useStore, observer } from '~/store'
 import Element from '~/components/base/Element'

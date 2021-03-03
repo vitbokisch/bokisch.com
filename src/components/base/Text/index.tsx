@@ -7,9 +7,9 @@ export default text
   .theme((t) => ({
     lineHeight: t.lineHeight.base,
   }))
-  .states((t, _, v) => ({
+  .states((t, m) => ({
     base: {
-      color: v(t.color.dark.base, t.color.light.base),
+      color: m(t.color.dark.base, t.color.light.base),
     },
     primary: {
       color: t.color.primary.base,

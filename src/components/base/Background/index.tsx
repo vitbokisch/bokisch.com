@@ -1,4 +1,4 @@
-import element from '~/components/core/element'
+import { element } from '~/components/core'
 
 export default element
   .config({ name: 'base/Background' })
@@ -12,15 +12,15 @@ export default element
     margin: t.space.reset,
     padding: t.space.reset,
   }))
-  .states((t, _, v) => ({
+  .states((t, m) => ({
     primary: {
-      backgroundColor: v(t.color.light.base, t.color.dark.base),
+      backgroundColor: m(t.color.light.base, t.color.dark.base),
     },
     secondary: {
-      backgroundColor: v(t.color.light[100], t.color.dark[100]),
+      backgroundColor: m(t.color.light[100], t.color.dark[100]),
     },
     gradient: {
-      background: v(t.gradient.base.light, t.gradient.base.dark),
+      background: m(t.gradient.base.light, t.gradient.base.dark),
     },
     overlay: {
       fullScreen: true,
@@ -33,7 +33,7 @@ export default element
     },
     triangle: {
       position: 'absolute',
-      background: v(t.gradient.triangle.light, t.gradient.triangle.dark),
+      background: m(t.gradient.triangle.light, t.gradient.triangle.dark),
       clipPath: 'polygon(0 0, 100% 15%, 100% 85%, 0 100%)',
       inset: '150px 0px 0px',
     },

@@ -1,14 +1,14 @@
-import list from '~/components/core/list'
-import component from './Item'
+import { list } from '~/components/core'
+import Item from './Item'
 
-export { component }
+export { Item }
 
 export default list
   .config({ name: 'base/List' })
   .attrs({
     tag: 'ul',
     block: true,
-    component,
+    component: Item,
     contentAlignX: 'block',
   })
   .theme({

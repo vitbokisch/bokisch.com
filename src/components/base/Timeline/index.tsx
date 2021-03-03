@@ -1,7 +1,7 @@
 import { VFC } from 'react'
 import { List } from '@vitus-labs/elements'
 import { useWindowResize } from '@vitus-labs/unistyle'
-import element from '~/components/core/element'
+import { element } from '~/components/core'
 import { Container, Row, Col } from '~/components/base/grid'
 import BoxList from './BoxList'
 
@@ -22,13 +22,13 @@ const splitData: SplitData = (data) =>
 
 const Timeline = element
 
-const Line = element.attrs({ tag: 'span' }).theme((_, __, v) => ({
+const Line = element.attrs({ tag: 'span' }).theme((_, m) => ({
   position: 'absolute',
   left: '50%',
   width: 4,
   height: '100%',
   transform: 'translateX(-50%)',
-  backgroundColor: v('#F3F3F3', '#3f3f3f'),
+  backgroundColor: m('#F3F3F3', '#3f3f3f'),
 }))
 
 type Props = {

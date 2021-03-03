@@ -1,4 +1,4 @@
-import list from '~/components/core/list'
+import { list } from '~/components/core'
 import Wrapper from './Wrapper'
 import Box from './Box'
 

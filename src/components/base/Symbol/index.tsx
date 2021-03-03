@@ -1,4 +1,4 @@
-import element from '~/components/core/element'
+import { element } from '~/components/core'
 
 const Component = element
   .config({ name: 'base/Symbol' })
@@ -54,14 +54,14 @@ const Component = element
       },
     },
   }))
-  .sizes((t, _, v) => ({
+  .sizes((t, m) => ({
     small: {
       size: 12,
     },
     medium: {
       size: 36,
       borderWidth: 4,
-      borderColor: v(t.color.light.base, t.color.dark.base),
+      borderColor: m(t.color.light.base, t.color.dark.base),
       borderStyle: 'solid',
     },
     large: {

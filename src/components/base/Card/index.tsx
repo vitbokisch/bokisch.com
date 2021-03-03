@@ -1,11 +1,11 @@
-import React, { FC, ReactNode } from 'react'
-import Box, { Header, Body } from '~/components/base/Box'
-import heading from '~/components/base/Heading'
-import Text from '~/components/base/Text'
-import List from '~/components/base/List'
-import Line from '~/components/base/Line'
-import Icon from '~/components/base/Icon'
-import IconLogo from '~/components/base/IconLogo'
+import { FC, ReactNode } from 'react'
+import Box, { Header, Body } from '../Box'
+import heading from '../Heading'
+import Text from '../Text'
+import List from '../List'
+import Line from '../Line'
+import Icon from '../Icon'
+import IconLogo from '../IconLogo'
 
 const Heading = heading.theme((t) => ({
   marginTop: t.space.large,

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Provider } from '@vitus-labs/rocketstyle'
 import { useWindowResize } from '@vitus-labs/unistyle'
 import Element from '~/components/base/Element'

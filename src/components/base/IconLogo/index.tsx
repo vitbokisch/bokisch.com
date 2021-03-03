@@ -1,4 +1,4 @@
-import element from '~/components/core/element'
+import { element } from '~/components/core'
 import image from '~/components/base/Image'
 
 const Image = image
@@ -19,15 +19,15 @@ export default element
     contentAlignY: 'center',
     content: <Image name={name} responsive />,
   }))
-  .theme((t, _, v) => ({
-    backgroundColor: v(t.color.light.base, t.color.dark.base),
+  .theme((t, m) => ({
+    backgroundColor: m(t.color.light.base, t.color.dark.base),
     borderRadius: t.borderRadius.base,
   }))
-  .variants((t, _, v) => ({
+  .variants((t, m) => ({
     box: {
       height: { xs: 64, md: 100 },
       padding: { xs: t.space.medium },
-      backgroundColor: v(t.color.transparent, t.color.light.base),
+      backgroundColor: m(t.color.transparent, t.color.light.base),
     },
     circle: {
       width: 72,

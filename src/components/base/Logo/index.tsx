@@ -10,9 +10,9 @@ const Logo = element
       __html: require(`~/assets/logo/logo-vit-bokisch.svg?include`),
     },
   })
-  .theme((t, _, v) => ({
+  .theme((t, m) => ({
     width: { xs: 120, sm: 180, lg: 250 },
-    color: v(t.color.light.base, t.color.dark.base),
+    color: m(t.color.light.base, t.color.dark.base),
   }))
   .styles(
     (css) => css`
@@ -29,8 +29,8 @@ const Logo = element
 
 const LogoHeading = Text.attrs({
   label: 'Frontend Engineer | Architect | Innovator',
-}).theme((t, _, v) => ({
-  color: v(t.color.light[100], t.color.dark[100]),
+}).theme((t, m) => ({
+  color: m(t.color.light[100], t.color.dark[100]),
   opacity: 0.6,
   textTransform: 'uppercase',
   fontSize: { xs: 10, sm: 12, lg: 18 },

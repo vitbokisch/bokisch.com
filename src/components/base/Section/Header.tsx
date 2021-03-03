@@ -1,7 +1,7 @@
-import React, { FC, ReactNode } from 'react'
-import element from '~/components/core/element'
-import heading from '~/components/base/Heading'
-import Text from '~/components/base/Text'
+import { FC, ReactNode } from 'react'
+import { element } from '~/components/core'
+import heading from '../Heading'
+import Text from '../Text'
 
 const Header = element
   .config({
@@ -12,10 +12,10 @@ const Header = element
     contentDirection: 'rows',
     contentAlignX: 'center',
   })
-  .theme((t, _, v) => ({
+  .theme((t, m) => ({
     marginBottom: { xs: t.space.large, md: t.space.xLarge },
     maxWidth: { xs: '90%', lg: '70%', xxl: 1100 },
-    color: v(t.color.dark.base, t.color.light.base),
+    color: m(t.color.dark.base, t.color.light.base),
   }))
   .variants({
     hidden: {

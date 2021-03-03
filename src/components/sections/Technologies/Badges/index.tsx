@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { IStore, useStore, observer } from '~/store'
 import BadgeList from '~/components/base/BadgeList'
 

@@ -1,7 +1,6 @@
-import React from 'react'
-import heading from '~/components/base/Heading'
-import element from '~/components/core/element'
-import ProgressList from '~/components/base/ProgressList'
+import { element } from '~/components/core'
+import heading from '../Heading'
+import ProgressList from '../ProgressList'
 
 const Heading = heading.theme((t) => ({
   marginBottom: t.space.medium,
@@ -14,8 +13,8 @@ const Box = element
     contentAlignY: 'block',
     block: true,
   })
-  .theme((t, _, v) => ({
-    color: v(t.color.dark[100], t.color.light[100]),
+  .theme((t, m) => ({
+    color: m(t.color.dark[100], t.color.light[100]),
   }))
 
 type Props = {

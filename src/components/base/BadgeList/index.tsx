@@ -1,5 +1,5 @@
-import list from '~/components/core/list'
-import Badge from '~/components/base/Badge'
+import { list } from '~/components/core'
+import Badge from '../Badge'
 
 export { Badge }
 

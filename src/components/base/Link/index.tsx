@@ -1,4 +1,4 @@
-import link from '~/components/core/link'
+import { link } from '~/components/core'
 import icon from '../Icon'
 
 const Icon = icon.config({
@@ -16,9 +16,9 @@ const Link = link
     beforeContent: icon ? <Icon name={icon} size="small" /> : undefined,
     gap: icon ? theme.space.medium : undefined,
   }))
-  .theme((t, _, v) => ({
+  .theme((t, m) => ({
     fontSize: 'inherit',
-    color: v(t.color.dark.base, t.color.light.base),
+    color: m(t.color.dark.base, t.color.light.base),
     userSelect: 'none',
     fontWeight: 300,
 

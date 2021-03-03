@@ -1,5 +1,5 @@
-import list from '~/components/core/list'
-import Box from '~/components/base/Box'
+import { list } from '~/components/core'
+import Box from '../Box'
 
 export { Box }
 

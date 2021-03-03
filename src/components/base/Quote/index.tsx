@@ -1,5 +1,4 @@
-import element from '~/components/core/element'
-import text from '~/components/core/text'
+import { element, text } from '~/components/core'
 
 const base = element
   .attrs({
@@ -15,8 +14,8 @@ const Quote = base
   .attrs({
     tag: 'blockquote',
   })
-  .theme((t, _, v) => ({
-    color: v(t.color.dark.base, t.color.light.base),
+  .theme((t, m) => ({
+    color: m(t.color.dark.base, t.color.light.base),
   }))
 
 const Text = text

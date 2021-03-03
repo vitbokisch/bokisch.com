@@ -1,5 +1,5 @@
 import { useWindowResize } from '@vitus-labs/unistyle'
-import element from '~/components/core/element'
+import { element } from '~/components/core'
 
 const BackgroundMobile = element.theme((t) => ({
   fullScreen: true,

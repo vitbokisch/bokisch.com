@@ -1,4 +1,4 @@
-import link from '~/components/core/link'
+import { link } from '~/components/core'
 
 export default link
   .config({ name: 'base/Badge' })
@@ -7,10 +7,8 @@ export default link
     borderRadius: t.borderRadius.extra,
     fontSize: { xs: t.fontSize.small, md: t.fontSize.base },
     paddingX: { xs: t.space.xSmall, md: t.space.small },
-    backgroundColor: t.color.transparent,
     borderWidth: t.borderWidth.base,
     borderStyle: t.borderStyle.base,
-    transition: t.transition.base,
     fontWeight: 500,
   }))
   .states((t) => ({

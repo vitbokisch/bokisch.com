@@ -1,4 +1,3 @@
-import React from 'react'
 import Root from '~/components/base/skeleton/Root'
 import Intro from '~/components/sections/Intro'
 import Quote from '~/components/sections/Quote'

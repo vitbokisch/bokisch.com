@@ -1,15 +1,15 @@
 import { VFC } from 'react'
 import { ExtractProps } from '~/types'
-import element from '~/components/core/element'
+import { element } from '~/components/core'
 import Overlay from '~/components/core/Overlay'
 import Text from '../Text'
 
 const Arrow = element
-  .theme((t, _, v) => ({
+  .theme((t, m) => ({
     position: 'absolute',
     left: '50%',
     size: 16,
-    backgroundColor: v(t.color.dark[100], t.color.light[100]),
+    backgroundColor: m(t.color.dark[100], t.color.light[100]),
   }))
   .variants({
     top: {
@@ -28,12 +28,12 @@ const PopoverContent = element
     contentDirection: 'inline',
     contentAlignX: 'block',
   })
-  .theme((t, _, v) => ({
+  .theme((t, m) => ({
     position: 'relative',
     maxWidth: 360,
     minHeight: 64,
-    backgroundColor: v(t.color.dark[100], t.color.light[100]),
-    color: v(t.color.light[100], t.color.dark[100]),
+    backgroundColor: m(t.color.dark[100], t.color.light[100]),
+    color: m(t.color.light[100], t.color.dark[100]),
     borderRadius: t.borderRadius.large,
     padding: t.space.small,
   }))

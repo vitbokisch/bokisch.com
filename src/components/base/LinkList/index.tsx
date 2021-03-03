@@ -1,4 +1,4 @@
-import list, { component as wrapComponent } from '../List'
+import list, { Item as wrapComponent } from '../List'
 import link from '../Link'
 
 const Link = link.attrs({

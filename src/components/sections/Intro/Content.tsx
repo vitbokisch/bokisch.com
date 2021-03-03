@@ -1,4 +1,3 @@
-import React from 'react'
 import { Provider } from '@vitus-labs/rocketstyle'
 import Heading from '~/components/base/Heading'
 import Link from '~/components/base/Link'

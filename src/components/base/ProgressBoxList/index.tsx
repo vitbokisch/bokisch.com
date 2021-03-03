@@ -1,4 +1,4 @@
-import BoxList from '~/components/base/BoxList'
+import BoxList from '../BoxList'
 import ProgressBox from '../ProgressBox'
 
 export { ProgressBox }

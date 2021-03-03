@@ -1,4 +1,4 @@
-import link from '~/components/core/link'
+import { link } from '~/components/core'
 
 export default link
   .config({ name: 'base/Icon' })
@@ -24,9 +24,9 @@ export default link
       size: { xs: 64, md: 80, lg: 96 },
     },
   })
-  .variants((t, _, v) => ({
+  .variants((t, m) => ({
     circle: {
-      backgroundColor: v(t.color.dark.base, t.color.light[200]),
+      backgroundColor: m(t.color.dark.base, t.color.light[200]),
     },
   }))
   .styles(

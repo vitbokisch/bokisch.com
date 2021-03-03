@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme; blocked: boolean }>`
     ${({ blocked }) =>
       blocked &&
       css`
+        position: fixed;
         overflow-y: hidden;
       `};
 

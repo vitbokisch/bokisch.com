@@ -41,7 +41,11 @@ const component: FC<Props> = ({
       {logo && <IconLogo circle name={logo} />}
       <Heading level3 centered label={title} />
       {subtitle && <SubHeading centered label={subtitle} />}
-      {note && <Text small>{note}</Text>}
+      {note && (
+        <Text small neutral>
+          {note}
+        </Text>
+      )}
     </Header>
 
     <Line />

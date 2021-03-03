@@ -7,12 +7,16 @@ const Heading = heading.theme((t) => ({
   marginBottom: t.space.medium,
 }))
 
-const Box = element.attrs({
-  contentDirection: 'rows',
-  contentAlignX: 'block',
-  contentAlignY: 'block',
-  block: true,
-})
+const Box = element
+  .attrs({
+    contentDirection: 'rows',
+    contentAlignX: 'block',
+    contentAlignY: 'block',
+    block: true,
+  })
+  .theme((t, _, v) => ({
+    color: v(t.color.dark[100], t.color.light[100]),
+  }))
 
 type Props = {
   state: string

@@ -22,9 +22,9 @@ const component: VFC = () => (
   <Background primary>
     <Section id="work-experience">
       <Header title="Work Experience">
-        I am a freelancer with more than 6 years of experience in the business
-        at various positions. I have participated on several mid-large
-        applications and realized tens of websites from green field to
+        I am a freelancer with more than 6+ years of experience in the business
+        in various positions. I have participated in several mid-large
+        applications and realized tens of websites from the green field to
         production. My work has helped thousands of people around the world.
       </Header>
 

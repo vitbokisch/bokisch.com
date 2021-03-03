@@ -74,11 +74,11 @@ export default [
     state: 'primary',
     data: [
       {
-        label: 'Web',
+        label: 'Backend',
         level: 4,
       },
       {
-        label: 'Mobile',
+        label: 'DevOps',
         level: 4,
       },
     ],

@@ -20,7 +20,8 @@ export default text
       tag: getTag(props),
     }
   })
-  .theme((t) => ({
+  .theme((t, _, v) => ({
+    color: v(t.color.dark.base, t.color.light.base),
     fontSize: t.fontSize.base,
     lineHeight: t.lineHeight.reset,
     fontWeight: 500,

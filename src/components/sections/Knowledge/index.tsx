@@ -16,10 +16,10 @@ const component: VFC<Props> = () => {
     <Background primary>
       <Section id="knowledge">
         <Header title="Knowledge">
-          The preparation is the key for a smooth website design and development
-          project. Broad knowledge from planning to launch stage is key for
-          meeting requirements and effective realization with less headaches. I
-          can speak Czech, English and modern JavaScript ;)
+          Preparation is the key to a smooth website design and development
+          project. Broad knowledge from the planning to launch stage is key for
+          meeting requirements and effective realization with fewer headaches. I
+          can speak Czech, English, and modern JavaScript ;)
         </Header>
 
         <Container

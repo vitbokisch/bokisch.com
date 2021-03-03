@@ -10,23 +10,18 @@ import Footer from './Footer'
 
 const Element = element.theme({ height: 'inherit' })
 
-const Section = section
-  .theme({
-    overflow: 'hidden',
-    background: `linear-gradient(
+const Section = section.theme({
+  height: '100vh',
+  maxHeight: { xs: 520, md: 800, lg: 1000 },
+  minHeight: { xs: '100vh', md: 600 },
+  overflow: 'hidden',
+  background: `linear-gradient(
       180deg,
       #a5aead 0%,
       #b1bab9 52.08%,
       #b0b8b7 100%
     )`,
-  })
-  .variants({
-    limitedFullScreen: {
-      height: '100vh',
-      maxHeight: { xs: 520, md: 800, lg: 1000 },
-      minHeight: { md: 600 },
-    },
-  })
+})
 
 const ProfileImageWrapper = element.theme({
   position: 'absolute',
@@ -50,7 +45,7 @@ type Props = {
 }
 
 const component: VFC<Props> = ({ fullScreen }) => (
-  <Section fullScreen={fullScreen} limitedFullScreen={!fullScreen}>
+  <Section>
     <ProfileImageWrapper>
       <ProfileImage />
     </ProfileImageWrapper>

@@ -5,10 +5,12 @@ export default text
     name: 'base/Text',
   })
   .theme((t) => ({
-    fontSize: { xs: t.fontSize.small, md: t.fontSize.base },
     lineHeight: t.lineHeight.base,
   }))
-  .states((t) => ({
+  .states((t, _, v) => ({
+    base: {
+      color: v(t.color.dark.base, t.color.light.base),
+    },
     primary: {
       color: t.color.primary.base,
     },
@@ -23,6 +25,9 @@ export default text
     },
   }))
   .sizes((t) => ({
+    normal: {
+      fontSize: { xs: t.fontSize.small, md: t.fontSize.base },
+    },
     small: {
       fontSize: t.fontSize.small,
     },
@@ -33,7 +38,7 @@ export default text
       fontSize: { xs: t.fontSize.large, md: t.fontSize.xLarge },
     },
   }))
-  .multiple((t) => ({
+  .multiple({
     strong: {
       fontWeight: 500,
     },
@@ -43,4 +48,4 @@ export default text
     italic: {
       fontStyle: 'italic',
     },
-  }))
+  })

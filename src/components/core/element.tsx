@@ -59,24 +59,28 @@ export default rocketstyle<Theme, ComponentThemeDefinition>()()({
             {
               ...restStyles,
             } || {},
+          //@ts-ignore
           styles,
           css,
         })
 
         const hoverTheme = makeItResponsive({
           theme: hoverStyles,
+          //@ts-ignore
           styles,
           css,
         })
 
         const focusTheme = makeItResponsive({
           theme: focusStyles,
+          //@ts-ignore
           styles,
           css,
         })
 
         const activeTheme = makeItResponsive({
           theme: activeStyles,
+          //@ts-ignore
           styles,
           css,
         })

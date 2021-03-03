@@ -100,6 +100,7 @@ export default rocketstyle<
             {
               ...restStyles,
             } || {},
+          //@ts-ignore
           styles,
           css,
         })

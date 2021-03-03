@@ -1,6 +1,17 @@
 import Root from '~/components/base/skeleton/Root'
+import background from '~/components/base/Background'
 import MainMenu from '~/components/sections/menu/MainMenu'
 import Intro from '~/components/sections/Intro'
+
+const Background = background.theme({
+  minHeight: '100vh',
+  background: `linear-gradient(
+      180deg,
+      #a5aead 0%,
+      #b1bab9 52.08%,
+      #b0b8b7 100%
+    )`,
+})
 
 const data = [
   { label: 'Home', href: '/' },
@@ -9,8 +20,10 @@ const data = [
 
 const component = () => (
   <Root>
-    <Intro />
-    <MainMenu menu={data} />
+    <Background>
+      <Intro />
+      <MainMenu menu={data} />
+    </Background>
   </Root>
 )
 

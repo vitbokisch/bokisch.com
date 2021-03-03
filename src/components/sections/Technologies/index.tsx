@@ -16,9 +16,9 @@ const component: VFC = () => (
   <Background secondary>
     <Section id="technologies">
       <Header title="Technologies">
-        Choosing the right tools might be overhelming. By continuous learning,
-        endless experimenting and following new trends and best practices help
-        making the right choice easier.
+        Choosing the right tools might be overwhelming. By continuous learning,
+        endless experimenting, and following new trends and best practices help
+        to make the right choice easier.
       </Header>
 
       <Container width={({ lg, xl, xxl }: any) => ({ xs: '90%', lg, xl, xxl })}>
@@ -28,14 +28,16 @@ const component: VFC = () => (
       <Container contentAlignX="center">
         <Row>
           <Col size={{ xs: 12, md: 8 }}>
-            <Text paragraph centered>
-              …and many more. Checkout my{' '}
+            <Text base paragraph centered>
+              …and many more. Check out my{' '}
               <Link href="https://github.com/vitbokisch?tab=stars">
-                GitHub stars
+                Github stars
               </Link>{' '}
-              to see what an interesting stuff have caught my attention.
+              to see what interesting stuff has caught my attention.
             </Text>
-            <Text centered>Uhm, what will come next?</Text>
+            <Text base centered>
+              Uhm, what will come next?
+            </Text>
           </Col>
         </Row>
       </Container>

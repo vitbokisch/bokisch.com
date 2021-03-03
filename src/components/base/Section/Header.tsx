@@ -12,9 +12,10 @@ const Header = element
     contentDirection: 'rows',
     contentAlignX: 'center',
   })
-  .theme((t) => ({
+  .theme((t, _, v) => ({
     marginBottom: { xs: t.space.large, md: t.space.xLarge },
     maxWidth: { xs: '90%', lg: '70%', xxl: 1100 },
+    color: v(t.color.dark.base, t.color.light.base),
   }))
   .variants({
     hidden: {

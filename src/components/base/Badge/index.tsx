@@ -1,6 +1,6 @@
-import element from '~/components/core/element'
+import link from '~/components/core/link'
 
-export default element
+export default link
   .config({ name: 'base/Badge' })
   .theme((t) => ({
     height: { xs: 32, md: 40 },

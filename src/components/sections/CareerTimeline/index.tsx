@@ -15,7 +15,7 @@ const component: VFC = () => {
           understand. Having a broad knowledge important to understand from
           several is.
         </Header>
-        <Timeline data={store.career?.data} />
+        <Timeline data={store.career?.data as any} />
       </Section>
     </Background>
   )

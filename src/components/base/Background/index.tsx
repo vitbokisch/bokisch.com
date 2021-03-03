@@ -5,6 +5,7 @@ export default element
   .attrs({
     block: true,
     contentDirection: 'rows',
+    contentAlignY: 'top',
     contentAlignX: 'block',
   })
   .theme((t) => ({

@@ -15,6 +15,9 @@ const Quote = base
   .attrs({
     tag: 'blockquote',
   })
+  .theme((t, _, v) => ({
+    color: v(t.color.dark.base, t.color.light.base),
+  }))
 
 const Text = text
   .config({

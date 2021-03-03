@@ -2,6 +2,7 @@ import { VFC } from 'react'
 import { ExtractProps } from '~/types'
 import element from '~/components/core/element'
 import Overlay from '~/components/core/Overlay'
+import Text from '../Text'
 
 const Arrow = element
   .theme((t, _, v) => ({
@@ -58,7 +59,7 @@ const component: VFC<Props> = ({ trigger, children }) => (
   >
     {({ innerRef, align }: RenderType) => (
       <PopoverContent ref={innerRef} beforeContent={<Arrow variant={align} />}>
-        {children}
+        <Text small>{children}</Text>
       </PopoverContent>
     )}
   </Overlay>

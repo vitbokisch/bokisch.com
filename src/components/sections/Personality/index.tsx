@@ -34,18 +34,18 @@ const component: VFC = () => (
             </Card>
 
             <Card icon="analytics" title="Analytical Mind">
-              Everything seems like a puzzle and I really enjoy thinking about
-              that and looking for a way to make things happen piece by piece so
-              all these pieces together create a harmony. I never get tired of
-              it. Well, when I do, I just need to take a rest for a while while
-              I can get down back to the business even stronger.
+              Everything seems like a puzzle and I enjoy thinking about that and
+              looking for a way to make things happen piece by piece so all
+              these pieces together create harmony. I never get tired of it.
+              Well, when I do, I just need to take a rest for a while while I
+              can get down back to the business even stronger.
             </Card>
 
             <Card icon="mind" title="Common sense">
-              Put me in a water and I will learn how to swim, give me a
-              challenging project and I bring fresh energy, new ideas and be
+              Put me in the water and I will learn how to swim. Give me a
+              challenging project and I bring fresh energy, new ideas, and be
               happy moving things forward. I was born to face challenges and
-              rely on my own common sense.
+              rely on my common sense.
             </Card>
           </CardList>
         </Row>

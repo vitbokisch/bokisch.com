@@ -17,8 +17,7 @@ const PLUGINS = [[optimizedImages, {}]]
 // }
 
 module.exports = withPlugins(PLUGINS, {
-  dir: './src',
-  distDir: 'build',
+  dir: 'src',
   poweredByHeader: false,
   // reactStrictMode: true,
 })

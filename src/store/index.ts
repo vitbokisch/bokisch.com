@@ -10,7 +10,7 @@ import { observer } from 'mobx-react'
 import runtime from './runtime'
 import knowledge, { mockup as knowledgeMockup } from './data/knowledge'
 import technologies, { mockup as technologiesMockup } from './data/technologies'
-import socials, { mockup as socialsMockup } from './data/socials'
+import contacts, { mockup as contactsMockup } from './data/contacts'
 import career, { mockup as careerMockup } from './data/career'
 
 const initialState = {
@@ -18,7 +18,7 @@ const initialState = {
   knowledge: knowledgeMockup,
   technologies: technologiesMockup,
   career: careerMockup,
-  socials: socialsMockup,
+  contacts: contactsMockup,
 }
 
 let store: IStore | undefined
@@ -28,7 +28,7 @@ const Store = t.model('Store', {
   knowledge: t.maybeNull(knowledge),
   technologies: t.maybeNull(technologies),
   career: t.maybeNull(career),
-  socials: t.maybeNull(socials),
+  contacts: t.maybeNull(contacts),
 })
 
 export type IStore = Instance<typeof Store>

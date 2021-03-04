@@ -5,6 +5,7 @@ const Item = t.model('socials/Item', {
   type: t.string,
   username: t.string,
   link: t.maybeNull(t.string),
+  label: t.string,
 })
 
 const model = t

@@ -12,13 +12,13 @@ type Props = ExtractProps<typeof LinkList> &
 const component: VFC<Props> = ({ types, ...props }) => {
   const store = useStore('')
 
-  const socials = store.socials?.pickDataByType(types).map((item) => ({
+  const contacts = store.contacts?.pickDataByType(types).map((item) => ({
     icon: item.type,
     href: item.link,
     label: item.username,
   }))
 
-  return <LinkList data={socials} gap="large" {...props} />
+  return <LinkList data={contacts} gap="large" {...props} />
 }
 
 export default observer(component)

@@ -5,7 +5,7 @@ import IconList from '~/components/base/IconList'
 const component: VFC = () => {
   const store = useStore('')
 
-  const socials = store.socials
+  const contacts = store.contacts
     ?.pickDataByType([
       'github',
       'linkedin',
@@ -17,7 +17,7 @@ const component: VFC = () => {
 
   return (
     <IconList
-      data={socials}
+      data={contacts}
       gap="large"
       itemProps={{ size: 'medium', external: true }}
     />

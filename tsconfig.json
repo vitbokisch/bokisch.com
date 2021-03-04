@@ -1,16 +1,27 @@
 {
   "extends": "@vitus-labs/tools-typescript/nextjs",
   "compilerOptions": {
-    "rootDir": "src",
+    "rootDir": "./src",
     "baseUrl": "./src",
     "paths": {
       "~": [
         "src"
       ],
-      "~/*": ["src/*"],
+      "~/*": [
+        "./*"
+      ],
       "components/*": [
-        "src/components/*"
+        "./components/*"
       ],
     },
-  }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/__stories__/**"
+  ]
 }

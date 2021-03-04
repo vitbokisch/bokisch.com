@@ -17,16 +17,18 @@ const component = ({ Component, pageProps }: AppProps) => {
   })
 
   return (
-    <StoreProvider store={store}>
-      <ThemeProvider>
-        <Head>
-          <Meta />
-          <Social />
-          <Favicons />
-        </Head>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </StoreProvider>
+    <>
+      <Head>
+        <Meta />
+        <Social />
+        <Favicons />
+      </Head>
+      <StoreProvider store={store}>
+        <ThemeProvider>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </StoreProvider>
+    </>
   )
 }
 

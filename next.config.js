@@ -28,5 +28,8 @@ const PLUGINS = [
 module.exports = withPlugins(PLUGINS, {
   dir: 'src',
   poweredByHeader: false,
+  experimental: {
+    optimizeFonts: true,
+  },
   // reactStrictMode: true,
 })

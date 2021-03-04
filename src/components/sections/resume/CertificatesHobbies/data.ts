@@ -21,9 +21,8 @@ export default [
     title: 'Side projects & Volunteering',
     icon: 'volunteering',
     data: [
-      'Music lover (especially EDM music)',
-      'Sports (Fitness, Futnet, Greco-Roman wrestling)',
-      'Travelling, Nature, Cooking & Reading books',
+      'Currently working on several own libraries.',
+      'Contributing to open source',
     ],
   },
 ]

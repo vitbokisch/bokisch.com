@@ -41,7 +41,11 @@ const component: VFC = () => (
           </Col>
         </Row>
       </Container>
-      <Button primary label="Give me a new challenge" />
+      <Button
+        primary
+        label="Give me a new challenge"
+        href="mailto:vi@bokisch.cz"
+      />
     </Section>
   </Background>
 )

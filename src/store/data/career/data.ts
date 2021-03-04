@@ -4,10 +4,10 @@ export default [
     date: 'Jan 2019 - current',
     position: 'Frontend Engineer',
     responsibilities: [
-      'A side hobby project in free time',
+      'A side hobby project in my free time',
       'A set of ideas and experiments with a goal to innovate and make frontend development more convenient',
       'A bunch of libraries to design and develop universal UI systems',
-      'Ready to use tools for to eliminate configurations of web/monorepo setup',
+      'Ready to use tools to eliminate configurations of web/monorepo setup',
     ],
   },
   {
@@ -15,11 +15,11 @@ export default [
     date: 'Dec 2019 - Aug 2021',
     position: 'Frontend Engineer',
     responsibilities: [
-      'Designing a complete monorepo structure + documentation, including confuguration ESLint, Typescript, Rollup.js, Storybook,... ',
+      'Designing a complete monorepo structure + documentation, including configuration ESLint, Typescript, Rollup.js, Storybook,...',
       'Designed automation processes and possible solutions for CI/CD Involved in UI design & developed UI library',
       'Responsible for collaboration with colleagues from an external agency',
-      'Bulding new features & rewriting old app to a brand new web app',
-      'Fixing bugs, code reviews, sharing knowledge, supporting colleagues and other common stuff',
+      'Building new features & rewriting an old app to a brand new web app',
+      'Fixing bugs, code reviews, sharing knowledge, supporting colleagues, and other common stuff',
     ],
   },
   {
@@ -28,7 +28,7 @@ export default [
     position: 'Frontend Engineer',
     responsibilities: [
       'Collaboration in a team working on a B2C product connecting hoteliers with their customers',
-      'Working on a prototyping and later on developing an instant messanging feature',
+      'Working on a prototyping and later on developing an instant messaging feature',
       'Contributing to UI library',
       'Helping to catch up on technical debt',
       'Contributing to code styles & documentation',
@@ -45,7 +45,7 @@ export default [
       'Maintaining 2 B2B products (running on React or Angular)',
       'Fixing technical debt',
       'Defining an architecture for a new product development',
-      'Participating on UI design process',
+      'Participating in the UI design process',
       'Leading a very small team of 2 people',
       'Implementing new features and fixing bugs',
     ],
@@ -56,10 +56,10 @@ export default [
     position: 'Co-founder & Frontend Engineer',
     responsibilities: [
       'A side hobby project made for fun and learn new stuff',
-      'An aggregator scrapping great travelling deals from other websites and presents them at one place',
+      'An aggregator scrapping great traveling deals from other websites and presents them in one place',
       'Designed UI for web and mobile',
-      'Developed web app and worked on mobile app in React Native',
-      'App is not running anymore',
+      'Developed web app and worked on the mobile app in React Native',
+      'The app is not running anymore',
     ],
   },
   {
@@ -68,7 +68,7 @@ export default [
     position: '(Lead) Frontend Engineer',
     responsibilities: [
       'Collaboration in a small team working on hiring platform',
-      'Working on a prototyping and later on developing a mobile app in React Native (unfortunately never released)',
+      'Working on prototyping and later on developing a mobile app in React Native (unfortunately never released)',
       'Contributing to web development & fixing bugs',
       'Contributing to code styles',
       'Code reviews',
@@ -81,7 +81,7 @@ export default [
     responsibilities: [
       'Interviews with candidates',
       'Initiated a new episode of web app',
-      'Participated on UI design process',
+      'Participated in the UI design process',
       'Designing a new repository, technologies proposal',
       'Developing a new responsive web app from scratch',
       'Leading a very small team of 3 people',
@@ -95,9 +95,9 @@ export default [
     position: 'Beihang University, China',
     responsibilities: [
       'Abroad studies in Beijing, China',
-      'Learned a lot about Asian culture and international environment',
+      'Learned a lot about Asian culture and the international environment',
       'Writing a diploma thesis in English at that time',
-      'Travelled a lot through China',
+      'Traveled a lot through China',
       'Wrote several articles on Medium or Facebook',
     ],
   },
@@ -107,7 +107,7 @@ export default [
     position: 'Frontend Engineer',
     responsibilities: [
       'Collaboration in teams working on several client web apps',
-      'Working on an app similar to Uber or Bolt; or on an investment platform',
+      'Working on an app similar to Uber or Bolt; or an investment platform',
       'Building web apps from scratch, working on features requested by clients, fixing bugs',
       'Contributing to company frontend code styles',
     ],
@@ -119,7 +119,7 @@ export default [
     responsibilities: [
       'Erasmus student of Economics & Business Administration',
       'Considering it as one of the best experiences in my life ever',
-      'Many interesting team work projects',
+      'Many interesting teamwork projects',
       'Very experienced professors',
       'Great international experience',
     ],
@@ -129,7 +129,7 @@ export default [
     date: '2013 - 2016',
     position: 'Czech Technical University',
     responsibilities: [
-      'Master studies (without master degree)',
+      'Master studies (without Baster degree)',
       'Student of Economics & Management of Electrical Engineering',
       'Full-time study with taking opportunities to study & travel abroad',
     ],
@@ -139,7 +139,7 @@ export default [
     date: 'May 2012 - Sep 2013',
     position: 'Internship',
     responsibilities: [
-      'An Internship at Center of Knowledge Management (in collaboration with IBM) at Czech Technical University in Prague',
+      'An Internship at the Center of Knowledge Management (in collaboration with IBM) at Czech Technical University in Prague',
       'Responsible for visual identity, building presentational websites, presentations',
       'Responsible for process portal implementation',
       'Implementation of BPM processes',
@@ -150,7 +150,7 @@ export default [
     date: '2012 - 2013',
     position: 'Mentoring',
     responsibilities: [
-      'A mentee at department of Law',
+      'A mentee at the department of Law',
       'Learning management stuff, attending meetings,...',
       'Working on intranet web updated',
     ],

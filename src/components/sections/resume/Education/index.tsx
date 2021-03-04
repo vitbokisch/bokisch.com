@@ -18,9 +18,9 @@ const component: VFC = () => (
     <Background triangle />
     <Section id="education">
       <Header title="Education">
-        An abroad experience is something I am really proud of. I have studied
-        in Belgium and China. Different approaches, different cultures... what
-        an eye openers. Bachelor degree
+        An abroad experience is something I am proud of. I have studied in
+        Belgium and China. Different approaches, different cultures... what an
+        eye-opener. Bachelor's degree achieved.
       </Header>
 
       <Container

@@ -54,18 +54,12 @@ const callback = (variant) => (error, response) => {
 
   console.log('Creating images...')
   response.images.forEach((item) => {
-    fs.writeFileSync(
-      `./src/public/favicon/${variant}/${item.name}`,
-      item.contents
-    )
+    fs.writeFileSync(`./public/favicon/${variant}/${item.name}`, item.contents)
   })
 
   console.log('Creating manifests...')
   response.files.forEach((item) => {
-    fs.writeFileSync(
-      `./src/public/favicon/${variant}/${item.name}`,
-      item.contents
-    )
+    fs.writeFileSync(`./public/favicon/${variant}/${item.name}`, item.contents)
   })
 
   // console.log(response.images) // Array of { name: string, contents: <buffer> }
@@ -75,7 +69,7 @@ const callback = (variant) => (error, response) => {
 
 const generateFavicons = (variant) =>
   favicons(
-    `${__dirname}/../src/assets/favicon/${variant}.svg`,
+    `${__dirname}/../assets/favicon/${variant}.svg`,
     configuration(variant),
     callback(variant)
   )

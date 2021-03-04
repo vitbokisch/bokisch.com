@@ -16,7 +16,7 @@ const component = () => {
       beforeContent={Logo}
       afterContent={
         <>
-          <List contentDirection="inline" gap="xLarge">
+          <List tag="div" contentDirection="inline" gap="xLarge">
             {width >= 576 ? <ThemeSwitch /> : null}
             <Provider inversed>
               <MenuTrigger />

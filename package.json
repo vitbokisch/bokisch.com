@@ -13,7 +13,7 @@
     "export": "next export src",
     "start": "next start src",
     "pkgs": "rm -rf node_modules/ package-lock.json yarn.lock && yarn",
-    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && cp CNAME out/CNAME && git add out/ && git commit -m \"Deploy new version to gh-pages\" && git subtree push --prefix out origin gh-pages",
+    "deploy": "rm -rf node_modules/.cache && next build && next export && touch build/.nojekyll && cp CNAME build/CNAME && git add build/ && git commit -m \"Release new version to release branch\" && git subtree push --prefix out origin release",
     "pkgs:clean": "rm -rf node_modules/ yarn.lock && yarn",
     "pkgs:build": "lerna run build --stream",
     "make:favicon": "node scripts/favicon"

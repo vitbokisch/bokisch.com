@@ -1,10 +1,12 @@
 import { useEffect, useState, VFC } from 'react'
 import { element } from '~/components/core'
 
-type Props = { src: string; alt?: string }
+type Props = { src?: string; alt?: string }
 
 const component: VFC<Props> = ({ src, alt = '', ...props }) => {
   const [sizes, setSizes] = useState({})
+
+  if (!src) return null
 
   useEffect(() => {
     const originalImage = new Image()

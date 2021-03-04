@@ -2,6 +2,7 @@
 .docz
 .next
 stats.html
+build/
 
 node_modules/**/*
 .expo/*

@@ -1,7 +1,16 @@
 const withPlugins = require('next-compose-plugins')
 const optimizedImages = require('next-optimized-images')
 
-const PLUGINS = [[optimizedImages, {}]]
+const PLUGINS = [
+  [
+    optimizedImages,
+    {
+      svgo: {
+        plugins: [{ removeViewBox: false }],
+      },
+    },
+  ],
+]
 
 // if (CONFIG.pwa) {
 //   const withPWA = require('next-pwa')

@@ -3,6 +3,7 @@
 .next
 stats.html
 build/
+out/
 
 node_modules/**/*
 .expo/*

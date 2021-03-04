@@ -1,3 +1,4 @@
+import Seo from '~/components/meta/Seo'
 import Layout from '~/components/layouts/Base'
 import Footer from '~/components/layouts/Footer'
 import Intro from '~/components/sections/Intro'
@@ -22,19 +23,22 @@ const data = [
 ]
 
 const component = () => (
-  <Layout>
-    <Intro />
-    <Quote />
-    <Personality />
-    <Knowledge />
-    <Technologies />
-    <WorkExperience />
-    <Education />
-    <CertificatesHobbies />
-    <CareerTimeline />
-    <Footer />
-    <MainMenu menu={data} />
-  </Layout>
+  <>
+    <Seo title="Resume" />
+    <Layout>
+      <Intro />
+      <Quote />
+      <Personality />
+      <Knowledge />
+      <Technologies />
+      <WorkExperience />
+      <Education />
+      <CertificatesHobbies />
+      <CareerTimeline />
+      <Footer />
+      <MainMenu menu={data} />
+    </Layout>
+  </>
 )
 
 component.displayName = 'components/pages/Resume'

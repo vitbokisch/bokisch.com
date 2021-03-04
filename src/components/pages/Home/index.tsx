@@ -1,3 +1,4 @@
+import Seo from '~/components/meta/Seo'
 import Layout from '~/components/layouts/Base'
 import background from '~/components/base/Background'
 import Intro from '~/components/sections/Intro'
@@ -19,12 +20,15 @@ const data = [
 ]
 
 const component = () => (
-  <Layout>
-    <Background>
-      <Intro />
-      <MainMenu menu={data} />
-    </Background>
-  </Layout>
+  <>
+    <Seo title="Home" />
+    <Layout>
+      <Background>
+        <Intro />
+        <MainMenu menu={data} />
+      </Background>
+    </Layout>
+  </>
 )
 
 component.displayName = 'components/pages/Home'

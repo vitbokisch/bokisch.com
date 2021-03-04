@@ -17,9 +17,7 @@ const Link = link
     gap: icon ? theme.space.medium : undefined,
   }))
   .theme((t, m) => ({
-    fontSize: 'inherit',
     color: m(t.color.dark.base, t.color.light.base),
-    userSelect: 'none',
 
     hover: {
       color: t.color.tertiary.base,

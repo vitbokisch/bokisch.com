@@ -1,27 +1,26 @@
 import rocketstyle from '@vitus-labs/rocketstyle'
 import { Element } from '@vitus-labs/elements'
-import { styles, makeItResponsive } from '@vitus-labs/unistyle'
+import { styles, StylesTheme, makeItResponsive } from '@vitus-labs/unistyle'
 import type { Theme } from '~/theme'
 
-type ComponentTheme = Parameters<typeof styles>[0]['theme']
 type ResponsiveThemeDefinition = {
-  [I in keyof ComponentTheme]:
-    | ComponentTheme[I]
+  [I in keyof StylesTheme]:
+    | StylesTheme[I]
     | Partial<{
-        xs: ComponentTheme[I]
-        sm: ComponentTheme[I]
-        md: ComponentTheme[I]
-        lg: ComponentTheme[I]
-        xl: ComponentTheme[I]
-        xxl: ComponentTheme[I]
+        xs: StylesTheme[I]
+        sm: StylesTheme[I]
+        md: StylesTheme[I]
+        lg: StylesTheme[I]
+        xl: StylesTheme[I]
+        xxl: StylesTheme[I]
       }>
     | [
-        xs?: ComponentTheme[I],
-        sm?: ComponentTheme[I],
-        md?: ComponentTheme[I],
-        lg?: ComponentTheme[I],
-        xl?: ComponentTheme[I],
-        xxl?: ComponentTheme[I]
+        xs?: StylesTheme[I],
+        sm?: StylesTheme[I],
+        md?: StylesTheme[I],
+        lg?: StylesTheme[I],
+        xl?: StylesTheme[I],
+        xxl?: StylesTheme[I]
       ]
 }
 
@@ -59,28 +58,24 @@ export default rocketstyle<Theme, ComponentThemeDefinition>()()({
             {
               ...restStyles,
             } || {},
-          //@ts-ignore
           styles,
           css,
         })
 
         const hoverTheme = makeItResponsive({
           theme: hoverStyles,
-          //@ts-ignore
           styles,
           css,
         })
 
         const focusTheme = makeItResponsive({
           theme: focusStyles,
-          //@ts-ignore
           styles,
           css,
         })
 
         const activeTheme = makeItResponsive({
           theme: activeStyles,
-          //@ts-ignore
           styles,
           css,
         })

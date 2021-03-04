@@ -78,7 +78,7 @@ const component: VFC<Props> = ({ data }) => {
     <Timeline>
       <Container
         columns={12}
-        size={{ xs: 10, sm: 8 }}
+        size={{ xs: 12, md: 10, sm: 8 }}
         contentAlignX="center"
         gap={32}
       >

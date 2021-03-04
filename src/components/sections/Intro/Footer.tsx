@@ -1,6 +1,6 @@
 import { VFC } from 'react'
 import box from '~/components/base/Box'
-import SocialList from '~/components/sections/socials/SocialList'
+import ContactList from '~/components/sections/contacts/ContactList'
 
 const Box = box.theme({
   width: '100%',
@@ -9,7 +9,7 @@ const Box = box.theme({
 
 const component: VFC = () => (
   <Box small>
-    <SocialList
+    <ContactList
       contentDirection={{ xs: 'rows', sm: 'inline' }}
       contentAlignX={{ xs: 'left', sm: 'spaceAround' }}
       indent="xLarge"

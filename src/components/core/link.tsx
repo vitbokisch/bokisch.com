@@ -24,6 +24,7 @@ export default element
     padding: 0,
     margin: 0,
     color: m(t.color.dark.base, t.color.light.base),
+    userSelect: 'none',
 
     hover: {
       color: t.color.tertiary.base,

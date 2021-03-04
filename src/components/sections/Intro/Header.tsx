@@ -1,9 +1,8 @@
-import { Provider } from '@vitus-labs/rocketstyle'
+import { Provider } from '~/theme'
 import { useWindowResize } from '@vitus-labs/unistyle'
-import Element from '~/components/base/Element'
+import Base from '~/components/base/Base'
 import List from '~/components/base/List'
-import Link from '~/components/base/Link'
-import Logo, { LogoHeading } from '~/components/base/Logo'
+import Logo from '~/components/sections/brand/Logo'
 import ThemeSwitch from '~/components/sections/theme/ThemeSwitch'
 import MenuTrigger from '~/components/sections/menu/MenuTrigger'
 
@@ -11,15 +10,10 @@ const component = () => {
   const { width } = useWindowResize()
 
   return (
-    <Element
+    <Base
       block
       beforeContentDirection="rows"
-      beforeContent={
-        <Link href="/" contentDirection="rows">
-          <Logo />
-          <LogoHeading />
-        </Link>
-      }
+      beforeContent={Logo}
       afterContent={
         <>
           <List contentDirection="inline" gap="xLarge">

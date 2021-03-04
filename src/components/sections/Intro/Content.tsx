@@ -1,8 +1,8 @@
-import { Provider } from '@vitus-labs/rocketstyle'
+import { Provider } from '~/theme'
 import Heading from '~/components/base/Heading'
 import Link from '~/components/base/Link'
 import text from '~/components/base/Text'
-import SocialIcons from '~/components/sections/socials/SocialIcons'
+import ContactIconList from '~/components/sections/contacts/ContactIconList'
 
 const Text = text.theme((t) => ({
   maxWidth: { sm: '80%', lg: '60%' },
@@ -20,7 +20,7 @@ const component = () => (
       </Link>{' '}
       personality, analytical mind and passion for discovering the undiscovered.
     </Text>
-    <SocialIcons />
+    <ContactIconList />
   </Provider>
 )
 

@@ -1,9 +1,9 @@
 import { VFC } from 'react'
-import { Container } from '~/components/base/grid'
+import { element } from '~/components/core'
 import section from '~/components/base/Section'
-import image from '~/components/base/Image'
-import element from '~/components/base/Element'
+import { Container } from '~/components/base/grid'
 import Background from '~/components/base/Background'
+import ProfileImage from './ProfileImage'
 import Header from './Header'
 import Content from './Content'
 import Footer from './Footer'
@@ -23,33 +23,11 @@ const Section = section.theme({
     )`,
 })
 
-const ProfileImageWrapper = element.theme({
-  position: 'absolute',
-  right: { xs: -350, sm: -260, lg: -100, xxl: 'initial' },
-  bottom: { xs: -70, md: 0 },
-  height: { xs: 460, md: 500 },
-  left: { xxl: '55%' },
-})
-
-const ProfileImage = image
-  .attrs({
-    src: require(`~/assets/images/vit-profile.png`),
-  })
-  .theme({
-    width: 'auto',
-    height: '100%',
-  })
-
-type Props = {
-  fullScreen?: boolean
-}
-
-const component: VFC<Props> = ({ fullScreen }) => (
+const component: VFC = () => (
   <Section>
-    <ProfileImageWrapper>
-      <ProfileImage />
-    </ProfileImageWrapper>
+    <ProfileImage />
     <Background overlay />
+
     <Container
       css={`
         height: 100%;

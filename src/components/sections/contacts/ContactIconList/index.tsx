@@ -1,12 +1,8 @@
-import { FC } from 'react'
-import { IStore, useStore, observer } from '~/store'
+import { VFC } from 'react'
+import { useStore, observer } from '~/store'
 import IconList from '~/components/base/IconList'
 
-type Props = {
-  store?: IStore
-}
-
-const component: FC<Props> = () => {
+const component: VFC = () => {
   const store = useStore('')
 
   const socials = store.socials

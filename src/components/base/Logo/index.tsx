@@ -1,7 +1,6 @@
-import element from '~/components/base/Element'
-import Text from '../Text'
+import { element } from '~/components/core'
 
-const Logo = element
+export default element
   .config({ name: 'base/Logo' })
   .attrs({
     contentAlignX: 'left',
@@ -26,18 +25,3 @@ const Logo = element
       }
     `
   )
-
-const LogoHeading = Text.attrs({
-  label: 'Frontend Engineer | Architect | Innovator',
-}).theme((t, m) => ({
-  color: m(t.color.light[100], t.color.dark[100]),
-  opacity: 0.6,
-  textTransform: 'uppercase',
-  fontSize: { xs: 10, sm: 12, lg: 18 },
-  marginTop: { xs: 2, sm: 4, lg: 8 },
-  fontWeight: 500,
-}))
-
-export { LogoHeading }
-
-export default Logo

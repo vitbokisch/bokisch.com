@@ -4,6 +4,7 @@ import symbol from '../Symbol'
 const Symbol = symbol.config({
   consumer: (ctx) =>
     ctx<TabType>(({ state, pseudo }) => ({
+      // TODO: fix types here
       // @ts-ignore
       state,
       pseudo,
@@ -20,8 +21,14 @@ const Tab = link
     gap: 16,
     beforeContent: <Symbol primary />,
   })
-  .theme({
+  .theme((t) => ({
     fontWeight: 500,
+    fontSize: t.fontSize.base,
+  }))
+  .states({
+    transparent: null,
+    light: null,
+    dark: null,
   })
 
 export default Tab

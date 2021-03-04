@@ -1,15 +1,15 @@
-import Root from '~/components/base/skeleton/Root'
+import Layout from '~/components/layouts/Base'
+import Footer from '~/components/layouts/Footer'
 import Intro from '~/components/sections/Intro'
-import Quote from '~/components/sections/Quote'
-import Personality from '~/components/sections/Personality'
-import Knowledge from '~/components/sections/Knowledge'
-import Technologies from '~/components/sections/Technologies'
-import WorkExperience from '~/components/sections/WorkExperience'
-import Education from '~/components/sections/Education'
-import CertificatesHobbies from '~/components/sections/CertificatesHobbies'
-import Footer from '~/components/sections/Footer'
+import Quote from '~/components/sections/resume/Quote'
+import Personality from '~/components/sections/resume/Personality'
+import Knowledge from '~/components/sections/resume/Knowledge'
+import Technologies from '~/components/sections/resume/Technologies'
+import WorkExperience from '~/components/sections/resume/WorkExperience'
+import Education from '~/components/sections/resume/Education'
+import CertificatesHobbies from '~/components/sections/resume/CertificatesHobbies'
+import CareerTimeline from '~/components/sections/resume/CareerTimeline'
 import MainMenu from '~/components/sections/menu/MainMenu'
-import CareerTimeline from '~/components/sections/CareerTimeline'
 
 const data = [
   { label: 'About Me', href: '#about-me' },
@@ -22,7 +22,7 @@ const data = [
 ]
 
 const component = () => (
-  <Root>
+  <Layout>
     <Intro />
     <Quote />
     <Personality />
@@ -34,7 +34,7 @@ const component = () => (
     <CareerTimeline />
     <Footer />
     <MainMenu menu={data} />
-  </Root>
+  </Layout>
 )
 
 component.displayName = 'components/pages/Resume'

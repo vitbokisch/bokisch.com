@@ -1,7 +1,7 @@
-import Root from '~/components/base/skeleton/Root'
+import Layout from '~/components/layouts/Base'
 import background from '~/components/base/Background'
-import MainMenu from '~/components/sections/menu/MainMenu'
 import Intro from '~/components/sections/Intro'
+import MainMenu from '~/components/sections/menu/MainMenu'
 
 const Background = background.theme({
   minHeight: '100vh',
@@ -19,12 +19,12 @@ const data = [
 ]
 
 const component = () => (
-  <Root>
+  <Layout>
     <Background>
       <Intro />
       <MainMenu menu={data} />
     </Background>
-  </Root>
+  </Layout>
 )
 
 component.displayName = 'components/pages/Home'

@@ -1,12 +1,12 @@
 import { FC } from 'react'
-import { Provider } from '@vitus-labs/rocketstyle'
+import { Provider } from '~/theme'
 import { useStore, observer } from '~/store'
 import { Container, Row, Col } from '~/components/base/grid'
 import section from '~/components/base/Section'
 import LinkList from '~/components/base/LinkList'
-import SocialList from '~/components/sections/socials/SocialList'
+import ContactList from '~/components/sections/contacts/ContactList'
 import Background from './Background'
-import Header from './HeaderA'
+import Header from './Header'
 
 const Section = section
   .attrs({
@@ -18,6 +18,7 @@ const Section = section
     width: '100%',
     height: '100vh',
     overflowY: 'scroll',
+    overflowX: 'hidden',
   })
 
 type Props = {
@@ -50,7 +51,7 @@ const component: FC<Props> = ({ menu }) => {
           </Col>
           <Col size={{ xs: 0, sm: 2 }} />
           <Col size={{ xs: 1, sm: 2 }}>
-            <SocialList itemProps={{ light: true }} />
+            <ContactList itemProps={{ light: true }} />
           </Col>
         </Row>
       </Container>

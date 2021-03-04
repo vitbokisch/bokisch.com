@@ -1,3 +1,4 @@
+import Base from './Base'
 import Background from './Background'
 import Badge from './Badge'
 import BadgeList from './BadgeList'
@@ -6,7 +7,6 @@ import BoxList from './BoxList'
 import Button from './Button'
 import Card from './Card'
 import CardList from './CardList'
-import Element from './Element'
 import * as Grid from './grid'
 import Heading from './Heading'
 import Icon from './Icon'
@@ -34,6 +34,7 @@ import Text from './Text'
 import Timeline from './Timeline'
 
 export {
+  Base,
   Background,
   Badge,
   BadgeList,
@@ -42,7 +43,6 @@ export {
   Button,
   Card,
   CardList,
-  Element,
   Grid,
   Heading,
   Icon,

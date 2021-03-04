@@ -6,7 +6,8 @@ import type { Theme } from '~/theme'
 type ComponentTheme = Parameters<typeof styles>[0]['theme']
 type ComponentThemeDefinition = ComponentTheme
 
-const listStyles = ({ theme: t, css, rootSize }: any) => css`
+type ListStyles = Parameters<typeof makeItResponsive>[0]['styles']
+const listStyles: ListStyles = ({ theme: t, css, rootSize }) => css`
   ${t.gap && `margin: ${value(rootSize, [t.gap / 2])} !important;`};
   ${t.indent && `padding: ${value(rootSize, [t.indent / 2])} !important;`};
 `
@@ -100,7 +101,6 @@ export default rocketstyle<
             {
               ...restStyles,
             } || {},
-          //@ts-ignore
           styles,
           css,
         })

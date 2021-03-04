@@ -7,7 +7,8 @@ import Button from '~/components/base/Button'
 import IconLogoList from '~/components/base/IconLogoList'
 import data from './data'
 
-const normalizeData = (data: Array<any>) =>
+type Data = typeof data
+const normalizeData = (data: Data) =>
   data.reduce((acc, item, i) => {
     acc.push(item)
 
@@ -16,7 +17,7 @@ const normalizeData = (data: Array<any>) =>
     }
 
     return acc
-  }, [])
+  }, [] as Array<Record<string, unknown>>)
 
 const component: VFC = () => (
   <Background primary>

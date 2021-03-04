@@ -21,7 +21,7 @@ const component: VFC = () => (
         to make the right choice easier.
       </Header>
 
-      <Container width={({ lg, xl, xxl }: any) => ({ xs: '90%', lg, xl, xxl })}>
+      <Container width={({ lg, xl, xxl }) => ({ xs: '90%', lg, xl, xxl })}>
         <Tabs />
         <Badges />
       </Container>
@@ -41,7 +41,7 @@ const component: VFC = () => (
           </Col>
         </Row>
       </Container>
-      <Button label="Give me a new challenge" />
+      <Button primary label="Give me a new challenge" />
     </Section>
   </Background>
 )

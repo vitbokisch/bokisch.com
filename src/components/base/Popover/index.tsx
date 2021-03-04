@@ -1,7 +1,6 @@
 import { VFC } from 'react'
 import { ExtractProps } from '~/types'
-import { element } from '~/components/core'
-import Overlay from '~/components/core/Overlay'
+import { element, Overlay } from '~/components/core'
 import Text from '../Text'
 
 const Arrow = element

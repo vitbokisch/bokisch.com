@@ -33,13 +33,17 @@ const component: VFC<Props> = ({
 }) => (
   <Box medium tag="article">
     <Header contentDirection="inline" contentAlignX="spaceBetween">
-      <Heading level5>{company}</Heading>
+      <Heading tag="span" level5>
+        {company}
+      </Heading>
       <Text small neutral>
         {date}
       </Text>
     </Header>
     <Subheader contentAlignX="left">
-      <Heading level4>{position}</Heading>
+      <Heading tag="h1" level4>
+        {position}
+      </Heading>
     </Subheader>
     <Body>
       <List

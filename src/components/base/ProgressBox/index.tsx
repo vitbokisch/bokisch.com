@@ -33,8 +33,8 @@ const transformData = (data: Props['data']) =>
   }))
 
 const component = ({ title, data, state }: Props) => (
-  <Box>
-    <Heading level4 label={title} />
+  <Box tag="article">
+    <Heading tag="h1" level4 label={title} />
     <ProgressList
       data={transformData(data)}
       itemProps={{ state }}

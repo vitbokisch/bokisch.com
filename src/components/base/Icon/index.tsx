@@ -1,15 +1,12 @@
 import { link } from '~/components/core'
+import loadIcon from './loadIcon'
 
 export default link
   .config({ name: 'base/Icon' })
-  .attrs<{ name: string }>(({ name }) => ({
+  .compose({ loadIcon })
+  .attrs<{ name: string; label?: string }>({
     block: true,
-    dangerouslySetInnerHTML: name
-      ? {
-          __html: require(`~/assets/icons/${name}.svg?include`),
-        }
-      : undefined,
-  }))
+  })
   .sizes({
     small: {
       size: { xs: 16, md: 20 },

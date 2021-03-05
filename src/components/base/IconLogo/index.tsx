@@ -1,8 +1,10 @@
 import { element } from '~/components/core'
 import image from '~/components/base/Image'
+import loadIconLogo from './loadIconLogo'
 
 const Image = image
-  .attrs<{ name: string }>(({ name }) => ({
+  .compose({ loadIconLogo })
+  .attrs<{ name?: string }>(({ name }) => ({
     src: name ? `logo-${name}.png` : undefined,
   }))
   .theme({
@@ -14,10 +16,10 @@ const Image = image
 
 export default element
   .config({ name: 'base/IconLogo' })
-  .attrs<{ name: string }>(({ name = 'strv' }) => ({
+  .attrs<{ name: string }>(({ name }) => ({
     contentAlignX: 'center',
     contentAlignY: 'center',
-    content: <Image name={name} responsive />,
+    content: name ? <Image name={name} responsive /> : undefined,
   }))
   .theme((t, m) => ({
     backgroundColor: m(t.color.light.base, t.color.dark.base),

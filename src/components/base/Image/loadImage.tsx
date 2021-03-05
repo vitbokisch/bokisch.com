@@ -3,47 +3,29 @@ import { useEffect, useState } from 'react'
 
 type Props = { src?: string; alt?: string }
 
-const getSource = (src, placeholder) => {
+const getSource = (src) => {
   if (!src) return undefined
-
-  if (placeholder) return require(`~/assets/images/${src}?webp&trace`)
 
   return require(`~/assets/images/${src}?webp`)
 }
 
 const component = (WrappedComponent) => {
-  const Enhanced = ({ src, placeholder = true, ...props }) => {
-    const [isLoaded, setLoaded] = useState(false)
+  const Enhanced = ({ src, ...props }) => {
     const [sizes, setSizes] = useState({})
-    const [source, setSource] = useState(getSource(src, placeholder))
 
-    const previewSource = placeholder ? source.trace : undefined
-    const finalSource = placeholder ? source.src : source
+    if (!src) return null
 
-    if (!source) return null
-
-    useEffect(() => {
-      setLoaded(false)
-      setSource(getSource(src, placeholder))
-    }, [src, placeholder])
+    const source = getSource(src)
 
     useEffect(() => {
       const originalImage = new Image()
-      originalImage.src = finalSource
+      originalImage.src = source
       originalImage.onload = () => {
         setSizes({ width: originalImage.width, height: originalImage.height })
-        setLoaded(true)
       }
-    }, [previewSource, finalSource])
+    }, [src])
 
-    return (
-      <WrappedComponent
-        src={isLoaded ? finalSource : previewSource}
-        style={isLoaded ? {} : { filter: 'blur(10px)', opacity: 0.5 }}
-        {...sizes}
-        {...props}
-      />
-    )
+    return <WrappedComponent src={source} {...sizes} {...props} />
   }
 
   return Enhanced

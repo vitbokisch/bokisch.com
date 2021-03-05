@@ -11,7 +11,7 @@ const component = (WrappedComponent) => {
             }
           : undefined
       }
-      aria-labelledby={label || name}
+      aria-label={label || name}
       {...props}
     />
   )

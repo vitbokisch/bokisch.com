@@ -4,9 +4,7 @@ import loadIconLogo from './loadIconLogo'
 
 const Image = image
   .compose({ loadIconLogo })
-  .attrs<{ name?: string }>(({ name }) => ({
-    src: name ? `logo-${name}.png` : undefined,
-  }))
+  .attrs<{ name?: string }>({})
   .theme({
     maxHeight: {
       xs: 30,

@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react'
 
 type Props = { src?: string; alt?: string }
 
-const getSource = (src) => {
-  if (!src) return undefined
+// const getSource = (src) => {
+//   if (!src) return undefined
 
-  return require(`~/assets/images/${src}?webp`)
-}
+//   return require(`~/assets/images/${src}?webp`)
+// }
 
 const component = (WrappedComponent) => {
   const Enhanced = ({ src, ...props }) => {
@@ -15,17 +15,15 @@ const component = (WrappedComponent) => {
 
     if (!src) return null
 
-    const source = getSource(src)
-
     useEffect(() => {
       const originalImage = new Image()
-      originalImage.src = source
+      originalImage.src = src
       originalImage.onload = () => {
         setSizes({ width: originalImage.width, height: originalImage.height })
       }
     }, [src])
 
-    return <WrappedComponent src={source} {...sizes} {...props} />
+    return <WrappedComponent src={src} {...sizes} {...props} />
   }
 
   return Enhanced

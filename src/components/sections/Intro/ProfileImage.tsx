@@ -12,7 +12,7 @@ const ProfileImageWrapper = element.theme({
 
 const ProfileImage = image
   .attrs({
-    src: 'vit-profile.png',
+    src: require(`~/assets/images/vit-profile.png?webp`),
   })
   .theme({
     width: 'auto',

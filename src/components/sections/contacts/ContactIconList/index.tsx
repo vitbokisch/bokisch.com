@@ -13,7 +13,7 @@ const component: VFC = () => {
       'twitter',
       'stackoverflow',
     ])
-    .map((item) => ({ name: item.type, href: item.link }))
+    .map((item) => ({ name: item.type, href: item.link, label: item.label }))
 
   return (
     <IconList

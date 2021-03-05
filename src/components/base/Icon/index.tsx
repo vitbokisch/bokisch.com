@@ -4,7 +4,7 @@ import loadIcon from './loadIcon'
 export default link
   .config({ name: 'base/Icon' })
   .compose({ loadIcon })
-  .attrs<{ name: string; label?: string }>({
+  .attrs<{ name: string }>({
     block: true,
   })
   .sizes({

@@ -12,7 +12,7 @@ const getSource = (src, placeholder) => {
 }
 
 const component = (WrappedComponent) => {
-  const Enhanced = ({ src, placeholder = true, alt = '', ...props }) => {
+  const Enhanced = ({ src, placeholder = true, ...props }) => {
     const [isLoaded, setLoaded] = useState(false)
     const [sizes, setSizes] = useState({})
     const [source, setSource] = useState(getSource(src, placeholder))
@@ -40,7 +40,6 @@ const component = (WrappedComponent) => {
       <WrappedComponent
         src={isLoaded ? finalSource : previewSource}
         style={isLoaded ? {} : { filter: 'blur(10px)', opacity: 0.5 }}
-        alt={alt}
         {...sizes}
         {...props}
       />

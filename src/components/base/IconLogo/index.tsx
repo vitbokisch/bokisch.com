@@ -3,7 +3,7 @@ import image from '~/components/base/Image'
 
 const Image = image
   .attrs<{ name: string }>(({ name }) => ({
-    src: name ? require(`~/assets/images/logo-${name}.png`) : undefined,
+    src: name ? `logo-${name}.png` : undefined,
   }))
   .theme({
     maxHeight: {

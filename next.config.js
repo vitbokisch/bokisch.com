@@ -5,31 +5,16 @@ const PLUGINS = [
   [
     optimizedImages,
     {
+      optimizeInDev: true,
       svgo: {
-        plugins: [{ removeViewBox: false }],
+        plugins: [{ name: 'removeViewBox', active: false }],
       },
     },
   ],
 ]
 
-// if (CONFIG.pwa) {
-//   const withPWA = require('next-pwa')
-//   const runtimeCaching = require('next-pwa/cache')
-
-//   PLUGINS.push([
-//     withPWA,
-//     {
-//       dest: 'public',
-//       runtimeCaching,
-//     },
-//   ])
-// }
-
 module.exports = withPlugins(PLUGINS, {
   dir: 'src',
   poweredByHeader: false,
-  experimental: {
-    optimizeFonts: true,
-  },
   // reactStrictMode: true,
 })

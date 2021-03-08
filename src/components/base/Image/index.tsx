@@ -1,6 +1,6 @@
 import { VFC } from 'react'
 import { element } from '~/components/core'
-import loadImage from './loadImage'
+import withPlaceholder from './withPlaceholder'
 
 type Props = { src?: string; alt?: string }
 
@@ -10,7 +10,7 @@ const component: VFC<Props> = ({ src, alt = '', ...props }) => (
 
 export default element
   .config({ name: 'base/Image', component })
-  .compose({ loadImage })
+  .compose({ withPlaceholder })
   .attrs<{ placeholder?: boolean }>({})
   .variants({
     responsive: {

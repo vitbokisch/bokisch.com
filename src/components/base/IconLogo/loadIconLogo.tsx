@@ -2,11 +2,7 @@
 
 const component = (WrappedComponent) => {
   const Enhanced = ({ name, ...props }) => {
-    const nameSource = name
-      ? require(`~/assets/images/logo-${name}.png?url`)
-      : undefined
-
-    return <WrappedComponent alt={name} {...props} src={nameSource} />
+    return <WrappedComponent alt={name} {...props} src={`logo-${name}.png`} />
   }
 
   return Enhanced

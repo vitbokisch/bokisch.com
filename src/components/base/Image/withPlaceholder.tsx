@@ -6,9 +6,25 @@ type Props = { src?: string; alt?: string }
 const getSource = (src, placeholder) => {
   if (!src) return undefined
 
-  if (placeholder) return require(`~/assets/images/${src}&trace`)
+  if (src.startsWith('data:'))
+    return {
+      placeholder: null,
+      original: src,
+    }
 
-  return require(`~/assets/images/${src}?webp`)
+  const optimizedImage = require(`~/assets/images/${src}?webp`)
+
+  if (placeholder) {
+    return {
+      placeholder: require(`~/assets/images/${src}?trace`).trace,
+      original: optimizedImage,
+    }
+  }
+
+  return {
+    placeholder: null,
+    original: optimizedImage,
+  }
 }
 
 const component = (WrappedComponent) => {
@@ -17,28 +33,27 @@ const component = (WrappedComponent) => {
     const [sizes, setSizes] = useState({})
     const [source, setSource] = useState(getSource(src, placeholder))
 
-    const previewSource = placeholder ? source.trace : undefined
-    const finalSource = placeholder ? source.src : source
-
-    if (!source) return null
+    if (!src) return null
 
     useEffect(() => {
       setLoaded(false)
       setSource(getSource(src, placeholder))
     }, [src, placeholder])
 
+    console.log(source)
+
     useEffect(() => {
       const originalImage = new Image()
-      originalImage.src = finalSource
+      originalImage.src = source.original
       originalImage.onload = () => {
         setSizes({ width: originalImage.width, height: originalImage.height })
         setLoaded(true)
       }
-    }, [previewSource, finalSource])
+    }, [source.original, source.placeholder])
 
     return (
       <WrappedComponent
-        src={isLoaded ? finalSource : previewSource}
+        src={isLoaded ? source.original : source.placeholder}
         style={isLoaded ? {} : { filter: 'blur(10px)', opacity: 0.5 }}
         {...sizes}
         {...props}

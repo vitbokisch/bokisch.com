@@ -40,8 +40,6 @@ const component = (WrappedComponent) => {
       setSource(getSource(src, placeholder))
     }, [src, placeholder])
 
-    console.log(source)
-
     useEffect(() => {
       const originalImage = new Image()
       originalImage.src = source.original

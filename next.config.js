@@ -6,7 +6,14 @@ const runtimeCaching = require('next-pwa/cache')
 const PLUGINS = [
   [
     withPWA,
-    { pwa: { dest: 'public', sw: 'service-worker.js', runtimeCaching } },
+    {
+      pwa: {
+        disable: process.env.NODE_ENV === 'development',
+        dest: 'public',
+        sw: 'service-worker.js',
+        runtimeCaching,
+      },
+    },
   ],
   [
     optimizedImages,

@@ -1,4 +1,4 @@
-import text from '~/components/core/text'
+import { text } from '~/components/core'
 
 type GetTag = (props: Record<string, unknown>) => string
 const getTag: GetTag = ({ level1, level2, level3, level4, level5 }) => {

@@ -5,7 +5,7 @@ import ProgressLine from './ProgressLine'
 
 const Point = point.config({
   consumer: (ctx) =>
-    ctx<typeof Progress>(({ state }) => {
+    ctx<TProgress>(({ state }) => {
       return { state }
     }),
 })
@@ -13,13 +13,14 @@ const Point = point.config({
 const ProgressLineStatus = ProgressLine.config({
   name: 'base/Progress/ProgressLine',
   consumer: (ctx) =>
-    ctx<typeof Progress>(({ state, size }) => {
+    ctx<TProgress>(({ state, size }) => {
       return { state, size }
     }),
 }).attrs({
   content: Point,
 })
 
+type TProgress = typeof Progress
 const Progress = element
   .config({ name: 'base/Progress', provider: true })
   .attrs(({ label }, t) => ({

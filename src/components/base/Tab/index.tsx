@@ -4,8 +4,6 @@ import symbol from '../Symbol'
 const Symbol = symbol.config({
   consumer: (ctx) =>
     ctx<TabType>(({ state, pseudo }) => ({
-      // TODO: fix types here
-      // @ts-ignore
       state,
       pseudo,
     })),

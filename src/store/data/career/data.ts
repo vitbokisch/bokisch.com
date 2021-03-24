@@ -38,7 +38,7 @@ export default [
   },
   {
     company: 'Samba.ai',
-    date: 'Jan 2019 - Jun 2019',
+    date: 'Feb 2018 - Sep 2018',
     position: '(Lead) Frontend Engineer',
     responsibilities: [
       'Interviews with candidates',
@@ -76,7 +76,7 @@ export default [
   },
   {
     company: 'Spendee',
-    date: 'Dec 2017 - Aug 2019',
+    date: 'Dec 2016 - Aug 2017',
     position: '(Lead) Frontend Engineer',
     responsibilities: [
       'Interviews with candidates',

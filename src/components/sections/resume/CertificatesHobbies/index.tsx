@@ -15,8 +15,8 @@ const component: VFC = () => (
   <Background primary>
     <Section id="certificates-and-hobbies">
       <Header title="Certificates & Hobbies">
-        Having a broad knowledge from several fields is important to understand.
-        Having a broad knowledge important to understand from several is.
+        Having hobbies and side projects is for me as important as having solid
+        expertise in the professional field.
       </Header>
 
       <Container

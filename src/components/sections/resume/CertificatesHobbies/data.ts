@@ -13,8 +13,8 @@ export default [
     icon: 'hobby',
     data: [
       'Music lover (especially EDM music)',
-      'Sports (Fitness, Futnet, Greco-Roman wrestling)',
-      'Travelling, Nature, Cooking & Reading books',
+      'Sports (Fitness, Futnet, Greco-Roman wrestling or anything else)',
+      'Travelling, Nature, Cooking & Reading',
     ],
   },
   {

@@ -30,7 +30,7 @@ const component: VFC = () => (
           <Col size={{ xs: 12, md: 8 }}>
             <Text base paragraph centered>
               …and many more. Check out my{' '}
-              <Link href="https://github.com/vitbokisch?tab=stars">
+              <Link primary href="https://github.com/vitbokisch?tab=stars">
                 Github stars
               </Link>{' '}
               to see what interesting stuff has caught my attention.

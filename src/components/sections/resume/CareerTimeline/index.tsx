@@ -11,9 +11,8 @@ const component: VFC = () => {
     <Background gradient>
       <Section id="career-timeline">
         <Header title="Career Timeline">
-          Having a broaad knowledge from several fields is important to
-          understand. Having a broad knowledge important to understand from
-          several is.
+          I have experience from different fields, international companies,
+          positions, company cultures, and ways of working in teams
         </Header>
         <Timeline data={store.career?.data as any} />
       </Section>

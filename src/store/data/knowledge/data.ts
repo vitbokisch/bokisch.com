@@ -5,7 +5,7 @@ export default [
     data: [
       {
         label: 'Leadership',
-        level: 5,
+        level: 7,
       },
       {
         label: 'Teamwork',

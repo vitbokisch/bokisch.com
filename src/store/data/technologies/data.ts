@@ -215,4 +215,14 @@ export default [
     level: 3,
     link: 'https://mobx.js.org/README.html',
   },
+  {
+    title: 'Gatsby',
+    level: 3,
+    link: 'https://www.gatsbyjs.com/',
+  },
+  {
+    title: 'Markdown',
+    level: 2,
+    link: 'https://www.markdownguide.org/',
+  },
 ]

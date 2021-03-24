@@ -1,7 +1,7 @@
 export default [
   {
-    username: 'vit@bokisch.com',
-    link: 'mailto:vit@bokisch.com',
+    username: 'vit@bokisch.cz',
+    link: 'mailto:vit@bokisch.cz',
     type: 'email',
     label: 'E-mail address',
   },
@@ -41,5 +41,5 @@ export default [
     type: 'stackoverflow',
     label: 'Stack Overflow',
   },
-  { username: 'vitbokisch', link: '', type: 'skype', label: 'Skype' },
+  // { username: 'vitbokisch', link: '', type: 'skype', label: 'Skype' },
 ]

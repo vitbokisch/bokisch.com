@@ -1,6 +1,8 @@
 import { text } from '~/components/core'
 
-type GetTag = (props: Record<string, unknown>) => string
+type GetTag = (
+  props: Record<string, unknown>
+) => 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
 const getTag: GetTag = ({ level1, level2, level3, level4, level5 }) => {
   if (level1) return 'h1'
   if (level2) return 'h2'

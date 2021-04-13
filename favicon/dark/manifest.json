@@ -1,13 +1,12 @@
 {
   "name": "Vit Bokisch",
   "short_name": "Vit Bokisch",
-  "description": "My personal space",
+  "description": "My personal website",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
   "orientation": "any",
-  "scope": "/",
-  "start_url": "/?homescreen=1",
+  "start_url": "/",
   "background_color": "#fff",
   "theme_color": "#fff",
   "icons": [

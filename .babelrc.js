@@ -2,12 +2,13 @@ module.exports = {
   presets: ['next/babel'],
   plugins: [
     [
-      'styled-components',
+      'babel-plugin-styled-components',
       {
-        displayName: true,
-        minify: true,
-        pure: true,
         ssr: true,
+        minify: true,
+        transpileTemplateLiterals: true,
+        pure: true,
+        displayName: true,
         preprocess: false,
       },
     ],

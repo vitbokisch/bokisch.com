@@ -8,8 +8,8 @@ type ComponentThemeDefinition = ComponentTheme
 
 type ListStyles = Parameters<typeof makeItResponsive>[0]['styles']
 const listStyles: ListStyles = ({ theme: t, css, rootSize }) => css`
-  ${t.gap && `margin: ${value(rootSize, [t.gap / 2])} !important;`};
-  ${t.indent && `padding: ${value(rootSize, [t.indent / 2])} !important;`};
+  ${t.gap && `margin: ${value([t.gap / 2], rootSize)} !important;`};
+  ${t.indent && `padding: ${value([t.indent / 2], rootSize)} !important;`};
 `
 
 export default rocketstyle<

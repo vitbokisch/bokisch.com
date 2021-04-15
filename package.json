@@ -19,11 +19,11 @@
     "make:favicon": "node scripts/favicon"
   },
   "dependencies": {
-    "@vitus-labs/coolgrid": "^0.13.4",
-    "@vitus-labs/core": "^0.13.4",
-    "@vitus-labs/elements": "^0.13.4",
-    "@vitus-labs/rocketstyle": "^0.13.4",
-    "@vitus-labs/unistyle": "^0.13.4",
+    "@vitus-labs/coolgrid": "^0.14.0",
+    "@vitus-labs/core": "^0.14.0",
+    "@vitus-labs/elements": "^0.14.0",
+    "@vitus-labs/rocketstyle": "^0.14.0",
+    "@vitus-labs/unistyle": "^0.14.0",
     "mobx": "^6.2.0",
     "mobx-react": "^7.1.0",
     "mobx-state-tree": "^5.0.1",
@@ -33,12 +33,12 @@
     "styled-components": "^5.2.3"
   },
   "devDependencies": {
-    "@types/node": "^14.14.37",
+    "@types/node": "^14.14.39",
     "@types/react": "^17.0.0",
     "@types/styled-components": "^5.1.7",
-    "@vitus-labs/tools-babel": "^0.8.1",
-    "@vitus-labs/tools-lint": "^0.8.1",
-    "@vitus-labs/tools-typescript": "^0.8.1",
+    "@vitus-labs/tools-babel": "^0.9.1",
+    "@vitus-labs/tools-lint": "^0.9.1",
+    "@vitus-labs/tools-typescript": "^0.9.1",
     "favicons": "^6.2.1",
     "image-trace-loader": "^1.0.2",
     "imagemin-mozjpeg": "^9.0.0",

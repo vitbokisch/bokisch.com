@@ -12,7 +12,7 @@ export default [
   },
   {
     company: 'Cinnamon',
-    date: 'Dec 2019 - Aug 2021',
+    date: 'Dec 2019 - Aug 2020',
     position: 'Frontend Engineer',
     responsibilities: [
       'Designing a complete monorepo structure + documentation, including configuration ESLint, Typescript, Rollup.js, Storybook,...',

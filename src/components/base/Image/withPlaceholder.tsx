@@ -23,7 +23,7 @@ const getSource = (src, placeholder) => {
 
   return {
     placeholder: null,
-    original: optimizedImage,
+    original: optimizedImage.default,
   }
 }
 

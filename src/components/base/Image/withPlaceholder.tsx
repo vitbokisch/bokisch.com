@@ -1,9 +1,14 @@
 // @ts-nocheck
-import { useEffect, useState } from 'react'
+import { useEffect, useState, ComponentType } from 'react'
 
-type Props = { src?: string; alt?: string }
+type Props = { src?: string; placeholder?: string; alt?: string }
 
-const getSource = (src, placeholder) => {
+type GetSource = (
+  src: string,
+  placeholder: string
+) => { placeholder: any; original: string } | undefined
+
+const getSource: GetSource = (src, placeholder) => {
   if (!src) return undefined
 
   if (src.startsWith('data:'))
@@ -23,11 +28,13 @@ const getSource = (src, placeholder) => {
 
   return {
     placeholder: null,
-    original: optimizedImage.default,
+    original: optimizedImage,
   }
 }
 
-const component = (WrappedComponent) => {
+type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
+
+const component: HOC = (WrappedComponent) => {
   const Enhanced = ({ src, placeholder, ...props }) => {
     const [isLoaded, setLoaded] = useState(false)
     const [sizes, setSizes] = useState({})

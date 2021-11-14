@@ -1,1 +1,1 @@
-module.exports = require('@vitus-labs/tools-lint').stylelint
+module.exports = require('@vitus-labs/tools-lint').styles

@@ -52,13 +52,11 @@ const Point = symbol
     consumer: (ctx) => ctx<typeof Wrapper>(({ variant }) => ({ variant })),
   })
 
-const component: FC = ({ children, ...props }) => {
-  return (
-    <Wrapper {...props}>
-      <Point large primary />
-      {children}
-    </Wrapper>
-  )
-}
+const component: FC = ({ children, ...props }) => (
+  <Wrapper {...props}>
+    <Point large primary />
+    {children}
+  </Wrapper>
+)
 
 export default component

@@ -1,11 +1,18 @@
-// @ts-nocheck
+/* eslint-disable global-require */
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { useEffect, useState, ComponentType } from 'react'
 
-type Props = { src?: string; placeholder?: string; alt?: string }
+type Props = {
+  src: string
+  placeholder?: string
+  alt?: string
+  style?: Record<string, unknown>
+}
 
 type GetSource = (
   src: string,
-  placeholder: string
+  placeholder?: string
 ) => { placeholder: any; original: string } | undefined
 
 const getSource: GetSource = (src, placeholder) => {
@@ -34,8 +41,9 @@ const getSource: GetSource = (src, placeholder) => {
 
 type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
 
-const component: HOC = (WrappedComponent) => {
-  const Enhanced = ({ src, placeholder, ...props }) => {
+const component: HOC =
+  (WrappedComponent) =>
+  ({ src, placeholder, ...props }) => {
     const [isLoaded, setLoaded] = useState(false)
     const [sizes, setSizes] = useState({})
     const [source, setSource] = useState(getSource(src, placeholder))
@@ -49,24 +57,23 @@ const component: HOC = (WrappedComponent) => {
 
     useEffect(() => {
       const originalImage = new Image()
-      originalImage.src = source.original
-      originalImage.onload = () => {
-        setSizes({ width: originalImage.width, height: originalImage.height })
-        setLoaded(true)
+      if (source) {
+        originalImage.src = source.original
+        originalImage.onload = () => {
+          setSizes({ width: originalImage.width, height: originalImage.height })
+          setLoaded(true)
+        }
       }
-    }, [source.original, source.placeholder])
+    }, [source?.original, source?.placeholder])
 
     return (
       <WrappedComponent
-        src={isLoaded ? source.original : source.placeholder}
+        src={isLoaded ? source?.original : source?.placeholder}
         style={isLoaded ? {} : { filter: 'blur(10px)', opacity: 0.5 }}
         {...sizes}
         {...props}
       />
     )
   }
-
-  return Enhanced
-}
 
 export default component

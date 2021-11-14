@@ -20,7 +20,7 @@ const component: VFC = () => (
       <Header title="Education">
         An abroad experience is something I am proud of. I have studied in
         Belgium and China. Different approaches, different cultures... what an
-        eye-opener. Bachelor's degree achieved.
+        eye-opener. Bachelor&apos;s degree achieved.
       </Header>
 
       <Container

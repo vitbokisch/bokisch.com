@@ -17,11 +17,9 @@ export default text
   .config({
     name: 'base/Heading',
   })
-  .attrs((props) => {
-    return {
-      tag: getTag(props),
-    }
-  })
+  .attrs((props) => ({
+    tag: getTag(props),
+  }))
   .theme((t, m) => ({
     color: m(t.color.dark.base, t.color.light.base),
     fontSize: t.fontSize.base,

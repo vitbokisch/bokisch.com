@@ -1,4 +1,4 @@
-import { FC, ComponentType } from 'react'
+import { ComponentType } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import routes from '~/config/routes'
@@ -12,17 +12,13 @@ type Props = Partial<{
   shallow: boolean
 }>
 
-const component = (
-  WrappedComponent: ComponentType<Partial<{ active: boolean; href: string }>>
-) => {
-  const Enhance: FC<Props> = ({
-    href,
-    prefetch = false,
-    replace,
-    scroll,
-    shallow,
-    ...props
-  }) => {
+type WrapProps = Partial<{ active: boolean; href: string }>
+
+type HOC = (WrappedComponent: ComponentType<WrapProps>) => ComponentType<Props>
+
+const component: HOC =
+  (WrappedComponent) =>
+  ({ href, prefetch = false, replace, scroll, shallow, ...props }) => {
     const { route } = useRouter()
 
     if (!href) return <WrappedComponent {...props} />
@@ -59,8 +55,5 @@ const component = (
       </Link>
     )
   }
-
-  return Enhance
-}
 
 export default component

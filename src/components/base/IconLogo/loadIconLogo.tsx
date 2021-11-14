@@ -1,11 +1,16 @@
-// @ts-nocheck
+import { ComponentType } from 'react'
 
-const component = (WrappedComponent) => {
-  const Enhanced = ({ name, ...props }) => {
-    return <WrappedComponent alt={name} {...props} src={`logo-${name}.png`} />
-  }
+export type Props = Partial<{
+  name: string
+  src: string
+  alt: string
+}>
 
-  return Enhanced
-}
+type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
+
+const component: HOC =
+  (WrappedComponent) =>
+  ({ name, src, ...props }) =>
+    <WrappedComponent alt={name} {...props} src={src || `logo-${name}.png`} />
 
 export default component

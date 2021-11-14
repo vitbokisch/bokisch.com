@@ -1,3 +1,4 @@
+import { VFC } from 'react'
 import { element } from '~/components/core'
 import heading from '../Heading'
 import ProgressList from '../ProgressList'
@@ -32,7 +33,7 @@ const transformData = (data: Props['data']) =>
     size: `level${item.level}`,
   }))
 
-const component = ({ title, data, state }: Props) => (
+const component: VFC<Props> = ({ title, data, state }) => (
   <Box tag="article">
     <Heading tag="h1" level4 label={title} />
     <ProgressList

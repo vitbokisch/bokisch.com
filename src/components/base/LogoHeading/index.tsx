@@ -1,7 +1,6 @@
 import Text from '../Text'
 
-export default Text.config({ name: 'base/LogoHeading' })
-.theme((t, m) => ({
+export default Text.config({ name: 'base/LogoHeading' }).theme((t, m) => ({
   color: m(t.color.light[100], t.color.dark[100]),
   opacity: 0.6,
   textTransform: 'uppercase',

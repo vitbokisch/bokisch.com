@@ -4,18 +4,12 @@ import point from './Point'
 import ProgressLine from './ProgressLine'
 
 const Point = point.config({
-  consumer: (ctx) =>
-    ctx<TProgress>(({ state }) => {
-      return { state }
-    }),
+  consumer: (ctx) => ctx<TProgress>(({ state }) => ({ state })),
 })
 
 const ProgressLineStatus = ProgressLine.config({
   name: 'base/Progress/ProgressLine',
-  consumer: (ctx) =>
-    ctx<TProgress>(({ state, size }) => {
-      return { state, size }
-    }),
+  consumer: (ctx) => ctx<TProgress>(({ state, size }) => ({ state, size })),
 }).attrs({
   content: Point,
 })

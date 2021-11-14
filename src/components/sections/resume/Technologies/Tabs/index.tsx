@@ -48,11 +48,11 @@ const component: VFC = () => {
         label="A little experience"
         onClick={() => store.technologies?.setFilter(3)}
       >
-        These technologies are the ones I have used just occasionally or didn't
-        have an opportunity to discover them more yet. They are something
-        promising{' '}
+        These technologies are the ones I have used just occasionally or
+        didn&apos;t have an opportunity to discover them more yet. They are
+        something promising{' '}
         <Text strong>
-          I'm willing to learn more and add to my professional dev stack
+          I&apos;m willing to learn more and add to my professional dev stack
         </Text>
         .
       </TabItem>

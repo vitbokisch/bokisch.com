@@ -1,10 +1,10 @@
 import { link } from '~/components/core'
-import loadIcon from './loadIcon'
+import loadIcon, { Props } from './loadIcon'
 
 export default link
   .config({ name: 'base/Icon' })
   .compose({ loadIcon })
-  .attrs<{ name: string }>({
+  .attrs<Props>({
     block: true,
   })
   .sizes({

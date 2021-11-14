@@ -20,7 +20,7 @@ const component: VFC = () => (
         <Row>
           <CardList rootElement={false} wrapComponent={Col}>
             <Card icon="personality" title="INTJ-A Personality">
-              I'm a person with{' '}
+              I&apos;m a person with{' '}
               <Link
                 primary
                 href="https://www.16personalities.com/profiles/2d5836f3f4526"

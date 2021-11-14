@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import { VFC, ReactNode } from 'react'
 import { element } from '~/components/core'
 import heading from '../Heading'
 import Text from '../Text'
@@ -34,16 +34,14 @@ type Props = {
   name?: string
 }
 
-const component: FC<Props> = ({ title, children, hidden, name }: Props) => {
-  return (
-    <Header hidden={hidden} name={name}>
-      <Heading centered level2 label={title} />
-      <Text large centered>
-        {children}
-      </Text>
-    </Header>
-  )
-}
+const component: VFC<Props> = ({ title, children, hidden, name }: Props) => (
+  <Header hidden={hidden} name={name}>
+    <Heading centered level2 label={title} />
+    <Text large centered>
+      {children}
+    </Text>
+  </Header>
+)
 
 component.displayName = 'fragments/section/Header'
 export default component

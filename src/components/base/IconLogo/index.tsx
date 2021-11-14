@@ -1,6 +1,6 @@
 import { element } from '~/components/core'
 import image from '~/components/base/Image'
-import loadIconLogo from './loadIconLogo'
+import loadIconLogo, { Props } from './loadIconLogo'
 
 const Image = image
   .compose({ loadIconLogo })
@@ -14,7 +14,7 @@ const Image = image
 
 export default element
   .config({ name: 'base/IconLogo' })
-  .attrs<{ name: string }>(({ name }) => ({
+  .attrs<Props>(({ name }) => ({
     contentAlignX: 'center',
     contentAlignY: 'center',
     content: name ? <Image name={name} responsive /> : undefined,

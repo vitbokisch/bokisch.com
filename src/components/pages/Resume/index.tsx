@@ -1,3 +1,4 @@
+import { VFC } from 'react'
 import Seo from '~/components/meta/Seo'
 import Layout from '~/components/layouts/Base'
 import Footer from '~/components/layouts/Footer'
@@ -22,7 +23,7 @@ const data = [
   { label: 'Career Timeline', href: '#career-timeline' },
 ]
 
-const component = () => (
+const component: VFC = () => (
   <>
     <Seo title="Resume" />
     <Layout>

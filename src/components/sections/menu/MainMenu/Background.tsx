@@ -1,3 +1,4 @@
+import { VFC } from 'react'
 import { useWindowResize } from '@vitus-labs/unistyle'
 import { element } from '~/components/core'
 
@@ -41,7 +42,7 @@ const BackgroundRight = element.theme({
   background: `linear-gradient(180deg, #303030 0%, #1b1b1b 100%)`,
 })
 
-const component = () => {
+const component: VFC = () => {
   const { width } = useWindowResize()
 
   if (width < 576) {

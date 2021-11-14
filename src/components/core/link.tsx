@@ -8,13 +8,13 @@ export default element
   .compose({
     withLink,
   })
-  .attrs<{ href?: string; onClick?: MouseEvent | (() => void) }>(
-    ({ href, onClick }) => {
-      return {
-        tag: href ? 'a' : onClick ? 'button' : 'span',
-      }
-    }
-  )
+  .attrs<{
+    href?: string
+    onClick?: MouseEvent | (() => void)
+  }>(({ href, onClick }) => ({
+    // eslint-disable-next-line no-nested-ternary
+    tag: href ? 'a' : onClick ? 'button' : 'span',
+  }))
   .theme((t, m) => ({
     transition: t.transition.base,
     border: 'none',

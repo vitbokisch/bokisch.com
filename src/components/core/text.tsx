@@ -1,5 +1,5 @@
-import element from './element'
 import { Text } from '@vitus-labs/elements'
+import element from './element'
 
 export default element
   .config({

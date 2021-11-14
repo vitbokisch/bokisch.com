@@ -1,3 +1,4 @@
+import { VFC } from 'react'
 import { Provider } from '~/theme'
 import Heading from '~/components/base/Heading'
 import Link from '~/components/base/Link'
@@ -10,11 +11,11 @@ const Text = text.theme((t) => ({
   fontSize: { xs: t.fontSize.base, md: t.fontSize.xLarge },
 }))
 
-const component = () => (
+const component: VFC = () => (
   <Provider inversed>
     <Heading level1 label="Hello" />
     <Text base paragraph>
-      I'm a person with{' '}
+      I&apos;m a person with{' '}
       <Link href="https://www.16personalities.com/profiles/2d5836f3f4526">
         The Architect
       </Link>{' '}

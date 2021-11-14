@@ -1,16 +1,14 @@
-// @ts-nocheck
-import { useEffect, useState } from 'react'
+import { useEffect, useState, ComponentType } from 'react'
 
-type Props = { src?: string; alt?: string }
+export type Props = Partial<{
+  src: string
+}>
 
-// const getSource = (src) => {
-//   if (!src) return undefined
+type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
 
-//   return require(`~/assets/images/${src}?webp`)
-// }
-
-const component = (WrappedComponent) => {
-  const Enhanced = ({ src, ...props }) => {
+const component: HOC =
+  (WrappedComponent) =>
+  ({ src, ...props }) => {
     const [sizes, setSizes] = useState({})
 
     if (!src) return null
@@ -25,8 +23,5 @@ const component = (WrappedComponent) => {
 
     return <WrappedComponent src={src} {...sizes} {...props} />
   }
-
-  return Enhanced
-}
 
 export default component

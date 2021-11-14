@@ -1,22 +1,45 @@
-// @ts-nocheck
+import { useEffect, useState, ComponentType } from 'react'
 
-const component = (WrappedComponent) => {
-  const Enhanced = ({ name, label, href, ...props }) => (
-    <WrappedComponent
-      href={href}
-      dangerouslySetInnerHTML={
-        name
-          ? {
-              __html: require(`~/assets/icons/${name}.svg?include`),
-            }
-          : undefined
+export type Props = Partial<{
+  name: string
+  label: string
+  href: string
+  dangerouslySetInnerHTML: any
+}>
+
+type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
+
+const component: HOC =
+  (WrappedComponent) =>
+  ({ name, label, href, ...props }) => {
+    const [image, setImage] = useState(null)
+
+    useEffect(() => {
+      if (name) {
+        import(`~/assets/icons/${name}.svg?include`)
+          .then((value) => {
+            setImage(value.default)
+          })
+          .catch(() => {
+            setImage(null)
+          })
       }
-      aria-label={label || name}
-      {...props}
-    />
-  )
+    }, [name])
 
-  return Enhanced
-}
+    return (
+      <WrappedComponent
+        href={href}
+        dangerouslySetInnerHTML={
+          image
+            ? {
+                __html: image,
+              }
+            : undefined
+        }
+        aria-label={label || name}
+        {...props}
+      />
+    )
+  }
 
 export default component

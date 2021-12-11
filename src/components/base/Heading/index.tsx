@@ -17,7 +17,7 @@ export default text
   .config({
     name: 'base/Heading',
   })
-  .attrs<{ tag: Tag }>((props) => ({
+  .attrs<{ tag?: Tag }>((props) => ({
     tag: getTag(props),
   }))
   .theme((t, m) => ({

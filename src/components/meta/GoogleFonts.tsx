@@ -6,7 +6,11 @@ const component: VFC = () => {
 
   return (
     <>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin="anonymous"
+      />
       <link rel="stylesheet" href={config.googleFonts} />
 
       <noscript>

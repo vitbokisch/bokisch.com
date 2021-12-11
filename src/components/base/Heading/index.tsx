@@ -1,8 +1,8 @@
 import { text } from '~/components/core'
 
-type GetTag = (
-  props: Record<string, unknown>
-) => 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
+type Tag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
+
+type GetTag = (props: Record<string, unknown>) => Tag
 const getTag: GetTag = ({ level1, level2, level3, level4, level5 }) => {
   if (level1) return 'h1'
   if (level2) return 'h2'
@@ -17,7 +17,7 @@ export default text
   .config({
     name: 'base/Heading',
   })
-  .attrs((props) => ({
+  .attrs<{ tag: Tag }>((props) => ({
     tag: getTag(props),
   }))
   .theme((t, m) => ({

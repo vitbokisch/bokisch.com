@@ -44,7 +44,7 @@ const component: VFC = () => (
       <Button
         primary
         label="Give me a new challenge"
-        href="mailto:vi@bokisch.cz"
+        href="mailto:vit@bokisch.cz"
       />
     </Section>
   </Background>

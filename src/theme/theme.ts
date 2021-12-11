@@ -109,7 +109,7 @@ const theme = {
       dark: '#285E65',
     },
     neutral: {
-      base: '#C5C5C5',
+      base: '#C9C9C9',
       medium: '#A9A9A9',
       dark: '#696969',
     },

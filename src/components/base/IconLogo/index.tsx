@@ -1,6 +1,7 @@
 import { element } from '~/components/core'
 import image from '~/components/base/Image'
 import loadIconLogo, { Props } from './loadIconLogo'
+import withLink from './withLink'
 
 const Image = image
   .compose({ loadIconLogo })
@@ -14,6 +15,7 @@ const Image = image
 
 export default element
   .config({ name: 'base/IconLogo' })
+  .compose({ withLink })
   .attrs<Props>(({ name }) => ({
     contentAlignX: 'center',
     contentAlignY: 'center',

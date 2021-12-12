@@ -1,8 +1,9 @@
 export default [
   {
     company: 'Vitus Labs',
-    date: 'Jan 2019 - current',
-    position: 'Frontend Engineer',
+    date: 'Mar 2018 - current',
+    position: 'Founder & Frontend Engineer',
+    type: 2,
     responsibilities: [
       'A side hobby project in my free time',
       'A set of ideas and experiments with a goal to innovate and make frontend development more convenient',
@@ -12,8 +13,9 @@ export default [
   },
   {
     company: 'Cinnamon',
-    date: 'Dec 2019 - Aug 2020',
+    date: 'Dec 2019 - Sep 2020',
     position: 'Frontend Engineer',
+    type: 1,
     responsibilities: [
       'Designing a complete monorepo structure + documentation, including configuration ESLint, Typescript, Rollup.js, Storybook,...',
       'Designed automation processes and possible solutions for CI/CD Involved in UI design & developed UI library',
@@ -26,6 +28,7 @@ export default [
     company: 'Mews Systems',
     date: 'Jan 2019 - Jun 2019',
     position: 'Frontend Engineer',
+    type: 1,
     responsibilities: [
       'Collaboration in a team working on a B2C product connecting hoteliers with their customers',
       'Working on a prototyping and later on developing an instant messaging feature',
@@ -40,6 +43,7 @@ export default [
     company: 'Samba.ai',
     date: 'Feb 2018 - Sep 2018',
     position: '(Lead) Frontend Engineer',
+    type: 1,
     responsibilities: [
       'Interviews with candidates',
       'Maintaining 2 B2B products (running on React or Angular)',
@@ -53,7 +57,8 @@ export default [
   {
     company: 'Tripoffr',
     date: '2017 - 2019',
-    position: 'Co-founder & Frontend Engineer',
+    position: 'Founder & Frontend Engineer',
+    type: 2,
     responsibilities: [
       'A side hobby project made for fun and learn new stuff',
       'An aggregator scrapping great traveling deals from other websites and presents them in one place',
@@ -66,6 +71,7 @@ export default [
     company: 'Techloop',
     date: 'Oct 2017 - Feb 2018',
     position: '(Lead) Frontend Engineer',
+    type: 1,
     responsibilities: [
       'Collaboration in a small team working on hiring platform',
       'Working on prototyping and later on developing a mobile app in React Native (unfortunately never released)',
@@ -78,6 +84,7 @@ export default [
     company: 'Spendee',
     date: 'Dec 2016 - Aug 2017',
     position: '(Lead) Frontend Engineer',
+    type: 1,
     responsibilities: [
       'Interviews with candidates',
       'Initiated a new episode of web app',
@@ -93,6 +100,7 @@ export default [
     company: 'Abroad studies',
     date: 'Feb 2016 - Jul 2016',
     position: 'Beihang University, China',
+    type: 4,
     responsibilities: [
       'Abroad studies in Beijing, China',
       'Learned a lot about Asian culture and the international environment',
@@ -105,6 +113,7 @@ export default [
     company: 'STRV',
     date: 'Jun 2015 - Jan 2016',
     position: 'Frontend Engineer',
+    type: 1,
     responsibilities: [
       'Collaboration in teams working on several client web apps',
       'Working on an app similar to Uber or Bolt; or an investment platform',
@@ -116,6 +125,7 @@ export default [
     company: 'Abroad studies',
     date: 'May 2012 - Sep 2013',
     position: 'Ghent University, Belgium',
+    type: 4,
     responsibilities: [
       'Erasmus student of Economics & Business Administration',
       'Considering it as one of the best experiences in my life ever',
@@ -128,6 +138,7 @@ export default [
     company: 'Master studies',
     date: '2013 - 2016',
     position: 'Czech Technical University',
+    type: 4,
     responsibilities: [
       'Master studies (without Baster degree)',
       'Student of Economics & Management of Electrical Engineering',
@@ -138,8 +149,10 @@ export default [
     company: 'CZM',
     date: 'May 2012 - Sep 2013',
     position: 'Internship',
+    type: 3,
     responsibilities: [
-      'An Internship at the Center of Knowledge Management (in collaboration with IBM) at Czech Technical University in Prague',
+      'An Internship at the Center of Knowledge Management at Czech Technical University in Prague',
+      'Collaboration with IBM',
       'Responsible for visual identity, building presentational websites, presentations',
       'Responsible for process portal implementation',
       'Implementation of BPM processes',
@@ -149,6 +162,7 @@ export default [
     company: 'Tesco',
     date: '2012 - 2013',
     position: 'Mentoring',
+    type: 3,
     responsibilities: [
       'A mentee at the department of Law',
       'Learning management stuff, attending meetings,...',
@@ -159,6 +173,7 @@ export default [
     company: 'Bachelor studies',
     date: '2009 - 2013',
     position: 'Czech Technical University',
+    type: 4,
     responsibilities: [
       'Bachelor studies',
       'Student of Economics & Management of Electrical Engineering',

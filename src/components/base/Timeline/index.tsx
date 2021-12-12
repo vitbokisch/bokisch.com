@@ -1,5 +1,4 @@
 import { VFC } from 'react'
-import { List } from '@vitus-labs/elements'
 import { useWindowResize } from '@vitus-labs/unistyle'
 import { element } from '~/components/core'
 import { Container, Row, Col } from '~/components/base/grid'
@@ -52,19 +51,24 @@ const component: VFC<Props> = ({ data }) => {
         >
           <Row>
             <Col>
-              <List
-                data={leftSide}
-                wrapProps={(_, { last, first }) => ({ first, last, odd: true })}
-              />
               <BoxList
                 data={leftSide}
-                wrapProps={(_, { last, first }) => ({ first, last, odd: true })}
+                wrapProps={({ state }, { last, first }) => ({
+                  first,
+                  last,
+                  odd: true,
+                  state,
+                })}
               />
             </Col>
             <Col>
               <BoxList
                 data={rightSide}
-                wrapProps={(_, { last }) => ({ last, even: true })}
+                wrapProps={({ state }, { last }) => ({
+                  last,
+                  even: true,
+                  state,
+                })}
               />
             </Col>
           </Row>

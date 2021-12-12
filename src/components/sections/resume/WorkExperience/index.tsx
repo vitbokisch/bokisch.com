@@ -3,6 +3,7 @@ import { Container, Row, Col } from '~/components/base/grid'
 import Background from '~/components/base/Background'
 import Section, { Header } from '~/components/base/Section'
 import Heading from '~/components/base/Heading'
+import Text from '~/components/base/Text'
 import Button from '~/components/base/Button'
 import IconLogoList from '~/components/base/IconLogoList'
 import data from './data'
@@ -23,11 +24,10 @@ const component: VFC = () => (
   <Background primary>
     <Section id="work-experience">
       <Header title="Work Experience">
-        I am a <strong>freelancer with more than 8 years of experience</strong>{' '}
-        in the business in various positions. I have participated in several
-        mid-large applications and realized tens of websites from the green
-        field to production. My work has helped thousands of people around the
-        world.
+        I am a <Text strong>freelancer with 8+ years of experience</Text> in the
+        business in various positions. I have participated in several mid-large
+        applications and realized tens of websites from the green field to
+        production. My work has helped thousands of people around the world.
       </Header>
 
       <Container>

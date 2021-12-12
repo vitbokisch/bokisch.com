@@ -11,20 +11,18 @@ const Wrapper = element
     marginBottom: 80,
     height: '',
   })
-  .variants({
-    odd: {
-      paddingRight: 80,
-    },
-    even: {
-      paddingLeft: 80,
-    },
-  })
-  .states({
+  .multiple({
     first: {
       marginTop: 160,
     },
     last: {
       marginBottom: 0,
+    },
+    odd: {
+      paddingRight: 80,
+    },
+    even: {
+      paddingLeft: 80,
     },
   })
 
@@ -38,7 +36,7 @@ const Point = symbol
       md: 'inline-flex',
     },
   })
-  .variants({
+  .multiple({
     odd: {
       right: 0,
       transform: 'translateX(50%)',
@@ -47,16 +45,43 @@ const Point = symbol
       left: 0,
       transform: 'translateX(-50%)',
     },
+    first: true,
+    last: true,
   })
   .config({
-    consumer: (ctx) => ctx<typeof Wrapper>(({ variant }) => ({ variant })),
+    consumer: (ctx) => ctx<typeof Wrapper>(({ multiple }) => ({ multiple })),
   })
 
-const component: FC = ({ children, ...props }) => (
-  <Wrapper {...props}>
-    <Point large primary />
-    {children}
-  </Wrapper>
-)
+type Props = {
+  state?: any
+  odd?: boolean
+  even?: boolean
+  first?: boolean
+  last?: boolean
+}
+
+const component: FC<Props> = ({
+  children,
+  state = 'primary',
+  odd,
+  even,
+  first,
+  last,
+  ...props
+}) => {
+  // TODO: a hot fix, wrie it a better way
+  const wrapperMultiple = [] as any
+  if (odd) wrapperMultiple.push('odd')
+  if (even) wrapperMultiple.push('even')
+  if (first) wrapperMultiple.push('first')
+  if (last) wrapperMultiple.push('last')
+
+  return (
+    <Wrapper {...props} multiple={wrapperMultiple}>
+      <Point large state={state} />
+      {children}
+    </Wrapper>
+  )
+}
 
 export default component

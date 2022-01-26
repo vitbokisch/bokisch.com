@@ -9,7 +9,6 @@ const Header = element
   })
   .attrs<{ name?: string }>({
     tag: 'header',
-    contentDirection: 'rows',
     contentAlignX: 'center',
   })
   .theme((t, m) => ({

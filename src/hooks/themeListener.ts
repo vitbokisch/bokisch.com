@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useCallback } from 'react'
 import { STORAGE, THEME } from '~/config/constants'
 
 type Props = {
@@ -22,16 +22,16 @@ const themeListener = ({ theme, setTheme }: Props) => {
     }
   }, [])
 
+  const updateTheme = useCallback((e: StorageEvent) => {
+    if (e.newValue) setTheme(e.newValue)
+  }, [])
+
   // a hook for saving a default theme to local storage for the next time
   // and for observing changes and updating UI in other tabs as well
   useEffect(() => {
     const currentTheme = window.localStorage.getItem(STORAGE.THEME)
     if (currentTheme !== theme)
       window.localStorage.setItem(STORAGE.THEME, theme)
-
-    const updateTheme = (e: StorageEvent) => {
-      if (e.newValue) setTheme(e.newValue)
-    }
 
     window.addEventListener('storage', updateTheme)
 

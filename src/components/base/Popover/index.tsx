@@ -47,7 +47,8 @@ type RenderType = { innerRef: any; align: 'top' | 'bottom' }
 
 const component: VFC<Props> = ({ trigger, children }) => (
   <Overlay
-    refName="innerRef"
+    triggerRefName="innerRef"
+    contentRefName="innerRef"
     trigger={trigger}
     openOn="hover"
     closeOn="hover"

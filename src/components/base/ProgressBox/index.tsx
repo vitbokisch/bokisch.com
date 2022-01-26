@@ -9,7 +9,6 @@ const Heading = heading.theme((t) => ({
 
 const Box = element
   .attrs({
-    contentDirection: 'rows',
     contentAlignX: 'block',
     contentAlignY: 'block',
     block: true,

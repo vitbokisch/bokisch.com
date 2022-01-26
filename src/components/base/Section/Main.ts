@@ -7,7 +7,6 @@ export default element
   .attrs<{ id?: string }>({
     block: true,
     tag: 'section',
-    contentDirection: 'rows',
     contentAlignY: 'top',
     contentAlignX: 'center',
   })

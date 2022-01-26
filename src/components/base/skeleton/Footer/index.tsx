@@ -7,6 +7,7 @@ export default element
   .attrs({
     tag: 'footer',
     block: true,
+    contentDirection: 'inline',
     contentAlignX: 'center',
   })
   .theme((t, m) => ({

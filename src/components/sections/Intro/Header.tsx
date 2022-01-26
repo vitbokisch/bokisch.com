@@ -16,14 +16,12 @@ const component: VFC = () => {
       beforeContentDirection="rows"
       beforeContent={Logo}
       afterContent={
-        <>
-          <List tag="div" contentDirection="inline" gap="xLarge">
-            {width >= 576 ? <ThemeSwitch /> : null}
-            <Provider inversed>
-              <MenuTrigger />
-            </Provider>
-          </List>
-        </>
+        <List tag="div" contentDirection="inline" gap="xLarge">
+          {width >= 576 ? <ThemeSwitch /> : null}
+          <Provider inversed>
+            <MenuTrigger />
+          </Provider>
+        </List>
       }
     />
   )

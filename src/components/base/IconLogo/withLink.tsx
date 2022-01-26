@@ -2,7 +2,6 @@ import { ComponentType } from 'react'
 import link from '../Link'
 
 const Link = link.attrs({
-  contentDirection: 'rows',
   contentAlignX: 'block',
 })
 

@@ -5,7 +5,6 @@ export default link
   .config({ name: 'base/Icon' })
   .compose({ loadIcon })
   .attrs<Props & { role?: string }>({
-    block: true,
     role: 'img',
   })
   .sizes({

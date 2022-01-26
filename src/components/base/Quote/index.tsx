@@ -2,7 +2,6 @@ import { element, text } from '~/components/core'
 
 const base = element
   .attrs({
-    contentDirection: 'rows',
     contentAlignX: 'block',
   })
   .theme((t) => ({ margin: t.space.reset }))

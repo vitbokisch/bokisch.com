@@ -4,7 +4,6 @@ export default element
   .config({ name: 'base/Background' })
   .attrs({
     block: true,
-    contentDirection: 'rows',
     contentAlignY: 'top',
     contentAlignX: 'block',
   })

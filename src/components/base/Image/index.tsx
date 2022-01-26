@@ -1,17 +1,15 @@
-import { VFC } from 'react'
 import { element } from '~/components/core'
 import withPlaceholder from './withPlaceholder'
 
-type Props = { src?: string; alt?: string }
-
-const component: VFC<Props> = ({ src, alt = '', ...props }) => (
-  <img loading="lazy" src={src} alt={alt} {...props} />
-)
-
 export default element
-  .config({ name: 'base/Image', component })
+  .config({ name: 'base/Image', component: 'img' })
   .compose({ withPlaceholder })
-  .attrs<{ placeholder?: boolean }>({})
+  .attrs<{
+    src?: string
+    alt?: string
+    placeholder?: boolean
+    loading?: 'eager' | 'lazy'
+  }>({ loading: 'lazy' })
   .variants({
     responsive: {
       width: '100%',

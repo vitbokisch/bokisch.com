@@ -19,33 +19,34 @@ const component: VFC = () => (
       >
         <Row>
           <CardList rootElement={false} wrapComponent={Col}>
-            <Card icon="personality" title="INTJ-A Personality">
+            <Card icon="personality" title="INFJ-T Personality">
               I&apos;m a person with{' '}
               <Link
                 primary
                 href="https://www.16personalities.com/profiles/2d5836f3f4526"
               >
-                The Architect
+                The Advocate
               </Link>{' '}
-              personality and mind. They say that people with this personality
-              type are imaginative yet decisive, ambitious yet private,
-              amazingly curious, but they do not squander their energy. They are
-              probably right.
+              personality and mind. I am are very imaginative, open-minded and
+              curious. I prefer novelty over stability and focus on hidden
+              meanings and future possibilities. I am more empathic and less
+              competitive with focus on harmony and cooperation.
             </Card>
 
             <Card icon="analytics" title="Analytical Mind">
-              Everything seems like a puzzle and I enjoy thinking about that and
+              Everything seems like a puzzle. I enjoy thinking about that and
               looking for a way to make things happen piece by piece so all
               these pieces together create harmony. I never get tired of it.
-              Well, when I do, I just need to take a rest for a while while I
-              can get down back to the business even stronger.
+              Well, when I do, I just need to take a rest for a while to get
+              down back to the business even stronger.
             </Card>
 
             <Card icon="mind" title="Common sense">
-              Put me in the water and I will learn how to swim. Give me a
-              challenging project and I bring fresh energy, new ideas, and be
-              happy moving things forward. I was born to face challenges and
-              rely on my common sense.
+              I have a strong drive for constant improvement. I bring fresh
+              energy, new ideas, and am happy moving things forward. I always
+              see what can be done better way and strive to make it happen. I
+              believe the key to success is in a deep understanding of problems
+              to make informed decisions and improvements.
             </Card>
           </CardList>
         </Row>

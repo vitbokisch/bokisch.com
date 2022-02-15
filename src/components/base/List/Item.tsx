@@ -10,9 +10,10 @@ export default element
     contentAlignX: 'block',
     contentDirection: 'rows',
   })
-  .theme({
+  .theme((t) => ({
     listStyleType: 'none',
-  })
+    lineHeight: t.lineHeight.small,
+  }))
   .variants({
     centered: {
       textAlign: 'center',

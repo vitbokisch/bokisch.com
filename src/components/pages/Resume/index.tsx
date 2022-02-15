@@ -27,7 +27,7 @@ const component: VFC = () => (
   <>
     <Seo title="Resume" />
     <Layout>
-      <Intro />
+      <Intro heading="Resume" />
       <Quote />
       <Personality />
       <Knowledge />
@@ -37,8 +37,8 @@ const component: VFC = () => (
       <CertificatesHobbies />
       <CareerTimeline />
       <Footer />
-      <MainMenu menu={data} />
     </Layout>
+    <MainMenu menu={data} />
   </>
 )
 

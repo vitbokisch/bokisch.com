@@ -18,8 +18,7 @@ const component: VFC<Props> = () => {
         <Header title="Knowledge">
           Preparation is the key to a smooth website design and development
           project. Broad knowledge from the planning to launch stage is key for
-          meeting requirements and effective realization with fewer headaches. I
-          can speak Czech, English, and modern JavaScript ;)
+          meeting requirements and effective realization with fewer headaches.
         </Header>
 
         <Container

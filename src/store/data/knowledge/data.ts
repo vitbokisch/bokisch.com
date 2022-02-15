@@ -8,6 +8,10 @@ export default [
         level: 7,
       },
       {
+        label: 'Communication',
+        level: 7,
+      },
+      {
         label: 'Teamwork',
         level: 10,
       },
@@ -24,6 +28,10 @@ export default [
       {
         label: 'English',
         level: 8,
+      },
+      {
+        label: 'German',
+        level: 2,
       },
     ],
   },

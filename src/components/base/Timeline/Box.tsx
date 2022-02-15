@@ -47,7 +47,7 @@ const component: VFC<Props> = ({
     </Subheader>
     <Body>
       <List
-        itemProps={() => ({ contentAlignX: 'left', centered: false })}
+        itemProps={{ contentAlignX: 'left', centered: false }}
         gap="medium"
         data={responsibilities}
         valueName="label"

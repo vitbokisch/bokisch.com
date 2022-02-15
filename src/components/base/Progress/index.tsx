@@ -18,9 +18,12 @@ type TProgress = typeof Progress
 const Progress = element
   .config({ name: 'base/Progress', provider: true })
   .attrs(({ label }, t) => ({
-    gap: t.space.xLarge,
+    gap: t.space.small,
     block: true,
     tag: 'span',
+    beforeContentCss: (css) => css`
+      min-width: 120px;
+    `,
     beforeContent: <Text>{label}</Text>,
     content: () => (
       <ProgressLine>

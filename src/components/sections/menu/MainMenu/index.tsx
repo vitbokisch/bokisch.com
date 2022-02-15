@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { Portal } from '@vitus-labs/elements'
 import { Provider } from '~/theme'
 import { useStore, observer } from '~/store'
 import { Container, Row, Col } from '~/components/base/grid'
@@ -31,31 +32,37 @@ const component: FC<Props> = ({ menu }) => {
   if (!store.runtime.menu.isOpen) return null
 
   return (
-    <Section>
-      <Background />
-      <Container gutter={0} gap={{ xs: 48, sm: 0 }} columns={{ xs: 1, sm: 7 }}>
-        <Header />
+    <Portal>
+      <Section>
+        <Background />
+        <Container
+          gutter={0}
+          gap={{ xs: 48, sm: 0 }}
+          columns={{ xs: 1, sm: 7 }}
+        >
+          <Header />
 
-        <Row gutter={64}>
-          <Col size={{ xs: 1, sm: 3 }}>
-            <Provider inversed>
-              <LinkList
-                data={menu}
-                gap="xLarge"
-                itemProps={{
-                  size: 'large',
-                  onClick: store.runtime.menu.closeMenu,
-                }}
-              />
-            </Provider>
-          </Col>
-          <Col size={{ xs: 0, sm: 2 }} />
-          <Col size={{ xs: 1, sm: 2 }}>
-            <ContactList itemProps={{ light: true }} />
-          </Col>
-        </Row>
-      </Container>
-    </Section>
+          <Row gutter={64}>
+            <Col size={{ xs: 1, sm: 3 }}>
+              <Provider inversed>
+                <LinkList
+                  data={menu}
+                  gap="xLarge"
+                  itemProps={{
+                    size: 'large',
+                    onClick: store.runtime.menu.closeMenu,
+                  }}
+                />
+              </Provider>
+            </Col>
+            <Col size={{ xs: 0, sm: 2 }} />
+            <Col size={{ xs: 1, sm: 2 }}>
+              <ContactList itemProps={{ light: true }} />
+            </Col>
+          </Row>
+        </Container>
+      </Section>
+    </Portal>
   )
 }
 

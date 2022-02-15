@@ -11,13 +11,17 @@ const Text = text.theme((t) => ({
   fontSize: { xs: t.fontSize.base, md: t.fontSize.xLarge },
 }))
 
-const component: VFC = () => (
+type Props = {
+  heading?: string
+}
+
+const component: VFC<Props> = ({ heading }) => (
   <Provider inversed>
-    <Heading level1 label="Hello" />
+    <Heading level1 label={heading} />
     <Text base paragraph>
       I&apos;m a person with{' '}
       <Link href="https://www.16personalities.com/profiles/2d5836f3f4526">
-        The Architect
+        The Advocate
       </Link>{' '}
       personality, analytical mind and passion for discovering the undiscovered.
     </Text>

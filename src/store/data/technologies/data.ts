@@ -1,5 +1,10 @@
 export default [
   { title: 'React', level: 1, link: 'https://reactjs.org/' },
+  {
+    title: 'TypeScript',
+    level: 1,
+    link: 'https://www.typescriptlang.org/',
+  },
   { title: 'React Native', level: 2, link: 'https://reactnative.dev/' },
   { title: 'Redux', level: 2, link: 'https://redux.js.org/' },
   {
@@ -12,12 +17,17 @@ export default [
     level: 1,
     link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
   },
-  { title: 'ESNext', level: 1 },
+  {
+    title: 'ESNext',
+    level: 1,
+    link: 'https://www.javascripttutorial.net/es-next/',
+  },
   { title: 'Stylus', level: 4, link: 'https://stylus-lang.com/' },
   { title: 'jQuery', level: 4, link: 'https://jquery.com/' },
+  { title: 'date-fns', level: 1, link: 'https://date-fns.org/' },
   {
     title: 'REST',
-    level: 1,
+    level: 2,
     link: 'https://www.redhat.com/en/topics/api/what-is-a-rest-api',
   },
   { title: 'GraphQL', level: 1, link: 'https://graphql.org/' },
@@ -42,7 +52,7 @@ export default [
   { title: 'Sketch', level: 1, link: 'https://www.sketch.com/' },
   { title: 'Figma', level: 1, link: 'https://www.figma.com/' },
   { title: 'PostCSS', level: 4, link: 'https://postcss.org/' },
-  { title: 'BabelJS', level: 1, link: 'https://babeljs.io/' },
+  { title: 'Babel JS', level: 1, link: 'https://babeljs.io/' },
   { title: 'Recharts', level: 2, link: 'https://recharts.org/' },
   { title: 'i18next', level: 1, link: 'https://www.i18next.com/' },
   { title: 'InvisionApp', level: 2, link: 'https://www.invisionapp.com/' },
@@ -52,6 +62,7 @@ export default [
   { title: 'Webpack', level: 2, link: 'https://webpack.js.org/' },
   { title: 'RollupJS', level: 1, link: 'https://rollupjs.org/guide/en/' },
   { title: 'MySQL', level: 3, link: 'https://www.mysql.com/' },
+  { title: 'date-fns', level: 1, link: 'https://date-fns.org/' },
   { title: 'Java', level: 4, link: 'https://www.java.com/en/' },
   { title: 'PHP', level: 4, link: 'https://www.php.net/' },
   { title: 'CSS', level: 1, link: 'https://www.w3schools.com/css/' },
@@ -85,6 +96,11 @@ export default [
     level: 1,
     link: 'https://styled-components.com/',
   },
+  {
+    title: 'emotion',
+    level: 1,
+    link: 'https://emotion.sh/docs/introduction',
+  },
   { title: 'lodash', level: 2, link: 'https://lodash.com/' },
   { title: 'XML', level: 2, link: 'https://en.wikipedia.org/wiki/XML' },
   { title: 'Jest', level: 2, link: 'https://jestjs.io/' },
@@ -93,11 +109,6 @@ export default [
     title: 'ESLint',
     level: 1,
     link: 'https://eslint.org/',
-  },
-  {
-    title: 'TypeScript',
-    level: 1,
-    link: 'https://www.typescriptlang.org/',
   },
   {
     title: 'Git',
@@ -127,8 +138,7 @@ export default [
   {
     title: 'React Dev Tools',
     level: 2,
-    link:
-      'https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en',
+    link: 'https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en',
   },
   {
     title: 'Ramda',

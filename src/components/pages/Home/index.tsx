@@ -25,10 +25,10 @@ const component: VFC = () => (
     <Seo title="Home" />
     <Layout>
       <Background>
-        <Intro />
-        <MainMenu menu={data} />
+        <Intro heading="Hello" />
       </Background>
     </Layout>
+    <MainMenu menu={data} />
   </>
 )
 

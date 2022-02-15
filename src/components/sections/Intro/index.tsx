@@ -12,6 +12,7 @@ const Element = element.theme({ height: 'inherit' })
 
 const Section = section.theme({
   height: '100vh',
+  minHeight: { xl: 640 },
   maxHeight: { xs: 640, md: 800, lg: 1000 },
   // minHeight: { xs: '100vh', md: 600 },
   overflow: 'hidden',
@@ -23,7 +24,11 @@ const Section = section.theme({
     )`,
 })
 
-const component: VFC = () => (
+type Props = {
+  heading?: string
+}
+
+const component: VFC<Props> = ({ heading }) => (
   <Section>
     <ProfileImage />
     <Background overlay />
@@ -40,7 +45,7 @@ const component: VFC = () => (
         beforeContent={Header}
         beforeContentDirection="rows"
         beforeContentAlignX="block"
-        content={Content}
+        content={<Content heading={heading} />}
         contentDirection="rows"
         afterContent={Footer}
         afterContentAlignX="center"

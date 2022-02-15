@@ -47,8 +47,10 @@ const component: VFC = () => {
     <Background gradient>
       <Section id="career-timeline">
         <Header title="Career Timeline">
-          I have experience from different fields, international companies,
-          positions, company cultures, and ways of working in teams
+          I have experience from different business fields, international
+          companies, positions, company cultures, and ways of working in teams.
+          I enjoy open and respectful company culture(s) built on trust and
+          working in more agile environments and cross-functional teams.
         </Header>
         <Tabs />
         <Timeline data={transformedData(store.career?.dataByType as any)} />

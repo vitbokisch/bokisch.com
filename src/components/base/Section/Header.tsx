@@ -13,7 +13,7 @@ const Header = element
   })
   .theme((t, m) => ({
     marginBottom: { xs: t.space.large, md: t.space.xLarge },
-    maxWidth: { xs: '90%', lg: '70%', xxl: 1100 },
+    maxWidth: { xs: '90%', lg: '70%', xxl: 996 },
     color: m(t.color.dark.base, t.color.light.base),
   }))
   .variants({
@@ -36,7 +36,7 @@ type Props = {
 const component: VFC<Props> = ({ title, children, hidden, name }: Props) => (
   <Header hidden={hidden} name={name}>
     <Heading centered level2 label={title} />
-    <Text large centered>
+    <Text paragraph large centered>
       {children}
     </Text>
   </Header>

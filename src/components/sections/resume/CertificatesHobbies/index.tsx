@@ -16,7 +16,8 @@ const component: VFC = () => (
     <Section id="certificates-and-hobbies">
       <Header title="Certificates & Hobbies">
         Having hobbies and side projects is for me as important as having solid
-        expertise in the professional field.
+        expertise in the professional field. There are many different things I
+        like to do in my free time. Below are just some of them.
       </Header>
 
       <Container

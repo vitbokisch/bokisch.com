@@ -19,6 +19,7 @@ const ProfileImage = image
     src: 'vit-profile.png',
     placeholder: true,
     loading: 'eager',
+    alt: 'Vit Bokisch',
   })
   .theme({
     width: 'auto',

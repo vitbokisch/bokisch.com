@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { ExtractProps } from '~/types'
 import { element, Overlay } from '~/components/core'
 import Text from '../Text'
@@ -38,14 +38,15 @@ const PopoverContent = element
   }))
 
 type OverlayTypes = ExtractProps<typeof Overlay>
+type TextTypes = ExtractProps<typeof Text>
 type Props = {
   trigger: OverlayTypes['trigger']
-  children: OverlayTypes['children']
+  children: TextTypes['children']
 }
 
-type RenderType = { innerRef: any; align: 'top' | 'bottom' }
+// type RenderType = { innerRef: any; align: 'top' | 'bottom' }
 
-const component: VFC<Props> = ({ trigger, children }) => (
+const component: FC<Props> = ({ trigger, children }) => (
   <Overlay
     triggerRefName="innerRef"
     contentRefName="innerRef"
@@ -57,7 +58,7 @@ const component: VFC<Props> = ({ trigger, children }) => (
     offsetY={16}
     isOpen
   >
-    {({ innerRef, align }: RenderType) => (
+    {({ innerRef, align }: any) => (
       <PopoverContent ref={innerRef} beforeContent={<Arrow variant={align} />}>
         <Text small>{children}</Text>
       </PopoverContent>

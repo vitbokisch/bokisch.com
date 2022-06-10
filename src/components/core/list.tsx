@@ -1,10 +1,6 @@
 import rocketstyle from '@vitus-labs/rocketstyle'
 import { List } from '@vitus-labs/elements'
 import { styles, makeItResponsive, value } from '@vitus-labs/unistyle'
-import type { Theme } from '~/theme'
-
-type ComponentTheme = Parameters<typeof styles>[0]['theme']
-type ComponentThemeDefinition = ComponentTheme
 
 type ListStyles = Parameters<typeof makeItResponsive>[0]['styles']
 const listStyles: ListStyles = ({ theme: t, css, rootSize }) => css`
@@ -12,11 +8,10 @@ const listStyles: ListStyles = ({ theme: t, css, rootSize }) => css`
   ${t.indent && `padding: ${value([t.indent / 2], rootSize)} !important;`};
 `
 
-export default rocketstyle<
-  Theme,
-  ComponentThemeDefinition & Partial<{ gap: number; indent: number }>
->()({
-  dimensions: { indent: 'indent', gaps: 'gap', gapsY: 'gapY' } as const,
+const dimensions = { indent: 'indent', gaps: 'gap', gapsY: 'gapY' } as const
+
+export default rocketstyle({
+  dimensions,
   useBooleans: false,
 })({
   component: List,
@@ -34,19 +29,19 @@ export default rocketstyle<
   }))
   .indent((t) => ({
     small: {
-      indent: t.space.xSmall / 2,
+      padding: t.space.xSmall / 2,
     },
     medium: {
-      indent: t.space.medium / 2,
+      padding: t.space.medium / 2,
     },
     large: {
-      indent: t.space.large / 2,
+      padding: t.space.large / 2,
     },
     xLarge: {
-      indent: t.space.xLarge / 2,
+      padding: t.space.xLarge / 2,
     },
     xxLarge: {
-      indent: t.space.xxLarge / 2,
+      padding: t.space.xxLarge / 2,
     },
   }))
   .gaps((t) => ({

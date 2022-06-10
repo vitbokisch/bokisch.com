@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { IStore, useStore, observer } from '~/store'
 import Switch from '~/components/base/Switch'
 
@@ -6,7 +6,7 @@ type Props = {
   store?: IStore
 }
 
-const component: VFC<Props> = () => {
+const Component: FC<Props> = () => {
   const store = useStore('')
 
   return (
@@ -17,5 +17,5 @@ const component: VFC<Props> = () => {
   )
 }
 
-component.displayName = 'components/sections/theme/ThemeSwitch'
-export default observer(component)
+Component.displayName = 'components/sections/theme/ThemeSwitch'
+export default observer(Component)

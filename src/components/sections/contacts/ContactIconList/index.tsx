@@ -1,8 +1,8 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { useStore, observer } from '~/store'
 import IconList from '~/components/base/IconList'
 
-const component: VFC = () => {
+const Component: FC = () => {
   const store = useStore('')
 
   const contacts = store.contacts
@@ -24,4 +24,4 @@ const component: VFC = () => {
   )
 }
 
-export default observer(component)
+export default observer(Component)

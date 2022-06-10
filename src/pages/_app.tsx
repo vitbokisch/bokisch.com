@@ -12,7 +12,7 @@ import Favicons from '~/components/meta/Favicons'
 
 // init({ styled, css, context: StyledProvider })
 
-const component = ({ Component, pageProps }: AppProps) => {
+const Component = ({ Component, pageProps }: AppProps) => {
   const store = useStore(pageProps.initialState)
 
   themeListener({
@@ -36,4 +36,4 @@ const component = ({ Component, pageProps }: AppProps) => {
   )
 }
 
-export default observer(component)
+export default observer(Component)

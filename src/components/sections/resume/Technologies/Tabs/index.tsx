@@ -1,4 +1,4 @@
-import { ReactNode, VFC } from 'react'
+import { ReactNode, FC } from 'react'
 import { ExtractProps } from '~/types'
 import { useStore, observer } from '~/store'
 import TabList, { Tab } from '~/components/base/TabList'
@@ -7,11 +7,11 @@ import Popover from '~/components/base/Popover'
 
 type TabItemProps = ExtractProps<typeof Tab> & { children: ReactNode }
 
-const TabItem: VFC<TabItemProps> = ({ children, ...props }) => (
+const TabItem: FC<TabItemProps> = ({ children, ...props }) => (
   <Popover trigger={<Tab {...props} />}>{children}</Popover>
 )
 
-const component: VFC = () => {
+const Component: FC = () => {
   const store = useStore('')
 
   return (
@@ -71,4 +71,4 @@ const component: VFC = () => {
   )
 }
 
-export default observer(component)
+export default observer(Component)

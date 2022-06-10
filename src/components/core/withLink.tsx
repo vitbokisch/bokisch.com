@@ -18,7 +18,15 @@ type HOC = (WrappedComponent: ComponentType<WrapProps>) => ComponentType<Props>
 
 const component: HOC =
   (WrappedComponent) =>
-  ({ href, prefetch = false, replace, scroll, shallow, ...props }) => {
+  ({
+    href,
+    prefetch = false,
+    replace,
+    scroll,
+    shallow,
+    external,
+    ...props
+  }) => {
     const { route } = useRouter()
 
     if (!href) return <WrappedComponent {...props} />
@@ -31,12 +39,13 @@ const component: HOC =
     }
 
     const destination = goTo()
-    const externalProps = destination.startsWith('http')
-      ? {
-          rel: 'noopener noreferrer',
-          target: '_blank',
-        }
-      : {}
+    const externalProps =
+      destination.startsWith('http') || external
+        ? {
+            rel: 'noopener noreferrer',
+            target: '_blank',
+          }
+        : {}
 
     return (
       <Link

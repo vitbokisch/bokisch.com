@@ -1,5 +1,5 @@
-import { VFC } from 'react'
-import { useWindowResize } from '@vitus-labs/unistyle'
+import { FC } from 'react'
+import { useWindowResize } from '@vitus-labs/hooks'
 import { element } from '~/components/core'
 
 const BackgroundMobile = element.theme((t, m) => ({
@@ -20,7 +20,7 @@ const BackgroundLeft = element.theme({
   width: '60%',
   height: 'inherit',
   top: 0,
-  left: '0',
+  left: 0,
   bottom: 0,
   clipPath: 'polygon(100% 0, 85% 50%, 100% 100%, 0 100%, 0 0)',
   background: `linear-gradient(
@@ -42,7 +42,7 @@ const BackgroundRight = element.theme({
   background: `linear-gradient(180deg, #303030 0%, #1b1b1b 100%)`,
 })
 
-const component: VFC = () => {
+const Component: FC = () => {
   const { width } = useWindowResize()
 
   if (width < 576) {
@@ -56,4 +56,4 @@ const component: VFC = () => {
   )
 }
 
-export default component
+export default Component

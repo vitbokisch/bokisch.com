@@ -1,3 +1,11 @@
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 .temp
 .docz
 .next
@@ -48,7 +56,6 @@ junit.xml
 
 # Output
 *.js.map
-*.d.ts
 
 # Runtime data
 pids

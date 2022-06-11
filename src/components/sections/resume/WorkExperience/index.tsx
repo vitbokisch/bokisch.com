@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { Container, Row, Col } from '~/components/base/grid'
 import Background from '~/components/base/Background'
 import Section, { Header } from '~/components/base/Section'
@@ -20,7 +20,7 @@ const normalizeData = (data: Data) =>
     return acc
   }, [] as Array<Record<string, unknown>>)
 
-const component: VFC = () => (
+const Component: FC = () => (
   <Background primary>
     <Section id="work-experience">
       <Header title="Work Experience">
@@ -56,5 +56,5 @@ const component: VFC = () => (
   </Background>
 )
 
-component.displayName = 'sections/WorkExperience'
-export default component
+Component.displayName = 'sections/WorkExperience'
+export default Component

@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { Provider } from '~/theme'
 import Heading from '~/components/base/Heading'
 import Link from '~/components/base/Link'
@@ -15,7 +15,7 @@ type Props = {
   heading?: string
 }
 
-const component: VFC<Props> = ({ heading }) => (
+const component: FC<Props> = ({ heading }) => (
   <Provider inversed>
     <Heading level1 label={heading} />
     <Text base paragraph>

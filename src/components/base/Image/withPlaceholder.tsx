@@ -41,14 +41,11 @@ const getSource: GetSource = (src, placeholder) => {
 
 type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
 
-const component: HOC =
-  (WrappedComponent) =>
-  ({ src, placeholder, ...props }) => {
+const Component: HOC = (WrappedComponent) => {
+  const Enhanced: ComponentType<Props> = ({ src, placeholder, ...props }) => {
     const [isLoaded, setLoaded] = useState(false)
     const [sizes, setSizes] = useState({})
     const [source, setSource] = useState(getSource(src, placeholder))
-
-    if (!src) return null
 
     useEffect(() => {
       setLoaded(false)
@@ -64,7 +61,9 @@ const component: HOC =
           setLoaded(true)
         }
       }
-    }, [source?.original, source?.placeholder])
+    }, [source])
+
+    if (!src) return null
 
     return (
       <WrappedComponent
@@ -76,4 +75,7 @@ const component: HOC =
     )
   }
 
-export default component
+  return Enhanced
+}
+
+export default Component

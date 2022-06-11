@@ -1,7 +1,7 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import config from '~/config'
 
-const component: VFC = () => (
+const component: FC = () => (
   <>
     <meta property="og:type" content="website" />
     <meta property="og:url" content={config?.openGraph?.url || config.url} />

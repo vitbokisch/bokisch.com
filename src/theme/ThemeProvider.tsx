@@ -1,12 +1,12 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import { Provider } from '@vitus-labs/rocketstyle'
 import { Provider as provider } from '@vitus-labs/unistyle'
-import { IStore, useStore, observer } from '~/store'
+import { useStore, observer } from '~/store'
 import theme from './theme'
 import GlobalStyle from './globalStyles'
 
 type Props = {
-  store?: IStore
+  children: ReactNode
 }
 
 // const createVariables = (theme, name) => {
@@ -39,7 +39,7 @@ type Props = {
 //   return result
 // }
 
-const component: FC<Props> = ({ children }) => {
+const Component: FC<Props> = ({ children }) => {
   const store = useStore('')
 
   return (
@@ -48,10 +48,11 @@ const component: FC<Props> = ({ children }) => {
       mode={store.runtime.theme.variant as any}
       provider={provider}
     >
+      {/* @ts-ignore */}
       <GlobalStyle theme={theme} blocked={store.runtime.menu.isOpen} />
       {children}
     </Provider>
   )
 }
 
-export default observer(component)
+export default observer(Component)

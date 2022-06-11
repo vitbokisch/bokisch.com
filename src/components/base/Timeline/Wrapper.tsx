@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import { element } from '~/components/core'
 import symbol from '../Symbol'
 
@@ -9,7 +9,7 @@ const Wrapper = element
   })
   .theme({
     marginBottom: 80,
-    height: '',
+    height: null,
   })
   .multiple({
     first: {
@@ -53,6 +53,7 @@ const Point = symbol
   })
 
 type Props = {
+  children: ReactNode
   state?: any
   odd?: boolean
   even?: boolean

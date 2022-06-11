@@ -1,6 +1,7 @@
 import { link } from '~/components/core'
 
 export default link.config({ name: 'base/Badge' }).theme((t) => ({
+  border: null,
   height: { xs: 32, md: 40 },
   borderRadius: t.borderRadius.extra,
   fontSize: { xs: t.fontSize.small, md: t.fontSize.base },

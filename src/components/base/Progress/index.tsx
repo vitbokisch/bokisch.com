@@ -15,9 +15,11 @@ const ProgressLineStatus = ProgressLine.config({
 })
 
 type TProgress = typeof Progress
+type TextType = typeof Text
+
 const Progress = element
   .config({ name: 'base/Progress', provider: true })
-  .attrs(({ label }, t) => ({
+  .attrs<{ label: TextType['$$allProps']['children'] }>(({ label }, t) => ({
     gap: t.space.small,
     block: true,
     tag: 'span',

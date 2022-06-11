@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { ExtractProps } from '~/types'
 import { useStore, observer } from '~/store'
 import LinkList from '~/components/base/LinkList'
@@ -8,7 +8,7 @@ type Props = ExtractProps<typeof LinkList> &
     types: Array<string>
   }>
 
-const component: VFC<Props> = ({ types, ...props }) => {
+const Component: FC<Props> = ({ types, ...props }) => {
   const store = useStore('')
 
   const contacts = store.contacts?.pickDataByType(types).map((item) => ({
@@ -20,4 +20,4 @@ const component: VFC<Props> = ({ types, ...props }) => {
   return <LinkList data={contacts} gap="large" {...props} />
 }
 
-export default observer(component)
+export default observer(Component)

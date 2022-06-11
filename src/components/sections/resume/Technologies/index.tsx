@@ -1,18 +1,14 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { Container, Row, Col } from '~/components/base/grid'
 import Background from '~/components/base/Background'
-import button from '~/components/base/Button'
 import Text from '~/components/base/Text'
 import Link from '~/components/base/Link'
 import Section, { Header } from '~/components/base/Section'
 import Tabs from './Tabs'
 import Badges from './Badges'
+import ChallengeButton from './ChallengeButton'
 
-const Button = button.theme((t) => ({
-  marginTop: t.space.large,
-}))
-
-const component: VFC = () => (
+const component: FC = () => (
   <Background secondary>
     <Section id="technologies">
       <Header title="Technologies">
@@ -41,11 +37,7 @@ const component: VFC = () => (
           </Col>
         </Row>
       </Container>
-      <Button
-        primary
-        label="Give me a new challenge"
-        href="mailto:vit@bokisch.cz"
-      />
+      <ChallengeButton />
     </Section>
   </Background>
 )

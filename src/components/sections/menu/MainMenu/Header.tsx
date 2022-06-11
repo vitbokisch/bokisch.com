@@ -1,4 +1,4 @@
-import { useWindowResize } from '@vitus-labs/unistyle'
+import { useWindowResize } from '@vitus-labs/hooks'
 import { useStore, observer } from '~/store'
 import Base from '~/components/base/Base'
 import List from '~/components/base/List'
@@ -8,7 +8,7 @@ import MenuTrigger from '~/components/sections/menu/MenuTrigger'
 
 const MobileSettings = Base.theme({ marginY: 16 })
 
-const component = () => {
+const Component = () => {
   const { width } = useWindowResize()
   const store = useStore('')
 
@@ -33,4 +33,4 @@ const component = () => {
   )
 }
 
-export default observer(component)
+export default observer(Component)

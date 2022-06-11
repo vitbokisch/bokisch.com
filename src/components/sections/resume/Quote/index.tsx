@@ -1,10 +1,10 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { Container } from '~/components/base/grid'
 import Quote from '~/components/base/Quote'
 import Background from '~/components/base/Background'
 import Section from '~/components/base/Section'
 
-const component: VFC = () => (
+const component: FC = () => (
   <Background primary>
     <Section>
       <Container width={({ lg }) => ({ xs: '90%', lg })}>

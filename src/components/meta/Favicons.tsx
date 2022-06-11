@@ -1,10 +1,10 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 
 type Props = {
   variant?: 'light' | 'dark'
 }
 
-const component: VFC<Props> = ({ variant = 'dark' }) => (
+const component: FC<Props> = ({ variant = 'dark' }) => (
   <>
     <link rel="shortcut icon" href={`/favicon/${variant}/favicon.ico`} />
     <link

@@ -1,6 +1,6 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 
-const component: VFC = () => (
+const component: FC = () => (
   <>
     <meta
       name="viewport"

@@ -1,8 +1,8 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { useStore, observer } from '~/store'
 import TabList, { Tab } from '~/components/base/TabList'
 
-const Component: VFC = () => {
+const Component: FC = () => {
   const store = useStore('')
 
   return (

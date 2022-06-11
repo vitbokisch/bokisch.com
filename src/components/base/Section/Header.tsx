@@ -1,4 +1,4 @@
-import { VFC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 import { element } from '~/components/core'
 import heading from '../Heading'
 import Text from '../Text'
@@ -33,7 +33,7 @@ type Props = {
   name?: string
 }
 
-const component: VFC<Props> = ({ title, children, hidden, name }: Props) => (
+const component: FC<Props> = ({ title, children, hidden, name }: Props) => (
   <Header hidden={hidden} name={name}>
     <Heading centered level2 label={title} />
     <Text paragraph large centered>

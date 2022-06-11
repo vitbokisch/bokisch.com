@@ -1,10 +1,10 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { ExtractProps } from '~/types'
 import Link from '~/components/base/Link'
 import Logo from '~/components/base/Logo'
 import LogoHeading from '~/components/base/LogoHeading'
 
-const component: VFC<ExtractProps<typeof Link>> = (props) => (
+const component: FC<ExtractProps<typeof Link>> = (props) => (
   <Link href="/" contentDirection="rows" {...props}>
     <Logo />
     <LogoHeading label="Frontend Engineer | Architect | Innovator" />

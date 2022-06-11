@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { Container, Row, Col } from '~/components/base/grid'
 import Background from '~/components/base/Background'
 import Section, { Header } from '~/components/base/Section'
@@ -13,7 +13,7 @@ const transformedData = data.map((item) => ({
   logo: item.logo,
 }))
 
-const component: VFC = () => (
+const component: FC = () => (
   <Background primary>
     <Background triangle />
     <Section id="education">

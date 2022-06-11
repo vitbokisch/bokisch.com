@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import Background from '~/components/base/Background'
 import Section, { Header } from '~/components/base/Section'
 import { Container, Row, Col } from '~/components/base/grid'
@@ -11,7 +11,7 @@ const transformedData = data.map((item) => ({
   list: item.data,
 }))
 
-const component: VFC = () => (
+const component: FC = () => (
   <Background primary>
     <Section id="certificates-and-hobbies">
       <Header title="Certificates & Hobbies">

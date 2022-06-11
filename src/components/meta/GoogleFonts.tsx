@@ -1,7 +1,7 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import config from '~/config'
 
-const component: VFC = () => {
+const component: FC = () => {
   if (!config.googleFonts) return null
 
   return (

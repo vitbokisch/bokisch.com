@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { Container, Row, Col } from '~/components/base/grid'
 import Card from '~/components/base/Card'
 import CardList from '~/components/base/CardList'
@@ -6,7 +6,7 @@ import Background from '~/components/base/Background'
 import Link from '~/components/base/Link'
 import Section, { Header } from '~/components/base/Section'
 
-const component: VFC = () => (
+const component: FC = () => (
   <Background primary>
     <Section id="about-me">
       <Header title="About me" hidden />

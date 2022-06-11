@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import Seo from '~/components/meta/Seo'
 import Layout from '~/components/layouts/Base'
 import background from '~/components/base/Background'
@@ -20,7 +20,7 @@ const data = [
   { label: 'Resume', href: '/resume' },
 ]
 
-const component: VFC = () => (
+const component: FC = () => (
   <>
     <Seo title="Home" />
     <Layout>

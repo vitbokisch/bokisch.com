@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { element } from '~/components/core'
 import image from '~/components/base/Image'
 
@@ -26,7 +26,7 @@ const ProfileImage = image
     height: '100%',
   })
 
-const component: VFC = () => (
+const component: FC = () => (
   <ProfileImageWrapper>
     <ProfileImage />
   </ProfileImageWrapper>

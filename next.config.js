@@ -29,6 +29,10 @@ const PLUGINS = [
 module.exports = withPlugins(PLUGINS, {
   dir: 'src',
   poweredByHeader: false,
+  compiler: {
+    removeConsole: true,
+    styledComponents: true,
+  },
   images: {
     disableStaticImages: true,
   },

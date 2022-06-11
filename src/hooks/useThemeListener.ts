@@ -1,13 +1,16 @@
-import { useEffect, useCallback } from 'react'
+/* eslint-disable react-hooks/rules-of-hooks */
+import { useEffect, useCallback, useLayoutEffect } from 'react'
 import { STORAGE, THEME } from '~/config/constants'
 
 type Props = {
   theme: string
   setTheme: (theme: string) => void
 }
-const themeListener = ({ theme, setTheme }: Props) => {
+const useThemeListener = ({ theme, setTheme }: Props) => {
+  if (typeof window === 'undefined') return
+
   // an initial hook for defining default theme
-  useEffect(() => {
+  useLayoutEffect(() => {
     const currentTheme = window.localStorage.getItem(STORAGE.THEME)
 
     if (currentTheme && Object.values(THEME).includes(currentTheme)) {
@@ -20,11 +23,14 @@ const themeListener = ({ theme, setTheme }: Props) => {
     } else {
       setTheme(THEME.light)
     }
-  }, [])
+  }, [setTheme])
 
-  const updateTheme = useCallback((e: StorageEvent) => {
-    if (e.newValue) setTheme(e.newValue)
-  }, [])
+  const updateTheme = useCallback(
+    (e: StorageEvent) => {
+      if (e.newValue) setTheme(e.newValue)
+    },
+    [setTheme]
+  )
 
   // a hook for saving a default theme to local storage for the next time
   // and for observing changes and updating UI in other tabs as well
@@ -36,7 +42,7 @@ const themeListener = ({ theme, setTheme }: Props) => {
     window.addEventListener('storage', updateTheme)
 
     return () => window.removeEventListener('storage', updateTheme)
-  }, [theme])
+  }, [theme, updateTheme])
 }
 
-export default themeListener
+export default useThemeListener

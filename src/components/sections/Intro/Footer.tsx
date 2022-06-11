@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import box from '~/components/base/Box'
 import ContactList from '~/components/sections/contacts/ContactList'
 
@@ -7,8 +7,8 @@ const Box = box.theme({
   maxWidth: { xs: '80%', md: 600 },
 })
 
-const component: VFC = () => (
-  <Box small>
+const component: FC = () => (
+  <Box>
     <ContactList
       contentDirection={{ xs: 'rows', sm: 'inline' }}
       contentAlignX={{ xs: 'left', sm: 'spaceAround' }}

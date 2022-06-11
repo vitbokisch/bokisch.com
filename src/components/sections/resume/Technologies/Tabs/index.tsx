@@ -28,9 +28,9 @@ const Component: FC = () => {
         onClick={() => store.technologies?.setFilter(1)}
       >
         These technologies are the ones{' '}
-        <Text strong>I’m currently using actively professionally</Text> or on
-        side projects. Therefore, I’m usually familiar with new updates and
-        current best practices.
+        <Text strong>I&apos;m currently using actively professionally</Text> or
+        on side projects. Therefore, I&apos;m usually familiar with new updates
+        and current best practices.
       </TabItem>
       <TabItem
         secondary
@@ -40,8 +40,8 @@ const Component: FC = () => {
         These technologies are the ones I have worked with some time ago. I
         usually understand the principles of how they work and{' '}
         <Text strong>would be able to catch up quickly on new updates</Text>.
-        I’m not using them actively anymore as I believe another tech can do a
-        better job.
+        I&apos;m not using them actively anymore as I believe another tech can
+        do a better job.
       </TabItem>
       <TabItem
         tertiary
@@ -65,7 +65,7 @@ const Component: FC = () => {
         studied or used at universities. These tools{' '}
         <Text strong>I do not consider using anymore</Text>. They have given me
         a lot of experience and helped evolve the tech industry in general which
-        I’m grateful for.
+        I&apos;m grateful for.
       </TabItem>
     </TabList>
   )

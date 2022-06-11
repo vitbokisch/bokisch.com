@@ -5,7 +5,7 @@ import { Provider as StoreProvider } from 'mobx-react'
 // import { init } from '@vitus-labs/core'
 import { useStore, observer } from '~/store'
 import { ThemeProvider } from '~/theme'
-import themeListener from '~/hooks/themeListener'
+import useThemeListener from '~/hooks/useThemeListener'
 import Meta from '~/components/meta/Meta'
 import Social from '~/components/meta/Social'
 import Favicons from '~/components/meta/Favicons'
@@ -15,7 +15,7 @@ import Favicons from '~/components/meta/Favicons'
 const Component = ({ Component, pageProps }: AppProps) => {
   const store = useStore(pageProps.initialState)
 
-  themeListener({
+  useThemeListener({
     theme: store.runtime.theme.variant,
     setTheme: store.runtime.theme.setTheme,
   })
@@ -27,6 +27,7 @@ const Component = ({ Component, pageProps }: AppProps) => {
         <Social />
         <Favicons />
       </Head>
+
       <StoreProvider store={store}>
         <ThemeProvider>
           <Component {...pageProps} />

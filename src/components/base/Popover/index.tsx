@@ -56,7 +56,6 @@ const component: FC<Props> = ({ trigger, children }) => (
     align="top"
     alignX="center"
     offsetY={16}
-    isOpen
   >
     {({ innerRef, align }: any) => (
       <PopoverContent ref={innerRef} beforeContent={<Arrow variant={align} />}>

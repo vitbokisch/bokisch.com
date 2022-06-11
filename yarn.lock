@@ -3077,16 +3077,16 @@ __metadata:
     "@types/node": ^17.0.42
     "@types/react": ^18.0.12
     "@types/styled-components": ^5.1.25
-    "@vitus-labs/coolgrid": 0.57.0-alpha.8
-    "@vitus-labs/core": 0.57.0-alpha.8
-    "@vitus-labs/elements": 0.57.0-alpha.8
-    "@vitus-labs/hooks": 0.57.0-alpha.8
-    "@vitus-labs/rocketstyle": 0.57.0-alpha.8
+    "@vitus-labs/coolgrid": 0.60.0
+    "@vitus-labs/core": 0.60.0
+    "@vitus-labs/elements": 0.60.0
+    "@vitus-labs/hooks": 0.60.0
+    "@vitus-labs/rocketstyle": 0.60.0
     "@vitus-labs/tools-babel": ^0.33.0
     "@vitus-labs/tools-favicon": ^0.33.0
     "@vitus-labs/tools-lint": ^0.33.0
     "@vitus-labs/tools-typescript": ^0.33.0
-    "@vitus-labs/unistyle": 0.57.0-alpha.8
+    "@vitus-labs/unistyle": 0.60.0
     image-trace-loader: ^1.0.2
     imagemin-mozjpeg: ^9.0.0
     imagemin-optipng: ^8.0.0
@@ -3107,20 +3107,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@vitus-labs/coolgrid@npm:0.57.0-alpha.8":
-  version: 0.57.0-alpha.8
-  resolution: "@vitus-labs/coolgrid@npm:0.57.0-alpha.8"
+"@vitus-labs/coolgrid@npm:0.60.0":
+  version: 0.60.0
+  resolution: "@vitus-labs/coolgrid@npm:0.60.0"
   peerDependencies:
     "@vitus-labs/core": "*"
     "@vitus-labs/unistyle": "*"
     react: ">= 16.8"
-  checksum: 788d63f11bb4292415048f897d62aa805e34d916b465f11b9001686dba32bbae8d20d1ebeb759b3915c1f9efb1e62c8e7ee72c890260a805977c70142f5bf4b9
+  checksum: d572777f94863584ae37b53a41017358a0ef855b4299c2fe95ba62f7acee5389e5f66bc94933ea26a078a519d07a6da57cd840aac5c0ce08b0e1338ab9f3fb32
   languageName: node
   linkType: hard
 
-"@vitus-labs/core@npm:0.57.0-alpha.8":
-  version: 0.57.0-alpha.8
-  resolution: "@vitus-labs/core@npm:0.57.0-alpha.8"
+"@vitus-labs/core@npm:0.60.0":
+  version: 0.60.0
+  resolution: "@vitus-labs/core@npm:0.60.0"
   dependencies:
     lodash: ^4.17.21
     moize: ^6.1.1
@@ -3128,13 +3128,13 @@ __metadata:
   peerDependencies:
     react: ">= 16.8"
     styled-components: <= 5
-  checksum: 9b8e0613f41759eb13a945cef4473a477036bc93c2d9c46df798ee13807846c8df27f8afea60e1463577786f7ce91e4f01a2ed80e8a521294e1bdfbe402a945d
+  checksum: be95d338ad730f0c3a98b793b43432000f26fabed3adc310ced761a8293e3018ef73abd801177e8205d7d8652b1af7e0aa9fac6a6ae16bcfd328637e4fe8e462
   languageName: node
   linkType: hard
 
-"@vitus-labs/elements@npm:0.57.0-alpha.8":
-  version: 0.57.0-alpha.8
-  resolution: "@vitus-labs/elements@npm:0.57.0-alpha.8"
+"@vitus-labs/elements@npm:0.60.0":
+  version: 0.60.0
+  resolution: "@vitus-labs/elements@npm:0.60.0"
   dependencies:
     react-is: ^18.1.0
   peerDependencies:
@@ -3142,29 +3142,29 @@ __metadata:
     "@vitus-labs/unistyle": "*"
     react: ">= 16.8"
     react-dom: ">= 16.8"
-  checksum: 1fcb70295a390874256cd591dfd1de9907ce62dfeb076449c498bc55f3fa887f5acbe4a37783263ea44272a51240e7148b14ac0eedcae3771d37933986c0ef11
+  checksum: 27053981b42371aff09b8071dee2d2e0b933a418e8f2de430cc909acd3b862b337c4c77659fd2cbe2ab753539ae43a2f5e08798e1bf9c09ae3290e105cbfd2b5
   languageName: node
   linkType: hard
 
-"@vitus-labs/hooks@npm:0.57.0-alpha.8":
-  version: 0.57.0-alpha.8
-  resolution: "@vitus-labs/hooks@npm:0.57.0-alpha.8"
+"@vitus-labs/hooks@npm:0.60.0":
+  version: 0.60.0
+  resolution: "@vitus-labs/hooks@npm:0.60.0"
   peerDependencies:
     "@vitus-labs/core": "*"
     react: ">= 16.8"
-  checksum: 9959910d7d1e3c39e7bd0f3a9ec9c88aaae5de9d3d883feeba6e4f08115ba8c1a55e99d13ad89627ee4c97c37318a1f7fd082bf954137ba5c082740024737075
+  checksum: 9a6023ca30d6474e120b60ba8ac947212a3a24a9a82a91c490b8411bcce21f0af9963701a688378cc4a8e74b05eeeffab7d43659459802527c3bea383f1578e6
   languageName: node
   linkType: hard
 
-"@vitus-labs/rocketstyle@npm:0.57.0-alpha.8":
-  version: 0.57.0-alpha.8
-  resolution: "@vitus-labs/rocketstyle@npm:0.57.0-alpha.8"
+"@vitus-labs/rocketstyle@npm:0.60.0":
+  version: 0.60.0
+  resolution: "@vitus-labs/rocketstyle@npm:0.60.0"
   dependencies:
     hoist-non-react-statics: ^3.3.2
   peerDependencies:
     "@vitus-labs/core": "*"
     react: ">= 16.8"
-  checksum: 90ef90b4417c21ed420c5c19bf645a27775dcea3d3012ede9b13690684fec8525954ccce0caa178b339da54a2f6b3bcc64eb46536ac11382f2e1acece2f9e1ce
+  checksum: 1ad9fedf22b189d165853226ede26379c63178236fc7e1a5afc31825e5bac03affd883dad8e289c452e1e3c75aad20a093eb68186bdac577a15288490531539c
   languageName: node
   linkType: hard
 
@@ -3272,13 +3272,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitus-labs/unistyle@npm:0.57.0-alpha.8":
-  version: 0.57.0-alpha.8
-  resolution: "@vitus-labs/unistyle@npm:0.57.0-alpha.8"
+"@vitus-labs/unistyle@npm:0.60.0":
+  version: 0.60.0
+  resolution: "@vitus-labs/unistyle@npm:0.60.0"
   peerDependencies:
     "@vitus-labs/core": "*"
     react: ">= 16.8"
-  checksum: 9665bce686f8f9f763867c21981eff5f12202c987e4a0f927120080f4e03510bce7d6c9ba862463dea5f7cac1067860970900a178deb747d714e344b482956e0
+  checksum: 6354508e74056cdf6a6099616bf6886d2fc192100188bb0ac10f8dbcef49a41165e76565ee606b5c122373475a739c58f6cca117402362e3a8532c0c5a148927
   languageName: node
   linkType: hard
 

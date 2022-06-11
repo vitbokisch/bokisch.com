@@ -22,12 +22,12 @@
     "make:favicon": "yarn vl_favicon"
   },
   "dependencies": {
-    "@vitus-labs/coolgrid": "0.57.0-alpha.8",
-    "@vitus-labs/core": "0.57.0-alpha.8",
-    "@vitus-labs/elements": "0.57.0-alpha.8",
-    "@vitus-labs/hooks": "0.57.0-alpha.8",
-    "@vitus-labs/rocketstyle": "0.57.0-alpha.8",
-    "@vitus-labs/unistyle": "0.57.0-alpha.8",
+    "@vitus-labs/coolgrid": "0.60.0",
+    "@vitus-labs/core": "0.60.0",
+    "@vitus-labs/elements": "0.60.0",
+    "@vitus-labs/hooks": "0.60.0",
+    "@vitus-labs/rocketstyle": "0.60.0",
+    "@vitus-labs/unistyle": "0.60.0",
     "mobx": "^6.6.0",
     "mobx-react": "^7.5.0",
     "mobx-state-tree": "^5.1.5",

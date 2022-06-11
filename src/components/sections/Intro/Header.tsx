@@ -1,5 +1,5 @@
-import { VFC } from 'react'
-import { useWindowResize } from '@vitus-labs/unistyle'
+import { FC } from 'react'
+import { useWindowResize } from '@vitus-labs/hooks'
 import { Provider } from '~/theme'
 import Base from '~/components/base/Base'
 import List from '~/components/base/List'
@@ -7,7 +7,7 @@ import Logo from '~/components/sections/brand/Logo'
 import ThemeSwitch from '~/components/sections/theme/ThemeSwitch'
 import MenuTrigger from '~/components/sections/menu/MenuTrigger'
 
-const component: VFC = () => {
+const Component: FC = () => {
   const { width } = useWindowResize()
 
   return (
@@ -27,4 +27,4 @@ const component: VFC = () => {
   )
 }
 
-export default component
+export default Component

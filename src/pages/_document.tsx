@@ -9,7 +9,6 @@ import { ServerStyleSheet } from 'styled-components'
 import GoogleFonts from '~/components/meta/GoogleFonts'
 
 export default class MyDocument extends Document {
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
@@ -23,6 +22,7 @@ export default class MyDocument extends Document {
         })
 
       const initialProps = await Document.getInitialProps(ctx)
+
       return {
         ...initialProps,
         styles: (
@@ -30,7 +30,7 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        ),
+        ) as any,
       }
     } finally {
       sheet.seal()

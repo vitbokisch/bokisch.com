@@ -1,9 +1,9 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import Head from 'next/head'
 
 type Props = { title?: string }
 
-const component: VFC<Props> = ({ title }) => (
+const component: FC<Props> = ({ title }) => (
   <Head>
     <title>[{title}] Vit Bokisch</title>
     <meta

@@ -34,6 +34,9 @@ export default element
       position: 'absolute',
       background: m(t.gradient.triangle.light, t.gradient.triangle.dark),
       clipPath: 'polygon(0 0, 100% 15%, 100% 85%, 0 100%)',
-      inset: '150px 0px 0px',
+      top: '150px',
+      left: 0,
+      right: 0,
+      bottom: 0,
     },
   }))

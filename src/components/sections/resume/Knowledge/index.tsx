@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { IStore, useStore, observer } from '~/store'
 import { Container, Row, Col } from '~/components/base/grid'
 import Background from '~/components/base/Background'
@@ -9,7 +9,7 @@ type Props = {
   store?: IStore
 }
 
-const component: VFC<Props> = () => {
+const Component: FC<Props> = () => {
   const store = useStore('')
 
   return (
@@ -41,5 +41,5 @@ const component: VFC<Props> = () => {
   )
 }
 
-component.displayName = 'sections/Knowledge'
-export default observer(component)
+Component.displayName = 'sections/Knowledge'
+export default observer(Component)

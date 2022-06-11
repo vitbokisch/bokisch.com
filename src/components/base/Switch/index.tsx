@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { element } from '~/components/core'
 import Icon from '~/components/base/Icon'
 
@@ -43,7 +43,7 @@ type Props = {
   onChange: () => void
 }
 
-const component: VFC<Props> = ({ active, onChange }) => {
+const component: FC<Props> = ({ active, onChange }) => {
   const iconVariant = active ? 'moon' : 'sun'
 
   return (

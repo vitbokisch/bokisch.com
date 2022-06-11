@@ -1,5 +1,5 @@
-import { VFC } from 'react'
-import { useWindowResize } from '@vitus-labs/unistyle'
+import { FC } from 'react'
+import { useWindowResize } from '@vitus-labs/hooks'
 import { element } from '~/components/core'
 import { Container, Row, Col } from '~/components/base/grid'
 import BoxList from './BoxList'
@@ -34,7 +34,7 @@ type Props = {
   data: Array<Record<string, unknown>>
 }
 
-const component: VFC<Props> = ({ data }) => {
+const Component: FC<Props> = ({ data }) => {
   const { width } = useWindowResize()
 
   if (width === 0) return null
@@ -94,4 +94,4 @@ const component: VFC<Props> = ({ data }) => {
   )
 }
 
-export default component
+export default Component

@@ -1,8 +1,8 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { useStore, observer } from '~/store'
 import TabList, { Tab } from '~/components/base/TabList'
 
-const component: VFC = () => {
+const Component: FC = () => {
   const store = useStore('')
 
   return (
@@ -37,4 +37,4 @@ const component: VFC = () => {
   )
 }
 
-export default observer(component)
+export default observer(Component)

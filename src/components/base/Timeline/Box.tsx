@@ -1,11 +1,11 @@
-import { VFC, ReactText } from 'react'
+import { FC } from 'react'
 import box, { Header as header, Body } from '../Box'
 import Heading from '../Heading'
 import Text from '../Text'
 import List from '../List'
 
 const Box = box.config({ name: 'base/Timeline/Box' }).theme({
-  height: '',
+  height: null,
 })
 
 const Header = header.config({ name: 'base/Timeline/Header' }).theme((t) => ({
@@ -19,13 +19,13 @@ const Subheader = header
   }))
 
 type Props = {
-  company: ReactText
-  date: ReactText
-  position: ReactText
-  responsibilities: Array<ReactText>
+  company: string | number
+  date: string | number
+  position: string | number
+  responsibilities: Array<string | number>
 }
 
-const component: VFC<Props> = ({
+const component: FC<Props> = ({
   company,
   date,
   position,

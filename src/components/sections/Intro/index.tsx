@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { element } from '~/components/core'
 import section from '~/components/base/Section'
 import { Container } from '~/components/base/grid'
@@ -28,7 +28,7 @@ type Props = {
   heading?: string
 }
 
-const component: VFC<Props> = ({ heading }) => (
+const component: FC<Props> = ({ heading }) => (
   <Section>
     <ProfileImage />
     <Background overlay />

@@ -1,4 +1,4 @@
-import { VFC } from 'react'
+import { FC } from 'react'
 import { useStore, observer } from '~/store'
 import Background from '~/components/base/Background'
 import Section, { Header } from '~/components/base/Section'
@@ -40,7 +40,7 @@ const transformedData: TransformedData = (data) =>
     state: states[item.type],
   }))
 
-const component: VFC = () => {
+const Component: FC = () => {
   const store = useStore('')
 
   return (
@@ -59,5 +59,5 @@ const component: VFC = () => {
   )
 }
 
-component.displayName = 'sections/CertificatesHobbies'
-export default observer(component)
+Component.displayName = 'sections/CertificatesHobbies'
+export default observer(Component)

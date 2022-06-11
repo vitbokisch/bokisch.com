@@ -24,7 +24,7 @@ type Props = {
   store?: IStore
 }
 
-const component: FC<Props> = () => {
+const Component: FC<Props> = () => {
   const store = useStore('')
 
   return (
@@ -37,4 +37,4 @@ const component: FC<Props> = () => {
   )
 }
 
-export default observer(component)
+export default observer(Component)

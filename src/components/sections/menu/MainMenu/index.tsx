@@ -26,7 +26,7 @@ type Props = {
   menu: Array<{ label: string; href: string }>
 }
 
-const component: FC<Props> = ({ menu }) => {
+const Component: FC<Props> = ({ menu }) => {
   const store = useStore('')
 
   if (!store.runtime.menu.isOpen) return null
@@ -66,4 +66,4 @@ const component: FC<Props> = ({ menu }) => {
   )
 }
 
-export default observer(component)
+export default observer(Component)

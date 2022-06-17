@@ -2843,7 +2843,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^18.0.0":
   version: 18.0.0
   resolution: "@types/node@npm:18.0.0"
   checksum: aab2b325727a2599f6d25ebe0dedf58c40fb66a51ce4ca9c0226ceb70fcda2d3afccdca29db5942eb48b158ee8585a274a1e3750c718bbd5399d7f41d62dfdcc
@@ -2864,7 +2864,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^17.0.31, @types/node@npm:^17.0.42":
+"@types/node@npm:^17.0.31":
   version: 17.0.45
   resolution: "@types/node@npm:17.0.45"
   checksum: aa04366b9103b7d6cfd6b2ef64182e0eaa7d4462c3f817618486ea0422984c51fc69fd0d436eae6c9e696ddfdbec9ccaa27a917f7c2e8c75c5d57827fe3d95e8
@@ -2899,7 +2899,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.0.12":
+"@types/react@npm:*, @types/react@npm:^18.0.14":
   version: 18.0.14
   resolution: "@types/react@npm:18.0.14"
   dependencies:
@@ -3081,8 +3081,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vitbokisch/personal-web@workspace:."
   dependencies:
-    "@types/node": ^17.0.42
-    "@types/react": ^18.0.12
+    "@types/node": ^18.0.0
+    "@types/react": ^18.0.14
     "@types/styled-components": ^5.1.25
     "@vitus-labs/coolgrid": 0.60.0
     "@vitus-labs/core": 0.60.0
@@ -3105,11 +3105,11 @@ __metadata:
     next-compose-plugins: ^2.2.1
     next-optimized-images: ^2.6.2
     next-pwa: ^5.5.4
-    prettier: ^2.6.2
-    react: ^18.1.0
-    react-dom: ^18.1.0
+    prettier: ^2.7.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
     styled-components: ^5.3.5
-    typescript: ^4.7.3
+    typescript: ^4.7.4
     webp-loader: ^0.6.0
   languageName: unknown
   linkType: soft
@@ -10642,7 +10642,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.6.2":
+"prettier@npm:^2.7.1":
   version: 2.7.1
   resolution: "prettier@npm:2.7.1"
   bin:
@@ -10835,7 +10835,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^18.1.0":
+"react-dom@npm:^18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
   dependencies:
@@ -10861,7 +10861,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.1.0":
+"react@npm:^18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:
@@ -12894,7 +12894,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.7.3":
+"typescript@npm:^4.7.4":
   version: 4.7.4
   resolution: "typescript@npm:4.7.4"
   bin:
@@ -12904,7 +12904,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.7.3#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>":
   version: 4.7.4
   resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"
   bin:

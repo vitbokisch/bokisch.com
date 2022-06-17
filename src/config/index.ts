@@ -21,9 +21,9 @@ type Config = {
 const config: Config = {
   url: 'https://bokisch.com',
   title: 'Vit Bokisch',
-  description: `I'm a person with The Architect personality, analytical mind and passion for discovering the undiscovered.`,
+  description: `I'm a person with The Advocate personality, analytical mind and passion for discovering the undiscovered.`,
   googleFonts:
-    'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;1,300&display=swap',
+    'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;1,300&display=optional',
   openGraph: {
     url: 'https://bokisch.com',
     image: require('~/assets/socials/preview.jpg'),

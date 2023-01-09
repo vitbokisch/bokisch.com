@@ -1,3 +1,3 @@
-import component from '~/components/pages/Home'
+import Page from '~/components/pages/Home'
 
-export default component
+export default Page

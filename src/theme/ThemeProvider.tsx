@@ -9,36 +9,6 @@ type Props = {
   children: ReactNode
 }
 
-// const createVariables = (theme, name) => {
-//   let result = {}
-
-//   Object.entries(theme).forEach(([key, value]) => {
-//     const newKey = name ? `${name}-${key}` : `--${key}`
-//     if (typeof value === 'object') {
-//       result = { ...result, ...createVariables(value, newKey) }
-//     } else {
-//       result[newKey] = value
-//     }
-//   })
-
-//   return result
-// }
-
-// const createTheme = (theme, name) => {
-//   let result = {}
-
-//   Object.entries(theme).forEach(([key, value]) => {
-//     const newKey = name ? `${name}-${key}` : `--${key}`
-//     if (typeof value === 'object') {
-//       result = { ...result, ...createVariables(value, newKey) }
-//     } else {
-//       result[newKey] = value
-//     }
-//   })
-
-//   return result
-// }
-
 const Component: FC<Props> = ({ children }) => {
   const store = useStore('')
 
@@ -48,7 +18,6 @@ const Component: FC<Props> = ({ children }) => {
       mode={store.runtime.theme.variant as any}
       provider={provider}
     >
-      {/* @ts-ignore */}
       <GlobalStyle theme={theme} blocked={store.runtime.menu.isOpen} />
       {children}
     </Provider>

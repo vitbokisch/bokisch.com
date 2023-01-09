@@ -10,13 +10,13 @@ const MobileSettings = Base.theme({ marginY: 16 })
 
 const Component = () => {
   const { width } = useWindowResize()
-  const store = useStore('')
+  const { runtime } = useStore('')
 
   return (
     <>
       <Base
         block
-        content={<Logo onClick={store.runtime.menu.closeMenu} />}
+        content={<Logo onClick={runtime.menu.closeMenu} />}
         afterContent={
           <List contentDirection="inline" gap="xLarge">
             {width >= 576 ? <ThemeSwitch /> : null}

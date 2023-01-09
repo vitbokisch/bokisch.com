@@ -18,7 +18,7 @@ const Section = section
     fullScreen: true,
     width: '100%',
     height: '100vh',
-    overflowY: 'scroll',
+    overflowY: { xs: 'scroll', sm: 'hidden' },
     overflowX: 'hidden',
   })
 
@@ -27,9 +27,10 @@ type Props = {
 }
 
 const Component: FC<Props> = ({ menu }) => {
-  const store = useStore('')
+  const { runtime } = useStore('')
+  const { isOpen } = runtime.menu
 
-  if (!store.runtime.menu.isOpen) return null
+  if (!isOpen) return null
 
   return (
     <Portal>
@@ -37,25 +38,25 @@ const Component: FC<Props> = ({ menu }) => {
         <Background />
         <Container
           gutter={0}
-          gap={{ xs: 48, sm: 0 }}
+          gap={{ xs: 48, sm: 1 }}
           columns={{ xs: 1, sm: 7 }}
         >
           <Header />
 
           <Row gutter={64}>
-            <Col size={{ xs: 1, sm: 3 }}>
+            <Col size={{ xs: 1, sm: 2 }}>
               <Provider inversed>
                 <LinkList
                   data={menu}
                   gap="xLarge"
                   itemProps={{
                     size: 'large',
-                    onClick: store.runtime.menu.closeMenu,
+                    onClick: runtime.menu.closeMenu,
                   }}
                 />
               </Provider>
             </Col>
-            <Col size={{ xs: 0, sm: 2 }} />
+            <Col size={{ xs: 0, sm: 3 }} />
             <Col size={{ xs: 1, sm: 2 }}>
               <ContactList itemProps={{ light: true }} />
             </Col>

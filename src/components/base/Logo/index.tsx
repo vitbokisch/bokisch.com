@@ -7,7 +7,8 @@ export default element
     contentAlignX: 'left',
     contentAlignY: 'center',
     dangerouslySetInnerHTML: {
-      __html: require(`~/assets/logo/logo-vit-bokisch.svg?include`),
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      __html: require(`~/assets/logo/logo-vit-bokisch.svg?include`).default,
     },
   })
   .theme((t, m) => ({

@@ -29,6 +29,7 @@ const config: Config = {
     'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;1,300&display=swap',
   openGraph: {
     url: 'https://bokisch.com',
+    // eslint-disable-next-line global-require
     image: require('~/assets/socials/preview.jpg'),
   },
 }

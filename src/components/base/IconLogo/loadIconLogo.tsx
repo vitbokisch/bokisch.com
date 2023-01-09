@@ -8,9 +8,12 @@ export type Props = Partial<{
 
 type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
 
-const component: HOC =
-  (WrappedComponent) =>
-  ({ name, src, ...props }) =>
+const Component: HOC = (WrappedComponent) => {
+  const Enhanced = ({ name, src, ...props }: Props) => (
     <WrappedComponent alt={name} {...props} src={src || `logo-${name}.png`} />
+  )
 
-export default component
+  return Enhanced
+}
+
+export default Component

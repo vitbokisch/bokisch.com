@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import { FC } from 'react'
 import Box, { Header, Body } from '../Box'
 import heading from '../Heading'
 import Text from '../Text'
@@ -17,16 +17,16 @@ const SubHeading = Text.theme((t) => ({
 }))
 
 type Props = {
-  title: string
-  subtitle?: string
-  note?: string
-  icon?: string
-  logo?: string
-  children: ReactNode
-  list?: Array<string>
+  title: (typeof Heading)['$$types']['label']
+  subtitle?: (typeof SubHeading)['$$types']['label']
+  note?: (typeof Text)['$$types']['children']
+  icon?: (typeof Icon)['$$types']['name']
+  logo?: (typeof IconLogo)['$$types']['name']
+  children: (typeof Text)['$$types']['children']
+  list?: (typeof List)['$$types']['data']
 }
 
-const component: FC<Props> = ({
+const Component: FC<Props> = ({
   title,
   subtitle,
   note,
@@ -65,5 +65,5 @@ const component: FC<Props> = ({
   </Box>
 )
 
-component.displayName = 'base/Card'
-export default component
+Component.displayName = 'base/Card'
+export default Component

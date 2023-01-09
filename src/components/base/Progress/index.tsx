@@ -19,7 +19,7 @@ type TextType = typeof Text
 
 const Progress = element
   .config({ name: 'base/Progress', provider: true })
-  .attrs<{ label: TextType['$$allProps']['children'] }>(({ label }, t) => ({
+  .attrs<{ label: TextType['$$types']['children'] }>(({ label }, t) => ({
     gap: t.space.small,
     block: true,
     tag: 'span',

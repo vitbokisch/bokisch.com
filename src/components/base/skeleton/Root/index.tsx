@@ -9,5 +9,6 @@ export default element
     contentAlignX: 'block',
   })
   .theme({
+    width: '100vw',
     overflowX: 'hidden',
   })

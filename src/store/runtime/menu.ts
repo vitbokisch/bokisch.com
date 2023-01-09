@@ -14,7 +14,11 @@ const model = t
   }))
   .actions((self) => ({
     toggleMenu: () => {
-      self.isOpen ? self.closeMenu() : self.openMenu()
+      if (self.isOpen) {
+        self.closeMenu()
+      } else {
+        self.openMenu()
+      }
     },
   }))
 

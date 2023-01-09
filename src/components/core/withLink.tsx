@@ -16,9 +16,8 @@ type WrapProps = Partial<{ active: boolean; href: string }>
 
 type HOC = (WrappedComponent: ComponentType<WrapProps>) => ComponentType<Props>
 
-const component: HOC =
-  (WrappedComponent) =>
-  ({
+const component: HOC = (WrappedComponent) => {
+  const Enhanced = ({
     href,
     prefetch = false,
     replace,
@@ -26,7 +25,7 @@ const component: HOC =
     shallow,
     external,
     ...props
-  }) => {
+  }: Props) => {
     const { route } = useRouter()
 
     if (!href) return <WrappedComponent {...props} />
@@ -64,5 +63,8 @@ const component: HOC =
       </Link>
     )
   }
+
+  return Enhanced
+}
 
 export default component

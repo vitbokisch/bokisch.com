@@ -3,7 +3,7 @@ import { useStore, observer } from '~/store'
 import TabList, { Tab } from '~/components/base/TabList'
 
 const Component: FC = () => {
-  const store = useStore('')
+  const { career } = useStore('')
 
   return (
     <TabList
@@ -16,22 +16,22 @@ const Component: FC = () => {
       <Tab
         primary
         label="Work Experience"
-        onClick={() => store.career?.setFilter(1)}
+        onClick={() => career?.setFilter('work')}
       />
       <Tab
         secondary
         label="Own projects"
-        onClick={() => store.career?.setFilter(2)}
+        onClick={() => career?.setFilter('sideProject')}
       />
       <Tab
         tertiary
         label="Internships"
-        onClick={() => store.career?.setFilter(3)}
+        onClick={() => career?.setFilter('internship')}
       />
       <Tab
         neutral
         label="Education"
-        onClick={() => store.career?.setFilter(4)}
+        onClick={() => career?.setFilter('education')}
       />
     </TabList>
   )

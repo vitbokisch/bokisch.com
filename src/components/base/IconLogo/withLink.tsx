@@ -12,14 +12,16 @@ export type Props = Partial<{
 
 type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
 
-const component: HOC =
-  (WrappedComponent) =>
-  ({ link, ...props }) => {
+const component: HOC = (WrappedComponent) => {
+  const Enhanced = ({ link, ...props }: Props) => {
     const Result = <WrappedComponent {...props} name="" />
 
     if (link) return <Link href={link}>{Result}</Link>
 
     return Result
   }
+
+  return Enhanced
+}
 
 export default component

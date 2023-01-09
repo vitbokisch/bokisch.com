@@ -46,7 +46,7 @@ type Props = {
 
 // type RenderType = { innerRef: any; align: 'top' | 'bottom' }
 
-const component: FC<Props> = ({ trigger, children }) => (
+const Component: FC<Props> = ({ trigger, children }) => (
   <Overlay
     triggerRefName="innerRef"
     contentRefName="innerRef"
@@ -65,4 +65,4 @@ const component: FC<Props> = ({ trigger, children }) => (
   </Overlay>
 )
 
-export default component
+export default Component

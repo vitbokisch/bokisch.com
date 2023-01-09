@@ -1,21 +1,18 @@
-/* eslint-disable global-require */
-/* eslint-disable import/no-dynamic-require */
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { useEffect, useState, ComponentType } from 'react'
 
 type Props = {
   src: string
-  placeholder?: string
+  placeholder?: boolean
   alt?: string
   style?: Record<string, unknown>
 }
 
 type GetSource = (
-  src: string,
-  placeholder?: string
-) => { placeholder: any; original: string } | undefined
+  src?: Props['src'],
+  placeholder?: Props['placeholder']
+) => Promise<{ placeholder: string; original: string } | undefined>
 
-const getSource: GetSource = (src, placeholder) => {
+const getSource: GetSource = async (src, placeholder) => {
   if (!src) return undefined
 
   if (src.startsWith('data:'))
@@ -24,38 +21,50 @@ const getSource: GetSource = (src, placeholder) => {
       original: src,
     }
 
-  const optimizedImage = require(`~/assets/images/${src}?webp`)
+  const optimizedImage = await import(`~/assets/images/${src}?webp`)
 
   if (placeholder) {
+    const importedPlaceholder = await import(`~/assets/images/${src}?trace`)
+
     return {
-      placeholder: require(`~/assets/images/${src}?trace`).trace,
-      original: optimizedImage,
+      placeholder: importedPlaceholder.trace,
+      original: optimizedImage.default,
     }
   }
 
   return {
     placeholder: null,
-    original: optimizedImage,
+    original: optimizedImage.default,
   }
 }
 
 type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
 
+type ImageSize = { width: number; height: number }
+
 const Component: HOC = (WrappedComponent) => {
   const Enhanced: ComponentType<Props> = ({ src, placeholder, ...props }) => {
     const [isLoaded, setLoaded] = useState(false)
-    const [sizes, setSizes] = useState({})
-    const [source, setSource] = useState(getSource(src, placeholder))
+    const [sizes, setSizes] = useState<{ width: number; height: number }>(
+      {} as ImageSize
+    )
+    const [source, setSource] = useState<Awaited<ReturnType<GetSource>>>()
 
     useEffect(() => {
-      setLoaded(false)
-      setSource(getSource(src, placeholder))
+      const loadImage = async () => {
+        setLoaded(false)
+        const loaded = await getSource(src, placeholder)
+        // console.log(loaded)
+        setSource(loaded)
+      }
+
+      loadImage()
     }, [src, placeholder])
 
     useEffect(() => {
-      const originalImage = new Image()
-      if (source) {
-        originalImage.src = source.original
+      if (source?.original) {
+        const originalImage = new Image()
+        originalImage.src = source?.original
         originalImage.onload = () => {
           setSizes({ width: originalImage.width, height: originalImage.height })
           setLoaded(true)
@@ -64,6 +73,7 @@ const Component: HOC = (WrappedComponent) => {
     }, [source])
 
     if (!src) return null
+    if (!source?.original && !source?.placeholder) return null
 
     return (
       <WrappedComponent

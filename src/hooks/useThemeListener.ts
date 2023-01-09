@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { useEffect, useCallback, useLayoutEffect } from 'react'
 import { STORAGE, THEME } from '~/config/constants'
 
@@ -7,7 +6,7 @@ type Props = {
   setTheme: (theme: string) => void
 }
 const useThemeListener = ({ theme, setTheme }: Props) => {
-  if (typeof window === 'undefined') return
+  // if (typeof window === 'undefined') return
 
   // an initial hook for defining default theme
   useLayoutEffect(() => {

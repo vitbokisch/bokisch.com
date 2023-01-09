@@ -7,12 +7,14 @@ const Icon = icon.config({
     ctx<typeof Link>(({ pseudo, state }) => ({ pseudo, state })),
 })
 
+type Props = { icon?: string }
+
 const Link = link
   .config({
     name: 'base/Link',
     provider: true,
   })
-  .attrs<{ icon?: string }>(({ icon }, theme) => ({
+  .attrs<Props>(({ icon }, theme) => ({
     beforeContent: icon ? <Icon name={icon} size="small" /> : undefined,
     gap: icon ? theme.space.medium : undefined,
   }))

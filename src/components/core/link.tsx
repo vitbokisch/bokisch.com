@@ -21,8 +21,8 @@ export default element
     backgroundColor: t.color.transparent,
     textDecoration: 'none',
     outline: 'none',
-    padding: 0,
-    margin: 0,
+    padding: t.space.reset,
+    margin: t.space.reset,
     color: m(t.color.dark.base, t.color.light.base),
     userSelect: 'none',
 

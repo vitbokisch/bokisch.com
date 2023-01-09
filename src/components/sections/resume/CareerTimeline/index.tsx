@@ -5,43 +5,16 @@ import Section, { Header } from '~/components/base/Section'
 import Timeline from '~/components/base/Timeline'
 import Tabs from './Tabs'
 
-const states = {
-  1: 'primary',
-  2: 'secondary',
-  3: 'tertiary',
-  4: 'neutral',
-} as const
+const Component: FC = () => {
+  const store = useStore('')
 
-type Keys = keyof typeof states
-type Values = typeof states[Keys]
-
-type TransformedData = (
-  data: Array<{
-    company: string
-    type: 1 | 2 | 3 | 4
-    date: string
-    position: string
-    responsibilities: string[]
-  }>
-) => Array<{
-  company: string
-  date: string
-  position: string
-  responsibilities: string[]
-  state: Values
-}>
-
-const transformedData: TransformedData = (data) =>
-  data.map((item) => ({
+  const data = store.career?.dataByType.map((item) => ({
     company: item.company,
     date: item.date,
     position: item.position,
-    responsibilities: item.responsibilities,
-    state: states[item.type],
+    responsibilities: item.responsibilities.map((item) => item),
+    state: item.state,
   }))
-
-const Component: FC = () => {
-  const store = useStore('')
 
   return (
     <Background gradient>
@@ -53,7 +26,7 @@ const Component: FC = () => {
           working in more agile environments and cross-functional teams.
         </Header>
         <Tabs />
-        <Timeline data={transformedData(store.career?.dataByType as any)} />
+        {data && data?.length > 0 && <Timeline data={data} />}
       </Section>
     </Background>
   )

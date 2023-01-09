@@ -9,9 +9,8 @@ export type Props = Partial<{
 
 type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
 
-const component: HOC =
-  (WrappedComponent) =>
-  ({ name, label, href, ...props }) => {
+const Component: HOC = (WrappedComponent) => {
+  const Enhanced = ({ name, label, href, ...props }: Props) => {
     const [image, setImage] = useState(null)
 
     useEffect(() => {
@@ -42,4 +41,7 @@ const component: HOC =
     )
   }
 
-export default component
+  return Enhanced
+}
+
+export default Component

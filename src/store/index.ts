@@ -36,6 +36,7 @@ export type IStoreSnapshotIn = SnapshotIn<typeof Store>
 export type IStoreSnapshotOut = SnapshotOut<typeof Store>
 
 function initializeStore(snapshot = null) {
+  // eslint-disable-next-line no-underscore-dangle
   const _store = store ?? Store.create(initialState as any)
 
   // If your page has Next.js data fetching methods that use a Mobx store, it will
@@ -51,7 +52,8 @@ function initializeStore(snapshot = null) {
   return store
 }
 
-function useStore(initialState: any) {
+type UseStore = (initialState?: any) => ReturnType<typeof initializeStore>
+const useStore: UseStore = (initialState = '') => {
   const store = useMemo(() => initializeStore(initialState), [initialState])
   return store
 }

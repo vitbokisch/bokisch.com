@@ -6,22 +6,26 @@ export type Props = Partial<{
 
 type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
 
-const component: HOC =
-  (WrappedComponent) =>
-  ({ src, ...props }) => {
+const Component: HOC = (WrappedComponent) => {
+  const Enhanced = ({ src, ...props }: Props) => {
     const [sizes, setSizes] = useState({})
 
-    if (!src) return null
-
     useEffect(() => {
-      const originalImage = new Image()
-      originalImage.src = src
-      originalImage.onload = () => {
-        setSizes({ width: originalImage.width, height: originalImage.height })
+      if (src) {
+        const originalImage = new Image()
+        originalImage.src = src
+        originalImage.onload = () => {
+          setSizes({ width: originalImage.width, height: originalImage.height })
+        }
       }
     }, [src])
+
+    if (!src) return null
 
     return <WrappedComponent src={src} {...sizes} {...props} />
   }
 
-export default component
+  return Enhanced
+}
+
+export default Component

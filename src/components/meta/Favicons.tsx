@@ -90,7 +90,7 @@ const component: FC<Props> = ({ variant = 'dark' }) => (
       content="black-translucent"
     />
     <meta name="apple-mobile-web-app-title" />
-    <link
+    {/* <link
       rel="apple-touch-startup-image"
       media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
       href={`/favicon/${variant}/apple-touch-startup-image-640x1136.png`}
@@ -199,7 +199,7 @@ const component: FC<Props> = ({ variant = 'dark' }) => (
       rel="apple-touch-startup-image"
       media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
       href={`/favicon/${variant}/apple-touch-startup-image-2160x1620.png`}
-    />
+    /> */}
     <link
       rel="icon"
       type="image/png"
@@ -215,10 +215,10 @@ const component: FC<Props> = ({ variant = 'dark' }) => (
       name="msapplication-config"
       content={`/favicon/${variant}/browserconfig.xml`}
     />
-    <link
+    {/* <link
       rel="yandex-tableau-widget"
       href={`/favicon/${variant}/yandex-browser-manifest.json`}
-    />
+    /> */}
   </>
 )
 

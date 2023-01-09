@@ -3,7 +3,7 @@ export default [
     company: 'Vitus Labs',
     date: 'Mar 2018 - current',
     position: 'Founder & Engineer',
-    type: 2,
+    type: 'sideProject',
     responsibilities: [
       'A side hobby open-source project I work in my free time to give back to the community',
       'A set of ideas and experiments with a goal to innovate and make frontend development more convenient',
@@ -17,7 +17,7 @@ export default [
     company: 'Invity.io',
     date: 'Sep 2021 - Dec 2021',
     position: 'Product Manager',
-    type: 1,
+    type: 'work',
     responsibilities: [
       'Responsible for project Coinmap.org',
       'Market research, consumer behavior analysis, competitor analysis,...',
@@ -36,7 +36,7 @@ export default [
     company: 'Cinnamon',
     date: 'Dec 2019 - Sep 2020',
     position: 'Frontend Engineer',
-    type: 1,
+    type: 'work',
     responsibilities: [
       'A global social video platform similar to TikTok with real-time crypto pay outs to content creators',
       'Designing a complete monorepo structure + documentation, including configuration ESLint, Typescript, Rollup.js, Storybook,...',
@@ -52,7 +52,7 @@ export default [
     company: 'Mews Systems',
     date: 'Jan 2019 - Jun 2019',
     position: 'Frontend Engineer',
-    type: 1,
+    type: 'work',
     responsibilities: [
       'Collaboration in a team working on a B2C product connecting hoteliers with their customers',
       'Worked on a prototyping and later on developing an instant messaging feature',
@@ -68,7 +68,7 @@ export default [
     company: 'Samba.ai',
     date: 'Feb 2018 - Sep 2018',
     position: '(Lead) Frontend Engineer',
-    type: 1,
+    type: 'work',
     responsibilities: [
       'Interviews with candidates',
       'Maintained two B2B products (one running on ReactJS, the other on Angular)',
@@ -84,7 +84,7 @@ export default [
     company: 'Tripoffr',
     date: '2017 - 2019',
     position: 'Founder',
-    type: 2,
+    type: 'sideProject',
     responsibilities: [
       'A side hobby project of me and my friend made for fun and learn new stuff',
       'An aggregator scrapping great traveling deals from other websites and presents them in one place',
@@ -97,7 +97,7 @@ export default [
     company: 'Techloop',
     date: 'Oct 2017 - Jan 2018',
     position: '(Lead) Frontend Engineer',
-    type: 1,
+    type: 'work',
     responsibilities: [
       'Collaboration in a small team working on hiring platform',
       'Working on prototyping and later on developing a mobile app in React Native',
@@ -111,7 +111,7 @@ export default [
     company: 'Spendee',
     date: 'Dec 2016 - Aug 2017',
     position: '(Lead) Frontend Engineer',
-    type: 1,
+    type: 'work',
     responsibilities: [
       'Interviews with candidates',
       'Initiated a new episode of the web app',
@@ -128,7 +128,7 @@ export default [
     company: 'Abroad studies',
     date: 'Feb 2016 - Jul 2016',
     position: 'Beihang University, China',
-    type: 4,
+    type: 'education',
     responsibilities: [
       'Abroad studies in Beijing, China',
       'Learned a lot about Asian culture and the international environment',
@@ -141,7 +141,7 @@ export default [
     company: 'STRV',
     date: 'Jun 2015 - Jan 2016',
     position: 'Frontend Engineer',
-    type: 1,
+    type: 'work',
     responsibilities: [
       'Collaboration in teams working on several client web apps',
       'Worked on an app similar to Uber or Bolt; or an investment platform',
@@ -153,7 +153,7 @@ export default [
     company: 'Abroad studies',
     date: 'May 2012 - Sep 2013',
     position: 'Ghent University, Belgium',
-    type: 4,
+    type: 'education',
     responsibilities: [
       'Erasmus student of Economics & Business Administration',
       'One of Top 100 universities in the world',
@@ -167,7 +167,7 @@ export default [
     company: 'Master studies',
     date: '2013 - 2016',
     position: 'Czech Technical University',
-    type: 4,
+    type: 'education',
     responsibilities: [
       'Master studies (without Baster degree)',
       'Student of Economics & Management of Electrical Engineering',
@@ -178,7 +178,7 @@ export default [
     company: 'CZM',
     date: 'May 2012 - Sep 2013',
     position: 'Internship',
-    type: 3,
+    type: 'internship',
     responsibilities: [
       'An Internship at the Center of Knowledge Management at Czech Technical University in Prague',
       'Collaboration with IBM',
@@ -192,7 +192,7 @@ export default [
     company: 'Tesco',
     date: '2012 - 2013',
     position: 'Mentoring',
-    type: 3,
+    type: 'internship',
     responsibilities: [
       'A mentee at the department of Law during Bachelor studies',
       'Learning management stuff, attending meetings,...',
@@ -203,7 +203,7 @@ export default [
     company: 'Bachelor studies',
     date: '2009 - 2013',
     position: 'Czech Technical University',
-    type: 4,
+    type: 'education',
     responsibilities: [
       'Bachelor studies',
       'Student of Economics & Management of Electrical Engineering',

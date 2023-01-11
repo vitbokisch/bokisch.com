@@ -18,3 +18,8 @@ export default element
       height: '100vh',
     },
   })
+  .styles(
+    (css) => css`
+      content-visibility: auto;
+    `
+  )

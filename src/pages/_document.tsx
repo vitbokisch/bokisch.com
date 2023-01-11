@@ -30,7 +30,7 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        ) as any,
+        ),
       }
     } finally {
       sheet.seal()

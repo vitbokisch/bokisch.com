@@ -14,6 +14,19 @@ export default [
     ],
   },
   {
+    company: 'KINDRED.',
+    date: 'May 2022 - Aug 2022',
+    position: 'Engineering Team/Tech Lead',
+    type: 'work',
+    responsibilities: [
+      'As a Team Lead managing engineers, their ups and downs, growth, salaries, approving vaccations',
+      'As a Tech Lead responsible for web architecture, managing development workflow, JIRA tasks, helping developers',
+      'Contribution to company processes and vision',
+      'Maintenance migrations and solving technical debts on clients websites',
+      'Development of new client projects and attending calls with clients',
+    ],
+  },
+  {
     company: 'Invity.io',
     date: 'Sep 2021 - Dec 2021',
     position: 'Product Manager',
@@ -31,7 +44,6 @@ export default [
       'In the end, I have made a hard decission and recommended to postpone the realisation of the project',
     ],
   },
-
   {
     company: 'Cinnamon',
     date: 'Dec 2019 - Sep 2020',

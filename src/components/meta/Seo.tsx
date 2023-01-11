@@ -8,13 +8,17 @@ const component: FC<Props> = ({
   title,
   description = config.description,
   keywords = config.keywords,
-}) => (
-  <Head>
-    <title>[{title}] Vit Bokisch</title>
-    <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
-  </Head>
-)
+}) => {
+  const seoTitle = `[${title}] Vit Bokisch`
+
+  return (
+    <Head>
+      <title>{seoTitle}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+    </Head>
+  )
+}
 
 component.displayName = 'components/meta/Seo'
 

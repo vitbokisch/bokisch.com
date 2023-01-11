@@ -1,3 +1,4 @@
+import '~/config/rocketstyle'
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
 import { Provider as StoreProvider } from 'mobx-react'

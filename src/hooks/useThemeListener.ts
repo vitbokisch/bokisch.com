@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useLayoutEffect } from 'react'
+import { useEffect, useCallback } from 'react'
 import { STORAGE, THEME } from '~/config/constants'
 
 type Props = {
@@ -9,7 +9,7 @@ const useThemeListener = ({ theme, setTheme }: Props) => {
   // if (typeof window === 'undefined') return
 
   // an initial hook for defining default theme
-  useLayoutEffect(() => {
+  useEffect(() => {
     const currentTheme = window.localStorage.getItem(STORAGE.THEME)
 
     if (currentTheme && Object.values(THEME).includes(currentTheme)) {

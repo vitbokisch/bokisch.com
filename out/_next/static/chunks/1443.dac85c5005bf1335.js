@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[1443],{1443:function(e,t,c){c.r(t),t.default="/_next/static/images/vit-profile-516123674c2651181d236a538b8b86ec.png.webp"}}]);

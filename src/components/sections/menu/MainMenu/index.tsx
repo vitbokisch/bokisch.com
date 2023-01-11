@@ -38,7 +38,7 @@ const Component: FC<Props> = ({ menu }) => {
         <Background />
         <Container
           gutter={0}
-          gap={{ xs: 48, sm: 1 }}
+          gap={{ xs: 48, sm: 0 }}
           columns={{ xs: 1, sm: 7 }}
         >
           <Header />

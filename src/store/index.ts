@@ -14,7 +14,11 @@ import contacts, { mockup as contactsMockup } from './data/contacts'
 import career, { mockup as careerMockup } from './data/career'
 
 const initialState = {
-  runtime: { theme: { variant: 'light' }, menu: { isOpen: false } },
+  runtime: {
+    theme: { variant: 'light' },
+    menu: { isOpen: false },
+    viewport: {},
+  },
   knowledge: knowledgeMockup,
   technologies: technologiesMockup,
   career: careerMockup,

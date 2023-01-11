@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import box, { Header as header, Body } from '../Box'
-import Heading from '../Heading'
-import Text from '../Text'
-import List from '../List'
+import box, { Header as header, Body } from '~/components/base/Box'
+import Heading from '~/components/base/Heading'
+import Text from '~/components/base/Text'
+import List from '~/components/base/List'
 
 const Box = box.config({ name: 'base/Timeline/Box' }).theme({
   height: null,

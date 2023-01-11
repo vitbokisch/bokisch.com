@@ -31,7 +31,6 @@ import Switch from './Switch'
 import Symbol from './Symbol'
 import Tab from './Tab'
 import Text from './Text'
-import Timeline from './Timeline'
 
 export {
   Base,
@@ -67,5 +66,4 @@ export {
   Symbol,
   Tab,
   Text,
-  Timeline,
 }

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { useWindowResize } from '@vitus-labs/hooks'
+import { useStore, observer } from '~/store'
 import { element } from '~/components/core'
 
 const BackgroundMobile = element.theme((t, m) => ({
@@ -43,7 +43,8 @@ const BackgroundRight = element.theme({
 })
 
 const Component: FC = () => {
-  const { width } = useWindowResize()
+  const { runtime } = useStore()
+  const { width } = runtime.viewport
 
   if (width < 576) {
     return <BackgroundMobile />
@@ -56,4 +57,4 @@ const Component: FC = () => {
   )
 }
 
-export default Component
+export default observer(Component)

@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { useStore, observer } from '~/store'
 import Background from '~/components/base/Background'
 import Section, { Header } from '~/components/base/Section'
-import Timeline from '~/components/base/Timeline'
+import Timeline from '~/components/sections/timeline/Timeline'
 import Tabs from './Tabs'
 
 const Component: FC = () => {

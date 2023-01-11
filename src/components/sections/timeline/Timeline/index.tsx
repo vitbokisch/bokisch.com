@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { useWindowResize } from '@vitus-labs/hooks'
+import { useStore, observer } from '~/store'
 import { element } from '~/components/core'
 import { Container, Row, Col } from '~/components/base/grid'
 import BoxList from './BoxList'
@@ -35,7 +35,9 @@ type Props = {
 }
 
 const Component: FC<Props> = ({ data }) => {
-  const { width } = useWindowResize()
+  const { runtime } = useStore()
+
+  const { width } = runtime.viewport
 
   if (width === 0) return null
 
@@ -94,4 +96,4 @@ const Component: FC<Props> = ({ data }) => {
   )
 }
 
-export default Component
+export default observer(Component)

@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react'
 import { element } from '~/components/core'
-import symbol from '../Symbol'
+import symbol from '~/components/base/Symbol'
 
 const Wrapper = element
   .config({

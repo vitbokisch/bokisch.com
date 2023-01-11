@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { useWindowResize } from '@vitus-labs/hooks'
+import { useStore, observer } from '~/store'
 import { Provider } from '~/theme'
 import Base from '~/components/base/Base'
 import List from '~/components/base/List'
@@ -8,7 +8,8 @@ import ThemeSwitch from '~/components/sections/theme/ThemeSwitch'
 import MenuTrigger from '~/components/sections/menu/MenuTrigger'
 
 const Component: FC = () => {
-  const { width } = useWindowResize()
+  const { runtime } = useStore()
+  const { width } = runtime.viewport
 
   return (
     <Base
@@ -27,4 +28,4 @@ const Component: FC = () => {
   )
 }
 
-export default Component
+export default observer(Component)

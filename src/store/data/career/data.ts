@@ -19,11 +19,14 @@ export default [
     position: 'Engineering Team/Tech Lead',
     type: 'work',
     responsibilities: [
-      'As a Team Lead managing engineers, their ups and downs, growth, salaries, approving vaccations',
-      'As a Tech Lead responsible for web architecture, managing development workflow, JIRA tasks, helping developers',
-      'Contribution to company processes and vision',
-      'Maintenance migrations and solving technical debts on clients websites',
+      'Managing engineers, their ups and downs, growth, salaries, approving vaccations (directly responsible for 2 engineers)',
+      'As a Tech Lead responsible for designing web application architecture, managing development workflow, JIRA tasks, helping developers',
+      'Contribution to the company processes and vision',
+      'Maintenance, migrations and solving technical debts on clients websites',
       'Development of new client projects and attending calls with clients',
+      'Attending calls with clients, discussing technical feasibility, estimations',
+      'Implementation of third-party solutions',
+      'Contribution to CI/CD processes',
     ],
   },
   {
@@ -102,7 +105,7 @@ export default [
       'An aggregator scrapping great traveling deals from other websites and presents them in one place',
       'Designed UI for web and mobile',
       'Developed web app and mobile app in React Native',
-      'The app is not running anymore',
+      // 'The app is not running anymore',
     ],
   },
   {
@@ -158,12 +161,14 @@ export default [
       'Collaboration in teams working on several client web apps',
       'Worked on an app similar to Uber or Bolt; or an investment platform',
       'Built web apps from scratch, working on features requested by clients, fixing bugs',
-      'Contributed to company frontend code styles',
+      'Contribution to company frontend code styles',
+      'Early adoption of React, Redux, webpack, CSS Modules and other top-notch technology',
+      // 'Tech stack configurations',
     ],
   },
   {
     company: 'Abroad studies',
-    date: 'May 2012 - Sep 2013',
+    date: 'Sep 2013 - Sep 2014',
     position: 'Ghent University, Belgium',
     type: 'education',
     responsibilities: [
@@ -181,7 +186,7 @@ export default [
     position: 'Czech Technical University',
     type: 'education',
     responsibilities: [
-      'Master studies (without Baster degree)',
+      'Master studies (without Master degree)',
       'Student of Economics & Management of Electrical Engineering',
       'Full-time study with taking opportunities to study & travel abroad',
     ],

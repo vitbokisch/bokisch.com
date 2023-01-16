@@ -1,8 +1,11 @@
 import { types as t } from 'mobx-state-tree'
+import { getDefaultTheme } from '~/utils/theme'
+
+type Variant = ['light', 'dark'][number]
 
 const model = t
   .model('runtime/Theme', {
-    variant: t.enumeration(['light', 'dark']),
+    variant: t.optional(t.enumeration<Variant>(['light', 'dark']), 'light'),
   })
   .views((self) => ({
     get isDark() {
@@ -10,12 +13,17 @@ const model = t
     },
   }))
   .actions((self) => ({
-    setTheme: (theme: string) => {
+    setTheme: (theme: Variant) => {
       self.variant = theme
     },
     toggleTheme: () => {
       if (self.variant === 'light') self.variant = 'dark'
       else self.variant = 'light'
+    },
+  }))
+  .actions((self) => ({
+    afterCreate() {
+      self.setTheme(getDefaultTheme())
     },
   }))
 

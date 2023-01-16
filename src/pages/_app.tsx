@@ -2,10 +2,10 @@ import '~/config/rocketstyle'
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
 import { Provider as StoreProvider } from 'mobx-react'
+import { useWindowResize } from '@vitus-labs/hooks'
 import { useStore, observer } from '~/store'
 import { ThemeProvider } from '~/theme'
 import useThemeListener from '~/hooks/useThemeListener'
-import useWindowResizeListener from '~/hooks/useWindowResizeListener'
 import Meta from '~/components/meta/Meta'
 import Social from '~/components/meta/Social'
 import Favicons from '~/components/meta/Favicons'
@@ -16,8 +16,9 @@ const Component = ({
 }: AppProps<{ initialState: any }>) => {
   const store = useStore(pageProps.initialState)
 
-  useWindowResizeListener({
-    update: store.runtime.viewport.setSizes,
+  useWindowResize({
+    throttleDelay: 200,
+    onChange: store.runtime.viewport.setSizes,
   })
 
   useThemeListener({

@@ -23,7 +23,7 @@ const data = [
   { label: 'Career Timeline', href: '#career-timeline' },
 ]
 
-const component: FC = () => (
+const Component: FC = () => (
   <>
     <Seo title="Resume" />
     <Layout>
@@ -42,5 +42,5 @@ const component: FC = () => (
   </>
 )
 
-component.displayName = 'components/pages/Resume'
-export default component
+Component.displayName = 'components/pages/Resume'
+export default Component

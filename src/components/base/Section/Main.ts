@@ -12,14 +12,10 @@ export default element
   })
   .theme((t) => ({
     paddingY: { xs: t.space.xLarge, md: t.space.xxLarge },
+    contentVisibility: 'auto',
   }))
   .variants({
     fullScreen: {
       height: '100vh',
     },
   })
-  .styles(
-    (css) => css`
-      content-visibility: auto;
-    `
-  )

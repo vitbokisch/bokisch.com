@@ -36,10 +36,7 @@ type Props = {
 
 const Component: FC<Props> = ({ data }) => {
   const { runtime } = useStore()
-
   const { width } = runtime.viewport
-
-  if (width === 0) return null
 
   if (width >= 992) {
     const { leftSide, rightSide } = splitData(data)

@@ -10,9 +10,9 @@ type Props = {
 type GetSource = (
   src?: Props['src'],
   placeholder?: Props['placeholder']
-) => Promise<{ placeholder: string; original: string } | undefined>
+) => { placeholder: string; original: string } | undefined
 
-const getSource: GetSource = async (src, placeholder) => {
+const getSource: GetSource = (src, placeholder) => {
   if (!src) return undefined
 
   if (src.startsWith('data:'))
@@ -21,10 +21,10 @@ const getSource: GetSource = async (src, placeholder) => {
       original: src,
     }
 
-  const optimizedImage = await import(`~/assets/images/${src}?webp`)
+  const optimizedImage = require(`~/assets/images/${src}?webp`)
 
   if (placeholder) {
-    const importedPlaceholder = await import(`~/assets/images/${src}?trace`)
+    const importedPlaceholder = require(`~/assets/images/${src}?trace`)
 
     return {
       placeholder: importedPlaceholder.trace,
@@ -48,13 +48,12 @@ const Component: HOC = (WrappedComponent) => {
     const [sizes, setSizes] = useState<{ width: number; height: number }>(
       {} as ImageSize
     )
-    const [source, setSource] = useState<Awaited<ReturnType<GetSource>>>()
+    const [source, setSource] = useState<ReturnType<GetSource>>(getSource())
 
     useEffect(() => {
-      const loadImage = async () => {
+      const loadImage = () => {
         setLoaded(false)
-        const loaded = await getSource(src, placeholder)
-        // console.log(loaded)
+        const loaded = getSource(src, placeholder)
         setSource(loaded)
       }
 

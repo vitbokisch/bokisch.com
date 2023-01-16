@@ -7,7 +7,7 @@ const Box = box.theme({
   maxWidth: { xs: '80%', md: 600 },
 })
 
-const component: FC = () => (
+const Component: FC = () => (
   <Box>
     <ContactList
       contentDirection={{ xs: 'rows', sm: 'inline' }}
@@ -19,4 +19,4 @@ const component: FC = () => (
   </Box>
 )
 
-export default component
+export default Component

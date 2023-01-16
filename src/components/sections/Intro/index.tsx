@@ -16,19 +16,15 @@ const Section = section.theme({
   maxHeight: { xs: 640, md: 800, lg: 1000 },
   // minHeight: { xs: '100vh', md: 600 },
   overflow: 'hidden',
-  background: `linear-gradient(
-      180deg,
-      #a5aead 0%,
-      #b1bab9 52.08%,
-      #b0b8b7 100%
-    )`,
+  background:
+    'linear-gradient(180deg, #a5aead 0%, #b1bab9 52.08%, #b0b8b7 100%)',
 })
 
 type Props = {
   heading?: string
 }
 
-const component: FC<Props> = ({ heading }) => (
+const Component: FC<Props> = ({ heading }) => (
   <Section>
     <ProfileImage />
     <Background overlay />
@@ -54,5 +50,5 @@ const component: FC<Props> = ({ heading }) => (
   </Section>
 )
 
-component.displayName = 'sections/Intro'
-export default component
+Component.displayName = 'sections/Intro'
+export default Component

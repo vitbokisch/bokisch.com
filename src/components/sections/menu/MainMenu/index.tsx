@@ -20,6 +20,7 @@ const Section = section
     height: '100vh',
     overflowY: { xs: 'scroll', sm: 'hidden' },
     overflowX: 'hidden',
+    contentVisibility: null,
   })
 
 type Props = {

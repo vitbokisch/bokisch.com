@@ -1,20 +1,10 @@
-import { FC } from 'react'
 import { element } from '~/components/core'
 import image from '~/components/base/Image'
 
-const ProfileImageWrapper = element
-  .config({
-    name: 'Intro/ProfileImage',
-  })
-  .theme({
-    position: 'absolute',
-    right: { xs: -350, sm: -260, lg: -100, xxl: 'initial' },
-    bottom: { xs: -70, md: 0 },
-    height: { xs: 460, md: 500 },
-    left: { xxl: '55%' },
-  })
-
 const ProfileImage = image
+  .config({
+    name: 'sections/Intro/ProfileImage',
+  })
   .attrs({
     src: 'vit-profile.png',
     placeholder: true,
@@ -26,11 +16,15 @@ const ProfileImage = image
     height: '100%',
   })
 
-const component: FC = () => (
-  <ProfileImageWrapper>
-    <ProfileImage />
-  </ProfileImageWrapper>
-)
-
-component.displayName = 'sections/Intro/ProfileImage'
-export default component
+export default element
+  .config({
+    name: 'sections/Intro/ProfileImageWrapper',
+  })
+  .attrs({ content: ProfileImage })
+  .theme({
+    position: 'absolute',
+    right: { xs: -350, sm: -260, lg: -100, xxl: 'initial' },
+    bottom: { xs: -70, md: 0 },
+    height: { xs: 460, md: 500 },
+    left: { xxl: '55%' },
+  })

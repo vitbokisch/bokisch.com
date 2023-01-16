@@ -25,7 +25,7 @@ type Props = {
   responsibilities: Array<string | number>
 }
 
-const component: FC<Props> = ({
+const Component: FC<Props> = ({
   company,
   date,
   position,
@@ -56,5 +56,5 @@ const component: FC<Props> = ({
   </Box>
 )
 
-component.displayName = 'base/timeline/Box'
-export default component
+Component.displayName = 'base/timeline/Box'
+export default Component

@@ -2,7 +2,7 @@ import { types as t } from 'mobx-state-tree'
 
 const model = t
   .model('runtime/Menu', {
-    isOpen: t.boolean,
+    isOpen: t.optional(t.boolean, false),
   })
   .actions((self) => ({
     openMenu: () => {

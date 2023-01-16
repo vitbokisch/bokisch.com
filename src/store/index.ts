@@ -14,11 +14,6 @@ import contacts, { mockup as contactsMockup } from './data/contacts'
 import career, { mockup as careerMockup } from './data/career'
 
 const initialState = {
-  runtime: {
-    theme: { variant: 'light' },
-    menu: { isOpen: false },
-    viewport: {},
-  },
   knowledge: knowledgeMockup,
   technologies: technologiesMockup,
   career: careerMockup,
@@ -28,7 +23,7 @@ const initialState = {
 let store: IStore | undefined
 
 const Store = t.model('Store', {
-  runtime,
+  runtime: t.optional(runtime, {}),
   knowledge: t.maybeNull(knowledge),
   technologies: t.maybeNull(technologies),
   career: t.maybeNull(career),

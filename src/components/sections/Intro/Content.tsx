@@ -15,7 +15,7 @@ type Props = {
   heading?: string
 }
 
-const component: FC<Props> = ({ heading }) => (
+const Component: FC<Props> = ({ heading }) => (
   <Provider inversed>
     <Heading level1 label={heading} />
     <Text base paragraph>
@@ -29,4 +29,4 @@ const component: FC<Props> = ({ heading }) => (
   </Provider>
 )
 
-export default component
+export default Component

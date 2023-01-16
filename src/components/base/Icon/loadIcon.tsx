@@ -7,22 +7,24 @@ export type Props = Partial<{
   dangerouslySetInnerHTML: any
 }>
 
+const getImage = (name?: string) => {
+  if (name) {
+    const asset = require(`~/assets/icons/${name}.svg?include`).default
+    return asset
+  }
+
+  return null
+}
+
 type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
 
 const Component: HOC = (WrappedComponent) => {
   const Enhanced = ({ name, label, href, ...props }: Props) => {
-    const [image, setImage] = useState(null)
+    const [image, setImage] = useState(getImage(name))
 
     useEffect(() => {
-      if (name) {
-        import(`~/assets/icons/${name}.svg?include`)
-          .then((value) => {
-            setImage(value.default)
-          })
-          .catch(() => {
-            setImage(null)
-          })
-      }
+      const image = getImage(name)
+      setImage(image)
     }, [name])
 
     return (

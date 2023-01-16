@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
 import { useEffect, useState, ComponentType } from 'react'
 
 export type Props = Partial<{

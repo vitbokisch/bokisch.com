@@ -1,5 +1,5 @@
 import { types as t } from 'mobx-state-tree'
-import { getDefaultTheme } from '~/utils/theme'
+import { STORAGE } from '~/config/constants'
 
 type Variant = ['light', 'dark'][number]
 
@@ -15,15 +15,13 @@ const model = t
   .actions((self) => ({
     setTheme: (theme: Variant) => {
       self.variant = theme
-    },
-    toggleTheme: () => {
-      if (self.variant === 'light') self.variant = 'dark'
-      else self.variant = 'light'
+      window.localStorage.setItem(STORAGE.THEME, theme)
     },
   }))
   .actions((self) => ({
-    afterCreate() {
-      self.setTheme(getDefaultTheme())
+    toggleTheme: () => {
+      if (self.variant === 'light') self.setTheme('dark')
+      else self.setTheme('light')
     },
   }))
 

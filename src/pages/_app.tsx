@@ -22,7 +22,6 @@ const Component = ({
   })
 
   useThemeListener({
-    theme: store.runtime.theme.variant,
     setTheme: store.runtime.theme.setTheme,
   })
 

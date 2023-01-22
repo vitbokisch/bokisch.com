@@ -1,10 +1,10 @@
-import { ComponentType } from 'react'
+import { useEffect, ComponentType, MouseEventHandler } from 'react'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import routes from '~/config/routes'
 
 type Props = Partial<{
   href: string | (<T>(routes: T) => keyof T)
+  onClick?: MouseEventHandler
   external: boolean
   prefetch: boolean
   replace: boolean
@@ -12,7 +12,11 @@ type Props = Partial<{
   shallow: boolean
 }>
 
-type WrapProps = Partial<{ active: boolean; href: string }>
+type WrapProps = Partial<{
+  active: boolean
+  href: string
+  onClick?: MouseEventHandler
+}>
 
 type HOC = (WrappedComponent: ComponentType<WrapProps>) => ComponentType<Props>
 
@@ -24,43 +28,48 @@ const component: HOC = (WrappedComponent) => {
     scroll,
     shallow,
     external,
+    onClick,
     ...props
   }: Props) => {
-    const { route } = useRouter()
+    const router = useRouter()
 
-    if (!href) return <WrappedComponent {...props} />
-
-    const goTo = () => {
+    const getFinalHref = () => {
       if (typeof href === 'string') return href
       if (typeof href === 'function') return href<typeof routes>(routes)
 
       return ''
     }
 
-    const destination = goTo()
+    useEffect(() => {
+      if (prefetch) router.prefetch(getFinalHref())
+    })
+
+    if (!href) return <WrappedComponent onClick={onClick} {...props} />
+
     const externalProps =
-      destination.startsWith('http') || external
+      getFinalHref().startsWith('http') || external
         ? {
             rel: 'noopener noreferrer',
             target: '_blank',
           }
         : {}
 
+    const finalHref = getFinalHref()
+    const handleClick = replace ? router.replace : router.push
+    const isActive = router.route === finalHref
+
     return (
-      <Link
-        href={destination}
-        replace={replace}
-        scroll={scroll}
-        shallow={shallow}
-        prefetch={prefetch}
-      >
-        <WrappedComponent
-          active={route === destination}
-          href={destination}
-          {...props}
-          {...externalProps}
-        />
-      </Link>
+      <WrappedComponent
+        active={isActive}
+        href={finalHref}
+        onClick={(e) => {
+          e.preventDefault()
+          if (onClick) onClick(e)
+          handleClick(finalHref, finalHref, { shallow, scroll })
+        }}
+        {...props}
+        {...externalProps}
+      />
     )
   }
 

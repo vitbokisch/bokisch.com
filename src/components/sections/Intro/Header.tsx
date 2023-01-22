@@ -28,4 +28,6 @@ const Component: FC = () => {
   )
 }
 
+Component.displayName = 'sections/Intro/Header'
+
 export default observer(Component)

@@ -6,9 +6,9 @@ export default rocketstyle()({
   component: Element,
   name: 'core/Element',
 })
-  .theme((t) => ({
-    fontFamily: t.fontFamily.base,
-  }))
+  // .theme((t) => ({
+  //   fontFamily: t.fontFamily.base,
+  // }))
   .styles(
     (css) => css<any>`
       ${({ href, onClick, $rocketstyle, $rocketstate }) => {

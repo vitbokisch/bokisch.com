@@ -10,6 +10,7 @@ import Background from './Background'
 import Header from './Header'
 
 const Section = section
+  .config({ name: 'sections/menu/MainMenu/Section' })
   .attrs({
     contentAlignY: 'top',
     contentAlignX: 'block',
@@ -67,5 +68,7 @@ const Component: FC<Props> = ({ menu }) => {
     </Portal>
   )
 }
+
+Component.displayName = 'sections/menu/MainMenu'
 
 export default observer(Component)

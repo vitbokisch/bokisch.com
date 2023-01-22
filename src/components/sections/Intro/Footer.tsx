@@ -2,7 +2,7 @@ import { FC } from 'react'
 import box from '~/components/base/Box'
 import ContactList from '~/components/sections/contacts/ContactList'
 
-const Box = box.theme({
+const Box = box.config({ name: 'sections/Intro/Footer' }).theme({
   width: '100%',
   maxWidth: { xs: '80%', md: 600 },
 })
@@ -18,5 +18,7 @@ const Component: FC = () => (
     />
   </Box>
 )
+
+Component.displayName = 'sections/Intro/Content'
 
 export default Component

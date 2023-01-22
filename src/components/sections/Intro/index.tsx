@@ -14,10 +14,8 @@ const Section = section.theme({
   height: '100vh',
   minHeight: { xl: 640 },
   maxHeight: { xs: 640, md: 800, lg: 1000 },
-  // minHeight: { xs: '100vh', md: 600 },
   overflow: 'hidden',
-  background:
-    'linear-gradient(180deg, #a5aead 0%, #b1bab9 52.08%, #b0b8b7 100%)',
+  background: 'linear-gradient(180deg, #a5aead 0%, #b1bab9 52%, #b0b8b7 100%)',
 })
 
 type Props = {

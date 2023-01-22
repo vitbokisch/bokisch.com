@@ -6,12 +6,7 @@ const BackgroundMobile = element.theme((t, m) => ({
   fullScreen: true,
   background: m(
     t.color.dark[100],
-    `linear-gradient(
-        180deg,
-        #656b6a 0%,
-        #666b6b 48.96%,
-        #6a6f6e 100%
-      )`
+    'linear-gradient(180deg,#656b6a 0%,#666b6b 48.96%,#6a6f6e 100%)'
   ),
 }))
 
@@ -23,12 +18,7 @@ const BackgroundLeft = element.theme({
   left: 0,
   bottom: 0,
   clipPath: 'polygon(100% 0, 85% 50%, 100% 100%, 0 100%, 0 0)',
-  background: `linear-gradient(
-        180deg,
-        #656b6a 0%,
-        #666b6b 48.96%,
-        #6a6f6e 100%
-      )`,
+  background: 'linear-gradient(180deg,#656b6a 0%,#666b6b 48.96%,#6a6f6e 100%)',
 })
 
 const BackgroundRight = element.theme({
@@ -39,7 +29,7 @@ const BackgroundRight = element.theme({
   right: 0,
   bottom: 0,
   clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 50%)',
-  background: `linear-gradient(180deg, #303030 0%, #1b1b1b 100%)`,
+  background: 'linear-gradient(180deg, #303030 0%, #1b1b1b 100%)',
 })
 
 const Component: FC = () => {
@@ -56,5 +46,7 @@ const Component: FC = () => {
     </>
   )
 }
+
+Component.displayName = 'sections/menu/Background'
 
 export default observer(Component)

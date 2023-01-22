@@ -8,7 +8,7 @@ import MenuTrigger from '~/components/sections/menu/MenuTrigger'
 const MobileSettings = Base.theme({ marginY: 16 })
 
 const Component = () => {
-  const { runtime } = useStore('')
+  const { runtime } = useStore()
 
   const { width } = runtime.viewport
 
@@ -32,5 +32,7 @@ const Component = () => {
     </>
   )
 }
+
+Component.displayName = 'sections/menu/MainMenu'
 
 export default observer(Component)

@@ -17,11 +17,11 @@ export default withPlugins(PLUGINS, {
   dir: 'src',
   poweredByHeader: false,
   compiler: {
-    removeConsole: true,
+    // removeConsole: true,
     styledComponents: true,
   },
   images: {
     disableStaticImages: true,
   },
-  // reactStrictMode: true,
+  reactStrictMode: true,
 })

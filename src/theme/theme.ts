@@ -1,3 +1,11 @@
+import { Ubuntu } from '@next/font/google'
+
+const inter = Ubuntu({
+  weight: ['300', '500'],
+  subsets: ['latin'],
+  style: ['italic', 'normal'],
+})
+
 const theme = {
   rootSize: 16,
   breakpoints: {
@@ -29,7 +37,7 @@ const theme = {
     xxLarge: 64,
   },
   fontFamily: {
-    base: 'Ubuntu',
+    base: inter.style.fontFamily,
   },
   fontSize: {
     small: 14,

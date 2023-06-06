@@ -10,12 +10,14 @@ const PLUGINS = [
 ]
 
 export default withPlugins(PLUGINS, {
+  output: 'export',
   poweredByHeader: false,
   compiler: {
     // removeConsole: true,
     styledComponents: true,
   },
   images: {
+    unoptimized: true,
     disableStaticImages: true,
   },
   reactStrictMode: true,

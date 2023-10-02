@@ -164,7 +164,7 @@ export default [
     link: 'https://www.cypress.io/',
   },
   {
-    title: 'Angular (1)',
+    title: 'Angular v1',
     level: 4,
     link: 'https://angularjs.org/',
   },

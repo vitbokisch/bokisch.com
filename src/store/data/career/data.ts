@@ -14,6 +14,21 @@ export default [
     ],
   },
   {
+    company: 'BOOTIQ',
+    date: 'Feb 2023 - May 2023',
+    position: 'React.js Tech Lead',
+    type: 'work',
+    responsibilities: [
+      'Participating on preparing deal proposals and technical presentations',
+      'Direct communication with clients and facing their business challenges',
+      'Deep technical project analyses',
+      'Responsible for designing web application architecture and managing development workflows',
+      'Helping other peers with finding solutions and implementations',
+      'Contribution to the company processes',
+      'Maintenance, migrations and solving technical debts on clients websites',
+    ],
+  },
+  {
     company: 'KINDRED.',
     date: 'May 2022 - Aug 2022',
     position: 'Engineering Team/Tech Lead',
@@ -35,7 +50,7 @@ export default [
     position: 'Product Manager',
     type: 'work',
     responsibilities: [
-      'Responsible for project Coinmap.org',
+      'Responsible for one of the projects',
       'Market research, consumer behavior analysis, competitor analysis,...',
       'Product/technical specification of proposed changes',
       'Settled up a future vision',
@@ -44,7 +59,7 @@ export default [
       'Created an UX prototype using design system patterns',
       'Helped designing marketing materials',
       'Organised weekly sync meeting within departments',
-      'In the end, I have made a hard decission and recommended to postpone the realisation of the project',
+      'In the end, I have made a hard decision and recommended to cut the project (or at least to postpone the realisation)',
     ],
   },
   {
@@ -59,8 +74,9 @@ export default [
       'Involved in UI design process & developed UI library using atomic design system patterns',
       'Responsible for collaboration with colleagues from an external agency',
       'Built new features & rewriting an old app to a brand new web app',
-      'Attended hackathon focused on online micro payments',
+      'Attended hackathon (a competition) focused on online micro payments',
       'Fixing bugs, code reviews, sharing knowledge, supporting colleagues, etc.',
+      'Start Up is not running anymore',
     ],
   },
   {
@@ -82,11 +98,12 @@ export default [
   {
     company: 'Samba.ai',
     date: 'Feb 2018 - Sep 2018',
-    position: '(Lead) Frontend Engineer',
+    position: '(Lead) React.js Frontend Engineer',
     type: 'work',
     responsibilities: [
       'Interviews with candidates',
       'Maintained two B2B products (one running on ReactJS, the other on Angular)',
+      'Mostly spent time fixing an app written in Angular 1 (not my tech field focus)',
       'Fixing technical debt and coding anti-patterns, refactoring old code',
       'Defined an architecture for a new product development',
       'Participated in the UI design process',

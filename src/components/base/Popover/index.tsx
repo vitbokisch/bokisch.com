@@ -57,8 +57,8 @@ const Component: FC<Props> = ({ trigger, children }) => (
     alignX="center"
     offsetY={16}
   >
-    {({ innerRef, align }: any) => (
-      <PopoverContent ref={innerRef} beforeContent={<Arrow variant={align} />}>
+    {({ innerRef, alignY }: any) => (
+      <PopoverContent ref={innerRef} beforeContent={<Arrow variant={alignY} />}>
         <Text small>{children}</Text>
       </PopoverContent>
     )}

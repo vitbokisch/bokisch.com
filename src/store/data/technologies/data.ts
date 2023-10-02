@@ -5,6 +5,12 @@ export default [
     level: 1,
     link: 'https://www.typescriptlang.org/',
   },
+  { title: 'Next.js', level: 1, link: 'https://nextjs.org/' },
+  {
+    title: 'Monorepos',
+    level: 1,
+    link: 'https://www.toptal.com/front-end/guide-to-monorepos',
+  },
   { title: 'React Native', level: 2, link: 'https://reactnative.dev/' },
   { title: 'Redux', level: 2, link: 'https://redux.js.org/' },
   {
@@ -22,9 +28,12 @@ export default [
     level: 1,
     link: 'https://www.javascripttutorial.net/es-next/',
   },
+  { title: 'Strapi', level: 3, link: 'https://strapi.io/' },
   { title: 'Stylus', level: 4, link: 'https://stylus-lang.com/' },
   { title: 'jQuery', level: 4, link: 'https://jquery.com/' },
   { title: 'date-fns', level: 1, link: 'https://date-fns.org/' },
+  { title: 'Material UI', level: 2, link: 'https://mui.com/' },
+  { title: 'Contenful', level: 3, link: 'https://www.contentful.com/' },
   {
     title: 'REST',
     level: 2,
@@ -66,7 +75,6 @@ export default [
   { title: 'Java', level: 4, link: 'https://www.java.com/en/' },
   { title: 'PHP', level: 4, link: 'https://www.php.net/' },
   { title: 'CSS', level: 1, link: 'https://www.w3schools.com/css/' },
-  { title: 'NextJS', level: 1, link: 'https://nextjs.org/' },
   { title: 'Expo', level: 2, link: 'https://expo.io/' },
   { title: 'Redux-Form', level: 2, link: 'https://redux-form.com/' },
   { title: 'Selenium', level: 4, link: 'https://www.selenium.dev/' },

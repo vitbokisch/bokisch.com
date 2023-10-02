@@ -1,4 +1,5 @@
 import { element, text } from '~/components/core'
+import filterProps from './hoc'
 
 const base = element
   .attrs({
@@ -50,6 +51,7 @@ const Author = text
 
 export default base
   .config({ name: 'base/Quote' })
+  .compose({ filterProps })
   .attrs<{ quote: string; author: string }>(({ quote, author }) => ({
     tag: 'figure',
     content: () => (

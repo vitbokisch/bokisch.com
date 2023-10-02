@@ -1,11 +1,12 @@
 import { types as t } from 'mobx-state-tree'
 import { STORAGE } from '~/config/constants'
 
-type Variant = ['light', 'dark'][number]
+const VARIANTS = ['light', 'dark'] as const
+type Variant = (typeof VARIANTS)[number]
 
 const model = t
   .model('runtime/Theme', {
-    variant: t.optional(t.enumeration<Variant>(['light', 'dark']), 'light'),
+    variant: t.optional(t.enumeration<typeof VARIANTS>(VARIANTS), 'light'),
   })
   .views((self) => ({
     get isDark() {

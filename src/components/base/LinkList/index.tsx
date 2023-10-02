@@ -1,9 +1,5 @@
 import list, { Item as wrapComponent } from '../List'
-import link from '../Link'
-
-const Link = link.attrs({
-  block: true,
-})
+import Link from './Item'
 
 export { Link }
 

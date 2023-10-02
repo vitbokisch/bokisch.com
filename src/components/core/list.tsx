@@ -4,8 +4,8 @@ import { styles, makeItResponsive, value } from '@vitus-labs/unistyle'
 
 type ListStyles = Parameters<typeof makeItResponsive>[0]['styles']
 const listStyles: ListStyles = ({ theme: t, css, rootSize }) => css`
-  ${t.gap && `margin: ${value([t.gap / 2], rootSize)} !important;`};
-  ${t.indent && `padding: ${value([t.indent / 2], rootSize)} !important;`};
+  ${t.gap && `margin: ${value(t.gap / 2, rootSize)} !important;`};
+  ${t.indent && `padding: ${value(t.indent / 2, rootSize)} !important;`};
 `
 
 const dimensions = { indent: 'indent', gaps: 'gap', gapsY: 'gapY' } as const

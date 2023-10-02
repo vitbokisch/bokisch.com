@@ -10,7 +10,7 @@ type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
 
 const Component: HOC = (WrappedComponent) => {
   const Enhanced = ({ name, src, ...props }: Props) => (
-    <WrappedComponent alt={name} {...props} src={src || `logo-${name}.png`} />
+    <WrappedComponent alt={name} {...props} src={src ?? `logo-${name}.png`} />
   )
 
   return Enhanced

@@ -10,15 +10,18 @@ import data from './data'
 
 type Data = typeof data
 const normalizeData = (data: Data) =>
-  data.reduce((acc, item, i) => {
-    acc.push(item)
+  data.reduce(
+    (acc, item, i) => {
+      acc.push(item)
 
-    if (i === 3 || i === 6) {
-      acc.push({ component: <Col size={{ xs: 0, md: 1.5 }} /> })
-    }
+      if (i === 3 || i === 6) {
+        acc.push({ component: () => <Col size={{ xs: 0, md: 1.5 }} /> })
+      }
 
-    return acc
-  }, [] as Array<Record<string, unknown>>)
+      return acc
+    },
+    [] as Record<string, unknown>[]
+  )
 
 const Component: FC = () => (
   <Background primary>

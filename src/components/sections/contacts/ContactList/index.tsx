@@ -5,7 +5,7 @@ import LinkList from '~/components/base/LinkList'
 
 type Props = ExtractProps<typeof LinkList> &
   Partial<{
-    types: Array<string>
+    types: string[]
   }>
 
 const Component: FC<Props> = ({ types, ...props }) => {

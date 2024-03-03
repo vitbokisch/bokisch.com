@@ -243,7 +243,7 @@ export default [
     type: 'education',
     responsibilities: [
       'Bachelor studies',
-      'Student of Economics & Management of Electrical Engineering',
+      'Student of Software Technology and Management',
       'Full-time study with taking opportunities to study & travel abroad',
     ],
   },

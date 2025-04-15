@@ -1,5 +1,16 @@
 export default [
   {
+    company: 'Exaforce',
+    date: '2024 - current',
+    position: 'Software Engineer',
+    type: 'work',
+    responsibilities: [
+      'Dramatically simplify cloud security and operations',
+      'Direct communication with CEO about priorities and moving the company challenges forward',
+      'Building frontend using Typescript, React, MobX, Redux, Vite, TanStack Query, TanStack Table, react-intl, Emotion CSS-in-JS, monorepo, YAMLs and partially SQL and more',
+    ],
+  },
+  {
     company: 'Vitus Labs',
     date: 'Mar 2018 - current',
     position: 'Founder & Engineer',

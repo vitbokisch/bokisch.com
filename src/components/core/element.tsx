@@ -24,10 +24,7 @@ export default rocketstyle()({
         } = $rocketstyle
 
         const baseTheme = makeItResponsive({
-          theme:
-            {
-              ...restStyles,
-            } || {},
+          theme: restStyles,
           styles,
           css,
         })

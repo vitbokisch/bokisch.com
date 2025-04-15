@@ -6,7 +6,7 @@ type Variant = (typeof VARIANTS)[number]
 
 const model = t
   .model('runtime/Theme', {
-    variant: t.optional(t.enumeration<typeof VARIANTS>(VARIANTS), 'light'),
+    variant: t.optional(t.enumeration(VARIANTS), 'light'),
   })
   .views((self) => ({
     get isDark() {

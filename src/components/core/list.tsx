@@ -92,10 +92,7 @@ export default rocketstyle({
         const { gap, indent, ...restStyles } = $rocketstyle
 
         const baseTheme = makeItResponsive({
-          theme:
-            {
-              ...restStyles,
-            } || {},
+          theme: restStyles,
           styles,
           css,
         })

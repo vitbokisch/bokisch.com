@@ -57,11 +57,6 @@ jobs:
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: 1.2.20 # or "latest", "canary", <sha>
-      # - name: Setup Node
-      #   uses: actions/setup-node@v5
-      #   with:
-      #     node-version: '24'
-      #     cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
         # with:
@@ -72,14 +67,6 @@ jobs:
         # static_site_generator: next
       - name: Restore cache
         uses: actions/cache@v4
-        # with:
-        #   path: |
-        #     ${{ github.workspace }}/.next/cache
-        #   # Generate a new cache whenever packages or source files change.
-        #   key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock', '**/bun.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-        #   # If source files changed but packages didn't, rebuild from a prior cache.
-        #   restore-keys: |
-        #     ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock', '**/bun.lock') }}
         with:
           path: ~/.bun/install/cache
           key: ${{ runner.os }}-${{ matrix.bun }}-bun-${{ hashFiles('**/bun.lockb') }}

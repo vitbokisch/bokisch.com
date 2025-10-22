@@ -54,7 +54,9 @@ jobs:
             exit 1
           fi
       - name: Setup Bun
-        uses: oven-sh/setup-bun@v2 // [!code ++]
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.2.20 # or "latest", "canary", <sha>
       # - name: Setup Node
       #   uses: actions/setup-node@v5
       #   with:

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import Footer from '~/components/base/skeleton/Footer'
 import Link from '~/components/base/Link'
 

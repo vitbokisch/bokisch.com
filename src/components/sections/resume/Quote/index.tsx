@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { Container } from '~/components/base/grid'
 import Quote from '~/components/base/Quote'
 import Background from '~/components/base/Background'

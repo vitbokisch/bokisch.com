@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { Provider } from '~/theme'
 import Heading from '~/components/base/Heading'
 import Link from '~/components/base/Link'

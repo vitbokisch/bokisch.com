@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { useStore, observer } from '~/store'
 import TabList, { Tab } from '~/components/base/TabList'
 
@@ -22,11 +22,6 @@ const Component: FC = () => {
         secondary
         label="Own projects"
         onClick={() => career?.setFilter('sideProject')}
-      />
-      <Tab
-        tertiary
-        label="Internships"
-        onClick={() => career?.setFilter('internship')}
       />
       <Tab
         neutral

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { element } from '~/components/core'
 import Icon from '~/components/base/Icon'
 

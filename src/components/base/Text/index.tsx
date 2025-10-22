@@ -48,4 +48,7 @@ export default text
     italic: {
       fontStyle: 'italic',
     },
+    noWrap: {
+      whiteSpace: 'nowrap'
+    }
   })

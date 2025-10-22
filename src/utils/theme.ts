@@ -1,6 +1,5 @@
 import { STORAGE, THEME } from '~/config/constants'
 
-// eslint-disable-next-line import/prefer-default-export
 export const getDefaultTheme = () => {
   if (typeof window === 'undefined') {
     return THEME.light
@@ -14,10 +13,7 @@ export const getDefaultTheme = () => {
     return currentTheme
   }
 
-  if (
-    window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches
-  ) {
+  if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) {
     return THEME.dark
   }
 

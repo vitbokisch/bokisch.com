@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { useStore, observer } from '~/store'
 import { Provider } from '~/theme'
 import Base from '~/components/base/Base'

@@ -1,5 +1,5 @@
-import { ReactNode, FC } from 'react'
-import { ExtractProps } from '~/types'
+import type { ReactNode, FC } from 'react'
+import type { ExtractProps } from '~/types'
 import { useStore, observer } from '~/store'
 import TabList, { Tab } from '~/components/base/TabList'
 import Text from '~/components/base/Text'

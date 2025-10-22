@@ -1,9 +1,9 @@
 import { useMemo } from 'react'
 import {
   applySnapshot,
-  Instance,
-  SnapshotIn,
-  SnapshotOut,
+  type Instance,
+  type SnapshotIn,
+  type SnapshotOut,
   types as t,
 } from 'mobx-state-tree'
 import { observer } from 'mobx-react'
@@ -35,7 +35,6 @@ export type IStoreSnapshotIn = SnapshotIn<typeof Store>
 export type IStoreSnapshotOut = SnapshotOut<typeof Store>
 
 function initializeStore(snapshot = null) {
-  // eslint-disable-next-line no-underscore-dangle
   const _store = store ?? Store.create(initialState as any)
 
   // If your page has Next.js data fetching methods that use a Mobx store, it will

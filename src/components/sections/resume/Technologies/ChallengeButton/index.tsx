@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { type FC, useState } from 'react'
 import button from '~/components/base/Button'
 
 const Button = button.theme((t) => ({

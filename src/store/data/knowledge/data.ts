@@ -5,11 +5,11 @@ export default [
     data: [
       {
         label: 'Leadership',
-        level: 7,
+        level: 9,
       },
       {
         label: 'Communication',
-        level: 7,
+        level: 9,
       },
       {
         label: 'Teamwork',
@@ -41,11 +41,11 @@ export default [
     data: [
       {
         label: 'Web',
-        level: 7,
+        level: 8,
       },
       {
         label: 'Mobile',
-        level: 5,
+        level: 6,
       },
     ],
   },
@@ -59,7 +59,7 @@ export default [
       },
       {
         label: 'Mobile',
-        level: 5,
+        level: 6,
       },
     ],
   },
@@ -83,7 +83,7 @@ export default [
     data: [
       {
         label: 'Backend',
-        level: 4,
+        level: 5,
       },
       {
         label: 'DevOps',

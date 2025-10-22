@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import Box, { Header, Body } from '../Box'
 import heading from '../Heading'
 import Text from '../Text'
@@ -38,7 +38,7 @@ const Component: FC<Props> = ({
   <Box large tag="article">
     <Header>
       {icon && <Icon xLarge name={icon} />}
-      {logo && <IconLogo circle name={logo} />}
+      {logo && <IconLogo circle src={logo} />}
       <Heading tag="h1" level3 centered label={title} />
       {subtitle && <SubHeading centered label={subtitle} />}
       {note && (

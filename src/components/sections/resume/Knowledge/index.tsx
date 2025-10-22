@@ -1,5 +1,5 @@
-import { FC } from 'react'
-import { IStore, useStore, observer } from '~/store'
+import type { FC } from 'react'
+import { type IStore, useStore, observer } from '~/store'
 import { Container, Row, Col } from '~/components/base/grid'
 import Background from '~/components/base/Background'
 import Section, { Header } from '~/components/base/Section'

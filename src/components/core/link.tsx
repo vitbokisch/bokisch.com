@@ -12,7 +12,6 @@ export default element
     href?: string
     onClick?: MouseEvent | (() => void)
   }>(({ href, onClick }) => ({
-    // eslint-disable-next-line no-nested-ternary
     tag: href ? 'a' : onClick ? 'button' : 'span',
   }))
   .theme((t, m) => ({

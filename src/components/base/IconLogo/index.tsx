@@ -1,6 +1,6 @@
 import { element } from '~/components/core'
 import image from '~/components/base/Image'
-import loadIconLogo, { Props } from './loadIconLogo'
+import loadIconLogo, { type Props } from './loadIconLogo'
 import withLink from './withLink'
 
 const Image = image
@@ -14,12 +14,12 @@ const Image = image
   })
 
 export default element
-  .config({ name: 'base/IconLogo' })
+  .config({ name: "base/IconLogo" })
   .compose({ withLink })
-  .attrs<Props>(({ name }) => ({
-    contentAlignX: 'center',
-    contentAlignY: 'center',
-    content: name ? <Image name={name} responsive /> : undefined,
+  .attrs<Props>(({ name, src }) => ({
+    contentAlignX: "center",
+    contentAlignY: "center",
+    content: src ? <Image src={src} name={name} responsive /> : undefined,
   }))
   .theme((t, m) => ({
     backgroundColor: m(t.color.light.base, t.color.dark.base),
@@ -38,4 +38,4 @@ export default element
       backgroundColor: t.color.light[100],
       borderRadius: t.borderRadius.extra,
     },
-  }))
+  }));

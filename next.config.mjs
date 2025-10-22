@@ -12,6 +12,7 @@ const PLUGINS = [
 export default withPlugins(PLUGINS, {
   output: 'export',
   poweredByHeader: false,
+  turbopack: {},
   compiler: {
     // removeConsole: true,
     styledComponents: true,

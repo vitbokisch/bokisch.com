@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import config from '~/config'
 
 const component: FC = () => (

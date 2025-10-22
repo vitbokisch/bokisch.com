@@ -1,5 +1,5 @@
-import { FC } from 'react'
-import { IStore, useStore, observer } from '~/store'
+import type { FC } from 'react'
+import { type IStore, useStore, observer } from '~/store'
 import BadgeList from '~/components/base/BadgeList'
 
 const states = {

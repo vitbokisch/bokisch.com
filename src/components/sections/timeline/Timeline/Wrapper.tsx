@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import type { FC, ReactNode } from 'react'
 import { element } from '~/components/core'
 import symbol from '~/components/base/Symbol'
 

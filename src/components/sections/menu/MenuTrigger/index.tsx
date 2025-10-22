@@ -1,5 +1,5 @@
-import { FC } from 'react'
-import { ExtractProps } from '~/types'
+import type { FC } from 'react'
+import type { ExtractProps } from '~/types'
 import { useStore, observer } from '~/store'
 import Icon from '~/components/base/Icon'
 

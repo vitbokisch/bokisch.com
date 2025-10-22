@@ -1,5 +1,5 @@
 import { Provider } from '@vitus-labs/rocketstyle'
-import theme, { Theme } from './theme'
+import theme, { type Theme } from './theme'
 import ThemeProvider from './ThemeProvider'
 
 export type { Theme }

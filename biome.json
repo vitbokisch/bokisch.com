@@ -1,0 +1,106 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "includes": [
+      "apps/**/*.{ts,tsx,js,jsx,json,md}",
+      "assets/**/*.{ts,tsx,js,jsx,json,md}",
+      "modules/**/*.{ts,tsx,js,jsx,json,md}",
+      "packages/**/*.{ts,tsx,js,jsx,json,md}",
+      "tools/**/*.{ts,tsx,js,jsx,json,md}",
+      "!**/node_modules",
+      "!**/.next",
+      "!**/.vercel",
+      "!**/dist",
+      "!**/lib",
+      "!**/__generated__"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "tab",
+    "indentWidth": 2,
+    "useEditorconfig": true,
+    "lineWidth": 80,
+    "bracketSpacing": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noExplicitAny": "off",
+        "noShadowRestrictedNames": "off"
+      },
+      "complexity": {
+        "noForEach": "off",
+        "noBannedTypes": "off"
+      },
+      "a11y": {
+        "useKeyWithClickEvents": "off"
+      }
+    },
+    "includes": [
+      "apps/**/*.{ts,tsx,js,jsx,json,md}",
+      "assets/**/*.{ts,tsx,js,jsx,json,md}",
+      "modules/**/*.{ts,tsx,js,jsx,json,md}",
+      "packages/**/*.{ts,tsx,js,jsx,json,md}",
+      "tools/**/*.{ts,tsx,js,jsx,json,md}"
+    ]
+  },
+  "javascript": {
+    "assist": {
+      "enabled": true
+    },
+    "formatter": {
+      "enabled": true,
+      "quoteStyle": "single",
+      "semicolons": "asNeeded",
+      "indentStyle": "space"
+    }
+  },
+  "assist": {
+    "actions": {
+      "recommended": true,
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              ":NODE:",
+              "react",
+              "next",
+              "next/*",
+              "zustand",
+              "zustand/*",
+              "@vitus-labs/*",
+              "@hello/tools-*",
+              "@hello/i18n",
+              "@hello/i18n-*",
+              "@hello/store",
+              "@hello/constants",
+              "@hello/constants-*",
+              "@hello/forms",
+              "@hello/api",
+              "@hello/api-*",
+              "@hello/utils-*",
+              "@hello/hooks",
+              "@hello/hooks-*",
+              "@hello/ui-layout",
+              "@hello/ui-skeleton",
+              "@hello/module-*",
+              "@hello/ui-core",
+              "@hello/ui-base",
+              "@hello/ui-*"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

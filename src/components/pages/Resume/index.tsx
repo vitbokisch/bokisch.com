@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import Seo from '~/components/meta/Seo'
 import Layout from '~/components/layouts/Base'
 import Footer from '~/components/layouts/Footer'
@@ -32,9 +32,10 @@ const Component: FC = () => (
       <Personality />
       <Knowledge />
       <Technologies />
-      <WorkExperience />
+      {/* <WorkExperience /> */}
       <Education />
-      <CertificatesHobbies />
+      {/* <CertificatesHobbies /> */}
+
       <CareerTimeline />
       <Footer />
     </Layout>

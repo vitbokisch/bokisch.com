@@ -36,7 +36,7 @@ const Component: FC<Props> = ({
       <Heading tag="span" level5>
         {company}
       </Heading>
-      <Text small neutral>
+      <Text small neutral noWrap>
         {date}
       </Text>
     </Header>

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable import/no-dynamic-require */
 /* eslint-disable global-require */
-import { useEffect, useState, ComponentType } from 'react'
+import { useEffect, useState, type ComponentType } from 'react'
 
 type Props = {
   src: string
@@ -26,14 +26,14 @@ const getSource: GetSource = (src, placeholder) => {
 
   const optimizedImage = require(`~/assets/images/${src}?webp`)
 
-  if (placeholder) {
-    const importedPlaceholder = require(`~/assets/images/${src}?trace`)
+  // if (placeholder) {
+  //   const importedPlaceholder = require(`~/assets/images/${src}?trace`)
 
-    return {
-      placeholder: importedPlaceholder.trace,
-      original: optimizedImage.default,
-    }
-  }
+  //   return {
+  //     placeholder: importedPlaceholder.trace,
+  //     original: optimizedImage.default,
+  //   }
+  // }
 
   return {
     placeholder: null,

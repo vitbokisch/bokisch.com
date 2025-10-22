@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { Container, Row, Col } from '~/components/base/grid'
 import Background from '~/components/base/Background'
 import Section, { Header } from '~/components/base/Section'
@@ -27,7 +27,7 @@ const Component: FC = () => (
   <Background primary>
     <Section id="work-experience">
       <Header title="Work Experience">
-        I am a <Text strong>freelancer with 10+ years of experience</Text> in
+        I am a <Text strong>freelancer with 13+ years of experience</Text> in
         the business in various positions. I have participated in several
         mid-large applications and realized tens of websites from the green
         field to production. My work has helped thousands of people around the

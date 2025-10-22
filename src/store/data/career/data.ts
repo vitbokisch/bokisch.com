@@ -1,7 +1,7 @@
 export default [
   {
     company: 'Exaforce',
-    date: '2024 - current',
+    date: '2024 - 2025',
     position: 'Software Engineer',
     type: 'work',
     responsibilities: [
@@ -12,7 +12,7 @@ export default [
   },
   {
     company: 'Vitus Labs',
-    date: 'Mar 2018 - current',
+    date: '2018 - current',
     position: 'Founder & Engineer',
     type: 'sideProject',
     responsibilities: [
@@ -26,8 +26,8 @@ export default [
   },
   {
     company: 'BOOTIQ',
-    date: 'Feb 2023 - May 2023',
-    position: 'React.js Tech Lead',
+    date: '2023',
+    position: 'Frontend Tech Lead',
     type: 'work',
     responsibilities: [
       'Participating on preparing deal proposals and technical presentations',
@@ -41,11 +41,11 @@ export default [
   },
   {
     company: 'KINDRED.',
-    date: 'May 2022 - Aug 2022',
+    date: '2022',
     position: 'Engineering Team/Tech Lead',
     type: 'work',
     responsibilities: [
-      'Managing engineers, their ups and downs, growth, salaries, approving vaccations (directly responsible for 2 engineers)',
+      'Managing engineers, their ups and downs, growth, salaries, approving vacations (directly responsible for 2 engineers)',
       'As a Tech Lead responsible for designing web application architecture, managing development workflow, JIRA tasks, helping developers',
       'Contribution to the company processes and vision',
       'Maintenance, migrations and solving technical debts on clients websites',
@@ -92,7 +92,7 @@ export default [
   },
   {
     company: 'Mews Systems',
-    date: 'Jan 2019 - Jun 2019',
+    date: '2019',
     position: 'Frontend Engineer',
     type: 'work',
     responsibilities: [
@@ -108,8 +108,8 @@ export default [
   },
   {
     company: 'Samba.ai',
-    date: 'Feb 2018 - Sep 2018',
-    position: '(Lead) React.js Frontend Engineer',
+    date: '2018',
+    position: 'Lead Frontend Engineer',
     type: 'work',
     responsibilities: [
       'Interviews with candidates',
@@ -135,28 +135,13 @@ export default [
       'Developed web app in React.js and mobile app in React Native',
       // 'Gained an experience with GraphQL, Next.js, CSS-in-JS',
       // 'A great experience with building a project on my own :)',
-      // 'The app is not running anymore',
+      'The app is not running anymore',
     ],
   },
-  // {
-  //   company: 'Techloop',
-  //   date: 'Oct 2017 - Jan 2018',
-  //   position: '(Lead) Frontend Engineer',
-  //   type: 'work',
-  //   responsibilities: [
-  //     'Collaboration in a small team working on hiring platform',
-  //     'Working on prototyping and later on developing a mobile app in React Native',
-  //     'Responsible for one junior engineer',
-  //     'Contributing to web development & fixing bugs',
-  //     'Contributing to code styles',
-  //     'Code reviews',
-  //     'Project of mobile app in React Native has been postponed',
-  //   ],
-  // },
   {
     company: 'Spendee',
-    date: 'Dec 2016 - Aug 2017',
-    position: '(Lead) Frontend Engineer',
+    date: '2016 - 2017',
+    position: 'Lead Frontend Engineer',
     type: 'work',
     responsibilities: [
       'Interviews with candidates',
@@ -172,7 +157,7 @@ export default [
   },
   {
     company: 'Abroad studies',
-    date: 'Feb 2016 - Jul 2016',
+    date: '2016',
     position: 'Beihang University, China',
     type: 'education',
     responsibilities: [
@@ -185,7 +170,7 @@ export default [
   },
   {
     company: 'STRV',
-    date: 'Jun 2015 - Jan 2016',
+    date: '2015 - 2016',
     position: 'Frontend Engineer',
     type: 'work',
     responsibilities: [
@@ -194,12 +179,11 @@ export default [
       'Built web apps from scratch, working on features requested by clients, fixing bugs',
       'Contribution to company frontend code styles',
       'Early adoption of React, Redux, webpack, CSS Modules and other top-notch technology',
-      // 'Tech stack configurations',
     ],
   },
   {
     company: 'Abroad studies',
-    date: 'Sep 2013 - Sep 2014',
+    date: '2013 - 2014',
     position: 'Ghent University, Belgium',
     type: 'education',
     responsibilities: [
@@ -223,28 +207,16 @@ export default [
     ],
   },
   {
-    company: 'CZM',
-    date: 'May 2012 - Sep 2013',
-    position: 'Internship',
-    type: 'internship',
+    company: 'IBM University Technology Center',
+    date: '2012 - 2013',
+    position: 'BPM Developer, Consultant & Designer',
+    type: 'work',
     responsibilities: [
-      'An Internship at the Center of Knowledge Management at Czech Technical University in Prague',
       'Collaboration with IBM',
       'Responsible for visual identity, building presentational websites, presentations',
       'Responsible for process portal implementation',
       'Implementation of BPM portal',
       'Implementation of BPM processes',
-    ],
-  },
-  {
-    company: 'Tesco',
-    date: '2012 - 2013',
-    position: 'Mentoring',
-    type: 'internship',
-    responsibilities: [
-      'A mentee at the department of Law during Bachelor studies',
-      'Learning management stuff, attending meetings,...',
-      'Working on intranet web updated',
     ],
   },
   {

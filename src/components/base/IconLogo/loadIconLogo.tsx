@@ -1,4 +1,4 @@
-import { ComponentType } from 'react'
+import type { ComponentType } from 'react'
 
 export type Props = Partial<{
   name: string
@@ -9,9 +9,11 @@ export type Props = Partial<{
 type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
 
 const Component: HOC = (WrappedComponent) => {
-  const Enhanced = ({ name, src, ...props }: Props) => (
-    <WrappedComponent alt={name} {...props} src={src ?? `logo-${name}.png`} />
-  )
+  const Enhanced = ({ name, src, ...props }: Props) => {
+    console.log(src)
+    return (
+    <WrappedComponent alt={name} {...props} src={src} />
+  )}
 
   return Enhanced
 }

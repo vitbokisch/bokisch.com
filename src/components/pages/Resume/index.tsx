@@ -33,7 +33,6 @@ const Component: FC = () => (
       <Technologies />
       <WorkExperience />
       <Education />
-
       <CareerTimeline />
       <Footer />
     </Layout>

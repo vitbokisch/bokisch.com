@@ -24,11 +24,6 @@ const Component: FC = () => {
         onClick={() => career?.setFilter('sideProject')}
       />
       <Tab
-        tertiary
-        label="Internships"
-        onClick={() => career?.setFilter('internship')}
-      />
-      <Tab
         neutral
         label="Education"
         onClick={() => career?.setFilter('education')}

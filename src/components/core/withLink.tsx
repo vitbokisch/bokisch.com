@@ -1,4 +1,4 @@
-import { useEffect, ComponentType, MouseEventHandler } from 'react'
+import { useEffect, type ComponentType, type MouseEventHandler } from 'react'
 import { useRouter } from 'next/router'
 import routes from '~/config/routes'
 

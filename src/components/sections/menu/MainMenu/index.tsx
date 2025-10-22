@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { Portal } from '@vitus-labs/elements'
 import { Provider } from '~/theme'
 import { useStore, observer } from '~/store'

@@ -3,7 +3,7 @@ import Document, {
   Head,
   Main,
   NextScript,
-  DocumentContext,
+  type DocumentContext,
 } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
@@ -13,7 +13,6 @@ export default class MyDocument extends Document {
     const originalRenderPage = ctx.renderPage
 
     try {
-      // eslint-disable-next-line no-param-reassign
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp: (App) => (props) =>
@@ -36,7 +35,6 @@ export default class MyDocument extends Document {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   render() {
     return (
       <Html lang="en" dir="ltr">

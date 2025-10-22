@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import box, { Header as header, Body } from '~/components/base/Box'
 import Heading from '~/components/base/Heading'
 import Text from '~/components/base/Text'

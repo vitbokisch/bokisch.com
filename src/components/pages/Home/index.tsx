@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import Seo from '~/components/meta/Seo'
 import Layout from '~/components/layouts/Base'
 import background from '~/components/base/Background'

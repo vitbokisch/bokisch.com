@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { useStore, observer } from '~/store'
 import IconList from '~/components/base/IconList'
 

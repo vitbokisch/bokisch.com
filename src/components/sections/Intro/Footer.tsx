@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import box from '~/components/base/Box'
 import ContactList from '~/components/sections/contacts/ContactList'
 

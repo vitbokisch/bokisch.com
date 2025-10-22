@@ -15,9 +15,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint:css": "stylelint src/*.ts src/*.tsx",
-    "lint:ts": "eslint src/*",
-    "lint": "yarn lint:css && yarn lint:ts",
+    "linter": "biome lint --write",
     "make:favicon": "yarn vl_favicon"
   },
   "dependencies": {

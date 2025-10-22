@@ -1,5 +1,5 @@
-import { FC } from 'react'
-import { ExtractProps } from '~/types'
+import type { FC } from 'react'
+import type { ExtractProps } from '~/types'
 import Link from '~/components/base/Link'
 import Logo from '~/components/base/Logo'
 import LogoHeading from '~/components/base/LogoHeading'

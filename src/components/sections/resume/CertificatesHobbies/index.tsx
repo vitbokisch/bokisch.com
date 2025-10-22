@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import Background from '~/components/base/Background'
 import Section, { Header } from '~/components/base/Section'
 import { Container, Row, Col } from '~/components/base/grid'

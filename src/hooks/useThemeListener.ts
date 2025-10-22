@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from 'react'
-import { THEME } from '~/config/constants'
+import type { THEME } from '~/config/constants'
 import { getDefaultTheme } from '~/utils/theme'
 
 type Props = {

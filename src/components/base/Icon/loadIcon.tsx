@@ -1,4 +1,4 @@
-import { useEffect, useState, ComponentType } from 'react'
+import { useEffect, useState, type ComponentType } from 'react'
 
 export type Props = Partial<{
   name: string

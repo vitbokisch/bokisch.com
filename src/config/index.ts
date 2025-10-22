@@ -1,5 +1,5 @@
-/* eslint-disable global-require */
-/* eslint-disable @typescript-eslint/no-var-requires */
+import image from '~/assets/socials/preview.jpg'
+
 type Config = {
   url: string
   title: string
@@ -28,8 +28,7 @@ const config: Config = {
     'Vit Bokisch, Architect, Frontend Engineer, Innovator, React.js, Developer, Resume, Vitus Labs',
   openGraph: {
     url: 'https://bokisch.com',
-
-    image: require('~/assets/socials/preview.jpg').default,
+    image,
   },
 }
 

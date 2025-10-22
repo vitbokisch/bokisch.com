@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable import/no-dynamic-require */
-/* eslint-disable global-require */
 import { useEffect, useState, type ComponentType } from 'react'
 
 type Props = {
@@ -10,12 +7,15 @@ type Props = {
   style?: Record<string, unknown>
 }
 
+type GetResourceReturnType =
+  | { placeholder: string; original: string }
+  | undefined;
 type GetSource = (
   src?: Props['src'],
   placeholder?: Props['placeholder']
-) => { placeholder: string; original: string } | undefined
+) => Promise<GetResourceReturnType>
 
-const getSource: GetSource = (src, placeholder) => {
+const getSource: GetSource = async (src, placeholder) => {
   if (!src) return undefined
 
   if (src.startsWith('data:'))
@@ -24,16 +24,16 @@ const getSource: GetSource = (src, placeholder) => {
       original: src,
     }
 
-  const optimizedImage = require(`~/assets/images/${src}?webp`)
+  const optimizedImage = await import(`~/assets/images/${src}?webp`)
 
-  // if (placeholder) {
-  //   const importedPlaceholder = require(`~/assets/images/${src}?trace`)
+  if (placeholder) {
+    const importedPlaceholder = await import(`~/assets/images/${src}?trace`)
 
-  //   return {
-  //     placeholder: importedPlaceholder.trace,
-  //     original: optimizedImage.default,
-  //   }
-  // }
+    return {
+      placeholder: importedPlaceholder.trace,
+      original: optimizedImage.default,
+    }
+  }
 
   return {
     placeholder: null,
@@ -51,12 +51,12 @@ const Component: HOC = (WrappedComponent) => {
     const [sizes, setSizes] = useState<{ width: number; height: number }>(
       {} as ImageSize
     )
-    const [source, setSource] = useState<ReturnType<GetSource>>(getSource())
+    const [source, setSource] = useState<GetResourceReturnType>();
 
     useEffect(() => {
-      const loadImage = () => {
+      const loadImage = async () => {
         setLoaded(false)
-        const loaded = getSource(src, placeholder)
+        const loaded = await getSource(src, placeholder)
         setSource(loaded)
       }
 

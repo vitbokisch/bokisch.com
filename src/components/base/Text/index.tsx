@@ -49,6 +49,6 @@ export default text
       fontStyle: 'italic',
     },
     noWrap: {
-      textWrap: 'no-wrap'
+      whiteSpace: 'nowrap'
     }
   })

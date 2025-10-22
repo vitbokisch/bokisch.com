@@ -8,11 +8,7 @@
   "files": {
     "ignoreUnknown": false,
     "includes": [
-      "apps/**/*.{ts,tsx,js,jsx,json,md}",
-      "assets/**/*.{ts,tsx,js,jsx,json,md}",
-      "modules/**/*.{ts,tsx,js,jsx,json,md}",
-      "packages/**/*.{ts,tsx,js,jsx,json,md}",
-      "tools/**/*.{ts,tsx,js,jsx,json,md}",
+      "src/**/*.{ts,tsx,js,jsx,json,md}",
       "!**/node_modules",
       "!**/.next",
       "!**/.vercel",
@@ -43,14 +39,13 @@
       },
       "a11y": {
         "useKeyWithClickEvents": "off"
+      },
+      "correctness": {
+        "useUniqueElementIds": "off"
       }
     },
     "includes": [
-      "apps/**/*.{ts,tsx,js,jsx,json,md}",
-      "assets/**/*.{ts,tsx,js,jsx,json,md}",
-      "modules/**/*.{ts,tsx,js,jsx,json,md}",
-      "packages/**/*.{ts,tsx,js,jsx,json,md}",
-      "tools/**/*.{ts,tsx,js,jsx,json,md}"
+      "src/**/*.{ts,tsx,js,jsx,json,md}"
     ]
   },
   "javascript": {
@@ -79,24 +74,8 @@
               "zustand",
               "zustand/*",
               "@vitus-labs/*",
-              "@hello/tools-*",
-              "@hello/i18n",
-              "@hello/i18n-*",
-              "@hello/store",
-              "@hello/constants",
-              "@hello/constants-*",
-              "@hello/forms",
-              "@hello/api",
-              "@hello/api-*",
-              "@hello/utils-*",
-              "@hello/hooks",
-              "@hello/hooks-*",
-              "@hello/ui-layout",
-              "@hello/ui-skeleton",
-              "@hello/module-*",
-              "@hello/ui-core",
-              "@hello/ui-base",
-              "@hello/ui-*"
+              "~/store",
+              "~/*"
             ]
           }
         }

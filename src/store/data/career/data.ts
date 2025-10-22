@@ -57,7 +57,7 @@ export default [
   },
   {
     company: 'Invity.io',
-    date: 'Sep 2021 - Dec 2021',
+    date: '2021',
     position: 'Product Manager',
     type: 'work',
     responsibilities: [
@@ -75,7 +75,7 @@ export default [
   },
   {
     company: 'Cinnamon',
-    date: 'Dec 2019 - Sep 2020',
+    date: '2019 - 2020',
     position: 'Frontend Engineer',
     type: 'work',
     responsibilities: [

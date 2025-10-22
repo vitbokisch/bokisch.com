@@ -1,5 +1,5 @@
-/* eslint-disable global-require */
 import { element } from '~/components/core'
+import logo from '~/assets/logo/logo-vit-bokisch.svg?include'
 
 export default element
   .config({ name: 'base/Logo' })
@@ -7,8 +7,7 @@ export default element
     contentAlignX: 'left',
     contentAlignY: 'center',
     dangerouslySetInnerHTML: {
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      __html: require(`~/assets/logo/logo-vit-bokisch.svg?include`).default,
+      __html: logo,
     },
   })
   .theme((t, m) => ({

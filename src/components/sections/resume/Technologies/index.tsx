@@ -12,7 +12,7 @@ const component: FC = () => (
   <Background secondary>
     <Section id="technologies">
       <Header title="Technologies">
-        Choosing the right tools might be overwhelming. By continuous learning,
+        Choosing the right tools might be overwhelming. Continuous learning,
         endless experimenting, and following new trends and best practices help
         to make the right choice easier.
       </Header>

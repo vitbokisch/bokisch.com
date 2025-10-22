@@ -1,5 +1,5 @@
 import { link } from '~/components/core'
-import loadIcon, { Props } from './loadIcon'
+import loadIcon, { type Props } from './loadIcon'
 
 export default link
   .config({ name: 'base/Icon' })

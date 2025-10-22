@@ -9,7 +9,6 @@ import Knowledge from '~/components/sections/resume/Knowledge'
 import Technologies from '~/components/sections/resume/Technologies'
 import WorkExperience from '~/components/sections/resume/WorkExperience'
 import Education from '~/components/sections/resume/Education'
-import CertificatesHobbies from '~/components/sections/resume/CertificatesHobbies'
 import CareerTimeline from '~/components/sections/resume/CareerTimeline'
 import MainMenu from '~/components/sections/menu/MainMenu'
 
@@ -32,9 +31,8 @@ const Component: FC = () => (
       <Personality />
       <Knowledge />
       <Technologies />
-      {/* <WorkExperience /> */}
+      <WorkExperience />
       <Education />
-      {/* <CertificatesHobbies /> */}
 
       <CareerTimeline />
       <Footer />

@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable import/no-dynamic-require */
-/* eslint-disable global-require */
 import { useEffect, useState, ComponentType } from 'react'
 
 export type Props = Partial<{
@@ -10,10 +7,10 @@ export type Props = Partial<{
   dangerouslySetInnerHTML: any
 }>
 
-const getImage = (name?: string) => {
-  if (name) {
-    const asset = require(`~/assets/icons/${name}.svg?include`).default
-    return asset
+const getImage = async (img?: string) => {
+  if (img) {
+    const asset = await import(`~/assets/icons/${img}.svg?include`)
+    return asset.default
   }
 
   return null
@@ -23,11 +20,15 @@ type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
 
 const Component: HOC = (WrappedComponent) => {
   const Enhanced = ({ name, label, href, ...props }: Props) => {
-    const [image, setImage] = useState(getImage(name))
+    const [image, setImage] = useState()
 
     useEffect(() => {
-      const image = getImage(name)
-      setImage(image)
+      const getAsyncImg = async () => {
+        const image = await getImage(name);
+        setImage(image);
+      }
+
+      getAsyncImg()
     }, [name])
 
     return (

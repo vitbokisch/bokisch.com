@@ -26,7 +26,7 @@ const Component: FC = () => (
   <Background secondary>
     <Section id="years-of-shipping">
       <Header title="Years of Shipping">
-        <Text strong>13+ years</Text> of experience. I've built dozens of
+        <Text strong>13+ years of experience</Text>. I've built dozens of
         products from zero to thousands of users — everything from greenfield
         apps to scaling legacy systems. The work has touched millions globally.
       </Header>

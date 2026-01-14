@@ -19,7 +19,7 @@ const component: FC = () => (
     <Seo title="Home" />
     <Layout>
       <Background>
-        <Intro heading="Hello" />
+        <Intro heading="Hello" variant='fullScreen' />
       </Background>
     </Layout>
   </>

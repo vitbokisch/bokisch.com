@@ -92,9 +92,9 @@ const theme = {
   color: {
     transparent: 'transparent',
     light: {
-      base: '#FFFFFF',
-      100: '#FBFBFB',
-      200: '#F1F1F1',
+      base: '#F8F8F8',
+      100: '#F0F0F0',
+      200: '#E8E8E8',
     },
     dark: {
       base: '#272727',

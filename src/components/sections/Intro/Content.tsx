@@ -18,7 +18,9 @@ const Component: FC<Props> = ({ heading }) => (
   <Provider inversed>
     <Heading level1 label={heading} />
     <Text base paragraph>
-      I build and deliver products that actually ship. Efficiently and smartly.
+      I build and deliver products that actually ship.
+      <br />
+      Efficiently and smartly.
     </Text>
     <ContactIconList />
   </Provider>

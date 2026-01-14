@@ -15,7 +15,7 @@ export default element
   }))
   .states((t, m) => ({
     secondary: {
-      backgroundColor: m(t.color.light[100], t.color.dark[100]),
+      backgroundColor: m(t.color.light.base, t.color.dark[100]),
     }
   }))
   .sizes((t, m) => ({

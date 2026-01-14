@@ -13,17 +13,26 @@ const Element = element.theme({ height: 'inherit' })
 const Section = section.theme({
   height: '100vh',
   minHeight: { xl: 640 },
-  maxHeight: { xs: 640, md: 800, lg: 1400 },
+  maxHeight: { xs: 640, md: 800 },
   overflow: 'hidden',
   background: 'linear-gradient(180deg, #a5aead 0%, #b1bab9 52%, #b0b8b7 100%)',
 })
+.variants((t) => ({
+  fullScreen: {
+    height: '100vh',
+    minHeight: { xl: 640 },
+    maxHeight: { xs: 640, md: 800, lg: 1400 },
+  },
+}))
+
 
 type Props = {
   heading?: string
+  variant?: typeof Section['$$types']['variant']
 }
 
-const Component: FC<Props> = ({ heading }) => (
-  <Section>
+const Component: FC<Props> = ({ variant, heading }) => (
+  <Section variant={variant}>
     <ProfileImage />
     <Background overlay />
 

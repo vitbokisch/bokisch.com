@@ -25,7 +25,7 @@ const component: FC = () => {
 
   return (
   <Background secondary>
-    <Section id="education">
+    <Section id="work-experience">
       <Header title="Work Experience">
         Delivered solutions for startups and enterprises. From building MVPs to
         scaling production systems, I've solved real problems at every stage.

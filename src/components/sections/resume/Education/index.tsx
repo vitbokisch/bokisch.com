@@ -20,7 +20,7 @@ const component: FC = () => (
         Global education shaped my thinking. I studied in Czechia, Belgium and
         China — different cultures, different methods, different problems. That
         perspective is invaluable. Bachelor&apos;s degree, with real-world
-        perspective
+        perspective.
       </Header>
 
       <Container

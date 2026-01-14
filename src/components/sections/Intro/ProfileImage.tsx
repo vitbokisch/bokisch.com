@@ -25,6 +25,6 @@ export default element
     position: 'absolute',
     right: { xs: -350, sm: -260, lg: -100, xxl: 'initial' },
     bottom: { xs: -70, md: 0 },
-    height: { xs: 460, md: 500 },
+    height: { xs: 460, md: 640 },
     left: { xxl: '55%' },
   })

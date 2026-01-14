@@ -15,7 +15,7 @@ export default [
   {
     company: 'Vitus Labs',
     date: '2018 - 2024',
-    position: 'Open Source Tooling Creator',
+    position: 'Founding Creator & Maintainer',
     responsibilities: [
       'Created open-source libraries for multiplatform UI design systems',
       'Developed tools that eliminate web/monorepo configuration overhead',

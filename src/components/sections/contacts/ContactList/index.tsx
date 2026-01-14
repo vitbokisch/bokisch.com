@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 import type { ExtractProps } from '~/types'
-import { useStore, observer } from '~/store'
 import LinkList from '~/components/base/LinkList'
+import data from './data'
 
 type Props = ExtractProps<typeof LinkList> &
   Partial<{
@@ -9,15 +9,16 @@ type Props = ExtractProps<typeof LinkList> &
   }>
 
 const Component: FC<Props> = ({ types, ...props }) => {
-  const store = useStore('')
-
-  const contacts = store.contacts?.pickDataByType(types).map((item) => ({
-    icon: item.type,
-    href: item.link,
-    label: item.username,
-  }))
+  const contacts = data
+    .filter((item) => !types || types.includes(item.type))
+    .map((item) => ({
+      icon: item.type,
+      href: item.link,
+      label: item.username,
+    }))
 
   return <LinkList data={contacts} gap="large" {...props} />
 }
 
-export default observer(Component)
+Component.displayName = 'sections/contacts/ContactList'
+export default Component

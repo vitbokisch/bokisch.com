@@ -1,19 +1,15 @@
 import type { FC } from 'react'
-import { useStore, observer } from '~/store'
 import IconList from '~/components/base/IconList'
+import data from './data'
 
 const Component: FC = () => {
-  const store = useStore('')
-
-  const contacts = store.contacts
-    ?.pickDataByType([
-      'github',
-      'linkedin',
-      'medium',
-      'twitter',
-      'stackoverflow',
-    ])
-    .map((item) => ({ name: item.type, href: item.link, label: item.label }))
+  const contacts = data
+    // .filter((item) => !types || types.includes(item.type))
+    .map((item) => ({
+      name: item.type,
+      href: item.link,
+      label: item.username,
+    }))
 
   return (
     <IconList
@@ -24,4 +20,5 @@ const Component: FC = () => {
   )
 }
 
-export default observer(Component)
+Component.displayName = 'sections/contacts/ContactIconList'
+export default Component

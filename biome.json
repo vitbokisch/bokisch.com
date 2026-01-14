@@ -30,7 +30,7 @@
     "rules": {
       "recommended": true,
       "suspicious": {
-        "noExplicitAny": "off",
+        "noExplicitAny": "warn",
         "noShadowRestrictedNames": "off"
       },
       "complexity": {
@@ -38,14 +38,14 @@
         "noBannedTypes": "off"
       },
       "a11y": {
-        "useKeyWithClickEvents": "off"
+        "useKeyWithClickEvents": "warn"
       },
       "correctness": {
         "useUniqueElementIds": "off",
-        "noNestedComponentDefinitions": "off"
+        "noNestedComponentDefinitions": "warn"
       },
       "security": {
-        "noDangerouslySetInnerHtml": "off"
+        "noDangerouslySetInnerHtml": "warn"
       }
     },
     "includes": [
@@ -75,8 +75,8 @@
               "react",
               "next",
               "next/*",
-              "zustand",
-              "zustand/*",
+              "mobx",
+              "mobx-*",
               "@vitus-labs/*",
               "~/store",
               "~/*"

@@ -1,7 +1,6 @@
 import type { FC } from 'react'
 import { Provider } from '~/theme'
 import Heading from '~/components/base/Heading'
-import Link from '~/components/base/Link'
 import text from '~/components/base/Text'
 import ContactIconList from '~/components/sections/contacts/ContactIconList'
 
@@ -19,11 +18,7 @@ const Component: FC<Props> = ({ heading }) => (
   <Provider inversed>
     <Heading level1 label={heading} />
     <Text base paragraph>
-      I&apos;m a person with{' '}
-      <Link href="https://www.16personalities.com/profiles/2d5836f3f4526">
-        The Advocate
-      </Link>{' '}
-      personality, analytical mind and passion for discovering the undiscovered.
+      I build and deliver products that actually ship. Efficiently and smartly.
     </Text>
     <ContactIconList />
   </Provider>

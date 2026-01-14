@@ -3,7 +3,7 @@ import Head from 'next/head'
 import type { AppProps } from 'next/app'
 import { Provider as StoreProvider } from 'mobx-react'
 import { useWindowResize } from '@vitus-labs/hooks'
-import { useStore, observer } from '~/store'
+import { useStore, observer, type IStoreSnapshotIn } from '~/store'
 import { ThemeProvider } from '~/theme'
 import useThemeListener from '~/hooks/useThemeListener'
 import Meta from '~/components/meta/Meta'
@@ -13,7 +13,7 @@ import Favicons from '~/components/meta/Favicons'
 const Component = ({
   Component,
   pageProps,
-}: AppProps<{ initialState: any }>) => {
+}: AppProps<{ initialState?: IStoreSnapshotIn }>) => {
   const store = useStore(pageProps.initialState)
 
   useWindowResize({

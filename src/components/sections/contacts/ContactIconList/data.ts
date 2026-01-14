@@ -1,17 +1,5 @@
 export default [
   {
-    username: 'vit@bokisch.cz',
-    link: 'mailto:vit@bokisch.cz',
-    type: 'email',
-    label: 'E-mail address',
-  },
-  {
-    username: 'bokisch.com',
-    link: 'https://bokisch.com',
-    type: 'home',
-    label: 'Homepage',
-  },
-  {
     username: '/vitbokisch',
     link: 'https://www.linkedin.com/in/vitbokisch/',
     type: 'linkedin',
@@ -35,11 +23,4 @@ export default [
     type: 'twitter',
     label: 'Twitter',
   },
-  {
-    username: '/vitbokisch',
-    link: 'https://stackoverflow.com/users/9223826/v%c3%adt-bokisch',
-    type: 'stackoverflow',
-    label: 'Stack Overflow',
-  },
-  // { username: 'vitbokisch', link: '', type: 'skype', label: 'Skype' },
 ]

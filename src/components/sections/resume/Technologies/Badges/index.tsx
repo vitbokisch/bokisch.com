@@ -1,35 +1,16 @@
 import type { FC } from 'react'
-import { type IStore, useStore, observer } from '~/store'
 import BadgeList from '~/components/base/BadgeList'
+import technologiesData from './data'
 
-const states = {
-  1: 'primary',
-  2: 'secondary',
-  3: 'tertiary',
-  4: 'neutral',
-}
+const transformedData = technologiesData.map((item) => ({
+  label: item.title,
+  href: item.link || undefined,
+}))
 
-type TransformedData = (
-  data: Array<{ title: string; level: 1 | 2 | 3 | 4; link?: string }>
-) => Array<{ label: string; state: string; href?: string }>
-
-const transformedData: TransformedData = (data) =>
-  data.map((item) => ({
-    label: item.title,
-    state: states[item.level],
-    href: item.link,
-  }))
-
-type Props = {
-  store?: IStore
-}
-
-const Component: FC<Props> = () => {
-  const store = useStore('')
-
+const Component: FC = () => {
   return (
     <BadgeList
-      data={transformedData(store.technologies?.dataByLevel as any)}
+      data={transformedData}
       gap="medium"
       gapY="medium"
       contentAlignX="center"
@@ -37,4 +18,4 @@ const Component: FC<Props> = () => {
   )
 }
 
-export default observer(Component)
+export default Component

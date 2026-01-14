@@ -35,29 +35,14 @@ const Text = text
     textAlign: 'center',
   }))
 
-const Author = text
-  .config({
-    name: 'base/Quote/Author',
-  })
-  .attrs({
-    tag: 'figcaption',
-  })
-  .theme((t) => ({
-    marginTop: t.space.xSmall,
-    fontSize: { xs: t.fontSize.small, md: t.fontSize.base },
-    fontWeight: 500,
-    textAlign: 'right',
-  }))
-
 export default base
   .config({ name: 'base/Quote' })
   .compose({ filterProps })
-  .attrs<{ quote: string; author: string }>(({ quote, author }) => ({
+  .attrs<{ quote: string }>(({ quote }) => ({
     tag: 'figure',
     content: () => (
       <Quote>
         <Text>{quote}</Text>
-        <Author>— {author}</Author>
       </Quote>
     ),
   }))

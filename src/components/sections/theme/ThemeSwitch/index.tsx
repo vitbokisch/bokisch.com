@@ -7,7 +7,7 @@ type Props = {
 }
 
 const Component: FC<Props> = () => {
-  const store = useStore('')
+  const store = useStore()
 
   return (
     <Switch

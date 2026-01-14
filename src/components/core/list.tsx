@@ -88,7 +88,11 @@ export default rocketstyle({
   }))
   .styles(
     (css) => css`
-      ${({ $rocketstyle, rootElement }: any) => {
+      ${({
+        $rocketstyle,
+        rootElement,
+      }: // biome-ignore lint/suspicious/noExplicitAny: Complex rocketstyle library props typing
+      any) => {
         const { gap, indent, ...restStyles } = $rocketstyle
 
         const baseTheme = makeItResponsive({

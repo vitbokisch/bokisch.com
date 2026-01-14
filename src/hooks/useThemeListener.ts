@@ -15,8 +15,8 @@ const useThemeListener = ({ setTheme }: Props) => {
 
   const updateTheme = useCallback(
     (e: StorageEvent) => {
-      if (e.newValue) {
-        setTheme(e.newValue as any)
+      if (e.newValue && (e.newValue === 'LIGHT' || e.newValue === 'DARK')) {
+        setTheme(e.newValue as keyof typeof THEME)
       }
     },
     [setTheme]

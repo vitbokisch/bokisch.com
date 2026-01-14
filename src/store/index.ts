@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { observer } from 'mobx-react'
 import {
   applySnapshot,
   type Instance,
@@ -6,36 +7,20 @@ import {
   type SnapshotOut,
   types as t,
 } from 'mobx-state-tree'
-import { observer } from 'mobx-react'
 import runtime from './runtime'
-import knowledge, { mockup as knowledgeMockup } from './data/knowledge'
-import technologies, { mockup as technologiesMockup } from './data/technologies'
-import contacts, { mockup as contactsMockup } from './data/contacts'
-import career, { mockup as careerMockup } from './data/career'
-
-const initialState = {
-  knowledge: knowledgeMockup,
-  technologies: technologiesMockup,
-  career: careerMockup,
-  contacts: contactsMockup,
-}
 
 let store: IStore | undefined
 
 const Store = t.model('Store', {
   runtime: t.optional(runtime, {}),
-  knowledge: t.maybeNull(knowledge),
-  technologies: t.maybeNull(technologies),
-  career: t.maybeNull(career),
-  contacts: t.maybeNull(contacts),
 })
 
 export type IStore = Instance<typeof Store>
 export type IStoreSnapshotIn = SnapshotIn<typeof Store>
 export type IStoreSnapshotOut = SnapshotOut<typeof Store>
 
-function initializeStore(snapshot = null) {
-  const _store = store ?? Store.create(initialState as any)
+function initializeStore(snapshot: IStoreSnapshotIn | null = null) {
+  const _store = store ?? Store.create({})
 
   // If your page has Next.js data fetching methods that use a Mobx store, it will
   // get hydrated here, check `pages/ssg.tsx` and `pages/ssr.tsx` for more details
@@ -50,9 +35,14 @@ function initializeStore(snapshot = null) {
   return store
 }
 
-type UseStore = (initialState?: any) => ReturnType<typeof initializeStore>
-const useStore: UseStore = (initialState = '') => {
-  const store = useMemo(() => initializeStore(initialState), [initialState])
+type UseStore = (
+  initialState?: IStoreSnapshotIn | null | undefined,
+) => ReturnType<typeof initializeStore>
+const useStore: UseStore = (initialState) => {
+  const store = useMemo(
+    () => initializeStore(initialState || null),
+    [initialState],
+  )
   return store
 }
 

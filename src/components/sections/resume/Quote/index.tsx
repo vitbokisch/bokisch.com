@@ -1,18 +1,14 @@
 import type { FC } from 'react'
+import Background from '~/components/base/Background'
 import { Container } from '~/components/base/grid'
 import Quote from '~/components/base/Quote'
-import Background from '~/components/base/Background'
 import Section from '~/components/base/Section'
 
 const component: FC = () => (
   <Background primary>
     <Section>
       <Container width={({ lg }) => ({ xs: '90%', lg })}>
-        <Quote
-          author="Albert Einstein"
-          quote="“If I had an hour to solve a problem I'd spend 55 minutes thinking
-          about the problem and 5 minutes thinking about solutions.”"
-        />
+        <Quote quote="I turn complex problems into simple, working solutions, focusing on systems that scale and actually get used. I think deeply, plan carefully, and execute relentlessly — leveraging modern tools and workflows to move faster without compromising quality." />
       </Container>
     </Section>
   </Background>

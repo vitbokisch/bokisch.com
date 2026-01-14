@@ -7,7 +7,7 @@ import LogoHeading from '~/components/base/LogoHeading'
 const component: FC<ExtractProps<typeof Link>> = (props) => (
   <Link href="/" contentDirection="rows" {...props}>
     <Logo />
-    <LogoHeading label="Frontend Engineer | Architect | Innovator" />
+    <LogoHeading label="Building things that ship | Engineer & Problem Solver" />
   </Link>
 )
 

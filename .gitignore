@@ -79,6 +79,10 @@ build/Release
 # Typescript v1 declaration files
 typings/
 
+# TypeScript build info
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
 # Optional npm cache directory
 .npm
 

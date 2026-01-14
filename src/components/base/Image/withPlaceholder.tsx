@@ -8,8 +8,8 @@ type Props = {
 }
 
 type GetResourceReturnType =
-  | { placeholder: string; original: string }
-  | undefined;
+  | { placeholder: string | null; original: string }
+  | undefined
 type GetSource = (
   src?: Props['src'],
   placeholder?: Props['placeholder']
@@ -30,14 +30,14 @@ const getSource: GetSource = async (src, placeholder) => {
     const importedPlaceholder = await import(`~/assets/images/${src}?trace`)
 
     return {
-      placeholder: importedPlaceholder.trace,
-      original: optimizedImage.default,
+      placeholder: importedPlaceholder.trace as string,
+      original: optimizedImage.default as string,
     }
   }
 
   return {
     placeholder: null,
-    original: optimizedImage.default,
+    original: optimizedImage.default as string,
   }
 }
 
@@ -45,13 +45,12 @@ type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
 
 type ImageSize = { width: number; height: number }
 
-const Component: HOC = (WrappedComponent) => {
+// Create the Enhanced component outside the HOC to avoid nesting
+const createEnhancedComponent = (WrappedComponent: ComponentType<Props>) => {
   const Enhanced: ComponentType<Props> = ({ src, placeholder, ...props }) => {
     const [isLoaded, setLoaded] = useState(false)
-    const [sizes, setSizes] = useState<{ width: number; height: number }>(
-      {} as ImageSize
-    )
-    const [source, setSource] = useState<GetResourceReturnType>();
+    const [sizes, setSizes] = useState<ImageSize>({ width: 0, height: 0 })
+    const [source, setSource] = useState<GetResourceReturnType>()
 
     useEffect(() => {
       const loadImage = async () => {
@@ -66,10 +65,14 @@ const Component: HOC = (WrappedComponent) => {
     useEffect(() => {
       if (source?.original) {
         const originalImage = new Image()
-        originalImage.src = source?.original
+        originalImage.src = source.original
         originalImage.onload = () => {
           setSizes({ width: originalImage.width, height: originalImage.height })
           setLoaded(true)
+        }
+        // Cleanup
+        return () => {
+          originalImage.onload = null
         }
       }
     }, [source])
@@ -77,9 +80,11 @@ const Component: HOC = (WrappedComponent) => {
     if (!src) return null
     if (!source?.original && !source?.placeholder) return null
 
+    const imageSrc = isLoaded ? source.original : (source.placeholder || source.original)
+
     return (
       <WrappedComponent
-        src={isLoaded ? source?.original : source?.placeholder}
+        src={imageSrc}
         style={isLoaded ? {} : { filter: 'blur(10px)', opacity: 0.5 }}
         {...sizes}
         {...props}
@@ -87,7 +92,12 @@ const Component: HOC = (WrappedComponent) => {
     )
   }
 
+  Enhanced.displayName = `WithPlaceholder(${WrappedComponent.displayName || WrappedComponent.name || 'Component'})`
   return Enhanced
+}
+
+const Component: HOC = (WrappedComponent) => {
+  return createEnhancedComponent(WrappedComponent)
 }
 
 export default Component

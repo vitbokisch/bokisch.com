@@ -1,26 +1,13 @@
 import type { FC } from 'react'
-import Seo from '~/components/meta/Seo'
 import Layout from '~/components/layouts/Base'
 import Footer from '~/components/layouts/Footer'
+import Seo from '~/components/meta/Seo'
 import Intro from '~/components/sections/Intro'
+import Companies from '~/components/sections/resume/Companies'
+import Education from '~/components/sections/resume/Education'
 import Quote from '~/components/sections/resume/Quote'
-import Personality from '~/components/sections/resume/Personality'
-import Knowledge from '~/components/sections/resume/Knowledge'
 import Technologies from '~/components/sections/resume/Technologies'
 import WorkExperience from '~/components/sections/resume/WorkExperience'
-import Education from '~/components/sections/resume/Education'
-import CareerTimeline from '~/components/sections/resume/CareerTimeline'
-import MainMenu from '~/components/sections/menu/MainMenu'
-
-const data = [
-  { label: 'About Me', href: '#about-me' },
-  { label: 'Knowledge', href: '#knowledge' },
-  { label: 'Technologies', href: '#technologies' },
-  { label: 'Work Experience', href: '#work-experience' },
-  { label: 'Education', href: '#education' },
-  { label: 'Certificates & Hobbies', href: '#certificates-and-hobbies' },
-  { label: 'Career Timeline', href: '#career-timeline' },
-]
 
 const Component: FC = () => (
   <>
@@ -28,15 +15,12 @@ const Component: FC = () => (
     <Layout>
       <Intro heading="Resume" />
       <Quote />
-      <Personality />
-      <Knowledge />
+      <Companies />
       <Technologies />
       <WorkExperience />
       <Education />
-      <CareerTimeline />
       <Footer />
     </Layout>
-    <MainMenu menu={data} />
   </>
 )
 

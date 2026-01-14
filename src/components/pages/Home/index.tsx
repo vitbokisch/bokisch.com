@@ -1,9 +1,8 @@
 import type { FC } from 'react'
-import Seo from '~/components/meta/Seo'
-import Layout from '~/components/layouts/Base'
 import background from '~/components/base/Background'
+import Layout from '~/components/layouts/Base'
+import Seo from '~/components/meta/Seo'
 import Intro from '~/components/sections/Intro'
-import MainMenu from '~/components/sections/menu/MainMenu'
 
 const Background = background.theme({
   minHeight: '100vh',
@@ -15,11 +14,6 @@ const Background = background.theme({
     )`,
 })
 
-const data = [
-  { label: 'Home', href: '/' },
-  { label: 'Resume', href: '/resume' },
-]
-
 const component: FC = () => (
   <>
     <Seo title="Home" />
@@ -28,7 +22,6 @@ const component: FC = () => (
         <Intro heading="Hello" />
       </Background>
     </Layout>
-    <MainMenu menu={data} />
   </>
 )
 

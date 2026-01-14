@@ -10,7 +10,7 @@ type Props = {
 }
 
 const Component: FC<Props> = ({ children }) => {
-  const { runtime } = useStore('')
+  const { runtime } = useStore()
 
   return (
     <Provider theme={theme} mode={runtime.theme.variant} provider={provider}>

@@ -13,7 +13,7 @@ const Component: FC = () => {
       primary
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      label="Give me a new challenge"
+      label="Let's build something together"
       href={isHover ? 'mailto:vit@bokisch.cz' : '#'}
     />
   )

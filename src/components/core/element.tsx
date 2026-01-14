@@ -10,6 +10,7 @@ export default rocketstyle()({
   //   fontFamily: t.fontFamily.base,
   // }))
   .styles(
+    // biome-ignore lint/suspicious/noExplicitAny: Complex rocketstyle library generic types
     (css) => css<any>`
       ${({ href, onClick, $rocketstyle, $rocketstate }) => {
         const isDynamic = onClick || href

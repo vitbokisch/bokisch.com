@@ -1,11 +1,11 @@
 import type { FC } from 'react'
-import Box, { Header, Body } from '../Box'
+import Box, { Body, Header } from '../Box'
 import heading from '../Heading'
-import Text from '../Text'
-import List from '../List'
-import Line from '../Line'
 import Icon from '../Icon'
 import IconLogo from '../IconLogo'
+import Line from '../Line'
+import List from '../List'
+import Text from '../Text'
 
 const Heading = heading.theme((t) => ({
   marginTop: t.space.large,
@@ -22,7 +22,6 @@ type Props = {
   note?: (typeof Text)['$$types']['children']
   icon?: (typeof Icon)['$$types']['name']
   logo?: (typeof IconLogo)['$$types']['name']
-  children: (typeof Text)['$$types']['children']
   list?: (typeof List)['$$types']['data']
 }
 
@@ -33,7 +32,6 @@ const Component: FC<Props> = ({
   icon,
   logo,
   list,
-  children,
 }: Props) => (
   <Box large tag="article">
     <Header>
@@ -48,7 +46,7 @@ const Component: FC<Props> = ({
       )}
     </Header>
 
-    <Line />
+    {list && <Line />}
 
     <Body>
       {list && (
@@ -56,11 +54,9 @@ const Component: FC<Props> = ({
           data={list}
           valueName="label"
           gap="large"
-          itemProps={{ contentAlignX: 'center', centered: true }}
+          // itemProps={{ contentAlignX: 'center', centered: true }}
         />
       )}
-
-      {children && <Text paragraph>{children}</Text>}
     </Body>
   </Box>
 )

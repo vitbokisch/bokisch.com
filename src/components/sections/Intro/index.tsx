@@ -17,7 +17,7 @@ const Section = section.theme({
   overflow: 'hidden',
   background: 'linear-gradient(180deg, #a5aead 0%, #b1bab9 52%, #b0b8b7 100%)',
 })
-.variants((t) => ({
+.variants(() => ({
   fullScreen: {
     height: '100vh',
     minHeight: { xl: 640 },

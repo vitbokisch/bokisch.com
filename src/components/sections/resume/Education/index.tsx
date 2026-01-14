@@ -27,7 +27,7 @@ const component: FC = () => (
         width={{ xs: '90%', lg: 980 }}
         columns={12}
         size={{ xs: 12, sm: 8, md: 6 }}
-        gap={{ xs: 32, md: 64 }}
+        gap={{ xs: 24, md: 32 }}
         gutter={0}
         contentAlignX="center"
       >

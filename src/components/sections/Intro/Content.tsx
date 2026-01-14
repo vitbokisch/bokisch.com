@@ -7,7 +7,7 @@ import ContactIconList from '~/components/sections/contacts/ContactIconList'
 const Text = text.theme((t) => ({
   maxWidth: { sm: '80%', lg: '60%' },
   marginBottom: t.space.xLarge,
-  fontSize: { xs: t.fontSize.base, md: t.fontSize.xLarge },
+  fontSize: { xs: t.fontSize.base, md: t.fontSize.large, lg: t.fontSize.xLarge },
 }))
 
 type Props = {

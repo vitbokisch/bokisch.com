@@ -32,10 +32,10 @@ const component: FC = () => {
       </Header>
 
       <Container
-        width={{ xs: '90%', xl: 1380 }}
-        columns={6}
-        size={{ xs: 6, sm: 3, md: 2 }}
-        gap={{ xs: 32, md: 64 }}
+        width={{ xs: '90%', lg: 980, xl: 1380 }}
+        columns={12}
+        size={{ xs: 12, md: 6, lg: 4 }}
+        gap={{ xs: 24, md: 32 }}
         gutter={0}
         contentAlignX="center"
       >

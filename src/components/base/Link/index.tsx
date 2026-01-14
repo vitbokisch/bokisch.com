@@ -22,11 +22,11 @@ const Link = link
     color: m(t.color.dark.base, t.color.light.base),
 
     hover: {
-      color: t.color.tertiary.base,
+      color: t.color.primary.base,
     },
 
     active: {
-      color: t.color.tertiary.medium,
+      color: t.color.primary.medium,
     },
   }))
   .sizes((t) => ({

@@ -14,15 +14,6 @@ export default text
     primary: {
       color: t.color.primary.base,
     },
-    secondary: {
-      color: t.color.secondary.base,
-    },
-    tertiary: {
-      color: t.color.tertiary.base,
-    },
-    neutral: {
-      color: t.color.neutral.base,
-    },
   }))
   .sizes((t) => ({
     normal: {
@@ -49,6 +40,6 @@ export default text
       fontStyle: 'italic',
     },
     noWrap: {
-      whiteSpace: 'nowrap'
-    }
+      whiteSpace: 'nowrap',
+    },
   })

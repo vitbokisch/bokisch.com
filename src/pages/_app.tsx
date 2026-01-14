@@ -1,25 +1,19 @@
 import '~/config/rocketstyle'
-import Head from 'next/head'
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import { Provider as StoreProvider } from 'mobx-react'
-import { useWindowResize } from '@vitus-labs/hooks'
-import { useStore, observer, type IStoreSnapshotIn } from '~/store'
+import { type IStoreSnapshotIn, observer, useStore } from '~/store'
 import { ThemeProvider } from '~/theme'
-import useThemeListener from '~/hooks/useThemeListener'
+import Favicons from '~/components/meta/Favicons'
 import Meta from '~/components/meta/Meta'
 import Social from '~/components/meta/Social'
-import Favicons from '~/components/meta/Favicons'
+import useThemeListener from '~/hooks/useThemeListener'
 
 const Component = ({
   Component,
   pageProps,
 }: AppProps<{ initialState?: IStoreSnapshotIn }>) => {
   const store = useStore(pageProps.initialState)
-
-  useWindowResize({
-    throttleDelay: 200,
-    onChange: store.runtime.viewport.setSizes,
-  })
 
   useThemeListener({
     setTheme: store.runtime.theme.setTheme,

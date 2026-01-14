@@ -14,8 +14,8 @@ export default [
   },
   {
     company: 'Vitus Labs',
-    date: '2018 - 2024',
-    position: 'Founding Creator & Maintainer',
+    date: '2018 - 2025',
+    position: 'Founding Creator & Engineer',
     responsibilities: [
       'Created open-source libraries for multiplatform UI design systems',
       'Developed tools that eliminate web/monorepo configuration overhead',
@@ -127,7 +127,7 @@ export default [
   {
     company: 'IBM University Technology Center',
     date: '2012 - 2014',
-    position: 'BPM Developer, Consultant & Designer',
+    position: 'BPM Developer & Consultant',
     responsibilities: [
       'Full-stack developer and designer for IBM BPM solutions',
       'Led UX, design, and frontend development for BPMN web application',

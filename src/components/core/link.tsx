@@ -26,11 +26,11 @@ export default element
     userSelect: 'none',
 
     hover: {
-      color: t.color.tertiary.base,
+      color: t.color.primary.base,
     },
 
     active: {
-      color: t.color.tertiary.medium,
+      color: t.color.primary.medium,
     },
   }))
   .states((t) => ({
@@ -44,56 +44,26 @@ export default element
         color: t.color.primary.dark,
       },
     },
-    secondary: {
-      color: t.color.secondary.base,
-
-      hover: {
-        color: t.color.secondary.medium,
-      },
-      active: {
-        color: t.color.secondary.dark,
-      },
-    },
-    tertiary: {
-      color: t.color.tertiary.base,
-
-      hover: {
-        color: t.color.tertiary.medium,
-      },
-      active: {
-        color: t.color.tertiary.dark,
-      },
-    },
-    neutral: {
-      color: t.color.neutral.base,
-
-      hover: {
-        color: t.color.neutral.medium,
-      },
-      active: {
-        color: t.color.neutral.dark,
-      },
-    },
     light: {
       color: t.color.light.base,
 
       hover: {
-        color: t.color.tertiary.base,
+        color: t.color.primary.base,
       },
 
       active: {
-        color: t.color.tertiary.medium,
+        color: t.color.primary.medium,
       },
     },
     dark: {
       color: t.color.dark.base,
 
       hover: {
-        color: t.color.tertiary.base,
+        color: t.color.primary.base,
       },
 
       active: {
-        color: t.color.tertiary.medium,
+        color: t.color.primary.medium,
       },
     },
     transparent: {

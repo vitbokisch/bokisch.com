@@ -17,6 +17,7 @@ const SubHeading = Text.theme((t) => ({
 }))
 
 type Props = {
+  state?: typeof Box['$$types']['state']
   title: (typeof Heading)['$$types']['label']
   subtitle?: (typeof SubHeading)['$$types']['label']
   note?: (typeof Text)['$$types']['children']
@@ -26,6 +27,7 @@ type Props = {
 }
 
 const Component: FC<Props> = ({
+  state,
   title,
   subtitle,
   note,
@@ -33,7 +35,7 @@ const Component: FC<Props> = ({
   logo,
   list,
 }: Props) => (
-  <Box large tag="article">
+  <Box large tag="article" state={state}>
     <Header>
       {icon && <Icon xLarge name={icon} />}
       {logo && <IconLogo circle src={logo} />}

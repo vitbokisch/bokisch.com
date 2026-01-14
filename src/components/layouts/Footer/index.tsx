@@ -4,7 +4,7 @@ import Link from '~/components/base/Link'
 
 const component: FC = () => (
   <Footer>
-    Made with 💜 by &nbsp; <Link href="/">vitbokisch</Link>
+    Made with 💙 by &nbsp; <Link href="/">vitbokisch</Link>
   </Footer>
 )
 

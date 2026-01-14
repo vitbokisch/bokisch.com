@@ -23,36 +23,6 @@ const Component = element
         backgroundColor: t.color.primary.dark,
       },
     },
-    secondary: {
-      backgroundColor: t.color.secondary.base,
-
-      hover: {
-        backgroundColor: t.color.secondary.medium,
-      },
-      active: {
-        backgroundColor: t.color.secondary.dark,
-      },
-    },
-    tertiary: {
-      backgroundColor: t.color.tertiary.base,
-
-      hover: {
-        backgroundColor: t.color.tertiary.medium,
-      },
-      active: {
-        backgroundColor: t.color.tertiary.dark,
-      },
-    },
-    neutral: {
-      backgroundColor: t.color.neutral.base,
-
-      hover: {
-        backgroundColor: t.color.neutral.medium,
-      },
-      active: {
-        backgroundColor: t.color.neutral.dark,
-      },
-    },
   }))
   .sizes((t, m) => ({
     small: {

@@ -14,7 +14,7 @@ const Component: FC<Props> = ({ children }) => {
 
   return (
     <Provider theme={theme} mode={runtime.theme.variant} provider={provider}>
-      <GlobalStyle theme={theme} blocked={runtime.menu.isOpen} />
+      <GlobalStyle theme={theme} />
       {children}
     </Provider>
   )

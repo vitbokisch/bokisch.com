@@ -102,24 +102,9 @@ const theme = {
       200: '#3F3F3F',
     },
     primary: {
-      base: '#954EA4',
-      medium: '#71307E',
-      dark: '#461950',
-    },
-    secondary: {
-      base: '#5066B3',
-      medium: '#374C96',
-      dark: '#27366C',
-    },
-    tertiary: {
-      base: '#91C8CF',
-      medium: '#45939D',
-      dark: '#285E65',
-    },
-    neutral: {
-      base: '#B8B8B8',
-      medium: '#929292',
-      dark: '#696969',
+      base: '#06B6D4',
+      medium: '#0891B2',
+      dark: '#0E7490',
     },
   },
 } as const

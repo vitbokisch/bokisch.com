@@ -2,7 +2,7 @@ import { createGlobalStyle, css } from 'styled-components'
 import type { Theme } from './theme'
 import theme from './theme'
 
-const GlobalStyle = createGlobalStyle<{ theme: Theme; blocked: boolean }>`
+const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
   html {
     scroll-behavior: smooth;
     font-family: ${theme.fontFamily.base}
@@ -18,14 +18,6 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme; blocked: boolean }>`
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-
-    ${({ blocked }) =>
-      blocked &&
-      css`
-        position: fixed;
-        overflow-y: hidden;
-      `};
 
     ${({ theme: t }) => css`
       font-size: ${t.rootSize}px;

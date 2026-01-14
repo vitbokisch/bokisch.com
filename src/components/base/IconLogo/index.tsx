@@ -29,7 +29,7 @@ export default element
     box: {
       height: { xs: 64, md: 100 },
       padding: { xs: t.space.medium },
-      backgroundColor: m(t.color.transparent, t.color.light.base),
+      backgroundColor: m(t.color.transparent, t.color.light[200]),
     },
     circle: {
       width: 72,

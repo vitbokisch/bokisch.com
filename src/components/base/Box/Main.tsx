@@ -13,6 +13,11 @@ export default element
     borderRadius: t.borderRadius.base,
     color: m(t.color.dark.base, t.color.light[100]),
   }))
+  .states((t, m) => ({
+    secondary: {
+      backgroundColor: m(t.color.light[100], t.color.dark[100]),
+    }
+  }))
   .sizes((t, m) => ({
     small: {
       padding: t.space.xSmall,

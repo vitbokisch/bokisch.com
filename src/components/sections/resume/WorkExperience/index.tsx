@@ -1,8 +1,9 @@
-import type { FC } from 'react'
+import  { type FC, useState } from 'react'
 import Background from '~/components/base/Background'
 import CardList from '~/components/base/CardList'
 import { Col, Container, Row } from '~/components/base/grid'
 import Section, { Header } from '~/components/base/Section'
+import ShowMoreButton from './ShowMoreButton'
 import data from './data'
 
 const transformedData = data.map((item) => ({
@@ -12,7 +13,17 @@ const transformedData = data.map((item) => ({
   list: item.responsibilities,
 }))
 
-const component: FC = () => (
+const component: FC = () => {
+  const [showMore, setShowMore] = useState(false);
+
+  const toggleShowMore = () => {
+    setShowMore(!showMore);
+  };
+
+  const itemsList = showMore ? transformedData : transformedData.slice(0, 6);
+  const showMoreLabel = showMore ? "See less work experience" : "See more work experience";
+
+  return (
   <Background secondary>
     <Section id="education">
       <Header title="Work Experience">
@@ -29,12 +40,14 @@ const component: FC = () => (
         contentAlignX="center"
       >
         <Row>
-          <CardList data={transformedData} wrapComponent={Col} itemProps={{ state:'secondary' }} />
+          <CardList data={itemsList} wrapComponent={Col} itemProps={{ state:'secondary' }} />
         </Row>
       </Container>
+
+      <ShowMoreButton onClick={toggleShowMore} label={showMoreLabel} />
     </Section>
   </Background>
-)
+)}
 
 component.displayName = 'sections/Knowledge'
 export default component

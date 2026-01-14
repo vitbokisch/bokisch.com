@@ -19,17 +19,11 @@ import Link from './Link'
 import LinkList from './LinkList'
 import List from './List'
 import Logo from './Logo'
-import Popover from './Popover'
-import Progress from './Progress'
-import ProgressList from './ProgressList'
-import ProgressBox from './ProgressBox'
-import ProgressBoxList from './ProgressBoxList'
 import Quote from './Quote'
 import Section from './Section'
 import * as Skeleton from './skeleton'
 import Switch from './Switch'
 import Symbol from './Symbol'
-import Tab from './Tab'
 import Text from './Text'
 
 export {
@@ -54,16 +48,10 @@ export {
   LinkList,
   List,
   Logo,
-  Popover,
-  Progress,
-  ProgressList,
-  ProgressBox,
-  ProgressBoxList,
   Quote,
   Section,
   Skeleton,
   Switch,
   Symbol,
-  Tab,
   Text,
 }

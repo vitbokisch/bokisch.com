@@ -1,6 +1,5 @@
 import type { FC } from 'react'
 import Background from '~/components/base/Background'
-import Button from '~/components/base/Button'
 import { Col, Container, Row } from '~/components/base/grid'
 import Heading from '~/components/base/Heading'
 import IconLogoList from '~/components/base/IconLogoList'

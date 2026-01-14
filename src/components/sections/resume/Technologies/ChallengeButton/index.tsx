@@ -2,7 +2,7 @@ import { type FC, useState } from 'react'
 import button from '~/components/base/Button'
 
 const Button = button.theme((t) => ({
-  marginTop: t.space.large,
+  marginTop: t.space.xxLarge,
 }))
 
 const Component: FC = () => {

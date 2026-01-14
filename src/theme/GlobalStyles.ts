@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     -moz-osx-font-smoothing: grayscale;
 
     ${({ theme: t }) => css`
+      background-color: ${t.color.light.base};
       font-size: ${t.rootSize}px;
     `};
   }

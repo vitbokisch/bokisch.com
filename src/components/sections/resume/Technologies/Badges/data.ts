@@ -3,7 +3,7 @@ export default [
   { title: 'TypeScript', link: 'https://www.typescriptlang.org/' },
   { title: 'Next.js', link: 'https://nextjs.org/' },
   { title: 'Zustand', link: 'https://zustand-demo.pmnd.rs/' },
-  { title: 'TanStack Query', link: 'https://tanstack.com/query' },
+  { title: 'TanStack', link: 'https://tanstack.com/' },
   { title: 'GraphQL', link: 'https://graphql.org/' },
   { title: 'tRPC', link: 'https://trpc.io/' },
   { title: 'Tailwind CSS', link: 'https://tailwindcss.com/' },

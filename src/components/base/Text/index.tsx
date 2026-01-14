@@ -14,6 +14,9 @@ export default text
     primary: {
       color: t.color.primary.base,
     },
+    neutral: {
+      color: t.color.neutral.base
+    }
   }))
   .sizes((t) => ({
     normal: {

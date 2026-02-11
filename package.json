@@ -19,14 +19,14 @@
     "make:favicon": "bun run vl_favicon"
   },
   "dependencies": {
-    "@vitus-labs/connector-styler": "2.0.0-alpha.9",
-    "@vitus-labs/styler": "2.0.0-alpha.9",
-    "@vitus-labs/coolgrid": "2.0.0-alpha.9",
-    "@vitus-labs/core": "2.0.0-alpha.9",
-    "@vitus-labs/elements": "2.0.0-alpha.9",
-    "@vitus-labs/hooks": "2.0.0-alpha.9",
-    "@vitus-labs/rocketstyle": "2.0.0-alpha.9",
-    "@vitus-labs/unistyle": "2.0.0-alpha.9",
+    "@vitus-labs/connector-styler": "2.0.0-alpha.12",
+    "@vitus-labs/styler": "2.0.0-alpha.12",
+    "@vitus-labs/coolgrid": "2.0.0-alpha.12",
+    "@vitus-labs/core": "2.0.0-alpha.12",
+    "@vitus-labs/elements": "2.0.0-alpha.12",
+    "@vitus-labs/hooks": "2.0.0-alpha.12",
+    "@vitus-labs/rocketstyle": "2.0.0-alpha.12",
+    "@vitus-labs/unistyle": "2.0.0-alpha.12",
     "next": "^15.5.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
@@ -44,5 +44,11 @@
     "@vitus-labs/tools-nextjs-images": "1.7.0",
     "typescript": "^5.9.3",
     "webp-loader": "^0.6.0"
-  }
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions"
+  ]
 }

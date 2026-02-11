@@ -1,8 +1,7 @@
-import { createGlobalStyle, css } from 'styled-components'
-import type { Theme } from './theme'
+import { createGlobalStyle, css } from '@vitus-labs/connector-styler'
 import theme from './theme'
 
-const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
+const GlobalStyle = createGlobalStyle`
   html {
     scroll-behavior: smooth;
     font-family: ${theme.fontFamily.base}
@@ -19,7 +18,8 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    ${({ theme: t }) => css`
+    // biome-ignore lint/suspicious/noExplicitAny: styled-components theme typing
+    ${({ theme: t }: any) => css`
       background-color: ${t.color.light.base};
       font-size: ${t.rootSize}px;
     `};

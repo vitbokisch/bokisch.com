@@ -4,6 +4,7 @@ const inter = Ubuntu({
   weight: ['300', '500'],
   subsets: ['latin'],
   style: ['italic', 'normal'],
+  display: 'swap',
 })
 
 const theme = {

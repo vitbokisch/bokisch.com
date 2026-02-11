@@ -1,21 +1,13 @@
-import withPlugins from 'next-compose-plugins'
-import optimizedImages from 'next-optimized-images-2'
+import optimizedImages from '@vitus-labs/tools-nextjs-images'
 
-const PLUGINS = [
-  [
-    optimizedImages({
-      optimizeInDev: true,
-    }),
-  ],
-]
-
-export default withPlugins(PLUGINS, {
+export default optimizedImages({
+  optimizeInDev: true,
+})({
   output: 'export',
   poweredByHeader: false,
   turbopack: {},
   compiler: {
-    // removeConsole: true,
-    styledComponents: true,
+    removeConsole: true,
   },
   images: {
     unoptimized: true,

@@ -1,32 +1,21 @@
-import { useEffect, useCallback } from 'react'
-import type { THEME } from '~/config/constants'
-import { getDefaultTheme } from '~/utils/theme'
+import { useCallback, useEffect } from 'react'
 
 type Props = {
-  setTheme: (theme: keyof typeof THEME) => void
+  setTheme: (theme: 'light' | 'dark') => void
 }
+
 const useThemeListener = ({ setTheme }: Props) => {
-  // an initial hook for defining default theme
-  useEffect(() => {
-    const defaultTheme = getDefaultTheme()
-
-    setTheme(defaultTheme)
-  }, [setTheme])
-
   const updateTheme = useCallback(
     (e: StorageEvent) => {
-      if (e.newValue && (e.newValue === 'LIGHT' || e.newValue === 'DARK')) {
-        setTheme(e.newValue as keyof typeof THEME)
+      if (e.newValue === 'light' || e.newValue === 'dark') {
+        setTheme(e.newValue)
       }
     },
-    [setTheme]
+    [setTheme],
   )
 
-  // a hook for saving a default theme to local storage for the next time
-  // and for observing changes and updating UI in other tabs as well
   useEffect(() => {
     window.addEventListener('storage', updateTheme)
-
     return () => window.removeEventListener('storage', updateTheme)
   }, [updateTheme])
 }

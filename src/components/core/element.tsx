@@ -1,18 +1,13 @@
-import rocketstyle from '@vitus-labs/rocketstyle'
 import { Element } from '@vitus-labs/elements'
-import { styles, makeItResponsive } from '@vitus-labs/unistyle'
+import rocketstyle from '@vitus-labs/rocketstyle'
+import { makeItResponsive, styles } from '@vitus-labs/unistyle'
 
 export default rocketstyle()({
   component: Element,
   name: 'core/Element',
-})
-  // .theme((t) => ({
-  //   fontFamily: t.fontFamily.base,
-  // }))
-  .styles(
-    // biome-ignore lint/suspicious/noExplicitAny: Complex rocketstyle library generic types
-    (css) => css<any>`
-      ${({ href, onClick, $rocketstyle, $rocketstate }) => {
+}).styles(
+  (css) => css`
+      ${({ href, onClick, $rocketstyle, $rocketstate }: any) => {
         const isDynamic = onClick || href
         const { disabled, active, pseudo = {} } = $rocketstate
         const { hover, pressed, focus } = pseudo
@@ -54,61 +49,75 @@ export default rocketstyle()({
           /* -------------------------------------------------------- */
           ${baseTheme};
 
-          ${!disabled &&
-          isDynamic &&
-          css`
+          ${
+            !disabled &&
+            isDynamic &&
+            css`
             cursor: pointer;
-          `};
+          `
+          };
 
           /* -------------------------------------------------------- */
           /* HOVER STATE */
           /* -------------------------------------------------------- */
-          ${!disabled &&
-          !active &&
-          isDynamic &&
-          css`
+          ${
+            !disabled &&
+            !active &&
+            isDynamic &&
+            css`
             &:hover {
               ${hoverTheme};
             }
-          `};
+          `
+          };
 
-          ${hover &&
-          css`
+          ${
+            hover &&
+            css`
             ${hoverTheme};
-          `};
+          `
+          };
 
           /* -------------------------------------------------------- */
           /* FOCUS STATE */
           /* -------------------------------------------------------- */
-          ${!disabled &&
-          css`
+          ${
+            !disabled &&
+            css`
             &:focus {
               ${focusTheme};
             }
-          `};
+          `
+          };
 
-          ${focus &&
-          css`
+          ${
+            focus &&
+            css`
             ${focusTheme};
-          `};
+          `
+          };
 
           /* -------------------------------------------------------- */
           /* ACTIVE / PRESSED STATE */
           /* -------------------------------------------------------- */
-          ${!disabled &&
-          isDynamic &&
-          css`
+          ${
+            !disabled &&
+            isDynamic &&
+            css`
             &:active {
               ${activeTheme};
             }
-          `};
+          `
+          };
 
-          ${!disabled &&
-          (active || pressed) &&
-          css`
+          ${
+            !disabled &&
+            (active || pressed) &&
+            css`
             ${activeTheme};
-          `};
+          `
+          };
         `
       }};
-    `
-  )
+    `,
+)

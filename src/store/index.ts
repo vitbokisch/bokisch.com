@@ -1,49 +1,49 @@
-import { useMemo } from 'react'
-import { observer } from 'mobx-react'
-import {
-  applySnapshot,
-  type Instance,
-  type SnapshotIn,
-  type SnapshotOut,
-  types as t,
-} from 'mobx-state-tree'
-import runtime from './runtime'
+import { createContext, useCallback, useContext, useState } from 'react'
+import { STORAGE } from '~/config/constants'
+import { getDefaultTheme } from '~/utils/theme'
 
-let store: IStore | undefined
+type ThemeVariant = 'light' | 'dark'
 
-const Store = t.model('Store', {
-  runtime: t.optional(runtime, {}),
+type StoreContextType = {
+  theme: ThemeVariant
+  isDark: boolean
+  setTheme: (theme: ThemeVariant) => void
+  toggleTheme: () => void
+}
+
+export const StoreContext = createContext<StoreContextType>({
+  theme: 'light',
+  isDark: false,
+  setTheme: () => {},
+  toggleTheme: () => {},
 })
 
-export type IStore = Instance<typeof Store>
-export type IStoreSnapshotIn = SnapshotIn<typeof Store>
-export type IStoreSnapshotOut = SnapshotOut<typeof Store>
+export const useStore = () => useContext(StoreContext)
 
-function initializeStore(snapshot: IStoreSnapshotIn | null = null) {
-  const _store = store ?? Store.create({})
+export const useCreateStore = () => {
+  const [theme, setThemeState] = useState<ThemeVariant>(getDefaultTheme)
 
-  // If your page has Next.js data fetching methods that use a Mobx store, it will
-  // get hydrated here, check `pages/ssg.tsx` and `pages/ssr.tsx` for more details
-  if (snapshot) {
-    applySnapshot(_store, snapshot)
+  const setTheme = useCallback((variant: ThemeVariant) => {
+    setThemeState(variant)
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem(STORAGE.THEME, variant)
+    }
+  }, [])
+
+  const toggleTheme = useCallback(() => {
+    setThemeState((prev) => {
+      const next = prev === 'light' ? 'dark' : 'light'
+      if (typeof window !== 'undefined') {
+        window.localStorage.setItem(STORAGE.THEME, next)
+      }
+      return next
+    })
+  }, [])
+
+  return {
+    theme,
+    isDark: theme === 'dark',
+    setTheme,
+    toggleTheme,
   }
-  // For SSG and SSR always create a new store
-  if (typeof window === 'undefined') return _store
-  // Create the store once in the client
-  if (!store) store = _store
-
-  return store
 }
-
-type UseStore = (
-  initialState?: IStoreSnapshotIn | null | undefined,
-) => ReturnType<typeof initializeStore>
-const useStore: UseStore = (initialState) => {
-  const store = useMemo(
-    () => initializeStore(initialState || null),
-    [initialState],
-  )
-  return store
-}
-
-export { observer, initializeStore, useStore }

@@ -1,7 +1,8 @@
+'use client'
+
 import type { FC } from 'react'
 import background from '~/components/base/Background'
 import Layout from '~/components/layouts/Base'
-import Seo from '~/components/meta/Seo'
 import Intro from '~/components/sections/Intro'
 
 const Background = background.theme({
@@ -15,14 +16,11 @@ const Background = background.theme({
 })
 
 const component: FC = () => (
-  <>
-    <Seo title="Home" />
-    <Layout>
-      <Background>
-        <Intro heading="Hello" variant='fullScreen' />
-      </Background>
-    </Layout>
-  </>
+  <Layout>
+    <Background>
+      <Intro heading="Hello" variant='fullScreen' />
+    </Background>
+  </Layout>
 )
 
 component.displayName = 'components/pages/Home'

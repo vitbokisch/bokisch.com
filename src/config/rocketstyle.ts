@@ -1,4 +1,4 @@
-import styled, { css, ThemeProvider as StyledProvider } from 'styled-components'
 import { init } from '@vitus-labs/core'
+import * as connector from '@vitus-labs/connector-styler'
 
-init({ styled, css, provider: StyledProvider })
+init(connector)

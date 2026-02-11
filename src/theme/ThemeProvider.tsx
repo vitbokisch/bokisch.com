@@ -1,7 +1,7 @@
-import  { FC, ReactNode } from 'react'
+import type { FC, ReactNode } from 'react'
 import { Provider } from '@vitus-labs/rocketstyle'
-import { Provider as provider } from '@vitus-labs/unistyle'
-import { useStore, observer } from '~/store'
+import { Provider as UnistyleProvider } from '@vitus-labs/unistyle'
+import { useStore } from '~/store'
 import theme from './theme'
 import GlobalStyle from './GlobalStyles'
 
@@ -10,14 +10,14 @@ type Props = {
 }
 
 const Component: FC<Props> = ({ children }) => {
-  const { runtime } = useStore()
+  const { theme: themeVariant } = useStore()
 
   return (
-    <Provider theme={theme} mode={runtime.theme.variant} provider={provider}>
+    <Provider theme={theme} mode={themeVariant} provider={UnistyleProvider}>
       <GlobalStyle theme={theme} />
       {children}
     </Provider>
   )
 }
 
-export default observer(Component)
+export default Component

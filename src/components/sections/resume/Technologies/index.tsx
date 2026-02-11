@@ -11,8 +11,8 @@ const component: FC = () => (
   <Background primary>
     <Section id="technologies">
       <Header title="Favorite Tech Stack">
-        I don't just follow trends — I chase what actually solves problems. Every
-        tool here is battle-tested, continuously refined, and obsessively
+        I don't just follow trends — I chase what actually solves problems.
+        Every tool here is battle-tested, continuously refined, and obsessively
         optimized for the work that matters.
       </Header>
 

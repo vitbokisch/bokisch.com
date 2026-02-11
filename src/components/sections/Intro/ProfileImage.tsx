@@ -1,5 +1,5 @@
-import { element } from '~/components/core'
 import image from '~/components/base/Image'
+import { element } from '~/components/core'
 
 const ProfileImage = image
   .config({

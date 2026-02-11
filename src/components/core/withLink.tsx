@@ -1,5 +1,5 @@
 import { useEffect, type ComponentType, type MouseEventHandler } from 'react'
-import { useRouter } from 'next/router'
+import { useRouter, usePathname } from 'next/navigation'
 import routes from '~/config/routes'
 
 type Props = Partial<{
@@ -9,7 +9,6 @@ type Props = Partial<{
   prefetch: boolean
   replace: boolean
   scroll: boolean
-  shallow: boolean
 }>
 
 type WrapProps = Partial<{
@@ -26,12 +25,12 @@ const component: HOC = (WrappedComponent) => {
     prefetch = false,
     replace,
     scroll,
-    shallow,
     external,
     onClick,
     ...props
   }: Props) => {
     const router = useRouter()
+    const pathname = usePathname()
 
     const getFinalHref = () => {
       if (typeof href === 'string') return href
@@ -55,8 +54,7 @@ const component: HOC = (WrappedComponent) => {
         : {}
 
     const finalHref = getFinalHref()
-    const handleClick = replace ? router.replace : router.push
-    const isActive = router.route === finalHref
+    const isActive = pathname === finalHref
 
     return (
       <WrappedComponent
@@ -65,7 +63,11 @@ const component: HOC = (WrappedComponent) => {
         onClick={(e) => {
           e.preventDefault()
           if (onClick) onClick(e)
-          handleClick(finalHref, finalHref, { shallow, scroll })
+          if (replace) {
+            router.replace(finalHref, { scroll })
+          } else {
+            router.push(finalHref, { scroll })
+          }
         }}
         {...props}
         {...externalProps}

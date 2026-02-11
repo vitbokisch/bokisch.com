@@ -14,8 +14,7 @@ export default withPlugins(PLUGINS, {
   poweredByHeader: false,
   turbopack: {},
   compiler: {
-    // removeConsole: true,
-    styledComponents: true,
+    removeConsole: true,
   },
   images: {
     unoptimized: true,

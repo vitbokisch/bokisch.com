@@ -4,13 +4,12 @@ import type { StylesTheme } from '@vitus-labs/unistyle'
 import type { Theme } from '../src/theme'
 
 export type DefinedBreakpoins = {
-  xs: true
-  sm: true
-  md: true
-  lg: true
-  xl: true
-  xxl: true
-  xxxl: true
+  xs: number
+  sm: number
+  md: number
+  lg: number
+  xl: number
+  xxl: number
 }
 
 export type ResponsiveStyles = Partial<{
@@ -23,7 +22,6 @@ export type ResponsiveStyles = Partial<{
         lg: StylesTheme[I]
         xl: StylesTheme[I]
         xxl: StylesTheme[I]
-        xxxl: StylesTheme[I]
       }>
     | Partial<
         [
@@ -33,7 +31,6 @@ export type ResponsiveStyles = Partial<{
           lg: StylesTheme[I],
           xl: StylesTheme[I],
           xxl: StylesTheme[I],
-          xxxl: StylesTheme[I]
         ]
       >
 }>

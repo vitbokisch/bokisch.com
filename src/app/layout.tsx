@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 import config from '~/config'
 import Providers from './providers'
-import StylerRegistry from './registry'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -62,9 +61,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="theme-color" content="#fff" />
       </head>
       <body>
-        <StylerRegistry>
-          <Providers>{children}</Providers>
-        </StylerRegistry>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

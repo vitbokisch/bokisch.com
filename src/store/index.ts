@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useState } from 'react'
 import { STORAGE } from '~/config/constants'
+import { getDefaultTheme } from '~/utils/theme'
 
 type ThemeVariant = 'light' | 'dark'
 
@@ -20,7 +21,7 @@ export const StoreContext = createContext<StoreContextType>({
 export const useStore = () => useContext(StoreContext)
 
 export const useCreateStore = () => {
-  const [theme, setThemeState] = useState<ThemeVariant>('light')
+  const [theme, setThemeState] = useState<ThemeVariant>(getDefaultTheme)
 
   const setTheme = useCallback((variant: ThemeVariant) => {
     setThemeState(variant)

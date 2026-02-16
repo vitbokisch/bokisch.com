@@ -19,14 +19,14 @@
     "make:favicon": "bun run vl_favicon"
   },
   "dependencies": {
-    "@vitus-labs/connector-styler": "2.0.0-alpha.12",
-    "@vitus-labs/styler": "2.0.0-alpha.12",
-    "@vitus-labs/coolgrid": "2.0.0-alpha.12",
-    "@vitus-labs/core": "2.0.0-alpha.12",
-    "@vitus-labs/elements": "2.0.0-alpha.12",
-    "@vitus-labs/hooks": "2.0.0-alpha.12",
-    "@vitus-labs/rocketstyle": "2.0.0-alpha.12",
-    "@vitus-labs/unistyle": "2.0.0-alpha.12",
+    "@vitus-labs/connector-styler": "2.0.0-alpha.15",
+    "@vitus-labs/styler": "2.0.0-alpha.15",
+    "@vitus-labs/coolgrid": "2.0.0-alpha.15",
+    "@vitus-labs/core": "2.0.0-alpha.15",
+    "@vitus-labs/elements": "2.0.0-alpha.15",
+    "@vitus-labs/hooks": "2.0.0-alpha.15",
+    "@vitus-labs/rocketstyle": "2.0.0-alpha.15",
+    "@vitus-labs/unistyle": "2.0.0-alpha.15",
     "next": "^15.5.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"

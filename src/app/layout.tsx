@@ -1,7 +1,16 @@
 import type { Metadata, Viewport } from 'next'
+import { Ubuntu } from 'next/font/google'
 import type { ReactNode } from 'react'
 import config from '~/config'
 import Providers from './providers'
+
+const ubuntu = Ubuntu({
+  weight: ['300', '500'],
+  subsets: ['latin'],
+  style: ['italic', 'normal'],
+  display: 'swap',
+  variable: '--font-ubuntu',
+})
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -50,14 +59,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" dir="ltr">
+    <html lang="en" dir="ltr" className={`${ubuntu.variable} ${ubuntu.className}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
         <meta name="theme-color" content="#fff" />
       </head>
       <body>

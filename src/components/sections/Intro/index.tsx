@@ -37,11 +37,7 @@ const Component: FC<Props> = ({ variant, heading }) => (
 		<ProfileImage />
 		<Background overlay />
 
-		<Container
-			css={`
-        height: 100%;
-      `}
-		>
+		<Container css="height: 100%;">
 			<Element
 				gap={36}
 				block

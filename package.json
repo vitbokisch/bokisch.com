@@ -19,31 +19,25 @@
     "make:favicon": "bun run vl_favicon"
   },
   "dependencies": {
-    "@vitus-labs/connector-styler": "2.0.0-alpha.20",
-    "@vitus-labs/styler": "2.0.0-alpha.20",
-    "@vitus-labs/coolgrid": "2.0.0-alpha.20",
-    "@vitus-labs/core": "2.0.0-alpha.20",
-    "@vitus-labs/elements": "2.0.0-alpha.20",
-    "@vitus-labs/hooks": "2.0.0-alpha.20",
-    "@vitus-labs/rocketstyle": "2.0.0-alpha.20",
-    "@vitus-labs/unistyle": "2.0.0-alpha.20",
-    "next": "^15.5.6",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "@vitus-labs/connector-styler": "2.0.0-beta.3",
+    "@vitus-labs/styler": "2.0.0-beta.3",
+    "@vitus-labs/coolgrid": "2.0.0-beta.3",
+    "@vitus-labs/core": "2.0.0-beta.3",
+    "@vitus-labs/elements": "2.0.0-beta.3",
+    "@vitus-labs/hooks": "2.0.0-beta.3",
+    "@vitus-labs/rocketstyle": "2.0.0-beta.3",
+    "@vitus-labs/unistyle": "2.0.0-beta.3",
+    "next": "^16.2.4",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.2",
-    "@types/node": "^25.2.3",
+    "@biomejs/biome": "2.4.13",
+    "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
-    "@vitus-labs/tools-favicon": "1.7.0",
-    "@vitus-labs/tools-typescript": "1.7.0",
-    "image-trace-loader": "^1.0.2",
-    "imagemin-mozjpeg": "^10.0.0",
-    "imagemin-optipng": "^8.0.0",
-    "imagemin-svgo": "^11.0.1",
-    "@vitus-labs/tools-nextjs-images": "1.7.0",
-    "typescript": "^5.9.3",
-    "webp-loader": "^0.6.0"
+    "@vitus-labs/tools-favicon": "2.3.0",
+    "@vitus-labs/tools-typescript": "2.3.0",
+    "typescript": "^6.0.3"
   },
   "browserslist": [
     "last 2 Chrome versions",

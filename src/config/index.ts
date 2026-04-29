@@ -28,7 +28,7 @@ const config: Config = {
     'Vit Bokisch, Architect, Frontend Engineer, Innovator, React.js, Developer, Resume, Vitus Labs',
   openGraph: {
     url: 'https://bokisch.com',
-    image,
+    image: image.src,
   },
 }
 

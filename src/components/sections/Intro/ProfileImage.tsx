@@ -7,7 +7,6 @@ const ProfileImage = image
   })
   .attrs({
     src: 'vit-profile.png',
-    placeholder: true,
     loading: 'eager',
     alt: 'Vit Bokisch',
   })

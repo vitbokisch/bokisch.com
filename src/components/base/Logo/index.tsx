@@ -1,4 +1,4 @@
-import logo from "~/assets/logo/logo-vit-bokisch.svg?include";
+import { svgs } from "~/assets/logo";
 import { element } from "~/components/core";
 
 export default element
@@ -7,7 +7,7 @@ export default element
 		contentAlignX: "left",
 		contentAlignY: "center",
 		dangerouslySetInnerHTML: {
-			__html: logo,
+			__html: svgs["logo-vit-bokisch"],
 		},
 	})
 	.theme((t, m) => ({

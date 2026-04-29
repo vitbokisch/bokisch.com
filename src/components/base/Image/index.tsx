@@ -1,5 +1,5 @@
 import { element } from '~/components/core'
-import withPlaceholder from './withPlaceholder'
+import NextImageComponent from './withPlaceholder'
 
 type Props = {
   src?: string
@@ -9,8 +9,7 @@ type Props = {
 }
 
 export default element
-  .config({ name: 'base/Image', component: 'img' })
-  .compose({ withPlaceholder })
+  .config({ name: 'base/Image', component: NextImageComponent })
   .attrs<Props>({ loading: 'lazy' })
   .variants({
     responsive: {

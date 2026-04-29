@@ -1,8 +1,5 @@
-import optimizedImages from '@vitus-labs/tools-nextjs-images'
-
-export default optimizedImages({
-  optimizeInDev: true,
-})({
+/** @type {import('next').NextConfig} */
+export default {
   output: 'export',
   poweredByHeader: false,
   turbopack: {},
@@ -11,7 +8,6 @@ export default optimizedImages({
   },
   images: {
     unoptimized: true,
-    disableStaticImages: true,
   },
   reactStrictMode: true,
-})
+}

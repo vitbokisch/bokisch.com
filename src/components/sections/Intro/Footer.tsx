@@ -15,14 +15,8 @@ const Component: FC = () => (
       indent="xLarge"
       gap={undefined}
       types={['email', 'home']}
-      wrapProps={{
-        block: { xs: true, sm: false },
-        css: { sm: 'width: auto; align-self: auto' },
-      }}
-      itemProps={{
-        block: { xs: true, sm: false },
-        css: { sm: 'width: auto; align-self: auto' },
-      }}
+      wrapProps={{ block: { xs: true, sm: false } }}
+      itemProps={{ block: { xs: true, sm: false } }}
     />
   </Box>
 )

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   favicon: {
     appName: 'Vit Bokisch',
     appShortName: 'Vit Bokisch',

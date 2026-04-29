@@ -1,18 +1,19 @@
-import { type FC, useState } from 'react'
+import { type FC, useEffect, useState } from 'react'
 import { useWindowResize } from '@vitus-labs/hooks'
 import Base from '~/components/base/Base'
 import Logo from '~/components/sections/brand/Logo'
 import ThemeSwitch from '~/components/sections/theme/ThemeSwitch'
 
 const Component: FC = () => {
-  const [windowSizes, setWindowSize] = useState({
-    width: typeof window !== 'undefined' ? window.innerWidth : 0,
-    height: typeof window !== 'undefined' ? window.innerHeight : 0,
-  })
+  const [width, setWidth] = useState(0)
+
+  useEffect(() => {
+    setWidth(window.innerWidth)
+  }, [])
 
   useWindowResize({
     throttleDelay: 200,
-    onChange: setWindowSize,
+    onChange: ({ width }) => setWidth(width),
   })
 
   return (
@@ -20,7 +21,7 @@ const Component: FC = () => {
       block
       beforeContentDirection="rows"
       beforeContent={Logo}
-      afterContent={windowSizes.width >= 576 ? <ThemeSwitch /> : null}
+      afterContent={width >= 576 ? <ThemeSwitch /> : null}
     />
   )
 }

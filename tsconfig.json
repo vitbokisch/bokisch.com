@@ -3,7 +3,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "lib": [
       "DOM",
       "ES2024"
@@ -30,16 +30,17 @@
       }
     ],
     "rootDir": ".",
-    "baseUrl": "./src",
     "paths": {
       "~": [
-        "src"
+        "./src"
       ],
       "~/*": [
-        "./*"
+        "./src/*"
       ]
     },
-    "types": ["node"]
+    "types": [
+      "node"
+    ]
   },
   "include": [
     "@types/*",
@@ -47,7 +48,8 @@
     "**/*.tsx",
     "next-env.d.ts",
     "next.config.js",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

@@ -5,20 +5,20 @@
     "": {
       "name": "@vitbokisch/personal-web",
       "dependencies": {
-        "@vitus-labs/connector-styler": "2.0.0",
-        "@vitus-labs/coolgrid": "2.0.0",
-        "@vitus-labs/core": "2.0.0",
-        "@vitus-labs/elements": "2.0.0",
-        "@vitus-labs/hooks": "2.0.0",
-        "@vitus-labs/rocketstyle": "2.0.0",
-        "@vitus-labs/styler": "2.0.0",
-        "@vitus-labs/unistyle": "2.0.0",
+        "@vitus-labs/connector-styler": "2.1.0",
+        "@vitus-labs/coolgrid": "2.1.0",
+        "@vitus-labs/core": "2.1.0",
+        "@vitus-labs/elements": "2.1.0",
+        "@vitus-labs/hooks": "2.1.0",
+        "@vitus-labs/rocketstyle": "2.1.0",
+        "@vitus-labs/styler": "2.1.0",
+        "@vitus-labs/unistyle": "2.1.0",
         "next": "^16.2.4",
         "react": "^19.2.5",
         "react-dom": "^19.2.5",
       },
       "devDependencies": {
-        "@biomejs/biome": "2.4.13",
+        "@biomejs/biome": "2.4.14",
         "@types/node": "^25.6.0",
         "@types/react": "^19.2.14",
         "@vitus-labs/tools-favicon": "2.3.0",
@@ -28,23 +28,23 @@
     },
   },
   "packages": {
-    "@biomejs/biome": ["@biomejs/biome@2.4.13", "", { "optionalDependencies": { "@biomejs/cli-darwin-arm64": "2.4.13", "@biomejs/cli-darwin-x64": "2.4.13", "@biomejs/cli-linux-arm64": "2.4.13", "@biomejs/cli-linux-arm64-musl": "2.4.13", "@biomejs/cli-linux-x64": "2.4.13", "@biomejs/cli-linux-x64-musl": "2.4.13", "@biomejs/cli-win32-arm64": "2.4.13", "@biomejs/cli-win32-x64": "2.4.13" }, "bin": { "biome": "bin/biome" } }, "sha512-gLXOwkOBBg0tr7bDsqlkIh4uFeKuMjxvqsrb1Tukww1iDmHcfr4Uu8MoQxp0Rcte+69+osRNWXwHsu/zxT6XqA=="],
+    "@biomejs/biome": ["@biomejs/biome@2.4.14", "", { "optionalDependencies": { "@biomejs/cli-darwin-arm64": "2.4.14", "@biomejs/cli-darwin-x64": "2.4.14", "@biomejs/cli-linux-arm64": "2.4.14", "@biomejs/cli-linux-arm64-musl": "2.4.14", "@biomejs/cli-linux-x64": "2.4.14", "@biomejs/cli-linux-x64-musl": "2.4.14", "@biomejs/cli-win32-arm64": "2.4.14", "@biomejs/cli-win32-x64": "2.4.14" }, "bin": { "biome": "bin/biome" } }, "sha512-TmAvxOEgrpLypzVGJ8FulIZnlyA9TxrO1hyqYrCz9r+bwma9xXxuLA5IuYnj55XQneFx460KjRbx6SWGLkg3bQ=="],
 
-    "@biomejs/cli-darwin-arm64": ["@biomejs/cli-darwin-arm64@2.4.13", "", { "os": "darwin", "cpu": "arm64" }, "sha512-2KImO1jhNFBa2oWConyr0x6flxbQpGKv6902uGXpYM62Xyem8U80j441SyUJ8KyngsmKbQjeIv1q2CQfDkNnYg=="],
+    "@biomejs/cli-darwin-arm64": ["@biomejs/cli-darwin-arm64@2.4.14", "", { "os": "darwin", "cpu": "arm64" }, "sha512-XvgoE9XOawUOQPdmvs4J7wPhi/DLwSCGks3AlPJDmh34O0awRTqCED1HRcRDdpf1Zrp4us4MGOOdIxNpbqNF5Q=="],
 
-    "@biomejs/cli-darwin-x64": ["@biomejs/cli-darwin-x64@2.4.13", "", { "os": "darwin", "cpu": "x64" }, "sha512-BKrJklbaFN4p1Ts4kPBczo+PkbsHQg57kmJ+vON9u2t6uN5okYHaSr7h/MutPCWQgg2lglaWoSmm+zhYW+oOkg=="],
+    "@biomejs/cli-darwin-x64": ["@biomejs/cli-darwin-x64@2.4.14", "", { "os": "darwin", "cpu": "x64" }, "sha512-jE7hKBCFhOx3uUh+ZkWBfOHxAcILPfhFplNkuID/eZeSTLHzfZzoZxW8fbqY9xXRnPi7jGNAf1iPVR+0yWsM/Q=="],
 
-    "@biomejs/cli-linux-arm64": ["@biomejs/cli-linux-arm64@2.4.13", "", { "os": "linux", "cpu": "arm64" }, "sha512-NzkUDSqfvMBrPplKgVr3aXLHZ2NEELvvF4vZxXulEylKWIGqlvNEcwUcj9OLrn75TD3lJ/GIqCVlBwd1MZCuYQ=="],
+    "@biomejs/cli-linux-arm64": ["@biomejs/cli-linux-arm64@2.4.14", "", { "os": "linux", "cpu": "arm64" }, "sha512-2TELhZnW5RSLL063l9rc5xLpA0ZIw0Ccwy/0q384rvNAgFw3yI76bd59547yxowdQr5MNPET/xDLrLuvgSeeWQ=="],
 
-    "@biomejs/cli-linux-arm64-musl": ["@biomejs/cli-linux-arm64-musl@2.4.13", "", { "os": "linux", "cpu": "arm64" }, "sha512-U5MsuBQW25dXaYtqWWSPM3P96H6Y+fHuja3TQpMNnylocHW0tEbtFTDlUj6oM+YJLntvEkQy4grBvQNUD4+RCg=="],
+    "@biomejs/cli-linux-arm64-musl": ["@biomejs/cli-linux-arm64-musl@2.4.14", "", { "os": "linux", "cpu": "arm64" }, "sha512-/z+6gqAqqUQTHazwStxSXKHg9b8UvqBmDFRp+c4wYbq2KXhELQDon9EoC9RpmQ8JWkqQx/lIUy/cs+MhzDZp6A=="],
 
-    "@biomejs/cli-linux-x64": ["@biomejs/cli-linux-x64@2.4.13", "", { "os": "linux", "cpu": "x64" }, "sha512-Az3ZZedYRBo9EQzNnD9SxFcR1G5QsGo6VEc2hIyVPZ1rdKwee/7E9oeBBZFpE8Z44ekxsDQBqbiWGW5ShOhUSQ=="],
+    "@biomejs/cli-linux-x64": ["@biomejs/cli-linux-x64@2.4.14", "", { "os": "linux", "cpu": "x64" }, "sha512-zHrlQZDBDUz4OLAraYpWKcnLS6HOewBFWYOzY91d1ZjdqZwibOyb6BEu6WuWLugyo0P3riCmsbV9UqV1cSXwQg=="],
 
-    "@biomejs/cli-linux-x64-musl": ["@biomejs/cli-linux-x64-musl@2.4.13", "", { "os": "linux", "cpu": "x64" }, "sha512-Z601MienRgTBDza/+u2CH3RSrWoXo9rtr8NK6A4KJzqGgfxx+H3VlyLgTJ4sRo40T3pIsqpTmiOQEvYzQvBRvQ=="],
+    "@biomejs/cli-linux-x64-musl": ["@biomejs/cli-linux-x64-musl@2.4.14", "", { "os": "linux", "cpu": "x64" }, "sha512-R6BWgJdQOwW9ulJatuTVrQkjnODjqHZkKNOqb1sz++3Noe5LYd0i3PchnOBUCYAPHoPWHhjJqbdZlHEu0hpjdA=="],
 
-    "@biomejs/cli-win32-arm64": ["@biomejs/cli-win32-arm64@2.4.13", "", { "os": "win32", "cpu": "arm64" }, "sha512-Px9PS2B5/Q183bUwy/5VHqp3J2lzdOCeVGzMpphYfl8oSa7VDCqenBdqWpy6DCy/en4Rbf/Y1RieZF6dJPcc9A=="],
+    "@biomejs/cli-win32-arm64": ["@biomejs/cli-win32-arm64@2.4.14", "", { "os": "win32", "cpu": "arm64" }, "sha512-M3EH5hqOI/F/FUA2u4xcLoUgmxd218mvuj/6JL7Hv2toQvr2/AdOvKSpGkoRuWFCtQPVa+ZqkEV3Q5xBA9+XSA=="],
 
-    "@biomejs/cli-win32-x64": ["@biomejs/cli-win32-x64@2.4.13", "", { "os": "win32", "cpu": "x64" }, "sha512-tTcMkXyBrmHi9BfrD2VNHs/5rYIUKETqsBlYOvSAABwBkJhSDVb5e7wPukftsQbO3WzQkXe6kaztC6WtUOXSoQ=="],
+    "@biomejs/cli-win32-x64": ["@biomejs/cli-win32-x64@2.4.14", "", { "os": "win32", "cpu": "x64" }, "sha512-WL0EG5qE+EAKomGXbf2g6VnSKJhTL3tXC0QRzWRwA5VpjxNYa6H4P7ZWfymbGE4IhZZQi1KXQ2R0YjwInmz2fA=="],
 
     "@emnapi/runtime": ["@emnapi/runtime@1.8.1", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-mehfKSMWjjNol8659Z8KxEMrdSJDDot5SXMq00dM8BN4o+CLNXQ0xH2V7EchNHV4RmbZLmmPdEaXZc5H2FXmDg=="],
 
@@ -122,19 +122,19 @@
 
     "@types/react": ["@types/react@19.2.14", "", { "dependencies": { "csstype": "^3.2.2" } }, "sha512-ilcTH/UniCkMdtexkoCN0bI7pMcJDvmQFPvuPvmEaYA/NSfFTAgdUSLAoVjaRJm7+6PvcM+q1zYOwS4wTYMF9w=="],
 
-    "@vitus-labs/connector-styler": ["@vitus-labs/connector-styler@2.0.0", "", { "peerDependencies": { "@vitus-labs/styler": "2.0.0", "react": ">= 19" } }, "sha512-7xKt7R9EQEq2vd72mYIpRU4+T3VvHTvI+DMP+Exc55QHI4hnteepH0AAB8MX5//P4aY+GSfAR5F2w2YAhzYPhQ=="],
+    "@vitus-labs/connector-styler": ["@vitus-labs/connector-styler@2.1.0", "", { "peerDependencies": { "@vitus-labs/styler": "2.1.0", "react": ">= 19" } }, "sha512-2XUfUDlnTfNi7vmx2GwAKBya6iykLo/LNTcop0QLVbNY50Lq4fafz8kXOX37gzkHn7qmE2Q5iOMt7eBmxJhKpg=="],
 
-    "@vitus-labs/coolgrid": ["@vitus-labs/coolgrid@2.0.0", "", { "peerDependencies": { "@vitus-labs/core": "2.0.0", "@vitus-labs/unistyle": "2.0.0", "react": ">= 19", "react-native": ">= 0.76" }, "optionalPeers": ["react-native"] }, "sha512-0fjFRrP4WTGd+UI0j7n1Dgo1ybv0pzoRprTAawfCCSjRm+mNMQqnKNs9AqisKtGGCmRzUGU0pCOf5vJh0ds99A=="],
+    "@vitus-labs/coolgrid": ["@vitus-labs/coolgrid@2.1.0", "", { "peerDependencies": { "@vitus-labs/core": "2.1.0", "@vitus-labs/unistyle": "2.1.0", "react": ">= 19", "react-native": ">= 0.76" }, "optionalPeers": ["react-native"] }, "sha512-L/nJhs06UVH/NsXDlmXYy2gTHnNuhDho3UfXQokY16+PatWYMRj+ZlI1AngEmlE00N0nF1EbrLz6vZUVug2OVw=="],
 
-    "@vitus-labs/core": ["@vitus-labs/core@2.0.0", "", { "dependencies": { "react-is": "^19.2.4" }, "peerDependencies": { "react": ">= 19" } }, "sha512-PHfqbbd4rz0rItRWyJ4MS36CwfztvJnCfMig5y4TZ+Lc7ibClCIr+o3mJr5bLY+jCUcev2z6wdL5WB9OBQ3+Fg=="],
+    "@vitus-labs/core": ["@vitus-labs/core@2.1.0", "", { "dependencies": { "react-is": "^19.2.4" }, "peerDependencies": { "react": ">= 19" } }, "sha512-p7htC4sZSeaZxxYHHIVDUGtVuk7Pop0GsDhHLF8xsXjbq/EOrC1MAX02IovRCdHDyYJJ8Gza5LF07Q/qMRaX2Q=="],
 
-    "@vitus-labs/elements": ["@vitus-labs/elements@2.0.0", "", { "dependencies": { "react-is": "^19.2.4" }, "peerDependencies": { "@vitus-labs/core": "2.0.0", "@vitus-labs/unistyle": "2.0.0", "react": ">= 19", "react-dom": ">= 19", "react-native": ">= 0.76" }, "optionalPeers": ["react-dom", "react-native"] }, "sha512-IgAOOwlF72dZP2LBfqD8TZFhhQEgB1yt9J61118xROrGlNN1Z4Bbcxdqf43R2ZCZnprDGYN2WdblqwJgUCrEZw=="],
+    "@vitus-labs/elements": ["@vitus-labs/elements@2.1.0", "", { "dependencies": { "react-is": "^19.2.4" }, "peerDependencies": { "@vitus-labs/core": "2.1.0", "@vitus-labs/unistyle": "2.1.0", "react": ">= 19", "react-dom": ">= 19", "react-native": ">= 0.76" }, "optionalPeers": ["react-dom", "react-native"] }, "sha512-cf2rF5B5paNGEE6ocOWJqBlTQYdpk6yDPcHwcNkdtOi65tjZW+BVH9oiTz9qQT49dTED0P9hAfSI7WkrMHYYYw=="],
 
-    "@vitus-labs/hooks": ["@vitus-labs/hooks@2.0.0", "", { "peerDependencies": { "@vitus-labs/core": "2.0.0", "react": ">= 19", "react-native": ">= 0.76" }, "optionalPeers": ["react-native"] }, "sha512-gRqIVgVJcRiX7idJkSQsXQpmrkyWNRUorkXutOJj8U0Ke3kyqrHfE+QNweWAMjwZOSZnC5rb0OekJ7XM1HgINQ=="],
+    "@vitus-labs/hooks": ["@vitus-labs/hooks@2.1.0", "", { "peerDependencies": { "@vitus-labs/core": "2.1.0", "react": ">= 19", "react-native": ">= 0.76" }, "optionalPeers": ["react-native"] }, "sha512-o3ayvC/re63nx7vqdO0YPP/etItJBPGr2abqcJVYPvotzaAQhBp81VNoWkWtHslJ8RXFGq0gbDVF3R34vAI8Rg=="],
 
-    "@vitus-labs/rocketstyle": ["@vitus-labs/rocketstyle@2.0.0", "", { "peerDependencies": { "@vitus-labs/core": "2.0.0", "react": ">= 19" } }, "sha512-nLJ5nP4fcd8XOBIgx3avNGuzIU4kEn4I7Zc6QiHur2kH5dWLM4RXuDIWWBE7fLMIqA4AexWzlbZERJY1E8NRVg=="],
+    "@vitus-labs/rocketstyle": ["@vitus-labs/rocketstyle@2.1.0", "", { "peerDependencies": { "@vitus-labs/core": "2.1.0", "react": ">= 19" } }, "sha512-+YHp8uon9i++VxDFypc+t9UN1/0JIdVyvnW3TyLvSIofE+bNsun8f4pbxjVjXrh+Dh5LaoQycsLBKwFYyEazqw=="],
 
-    "@vitus-labs/styler": ["@vitus-labs/styler@2.0.0", "", { "peerDependencies": { "react": ">= 19" } }, "sha512-Ppcu/V+L03uJlBtpLASu/BzcQR3NojFt9EAGTHUGeeV5unW3QpS/f8++HRXk25IlRjV5xq3jndkOUdwCVUm+uQ=="],
+    "@vitus-labs/styler": ["@vitus-labs/styler@2.1.0", "", { "peerDependencies": { "react": ">= 19" } }, "sha512-l0Lq4i77Z02jIf3ms3u7vnUOVZtRo3U9l39fooVr51NYOr0x1a0vR2TQsmCi841x0ZehGEPrRF4YDYZhbRA5mQ=="],
 
     "@vitus-labs/tools-core": ["@vitus-labs/tools-core@2.1.0", "", {}, "sha512-SaSRQMXD+KsTxeE56qrsIPljZeb/mg1IeA6C7JDNU6upqPGXcUlVjt9FPLU0p7OXcLrBR62Yl3NZsdMGKIh1EQ=="],
 
@@ -142,7 +142,7 @@
 
     "@vitus-labs/tools-typescript": ["@vitus-labs/tools-typescript@2.3.0", "", { "peerDependencies": { "typescript": "^6.0.3" } }, "sha512-QQ9BRHqjloTJh6cGZq3U2AXnsarWaZB2qpSTyAf8vKWkvJDjes1KrxGPMkBXMAYX1Dmjm7gCzS3wvaNp/T2hhA=="],
 
-    "@vitus-labs/unistyle": ["@vitus-labs/unistyle@2.0.0", "", { "peerDependencies": { "@vitus-labs/core": "2.0.0", "react": ">= 19", "react-native": ">= 0.76" }, "optionalPeers": ["react-native"] }, "sha512-jvVloT4MJINCYBMvdKhokrOLnRSNrQfeHkGR1QUMEvAftgtCMoqnntTJiJKwebMjr4cQLf8S/8ipkOh0VVXBzQ=="],
+    "@vitus-labs/unistyle": ["@vitus-labs/unistyle@2.1.0", "", { "peerDependencies": { "@vitus-labs/core": "2.1.0", "react": ">= 19", "react-native": ">= 0.76" }, "optionalPeers": ["react-native"] }, "sha512-cGp6R4G18QixlKpAz7VZMID1qGHP6Nj9KUJjMHZSalg3IRBpLsPE4nEY76//sJLYellFZb+QU6n06A6wC02riQ=="],
 
     "baseline-browser-mapping": ["baseline-browser-mapping@2.9.19", "", { "bin": { "baseline-browser-mapping": "dist/cli.js" } }, "sha512-ipDqC8FrAl/76p2SSWKSI+H9tFwm7vYqXQrItCuiVPt26Km0jS+NzSsBWAaBusvSbQcfJG+JitdMm+wZAgTYqg=="],
 

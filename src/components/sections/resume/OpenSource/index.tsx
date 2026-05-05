@@ -11,7 +11,7 @@ import { groups } from './data'
 
 const GroupBlock = element
   .attrs({ block: true })
-  .theme((t) => ({ marginBottom: t.space.xxLarge }))
+  .theme((t) => ({ marginTop: t.space.xLarge }))
 
 const GroupTitle = heading.theme((t, m) => ({
   marginBottom: t.space.xSmall,

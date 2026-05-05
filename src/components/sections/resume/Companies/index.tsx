@@ -11,9 +11,10 @@ const Component: FC = () => (
   <Background secondary>
     <Section id="years-of-shipping">
       <Header title="Years of Shipping">
-        <Text strong>13+ years of experience</Text>. I've built dozens of
-        products from zero to thousands of users — everything from greenfield
-        apps to scaling legacy systems. The work has touched millions globally.
+        <Text strong>13+ years architecting product-grade web apps</Text>—
+        frontend-led, full-stack capable — from MVP to scale. Most recently
+        Product Engineer at Exaforce ($75M Series A, AI security). Founding
+        engineer at 2 startups. Open-source maintainer
       </Header>
 
       <Container>

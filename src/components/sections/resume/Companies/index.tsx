@@ -7,28 +7,14 @@ import Section, { Header } from '~/components/base/Section'
 import Text from '~/components/base/Text'
 import data from './data'
 
-type Data = typeof data
-const normalizeData = (data: Data) =>
-  data.reduce(
-    (acc, item, i) => {
-      acc.push(item)
-
-      if (i === 3 || i === 6) {
-        acc.push({ component: () => <Col size={{ xs: 0, md: 1.5 }} /> })
-      }
-
-      return acc
-    },
-    [] as Record<string, unknown>[],
-  )
-
 const Component: FC = () => (
   <Background secondary>
     <Section id="years-of-shipping">
       <Header title="Years of Shipping">
-        <Text strong>13+ years of experience</Text>. I've built dozens of
-        products from zero to thousands of users — everything from greenfield
-        apps to scaling legacy systems. The work has touched millions globally.
+        <Text strong>13+ years architecting product-grade web apps</Text>—
+        frontend-led, full-stack capable — from MVP to scale. Most recently
+        Product Engineer at Exaforce ($75M Series A, AI security). Founding
+        engineer at 2 startups. Open-source maintainer
       </Header>
 
       <Container>
@@ -39,16 +25,30 @@ const Component: FC = () => (
 
       <Container
         gap={{ xs: 8, sm: 16, md: 32 }}
-        size={{ xs: 8, sm: 6, md: 3 }}
+        size={{ xs: 8, sm: 6, md: 4 }}
         contentAlignX="center"
       >
         <Row>
           <IconLogoList
             rootElement={false}
-            data={normalizeData(data)}
+            data={data}
             itemProps={{ variant: 'box' }}
             wrapComponent={Col}
           />
+        </Row>
+      </Container>
+
+      <Container contentAlignX="center">
+        <Row>
+          <Col size={{ xs: 12, md: 8 }}>
+            <Text base paragraph centered>
+              From 3-person founding teams to Series C engineering orgs.
+            </Text>
+            <Text base paragraph centered>
+              Each role taught me a different way to ship product under
+              different constraints.
+            </Text>
+          </Col>
         </Row>
       </Container>
     </Section>

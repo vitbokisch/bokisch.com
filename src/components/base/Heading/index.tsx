@@ -28,7 +28,11 @@ export default text
   }))
   .sizes((t) => ({
     level1: {
-      fontSize: { xs: t.fontSize.xxxLarge, sm: 96, lg: t.fontSize.jumbo },
+      fontSize: {
+        xs: t.fontSize.xxxLarge,
+        sm: t.fontSize.xxxxLarge,
+        lg: t.fontSize.jumbo,
+      },
       textTransform: 'uppercase',
     },
     level2: {

@@ -13,7 +13,7 @@ export default element
   .theme((t, m) => ({
     height: { xs: 60, md: 80 },
     lineHeight: t.lineHeight.reset,
-    backgroundColor: m(t.color.light[100], t.color.dark[100]),
+    backgroundColor: m(t.color.light[200], t.color.dark[200]),
     color: m(t.color.dark[100], t.color.light[100]),
     fontSize: { xs: t.fontSize.small, md: t.fontSize.base },
   }))

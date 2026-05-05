@@ -8,7 +8,7 @@ import Badges from './Badges'
 import ChallengeButton from './ChallengeButton'
 
 const component: FC = () => (
-  <Background primary>
+  <Background secondary>
     <Section id="technologies">
       <Header title="Favorite Tech Stack">
         I don't just follow trends — I chase what actually solves problems.

@@ -13,8 +13,7 @@ const transformedData = data.map((item) => ({
 }))
 
 const component: FC = () => (
-  <Background primary>
-    <Background />
+  <Background secondary>
     <Section id="education">
       <Header title="Education">
         Global education shaped my thinking. I studied in Czechia, Belgium and
@@ -32,7 +31,11 @@ const component: FC = () => (
         contentAlignX="center"
       >
         <Row>
-          <CardList data={transformedData} wrapComponent={Col} />
+          <CardList
+            data={transformedData}
+            wrapComponent={Col}
+            itemProps={{ state: 'secondary' }}
+          />
         </Row>
       </Container>
     </Section>

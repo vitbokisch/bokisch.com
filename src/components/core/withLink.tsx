@@ -1,5 +1,5 @@
-import { useEffect, type ComponentType, type MouseEventHandler } from 'react'
-import { useRouter, usePathname } from 'next/navigation'
+import { type ComponentType, type MouseEventHandler, useEffect } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
 import routes from '~/config/routes'
 
 type Props = Partial<{
@@ -15,6 +15,8 @@ type WrapProps = Partial<{
   active: boolean
   href: string
   onClick?: MouseEventHandler
+  rel: string
+  target: string
 }>
 
 type HOC = (WrappedComponent: ComponentType<WrapProps>) => ComponentType<Props>
@@ -39,21 +41,28 @@ const component: HOC = (WrappedComponent) => {
       return ''
     }
 
+    const finalHref = getFinalHref()
+
     useEffect(() => {
-      if (prefetch) router.prefetch(getFinalHref())
-    })
+      if (prefetch) router.prefetch(finalHref)
+    }, [finalHref, prefetch, router])
 
     if (!href) return <WrappedComponent onClick={onClick} {...props} />
 
-    const externalProps =
-      getFinalHref().startsWith('http') || external
-        ? {
-            rel: 'noopener noreferrer',
-            target: '_blank',
-          }
-        : {}
+    const isExternal = finalHref.startsWith('http') || external
 
-    const finalHref = getFinalHref()
+    if (isExternal) {
+      return (
+        <WrappedComponent
+          href={finalHref}
+          onClick={onClick}
+          {...props}
+          rel="noopener noreferrer"
+          target="_blank"
+        />
+      )
+    }
+
     const isActive = pathname === finalHref
 
     return (
@@ -70,7 +79,6 @@ const component: HOC = (WrappedComponent) => {
           }
         }}
         {...props}
-        {...externalProps}
       />
     )
   }

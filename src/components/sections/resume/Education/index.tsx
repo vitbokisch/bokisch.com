@@ -13,7 +13,7 @@ const transformedData = data.map((item) => ({
 }))
 
 const component: FC = () => (
-  <Background primary>
+  <Background secondary>
     <Background />
     <Section id="education">
       <Header title="Education">

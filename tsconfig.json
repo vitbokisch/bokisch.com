@@ -3,11 +3,9 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "jsx": "react-jsx",
-    "lib": [
-      "DOM",
-      "ES2024"
-    ],
+    "jsx": "preserve",
+    "jsxImportSource": "@pyreon/core",
+    "lib": ["DOM", "ES2024"],
     "moduleResolution": "bundler",
     "allowJs": true,
     "noEmit": true,
@@ -24,34 +22,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "rootDir": ".",
+    "ignoreDeprecations": "6.0",
     "paths": {
-      "~": [
-        "./src"
-      ],
-      "~/*": [
-        "./src/*"
-      ]
+      "~/*": ["./src/*"]
     },
-    "types": [
-      "node"
-    ]
+    "types": ["node"]
   },
-  "include": [
-    "@types/*",
-    "**/*.ts",
-    "**/*.tsx",
-    "next-env.d.ts",
-    "next.config.js",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "vite.config.ts"],
+  "exclude": ["node_modules", "dist", "out"]
 }

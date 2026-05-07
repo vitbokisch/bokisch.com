@@ -1,4 +1,3 @@
-import type { FC } from 'react'
 import Background from '~/components/base/Background'
 import { Col, Container, Row } from '~/components/base/grid'
 import Heading from '~/components/base/Heading'
@@ -7,7 +6,7 @@ import Section, { Header } from '~/components/base/Section'
 import Text from '~/components/base/Text'
 import data from './data'
 
-const Component: FC = () => (
+const Component= () => (
   <Background secondary>
     <Section id="years-of-shipping">
       <Header title="Years of Shipping">

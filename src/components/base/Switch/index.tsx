@@ -1,4 +1,3 @@
-import type { FC } from 'react'
 import { element } from '~/components/core'
 import Icon from '~/components/base/Icon'
 
@@ -43,19 +42,15 @@ type Props = {
   onChange: () => void
 }
 
-const component: FC<Props> = ({ active, onChange }) => {
-  const iconVariant = active ? 'moon' : 'sun'
-
-  return (
-    <Wrapper onClick={onChange}>
-      <Inner
-        active={active}
-        content={<Icon name={iconVariant} />}
-        contentAlignX="center"
-      />
-    </Wrapper>
-  )
-}
+const component = (props: Props) => (
+  <Wrapper onClick={props.onChange}>
+    <Inner
+      active={props.active}
+      content={<Icon name={props.active ? 'moon' : 'sun'} />}
+      contentAlignX="center"
+    />
+  </Wrapper>
+)
 
 component.displayName = 'base/Switch'
 export default component

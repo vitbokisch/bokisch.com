@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react'
+import type { AnyComponent } from "~/types"
 
 type Props = {
   author?: string
@@ -6,10 +6,10 @@ type Props = {
   [key: string]: unknown
 }
 
-type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
+type HOC = (WrappedComponent: AnyComponent<Props>) => AnyComponent<Props>
 
 // Create the Enhanced component outside the HOC to avoid nesting
-const createEnhancedComponent = (WrappedComponent: ComponentType<Props>) => {
+const createEnhancedComponent = (WrappedComponent: AnyComponent<Props>) => {
   const Enhanced = ({ author, quote, ...props }: Props) => (
     <WrappedComponent {...props} />
   )

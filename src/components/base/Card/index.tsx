@@ -1,4 +1,3 @@
-import type { FC } from 'react'
 import Box, { Body, Header } from '../Box'
 import heading from '../Heading'
 import Icon from '../Icon'
@@ -26,7 +25,7 @@ type Props = {
   list?: (typeof List)['$$types']['data']
 }
 
-const Component: FC<Props> = ({
+const Component= ({
   state,
   title,
   subtitle,

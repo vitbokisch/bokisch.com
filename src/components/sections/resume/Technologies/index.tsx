@@ -1,4 +1,3 @@
-import type { FC } from 'react'
 import Background from '~/components/base/Background'
 import { Col, Container, Row } from '~/components/base/grid'
 import Link from '~/components/base/Link'
@@ -7,7 +6,7 @@ import Text from '~/components/base/Text'
 import Badges from './Badges'
 import ChallengeButton from './ChallengeButton'
 
-const component: FC = () => (
+const component= () => (
   <Background secondary>
     <Section id="technologies">
       <Header title="Favorite Tech Stack">

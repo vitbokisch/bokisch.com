@@ -1,6 +1,6 @@
-import rocketstyle from '@vitus-labs/rocketstyle'
-import { List } from '@vitus-labs/elements'
-import { styles, makeItResponsive, value } from '@vitus-labs/unistyle'
+import rocketstyle from '@pyreon/rocketstyle'
+import { List } from '@pyreon/elements'
+import { styles, makeItResponsive, value } from '@pyreon/unistyle'
 
 type ListStyles = Parameters<typeof makeItResponsive>[0]['styles']
 const listStyles: ListStyles = ({ theme: t, css, rootSize }) => css`
@@ -12,7 +12,7 @@ const dimensions = { indent: 'indent', gaps: 'gap', gapsY: 'gapY' } as const
 
 export default rocketstyle({
   dimensions,
-  useBooleans: false,
+  useBooleans: true,
 })({
   component: List,
   name: 'core/List',

@@ -1,4 +1,4 @@
-import image from '~/assets/socials/preview.jpg'
+import image from '~/assets/socials/preview.jpg?url'
 
 type Config = {
   url: string
@@ -28,7 +28,7 @@ const config: Config = {
     'Vit Bokisch, Architect, Frontend Engineer, Innovator, React.js, Developer, Resume, Vitus Labs',
   openGraph: {
     url: 'https://bokisch.com',
-    image: image.src,
+    image,
   },
 }
 

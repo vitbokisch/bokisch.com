@@ -1,3 +1,3 @@
-import { Overlay } from '@vitus-labs/elements'
+import { Overlay } from '@pyreon/elements'
 
 export default Overlay

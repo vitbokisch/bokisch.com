@@ -1,4 +1,3 @@
-import type { FC } from 'react'
 import box from '~/components/base/Box'
 import ContactList from '~/components/sections/contacts/ContactList'
 
@@ -7,7 +6,7 @@ const Box = box.config({ name: 'sections/Intro/Footer' }).theme({
   maxWidth: { xs: '80%', md: 600 },
 })
 
-const Component: FC = () => (
+const Component= () => (
   <Box>
     <ContactList
       contentDirection={{ xs: 'rows', sm: 'inline' }}

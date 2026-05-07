@@ -1,12 +1,9 @@
-import type { FC } from 'react'
-import { useStore } from '~/store'
 import Switch from '~/components/base/Switch'
+import { isDarkSignal, toggleTheme } from '~/store'
 
-const Component: FC = () => {
-  const { isDark, toggleTheme } = useStore()
-
-  return <Switch active={isDark} onChange={toggleTheme} />
-}
+const Component = () => (
+  <Switch active={isDarkSignal()} onChange={toggleTheme} />
+)
 
 Component.displayName = 'components/sections/theme/ThemeSwitch'
 export default Component

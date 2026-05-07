@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react'
+import type { AnyComponent } from "~/types"
 import link from '../Link'
 
 const Link = link.attrs({
@@ -10,10 +10,10 @@ export type Props = Partial<{
   name: string
 }>
 
-type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
+type HOC = (WrappedComponent: AnyComponent<Props>) => AnyComponent<Props>
 
 // Create the Enhanced component outside the HOC to avoid nesting
-const createEnhancedComponent = (WrappedComponent: ComponentType<Props>) => {
+const createEnhancedComponent = (WrappedComponent: AnyComponent<Props>) => {
   const Enhanced = ({
     link,
     name,

@@ -1,8 +1,7 @@
-import type { FC } from 'react'
 import IconList from '~/components/base/IconList'
 import data from './data'
 
-const Component: FC = () => {
+const Component= () => {
   const contacts = data
     // .filter((item) => !types || types.includes(item.type))
     .map((item) => ({

@@ -1,6 +1,3 @@
-'use client'
-
-import type { FC } from 'react'
 import background from '~/components/base/Background'
 import Layout from '~/components/layouts/Base'
 import Intro from '~/components/sections/Intro'
@@ -15,7 +12,7 @@ const Background = background.theme({
     )`,
 })
 
-const component: FC = () => (
+const component= () => (
   <Layout>
     <Background>
       <Intro heading="Hello" variant='fullScreen' />

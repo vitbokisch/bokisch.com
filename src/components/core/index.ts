@@ -1,4 +1,4 @@
-import { useOverlay, Portal } from '@vitus-labs/elements'
+import { useOverlay, Portal } from '@pyreon/elements'
 import element from './element'
 import link from './link'
 import list from './list'

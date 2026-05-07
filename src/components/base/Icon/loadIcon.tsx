@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react'
+import type { AnyComponent } from "~/types"
 import { svgs } from '~/assets/icons'
 
 export type Props = Partial<{
@@ -8,9 +8,9 @@ export type Props = Partial<{
   dangerouslySetInnerHTML: { __html: string }
 }>
 
-type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
+type HOC = (WrappedComponent: AnyComponent<Props>) => AnyComponent<Props>
 
-const createEnhancedComponent = (WrappedComponent: ComponentType<Props>) => {
+const createEnhancedComponent = (WrappedComponent: AnyComponent<Props>) => {
   const Enhanced = ({ name, label, href, ...props }: Props) => {
     const image = name ? svgs[name] : undefined
 

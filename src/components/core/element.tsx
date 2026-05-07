@@ -1,8 +1,8 @@
-import { Element } from '@vitus-labs/elements'
-import rocketstyle from '@vitus-labs/rocketstyle'
-import { makeItResponsive, styles } from '@vitus-labs/unistyle'
+import { Element } from '@pyreon/elements'
+import rocketstyle from '@pyreon/rocketstyle'
+import { makeItResponsive, styles } from '@pyreon/unistyle'
 
-export default rocketstyle()({
+export default rocketstyle({ useBooleans: true })({
   component: Element,
   name: 'core/Element',
 }).styles(

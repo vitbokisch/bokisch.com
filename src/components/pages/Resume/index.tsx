@@ -1,6 +1,3 @@
-'use client'
-
-import type { FC } from 'react'
 import Layout from '~/components/layouts/Base'
 import Footer from '~/components/layouts/Footer'
 import Intro from '~/components/sections/Intro'
@@ -11,7 +8,7 @@ import Quote from '~/components/sections/resume/Quote'
 import Technologies from '~/components/sections/resume/Technologies'
 import WorkExperience from '~/components/sections/resume/WorkExperience'
 
-const Component: FC = () => (
+const Component= () => (
   <Layout>
     <Intro heading="Resume" />
     <Quote />

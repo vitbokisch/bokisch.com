@@ -92,7 +92,7 @@ export const vitusLabs: Group = {
   moreDescription: '(connectors, primitives, hooks, grid, build tooling)',
   packages: [
     {
-      title: '@vitus-labs/styler',
+      title: '@pyreon/styler',
       tagline: 'Custom CSS-in-JS engine, ~10 KB gzipped',
       features: [
         'React 19 native: <style precedence> SSR, useInsertionEffect client injection',
@@ -102,7 +102,7 @@ export const vitusLabs: Group = {
       ],
     },
     {
-      title: '@vitus-labs/rocketstyle',
+      title: '@pyreon/rocketstyle',
       tagline: 'Multi-dimensional component theming',
       features: [
         'Define a component as a matrix: size × variant × mode → every combination resolves automatically',
@@ -112,7 +112,7 @@ export const vitusLabs: Group = {
       ],
     },
     {
-      title: '@vitus-labs/attrs',
+      title: '@pyreon/attrs',
       tagline: 'Chainable component factory',
       features: [
         'Builder API: attrs({...}).attrs(callback).statics({...}).config({...})',
@@ -122,7 +122,7 @@ export const vitusLabs: Group = {
       ],
     },
     {
-      title: '@vitus-labs/unistyle',
+      title: '@pyreon/unistyle',
       tagline: 'Responsive styling engine',
       features: [
         '170+ CSS property mappings with three responsive formats (scalar, array, breakpoint-keyed object)',
@@ -132,7 +132,7 @@ export const vitusLabs: Group = {
       ],
     },
     {
-      title: '@vitus-labs/kinetic',
+      title: '@pyreon/kinetic',
       tagline: 'CSS-transition animation system',
       features: [
         'Transition, TransitionGroup, Stagger, Collapse — declarative, no virtual-DOM diffing of style values',
@@ -142,7 +142,7 @@ export const vitusLabs: Group = {
       ],
     },
     {
-      title: '@vitus-labs/rocketstories',
+      title: '@pyreon/rocketstories',
       tagline: 'Auto-generated Storybook coverage',
       features: [
         'Reads directly from rocketstyle dimension declarations — your component variants ARE the source of truth',

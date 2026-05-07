@@ -1,84 +1,58 @@
-import { type ComponentType, type MouseEventHandler, useEffect } from 'react'
-import { usePathname, useRouter } from 'next/navigation'
+import { useRouter } from '@pyreon/router'
 import routes from '~/config/routes'
 
 type Props = Partial<{
   href: string | (<T>(routes: T) => keyof T)
-  onClick?: MouseEventHandler
+  onClick: (e: MouseEvent) => void
   external: boolean
-  prefetch: boolean
   replace: boolean
   scroll: boolean
 }>
 
-type WrapProps = Partial<{
-  active: boolean
-  href: string
-  onClick?: MouseEventHandler
-  rel: string
-  target: string
-}>
-
-type HOC = (WrappedComponent: ComponentType<WrapProps>) => ComponentType<Props>
+// biome-ignore lint/suspicious/noExplicitAny: rocketstyle compose plumbing
+type ComponentLike = (props: any) => any
+// biome-ignore lint/suspicious/noExplicitAny: rocketstyle compose plumbing
+type HOC = (WrappedComponent: ComponentLike) => (props: Props) => any
 
 const component: HOC = (WrappedComponent) => {
-  const Enhanced = ({
-    href,
-    prefetch = false,
-    replace,
-    scroll,
-    external,
-    onClick,
-    ...props
-  }: Props) => {
+  const Enhanced = (props: Props) => {
     const router = useRouter()
-    const pathname = usePathname()
 
     const getFinalHref = () => {
-      if (typeof href === 'string') return href
-      if (typeof href === 'function') return href<typeof routes>(routes)
-
+      if (typeof props.href === 'string') return props.href
+      if (typeof props.href === 'function')
+        return props.href<typeof routes>(routes)
       return ''
     }
 
     const finalHref = getFinalHref()
 
-    useEffect(() => {
-      if (prefetch) router.prefetch(finalHref)
-    }, [finalHref, prefetch, router])
+    if (!props.href)
+      return <WrappedComponent onClick={props.onClick} {...props} />
 
-    if (!href) return <WrappedComponent onClick={onClick} {...props} />
-
-    const isExternal = finalHref.startsWith('http') || external
+    const isExternal = finalHref.startsWith('http') || props.external
 
     if (isExternal) {
       return (
         <WrappedComponent
-          href={finalHref}
-          onClick={onClick}
           {...props}
+          href={finalHref}
           rel="noopener noreferrer"
           target="_blank"
         />
       )
     }
 
-    const isActive = pathname === finalHref
-
     return (
       <WrappedComponent
-        active={isActive}
-        href={finalHref}
-        onClick={(e) => {
-          e.preventDefault()
-          if (onClick) onClick(e)
-          if (replace) {
-            router.replace(finalHref, { scroll })
-          } else {
-            router.push(finalHref, { scroll })
-          }
-        }}
         {...props}
+        href={finalHref}
+        onClick={(e: MouseEvent) => {
+          e.preventDefault()
+          if (props.onClick) props.onClick(e)
+          if (props.replace) router.replace(finalHref)
+          else router.push(finalHref)
+        }}
       />
     )
   }

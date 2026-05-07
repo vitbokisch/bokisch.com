@@ -1,4 +1,3 @@
-import type { FC } from "react";
 import Background from "~/components/base/Background";
 import { Container } from "~/components/base/grid";
 import section from "~/components/base/Section";
@@ -32,8 +31,8 @@ type Props = {
 	variant?: (typeof Section)["$$types"]["variant"];
 };
 
-const Component: FC<Props> = ({ variant, heading }) => (
-	<Section variant={variant}>
+const Component = (props: Props) => (
+	<Section variant={props.variant}>
 		<ProfileImage />
 		<Background overlay />
 
@@ -45,7 +44,7 @@ const Component: FC<Props> = ({ variant, heading }) => (
 				beforeContent={Header}
 				beforeContentDirection="rows"
 				beforeContentAlignX="block"
-				content={<Content heading={heading} />}
+				content={<Content heading={props.heading} />}
 				contentDirection="rows"
 				afterContent={Footer}
 				afterContentAlignX="center"

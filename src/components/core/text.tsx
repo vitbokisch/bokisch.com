@@ -1,4 +1,4 @@
-import { Text } from '@vitus-labs/elements'
+import { Text } from '@pyreon/elements'
 import element from './element'
 
 export default element

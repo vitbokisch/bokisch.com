@@ -1,4 +1,3 @@
-import type { FC } from 'react'
 import Background from '~/components/base/Background'
 import CardList from '~/components/base/CardList'
 import { Col, Container, Row } from '~/components/base/grid'
@@ -12,7 +11,7 @@ const transformedData = data.map((item) => ({
   logo: item.logo,
 }))
 
-const component: FC = () => (
+const component= () => (
   <Background secondary>
     <Section id="education">
       <Header title="Education">

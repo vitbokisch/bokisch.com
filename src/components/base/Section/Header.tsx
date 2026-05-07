@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react'
+import type { VNodeChild } from '@pyreon/core'
 import { element } from '~/components/core'
 import heading from '../Heading'
 import Text from '../Text'
@@ -28,16 +28,16 @@ const Heading = heading.theme((t) => ({
 
 type Props = {
   title: string
-  children?: ReactNode
+  children?: VNodeChild
   hidden?: boolean
   name?: string
 }
 
-const component: FC<Props> = ({ title, children, hidden, name }: Props) => (
-  <Header hidden={hidden} name={name}>
-    <Heading centered level2 label={title} />
+const component = (props: Props) => (
+  <Header hidden={props.hidden} name={props.name}>
+    <Heading centered level2 label={props.title} />
     <Text paragraph large centered>
-      {children}
+      {props.children}
     </Text>
   </Header>
 )

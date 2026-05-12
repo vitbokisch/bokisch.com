@@ -4,7 +4,7 @@ type Props = {
   src?: string
   alt?: string
   loading?: 'eager' | 'lazy'
-  className?: string
+  class?: string
   style?: Record<string, unknown> | string
 }
 
@@ -19,7 +19,7 @@ const Component = (props: Props) => {
       src={url}
       alt={props.alt ?? ''}
       loading={props.loading ?? 'lazy'}
-      class={props.className}
+      class={props.class}
       style={props.style as string | undefined}
     />
   )

@@ -19,4 +19,23 @@ export default defineConfig({
       '~': resolve(__dirname, 'src'),
     },
   },
+  optimizeDeps: {
+    exclude: [
+      '@pyreon/core',
+      '@pyreon/reactivity',
+      '@pyreon/runtime-dom',
+      '@pyreon/runtime-server',
+      '@pyreon/styler',
+      '@pyreon/rocketstyle',
+      '@pyreon/coolgrid',
+      '@pyreon/elements',
+      '@pyreon/hooks',
+      '@pyreon/unistyle',
+      '@pyreon/ui-core',
+      '@pyreon/router',
+      '@pyreon/zero',
+      '@pyreon/head',
+      '@pyreon/meta',
+    ],
+  },
 })

@@ -29,7 +29,7 @@ const theme = {
     xxLarge: 64,
   },
   fontFamily: {
-    base: 'var(--font-ubuntu), sans-serif',
+    base: "'Ubuntu', sans-serif",
   },
   fontSize: {
     small: 14,

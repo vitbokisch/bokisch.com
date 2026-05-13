@@ -1,6 +1,17 @@
 import rocketstyle from '@vitus-labs/rocketstyle'
-import { List } from '@vitus-labs/elements'
+import { List, type ListProps } from '@vitus-labs/elements'
 import { styles, makeItResponsive, value } from '@vitus-labs/unistyle'
+
+type IteratorAttrs = {
+  rootElement?: boolean
+  data?: ListProps['data']
+  valueName?: ListProps['valueName']
+  component?: ListProps['component']
+  wrapComponent?: ListProps['wrapComponent']
+  itemProps?: ListProps['itemProps']
+  wrapProps?: ListProps['wrapProps']
+  itemKey?: ListProps['itemKey']
+}
 
 type ListStyles = Parameters<typeof makeItResponsive>[0]['styles']
 const listStyles: ListStyles = ({ theme: t, css, rootSize }) => css`
@@ -17,7 +28,7 @@ export default rocketstyle({
   component: List,
   name: 'core/List',
 })
-  .attrs({
+  .attrs<IteratorAttrs>({
     rootElement: true,
     contentDirection: 'rows',
   })

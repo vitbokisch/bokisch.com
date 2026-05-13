@@ -3,7 +3,6 @@ import Badge from '../Badge'
 
 export { Badge }
 
-export default list.config({ name: 'base/BadgeList' }).attrs({
-  component: Badge,
+export default list.config({ name: 'base/BadgeList', component: Badge }).attrs({
   contentDirection: 'inline',
 })

@@ -3,8 +3,7 @@ import IconLogo from '../IconLogo'
 
 export { IconLogo }
 
-export default list.config({ name: 'base/IconLogoList' }).attrs({
-  component: IconLogo,
+export default list.config({ name: 'base/IconLogoList', component: IconLogo }).attrs({
   contentAlignX: 'center',
   contentDirection: 'inline',
 })

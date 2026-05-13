@@ -1,3 +1,4 @@
+import type { ListProps } from '@vitus-labs/elements'
 import type { FC } from 'react'
 import Box, { Body, Header } from '../Box'
 import heading from '../Heading'
@@ -23,7 +24,7 @@ type Props = {
   note?: (typeof Text)['$$types']['children']
   icon?: (typeof Icon)['$$types']['name']
   logo?: (typeof IconLogo)['$$types']['name']
-  list?: (typeof List)['$$types']['data']
+  list?: ListProps['data']
 }
 
 const Component: FC<Props> = ({

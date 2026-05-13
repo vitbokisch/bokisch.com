@@ -4,11 +4,10 @@ import Item from './Item'
 export { Item }
 
 export default list
-  .config({ name: 'base/List' })
+  .config({ name: 'base/List', component: Item })
   .attrs({
     tag: 'ul',
     block: true,
-    component: Item,
     contentAlignX: 'block',
   })
   .theme({

@@ -1,23 +1,12 @@
 import type { FC } from 'react'
+import type { ExtractProps } from '~/types'
 import LinkList from '~/components/base/LinkList'
 import data from './data'
 
-type LinkListTypes = (typeof LinkList)['$$types']
-
-type Props = Partial<{
-  types: string[]
-  contentDirection: LinkListTypes['contentDirection']
-  contentAlignX: LinkListTypes['contentAlignX']
-  indent: LinkListTypes['indent']
-  gap: LinkListTypes['gap']
-  // biome-ignore lint/suspicious/noExplicitAny: iterator union types in
-  // @vitus-labs/elements use mutually-exclusive discriminators (valueName/
-  // itemKey/itemProps differ per branch), which breaks prop forwarding from
-  // a parent. Cast to `any` until the elements iterator types are flattened.
-  itemProps: any
-  // biome-ignore lint/suspicious/noExplicitAny: same as itemProps above.
-  wrapProps: any
-}>
+type Props = ExtractProps<typeof LinkList> &
+  Partial<{
+    types: string[]
+  }>
 
 const Component: FC<Props> = ({ types, ...props }) => {
   const contacts = data

@@ -54,6 +54,7 @@ const Component: FC<Props> = ({
       {list && (
         <List
           data={list}
+          valueName="label"
           gap="large"
           // itemProps={{ contentAlignX: 'center', centered: true }}
         />

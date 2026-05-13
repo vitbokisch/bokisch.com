@@ -5,4 +5,4 @@ export { Card }
 
 export default list
   .config({ name: 'base/CardList' })
-  .attrs({ component: Card, rootElement: false })
+  .attrs({ rootElement: false, component: Card })

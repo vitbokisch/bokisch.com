@@ -17,7 +17,7 @@ const Component: FC<Props> = ({ types, ...props }) => {
       label: item.username,
     }))
 
-  return <LinkList {...props} data={contacts} gap="large" />
+  return <LinkList data={contacts} gap="large" {...props} />
 }
 
 Component.displayName = 'sections/contacts/ContactList'

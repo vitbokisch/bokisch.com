@@ -8,7 +8,7 @@ export default list
   .attrs(({ rootElement }) => ({
     block: true,
     tag: 'ul',
-    component: Link,
     wrapComponent: rootElement === false ? undefined : wrapComponent,
+    component: Link,
     contentAlignX: 'block',
   }))

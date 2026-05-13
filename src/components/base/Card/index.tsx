@@ -1,4 +1,3 @@
-import type { ListProps } from '@vitus-labs/elements'
 import type { FC } from 'react'
 import Box, { Body, Header } from '../Box'
 import heading from '../Heading'
@@ -24,7 +23,7 @@ type Props = {
   note?: (typeof Text)['$$types']['children']
   icon?: (typeof Icon)['$$types']['name']
   logo?: (typeof IconLogo)['$$types']['name']
-  list?: ListProps['data']
+  list?: Array<{ label: string }>
 }
 
 const Component: FC<Props> = ({
@@ -55,7 +54,6 @@ const Component: FC<Props> = ({
       {list && (
         <List
           data={list}
-          valueName="label"
           gap="large"
           // itemProps={{ contentAlignX: 'center', centered: true }}
         />

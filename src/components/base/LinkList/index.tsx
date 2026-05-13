@@ -1,22 +1,14 @@
-import type { ComponentProps, ComponentType } from 'react'
-import type { ListProps } from '@vitus-labs/elements'
-import { list, Item as wrapComponent } from '../List'
+import list, { Item as wrapComponent } from '../List'
 import Link from './Item'
 
 export { Link }
 
-const LinkList = list
+export default list
   .config({ name: 'base/LinkList' })
   .attrs(({ rootElement }) => ({
     block: true,
-    tag: 'ul',
+    tag: 'ul' as const,
     component: Link,
     wrapComponent: rootElement === false ? undefined : wrapComponent,
-    contentAlignX: 'block',
+    contentAlignX: 'block' as const,
   }))
-
-type Props = Omit<ComponentProps<typeof LinkList>, 'component'> & {
-  component?: ListProps['component']
-}
-
-export default LinkList as unknown as ComponentType<Props>

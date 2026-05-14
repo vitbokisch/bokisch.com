@@ -1,6 +1,6 @@
-import { link } from '~/components/core'
+import { link } from "~/components/core";
 
-export default link.config({ name: 'base/Badge' }).theme((t) => ({
+export default link.config({ name: "base/Badge" }).theme((t) => ({
   border: null,
   height: { xs: 32, md: 40 },
   borderRadius: t.borderRadius.extra,
@@ -9,5 +9,5 @@ export default link.config({ name: 'base/Badge' }).theme((t) => ({
   borderWidth: t.borderWidth.base,
   borderStyle: t.borderStyle.base,
   fontWeight: 500,
-  borderColor: 'currentColor',
-}))
+  borderColor: "currentColor",
+}));

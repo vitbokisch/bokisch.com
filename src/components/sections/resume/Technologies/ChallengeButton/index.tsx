@@ -1,22 +1,20 @@
-import { type FC, useState } from 'react'
-import button from '~/components/base/Button'
+import { signal } from "@pyreon/reactivity";
+import button from "~/components/base/Button";
 
 const Button = button.theme((t) => ({
   marginTop: t.space.xxLarge,
-}))
+}));
 
-const Component: FC = () => {
-  const [isHover, setHover] = useState(false)
+const isHover = signal(false);
 
-  return (
-    <Button
-      primary
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      label="Let's build something together"
-      href={isHover ? 'mailto:vit@bokisch.cz' : '#'}
-    />
-  )
-}
+const Component = () => (
+  <Button
+    state="primary"
+    onMouseEnter={() => isHover.set(true)}
+    onMouseLeave={() => isHover.set(false)}
+    label="Let's build something together"
+    href={isHover() ? "mailto:vit@bokisch.cz" : "#"}
+  />
+);
 
-export default Component
+export default Component;

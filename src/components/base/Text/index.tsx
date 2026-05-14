@@ -1,8 +1,8 @@
-import text from '~/components/core/text'
+import text from "~/components/core/text";
 
 export default text
   .config({
-    name: 'base/Text',
+    name: "base/Text",
   })
   .theme((t) => ({
     lineHeight: t.lineHeight.base,
@@ -15,8 +15,8 @@ export default text
       color: t.color.primary.base,
     },
     neutral: {
-      color: t.color.neutral.base
-    }
+      color: t.color.neutral.base,
+    },
   }))
   .sizes((t) => ({
     normal: {
@@ -37,12 +37,12 @@ export default text
       fontWeight: 500,
     },
     uppercase: {
-      textTransform: 'uppercase',
+      textTransform: "uppercase",
     },
     italic: {
-      fontStyle: 'italic',
+      fontStyle: "italic",
     },
     noWrap: {
-      whiteSpace: 'nowrap',
+      whiteSpace: "nowrap",
     },
-  })
+  });

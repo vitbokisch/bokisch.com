@@ -1,89 +1,61 @@
-import { type ComponentType, type MouseEventHandler, useEffect } from 'react'
-import { usePathname, useRouter } from 'next/navigation'
-import routes from '~/config/routes'
+import { useRouter } from "@pyreon/router";
 
 type Props = Partial<{
-  href: string | (<T>(routes: T) => keyof T)
-  onClick?: MouseEventHandler
-  external: boolean
-  prefetch: boolean
-  replace: boolean
-  scroll: boolean
-}>
+  href: string;
+  onClick: (e: MouseEvent) => void;
+  external: boolean;
+  replace: boolean;
+  scroll: boolean;
+}>;
 
-type WrapProps = Partial<{
-  active: boolean
-  href: string
-  onClick?: MouseEventHandler
-  rel: string
-  target: string
-}>
+// Hrefs the browser should handle natively — never route-push these.
+const isBrowserHandled = (href: string, external?: boolean) =>
+  external === true ||
+  href.startsWith("http://") ||
+  href.startsWith("https://") ||
+  href.startsWith("mailto:") ||
+  href.startsWith("tel:") ||
+  href.startsWith("sms:");
 
-type HOC = (WrappedComponent: ComponentType<WrapProps>) => ComponentType<Props>
+// biome-ignore lint/suspicious/noExplicitAny: rocketstyle compose plumbing
+type ComponentLike = (props: any) => any;
+// biome-ignore lint/suspicious/noExplicitAny: rocketstyle compose plumbing
+type HOC = (WrappedComponent: ComponentLike) => (props: Props) => any;
 
 const component: HOC = (WrappedComponent) => {
-  const Enhanced = ({
-    href,
-    prefetch = false,
-    replace,
-    scroll,
-    external,
-    onClick,
-    ...props
-  }: Props) => {
-    const router = useRouter()
-    const pathname = usePathname()
-
-    const getFinalHref = () => {
-      if (typeof href === 'string') return href
-      if (typeof href === 'function') return href<typeof routes>(routes)
-
-      return ''
-    }
-
-    const finalHref = getFinalHref()
-
-    useEffect(() => {
-      if (prefetch) router.prefetch(finalHref)
-    }, [finalHref, prefetch, router])
-
-    if (!href) return <WrappedComponent onClick={onClick} {...props} />
-
-    const isExternal = finalHref.startsWith('http') || external
-
-    if (isExternal) {
-      return (
-        <WrappedComponent
-          href={finalHref}
-          onClick={onClick}
-          {...props}
-          rel="noopener noreferrer"
-          target="_blank"
-        />
-      )
-    }
-
-    const isActive = pathname === finalHref
+  const Enhanced = (props: Props) => {
+    const router = useRouter();
 
     return (
       <WrappedComponent
-        active={isActive}
-        href={finalHref}
-        onClick={(e) => {
-          e.preventDefault()
-          if (onClick) onClick(e)
-          if (replace) {
-            router.replace(finalHref, { scroll })
-          } else {
-            router.push(finalHref, { scroll })
-          }
-        }}
         {...props}
+        rel={
+          props.href && isBrowserHandled(props.href, props.external)
+            ? "noopener noreferrer"
+            : undefined
+        }
+        target={
+          props.href &&
+          (props.external === true ||
+            props.href.startsWith("http://") ||
+            props.href.startsWith("https://"))
+            ? "_blank"
+            : undefined
+        }
+        onClick={(e: MouseEvent) => {
+          if (props.onClick) props.onClick(e);
+          const href = props.href;
+          if (!href || href === "#") return;
+          if (isBrowserHandled(href, props.external)) return;
+          e.preventDefault();
+          if (props.replace) router.replace(href);
+          else router.push(href);
+        }}
       />
-    )
-  }
+    );
+  };
 
-  return Enhanced
-}
+  return Enhanced;
+};
 
-export default component
+export default component;

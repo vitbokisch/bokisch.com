@@ -6,38 +6,44 @@
   "repository": "https://github.com/vitbokisch/bokisch.com.git",
   "author": "Vit Bokisch <vit@bokisch.cz>",
   "private": true,
+  "type": "module",
   "packageManager": "bun@1.2.20",
   "engines": {
     "node": ">=22.0.0",
     "bun": ">=1.2.19"
   },
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "linter": "biome lint --write",
-    "make:favicon": "bun run vl_favicon"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "pyreon-lint src/ && oxlint src/",
+    "lint:fix": "oxlint --fix src/",
+    "format": "oxfmt src/",
+    "format:check": "oxfmt --check src/"
   },
   "dependencies": {
-    "@vitus-labs/connector-styler": "2.6.0",
-    "@vitus-labs/styler": "2.6.0",
-    "@vitus-labs/coolgrid": "2.6.0",
-    "@vitus-labs/core": "2.6.0",
-    "@vitus-labs/elements": "2.6.0",
-    "@vitus-labs/hooks": "2.6.0",
-    "@vitus-labs/rocketstyle": "2.6.0",
-    "@vitus-labs/unistyle": "2.6.0",
-    "next": "^16.2.6",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "@pyreon/coolgrid": "0.18.0",
+    "@pyreon/core": "0.18.0",
+    "@pyreon/elements": "0.18.0",
+    "@pyreon/hooks": "0.18.0",
+    "@pyreon/reactivity": "0.18.0",
+    "@pyreon/rocketstyle": "0.18.0",
+    "@pyreon/router": "0.18.0",
+    "@pyreon/runtime-dom": "0.18.0",
+    "@pyreon/runtime-server": "0.18.0",
+    "@pyreon/styler": "0.18.0",
+    "@pyreon/ui-core": "0.18.0",
+    "@pyreon/unistyle": "0.18.0",
+    "@pyreon/zero": "0.18.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.15",
+    "@pyreon/lint": "0.18.0",
+    "@pyreon/vite-plugin": "0.18.0",
     "@types/node": "^25.7.0",
-    "@types/react": "^19.2.14",
-    "@vitus-labs/tools-favicon": "2.3.0",
-    "@vitus-labs/tools-typescript": "2.3.0",
-    "typescript": "^6.0.3"
+    "oxfmt": "^0.45.0",
+    "oxlint": "^1.60.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.3"
   },
   "browserslist": [
     "last 2 Chrome versions",

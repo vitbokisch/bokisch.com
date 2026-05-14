@@ -1,31 +1,31 @@
-import rocketstyle from '@vitus-labs/rocketstyle'
-import { List } from '@vitus-labs/elements'
-import { styles, makeItResponsive, value } from '@vitus-labs/unistyle'
+import rocketstyle from "@pyreon/rocketstyle";
+import { List } from "@pyreon/elements";
+import { styles, makeItResponsive, value } from "@pyreon/unistyle";
 
-type ListStyles = Parameters<typeof makeItResponsive>[0]['styles']
+type ListStyles = Parameters<typeof makeItResponsive>[0]["styles"];
 const listStyles: ListStyles = ({ theme: t, css, rootSize }) => css`
   ${t.gap && `margin: ${value(t.gap / 2, rootSize)} !important;`};
   ${t.indent && `padding: ${value(t.indent / 2, rootSize)} !important;`};
-`
+`;
 
-const dimensions = { indent: 'indent', gaps: 'gap', gapsY: 'gapY' } as const
+const dimensions = { indent: "indent", gaps: "gap", gapsY: "gapY" } as const;
 
 export default rocketstyle({
   dimensions,
-  useBooleans: false,
+  useBooleans: true,
 })({
   component: List,
-  name: 'core/List',
+  name: "core/List",
 })
   .attrs({
     rootElement: true,
-    contentDirection: 'rows',
+    contentDirection: "rows",
   })
   .theme((t) => ({
-    boxSizing: 'border-box',
+    boxSizing: "border-box",
     margin: t.space.reset,
     padding: t.space.reset,
-    listStyleType: 'none',
+    listStyleType: "none",
   }))
   .indent((t) => ({
     small: {
@@ -93,19 +93,19 @@ export default rocketstyle({
         rootElement,
       }: // biome-ignore lint/suspicious/noExplicitAny: Complex rocketstyle library props typing
       any) => {
-        const { gap, indent, ...restStyles } = $rocketstyle
+        const { gap, indent, ...restStyles } = $rocketstyle;
 
         const baseTheme = makeItResponsive({
           theme: restStyles,
           styles,
           css,
-        })
+        });
 
         const listTheme = makeItResponsive({
           theme: { gap, indent },
           styles: listStyles,
           css,
-        })
+        });
 
         return css`
           /* -------------------------------------------------------- */
@@ -120,7 +120,7 @@ export default rocketstyle({
               ${listTheme};
             }
           `};
-        `
+        `;
       }};
-    `
-  )
+    `,
+  );

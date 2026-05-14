@@ -1,61 +1,79 @@
-import { type FC, useState } from 'react'
-import Background from '~/components/base/Background'
-import CardList from '~/components/base/CardList'
-import { Col, Container, Row } from '~/components/base/grid'
-import Section, { Header } from '~/components/base/Section'
-import data from './data'
-import ShowMoreButton from './ShowMoreButton'
+import { Show } from "@pyreon/core";
+import { signal } from "@pyreon/reactivity";
+import Background from "~/components/base/Background";
+import CardList from "~/components/base/CardList";
+import { Col, Container, Row } from "~/components/base/grid";
+import Section, { Header } from "~/components/base/Section";
+import data from "./data";
+import ShowMoreButton from "./ShowMoreButton";
 
-const transformedData = data.map((item) => ({
+const firstBatch = data.slice(0, 6).map((item) => ({
   title: item.position,
   subtitle: item.company,
   note: item.date,
   list: item.responsibilities,
-}))
+}));
 
-const component: FC = () => {
-  const [showMore, setShowMore] = useState(false)
+const restBatch = data.slice(6).map((item) => ({
+  title: item.position,
+  subtitle: item.company,
+  note: item.date,
+  list: item.responsibilities,
+}));
 
-  const toggleShowMore = () => {
-    setShowMore(!showMore)
-  }
+const showMore = signal(false);
+const toggleShowMore = () => showMore.set(!showMore());
 
-  const itemsList = showMore ? transformedData : transformedData.slice(0, 6)
-  const showMoreLabel = showMore
-    ? 'See less work experience'
-    : 'See more work experience'
+const component = () => (
+  <Background state="secondary">
+    <Section id="work-experience">
+      <Header title="Work Experience">
+        Delivered solutions for startups and enterprises. From building MVPs to
+        scaling production systems, I've solved real problems at every stage.
+      </Header>
 
-  return (
-    <Background primary>
-      <Section id="work-experience">
-        <Header title="Work Experience">
-          Delivered solutions for startups and enterprises. From building MVPs
-          to scaling production systems, I've solved real problems at every
-          stage.
-        </Header>
+      <Container
+        width={{ xs: "90%", lg: 980, xl: 1380 }}
+        columns={12}
+        size={{ xs: 12, md: 6, lg: 4 }}
+        gap={{ xs: 24, md: 32 }}
+        gutter={0}
+        contentAlignX="center"
+      >
+        <Row>
+          <CardList
+            data={firstBatch}
+            wrapComponent={Col}
+            itemProps={{ state: "secondary" }}
+          />
 
-        <Container
-          width={{ xs: '90%', lg: 980, xl: 1380 }}
-          columns={12}
-          size={{ xs: 12, md: 6, lg: 4 }}
-          gap={{ xs: 24, md: 32 }}
-          gutter={0}
-          contentAlignX="center"
-        >
-          <Row>
+          <Show when={showMore}>
             <CardList
-              data={itemsList}
+              data={restBatch}
               wrapComponent={Col}
-              itemProps={{ state: 'secondary' }}
+              itemProps={{ state: "secondary" }}
             />
-          </Row>
-        </Container>
+          </Show>
+        </Row>
+      </Container>
 
-        <ShowMoreButton onClick={toggleShowMore} label={showMoreLabel} />
-      </Section>
-    </Background>
-  )
-}
+      <Show
+        when={showMore}
+        fallback={
+          <ShowMoreButton
+            onClick={toggleShowMore}
+            label="See more work experience"
+          />
+        }
+      >
+        <ShowMoreButton
+          onClick={toggleShowMore}
+          label="See less work experience"
+        />
+      </Show>
+    </Section>
+  </Background>
+);
 
-component.displayName = 'sections/WorkExperience'
-export default component
+component.displayName = "sections/resume/WorkExperience";
+export default component;

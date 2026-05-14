@@ -1,7 +1,7 @@
-import { element } from '~/components/core'
-import image from '~/components/base/Image'
-import loadIconLogo, { type Props } from './loadIconLogo'
-import withLink from './withLink'
+import { element } from "~/components/core";
+import image from "~/components/base/Image";
+import loadIconLogo, { type Props } from "./loadIconLogo";
+import withLink from "./withLink";
 
 const Image = image
   .compose({ loadIconLogo })
@@ -11,7 +11,7 @@ const Image = image
       xs: 30,
       md: 40,
     },
-  })
+  });
 
 export default element
   .config({ name: "base/IconLogo" })

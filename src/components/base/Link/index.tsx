@@ -1,17 +1,17 @@
-import { link } from '~/components/core'
-import icon from '../Icon'
+import { link } from "~/components/core";
+import icon from "../Icon";
 
 const Icon = icon.config({
-  name: 'base/Link/Icon',
+  name: "base/Link/Icon",
   consumer: (ctx) =>
     ctx<typeof Link>(({ pseudo, state }) => ({ pseudo, state })),
-})
+});
 
-type Props = { icon?: string }
+type Props = { icon?: string };
 
 const Link = link
   .config({
-    name: 'base/Link',
+    name: "base/Link",
     provider: true,
   })
   .attrs<Props>(({ icon }, theme) => ({
@@ -33,6 +33,6 @@ const Link = link
     large: {
       fontSize: { xs: t.fontSize.medium, lg: t.fontSize.xLarge },
     },
-  }))
+  }));
 
-export default Link
+export default Link;

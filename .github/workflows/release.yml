@@ -50,7 +50,7 @@ jobs:
         run: bun install
 
       - name: Lint
-        run: bun run linter
+        run: bun run lint
 
       - name: Type check
         run: bun tsc --noEmit
@@ -98,16 +98,13 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
 
-      - name: Generate favicon
-        run: bun run make:favicon
-
       - name: Build
         run: bun run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
-          path: ./out
+          path: ./dist
 
       - name: Deploy to GitHub Pages
         id: deployment

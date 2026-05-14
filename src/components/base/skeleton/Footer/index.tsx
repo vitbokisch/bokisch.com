@@ -1,14 +1,14 @@
-import { element } from '~/components/core'
+import { element } from "~/components/core";
 
 export default element
   .config({
-    name: 'base/skeleton/Footer',
+    name: "base/skeleton/Footer",
   })
   .attrs({
-    tag: 'footer',
+    tag: "footer",
     block: true,
-    contentDirection: 'inline',
-    contentAlignX: 'center',
+    contentDirection: "inline",
+    contentAlignX: "center",
   })
   .theme((t, m) => ({
     height: { xs: 60, md: 80 },
@@ -16,4 +16,4 @@ export default element
     backgroundColor: m(t.color.light[200], t.color.dark[200]),
     color: m(t.color.dark[100], t.color.light[100]),
     fontSize: { xs: t.fontSize.small, md: t.fontSize.base },
-  }))
+  }));

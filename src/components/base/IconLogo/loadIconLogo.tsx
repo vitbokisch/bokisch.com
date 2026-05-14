@@ -1,25 +1,27 @@
-import type { ComponentType } from 'react'
+import { splitProps } from "@pyreon/core";
+import type { AnyComponent } from "~/types";
 
 export type Props = Partial<{
-  name: string
-  src: string
-  alt: string
-}>
+  name: string;
+  src: string;
+  alt: string;
+}>;
 
-type HOC = (WrappedComponent: ComponentType<Props>) => ComponentType<Props>
+type HOC = (WrappedComponent: AnyComponent<Props>) => AnyComponent<Props>;
 
 // Create the Enhanced component outside the HOC to avoid nesting
-const createEnhancedComponent = (WrappedComponent: ComponentType<Props>) => {
-  const Enhanced = ({ name, src, ...props }: Props) => (
-    <WrappedComponent alt={name} {...props} src={src} />
-  )
+const createEnhancedComponent = (WrappedComponent: AnyComponent<Props>) => {
+  const Enhanced = (props: Props) => {
+    const [own, rest] = splitProps(props, ["name", "src"]);
+    return <WrappedComponent alt={own.name} {...rest} src={own.src} />;
+  };
 
-  Enhanced.displayName = `LoadIconLogo(${WrappedComponent.displayName || WrappedComponent.name || 'Component'})`
-  return Enhanced
-}
+  Enhanced.displayName = `LoadIconLogo(${WrappedComponent.displayName || WrappedComponent.name || "Component"})`;
+  return Enhanced;
+};
 
 const Component: HOC = (WrappedComponent) => {
-  return createEnhancedComponent(WrappedComponent)
-}
+  return createEnhancedComponent(WrappedComponent);
+};
 
-export default Component
+export default Component;

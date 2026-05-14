@@ -19,7 +19,7 @@ type Props = {
 }
 
 const Component = (props: Props) => (
-  <PyreonUI theme={theme}>
+  <PyreonUI theme={theme} inversed>
     <Heading size="level1" label={props.heading} />
     <Text state="base">
       I build and deliver products that actually ship.

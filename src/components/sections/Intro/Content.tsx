@@ -7,7 +7,11 @@ import theme from '~/theme/theme'
 const Text = text.theme((t) => ({
   maxWidth: { sm: '80%', lg: '60%' },
   marginBottom: t.space.xLarge,
-  fontSize: { xs: t.fontSize.base, md: t.fontSize.large, lg: t.fontSize.xLarge },
+  fontSize: {
+    xs: t.fontSize.base,
+    md: t.fontSize.large,
+    lg: t.fontSize.xLarge,
+  },
 }))
 
 type Props = {
@@ -15,7 +19,7 @@ type Props = {
 }
 
 const Component = (props: Props) => (
-  <PyreonUI theme={theme} inversed>
+  <PyreonUI theme={theme}>
     <Heading size="level1" label={props.heading} />
     <Text state="base">
       I build and deliver products that actually ship.

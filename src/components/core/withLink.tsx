@@ -1,13 +1,21 @@
 import { useRouter } from '@pyreon/router'
-import routes from '~/config/routes'
 
 type Props = Partial<{
-  href: string | (<T>(routes: T) => keyof T)
+  href: string
   onClick: (e: MouseEvent) => void
   external: boolean
   replace: boolean
   scroll: boolean
 }>
+
+// Hrefs the browser should handle natively — never route-push these.
+const isBrowserHandled = (href: string, external?: boolean) =>
+  external === true ||
+  href.startsWith('http://') ||
+  href.startsWith('https://') ||
+  href.startsWith('mailto:') ||
+  href.startsWith('tel:') ||
+  href.startsWith('sms:')
 
 // biome-ignore lint/suspicious/noExplicitAny: rocketstyle compose plumbing
 type ComponentLike = (props: any) => any
@@ -18,40 +26,30 @@ const component: HOC = (WrappedComponent) => {
   const Enhanced = (props: Props) => {
     const router = useRouter()
 
-    const getFinalHref = () => {
-      if (typeof props.href === 'string') return props.href
-      if (typeof props.href === 'function')
-        return props.href<typeof routes>(routes)
-      return ''
-    }
-
-    const finalHref = getFinalHref()
-
-    if (!props.href)
-      return <WrappedComponent onClick={props.onClick} {...props} />
-
-    const isExternal = finalHref.startsWith('http') || props.external
-
-    if (isExternal) {
-      return (
-        <WrappedComponent
-          {...props}
-          href={finalHref}
-          rel="noopener noreferrer"
-          target="_blank"
-        />
-      )
-    }
-
     return (
       <WrappedComponent
         {...props}
-        href={finalHref}
+        rel={
+          props.href && isBrowserHandled(props.href, props.external)
+            ? 'noopener noreferrer'
+            : undefined
+        }
+        target={
+          props.href &&
+          (props.external === true ||
+            props.href.startsWith('http://') ||
+            props.href.startsWith('https://'))
+            ? '_blank'
+            : undefined
+        }
         onClick={(e: MouseEvent) => {
-          e.preventDefault()
           if (props.onClick) props.onClick(e)
-          if (props.replace) router.replace(finalHref)
-          else router.push(finalHref)
+          const href = props.href
+          if (!href || href === '#') return
+          if (isBrowserHandled(href, props.external)) return
+          e.preventDefault()
+          if (props.replace) router.replace(href)
+          else router.push(href)
         }}
       />
     )

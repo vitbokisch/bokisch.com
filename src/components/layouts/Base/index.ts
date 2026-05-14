@@ -1,3 +1,3 @@
-import Root from '~/components/base/skeleton/Root'
+import Root from "~/components/base/skeleton/Root";
 
-export default Root.config({ name: 'layouts/Base' })
+export default Root.config({ name: "layouts/Base" });

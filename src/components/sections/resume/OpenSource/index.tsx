@@ -1,47 +1,54 @@
-import { For } from '@pyreon/core'
-import Background from '~/components/base/Background'
-import Card from '~/components/base/Card'
-import { Col, Container, Row } from '~/components/base/grid'
-import heading from '~/components/base/Heading'
-import Link from '~/components/base/Link'
-import Section, { Header } from '~/components/base/Section'
-import text from '~/components/base/Text'
-import { element } from '~/components/core'
-import { groups } from './data'
+import { For } from "@pyreon/core";
+import Background from "~/components/base/Background";
+import Card from "~/components/base/Card";
+import { Col, Container, Row } from "~/components/base/grid";
+import heading from "~/components/base/Heading";
+import Link from "~/components/base/Link";
+import Section, { Header } from "~/components/base/Section";
+import text from "~/components/base/Text";
+import { element } from "~/components/core";
+import { groups } from "./data";
 
 const GroupBlock = element
   .attrs({ block: true })
-  .theme((t) => ({ marginTop: t.space.xLarge }))
+  .theme((t) => ({ marginTop: t.space.xLarge }));
 
 const GroupTitle = heading.theme((t, m) => ({
   marginBottom: t.space.xSmall,
   fontSize: { xs: t.fontSize.large, md: t.fontSize.xLarge },
-  textAlign: 'center',
+  textAlign: "center",
   color: m(t.color.dark.base, t.color.light.base),
-}))
+}));
 
 const GroupSubtitle = text.theme((t, m) => ({
   marginBottom: t.space.large,
   color: m(t.color.dark.base, t.color.light.base),
   fontSize: { xs: t.fontSize.small, md: t.fontSize.base },
-  textAlign: 'center',
-}))
+  textAlign: "center",
+}));
 
 const GroupLinks = text.theme((t) => ({
   marginBottom: t.space.large,
   fontSize: t.fontSize.base,
-  textAlign: 'center',
-}))
+  textAlign: "center",
+}));
 
 const GroupFooter = text.theme((t, m) => ({
   marginTop: t.space.medium,
   color: m(t.color.dark.base, t.color.light.base),
   fontSize: t.fontSize.base,
   lineHeight: t.lineHeight.base,
-  textAlign: 'center',
-}))
+  textAlign: "center",
+}));
 
-const component= () => (
+type Pkg = (typeof groups)[number]["packages"][number];
+const toCardList = (pkg: Pkg) => {
+  if (pkg.features) return pkg.features.map((label) => ({ label }));
+  if (pkg.description) return [{ label: pkg.description }];
+  return undefined;
+};
+
+const component = () => (
   <Background primary>
     <Section id="open-source">
       <Header title="Open Source">
@@ -55,7 +62,7 @@ const component= () => (
         by={(group: (typeof groups)[number]) => group.title}
       >
         {(group: (typeof groups)[number]) => {
-          const more = group.totalPackages - group.packages.length
+          const more = group.totalPackages - group.packages.length;
           return (
             <GroupBlock>
               <Container contentAlignX="center">
@@ -66,8 +73,8 @@ const component= () => (
                     <GroupLinks>
                       <Link primary href={group.github}>
                         GitHub
-                      </Link>{' '}
-                      ·{' '}
+                      </Link>{" "}
+                      ·{" "}
                       <Link primary href={group.docs}>
                         Documentation
                       </Link>
@@ -77,7 +84,7 @@ const component= () => (
               </Container>
 
               <Container
-                width={{ xs: '90%', lg: 980, xl: 1380 }}
+                width={{ xs: "90%", lg: 980, xl: 1380 }}
                 columns={12}
                 size={{ xs: 12, md: 6, lg: 4 }}
                 gap={{ xs: 24, md: 32 }}
@@ -90,11 +97,11 @@ const component= () => (
                     by={(pkg: (typeof group.packages)[number]) => pkg.title}
                   >
                     {(pkg: (typeof group.packages)[number]) => {
-                      const list = pkg.features
-                        ? pkg.features.map((label) => ({ label }))
-                        : pkg.description
-                          ? [{ label: pkg.description }]
-                          : undefined
+                      // pyreon-lint flags `.map()` near JSX as a render
+                      // loop, but this is pure data-shaping on static data
+                      // (the features array doesn't change after mount).
+                      // The reactive list rendering is the outer <For>.
+                      const list = toCardList(pkg);
                       return (
                         <Col>
                           <Card
@@ -104,7 +111,7 @@ const component= () => (
                             state="secondary"
                           />
                         </Col>
-                      )
+                      );
                     }}
                   </For>
                 </Row>
@@ -115,18 +122,18 @@ const component= () => (
                   <Col size={{ xs: 12, md: 8 }}>
                     <GroupFooter>
                       {more > 0 &&
-                        `+${more} more${group.moreDescription ? ` ${group.moreDescription}` : ''}`}
+                        `+${more} more${group.moreDescription ? ` ${group.moreDescription}` : ""}`}
                     </GroupFooter>
                   </Col>
                 </Row>
               </Container>
             </GroupBlock>
-          )
+          );
         }}
       </For>
     </Section>
   </Background>
-)
+);
 
-component.displayName = 'sections/resume/OpenSource'
-export default component
+component.displayName = "sections/resume/OpenSource";
+export default component;

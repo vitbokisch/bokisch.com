@@ -1,16 +1,16 @@
-import { list } from '~/components/core'
-import Item from './Item'
+import { list } from "~/components/core";
+import Item from "./Item";
 
-export { Item }
+export { Item };
 
 export default list
-  .config({ name: 'base/List' })
+  .config({ name: "base/List" })
   .attrs({
-    tag: 'ul',
+    tag: "ul",
     block: true,
     component: Item,
-    contentAlignX: 'block',
+    contentAlignX: "block",
   })
   .theme({
     fontWeight: 300,
-  })
+  });

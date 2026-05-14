@@ -1,12 +1,12 @@
-import BadgeList from '~/components/base/BadgeList'
-import technologiesData from './data'
+import BadgeList from "~/components/base/BadgeList";
+import technologiesData from "./data";
 
 const transformedData = technologiesData.map((item) => ({
   label: item.title,
   href: item.link || undefined,
-}))
+}));
 
-const Component= () => {
+const Component = () => {
   return (
     <BadgeList
       data={transformedData}
@@ -14,7 +14,7 @@ const Component= () => {
       gapY="medium"
       contentAlignX="center"
     />
-  )
-}
+  );
+};
 
-export default Component
+export default Component;

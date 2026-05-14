@@ -1,3 +1,3 @@
-import { Container, Row, Col } from '@pyreon/coolgrid'
+import { Container, Row, Col } from "@pyreon/coolgrid";
 
-export { Container, Row, Col }
+export { Container, Row, Col };

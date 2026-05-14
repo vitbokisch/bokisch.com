@@ -1,7 +1,7 @@
-import { link } from '~/components/core'
+import { link } from "~/components/core";
 
 export default link
-  .config({ name: 'base/Button' })
+  .config({ name: "base/Button" })
   .theme((t) => ({
     height: 48,
     fontSize: t.fontSize.base,
@@ -9,7 +9,7 @@ export default link
     borderRadius: t.borderRadius.base,
     borderWidth: t.borderWidth.base,
     borderStyle: t.borderStyle.base,
-    textAlign: 'center',
+    textAlign: "center",
   }))
   .states((t) => ({
     primary: {
@@ -28,4 +28,4 @@ export default link
         borderColor: t.color.primary.dark,
       },
     },
-  }))
+  }));

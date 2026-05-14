@@ -1,6 +1,6 @@
-import { Meta } from '@pyreon/zero/meta'
-import Home from '~/components/pages/Home'
-import config from '~/config'
+import { Meta } from "@pyreon/zero/meta";
+import Home from "~/components/pages/Home";
+import config from "~/config";
 
 export default function HomePage() {
   return (
@@ -14,5 +14,5 @@ export default function HomePage() {
       />
       <Home />
     </>
-  )
+  );
 }

@@ -1,25 +1,25 @@
-import { text } from '~/components/core'
+import { text } from "~/components/core";
 
-type Tag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
+type Tag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span";
 
-type GetTag = (props: Record<string, unknown>) => Tag
+type GetTag = (props: Record<string, unknown>) => Tag;
 const getTag: GetTag = (props) => {
   // Support both boolean shorthand (`<Heading level1>`) and structured form
   // (`<Heading size="level1">`). With `useBooleans: true` boolean shorthand
   // resolves to `size="levelN"` only after dimension resolution, so attrs
   // callbacks must read both forms.
-  if (props.level1 || props.size === 'level1') return 'h1'
-  if (props.level2 || props.size === 'level2') return 'h2'
-  if (props.level3 || props.size === 'level3') return 'h3'
-  if (props.level4 || props.size === 'level4') return 'h4'
-  if (props.level5 || props.size === 'level5') return 'h5'
+  if (props.level1 || props.size === "level1") return "h1";
+  if (props.level2 || props.size === "level2") return "h2";
+  if (props.level3 || props.size === "level3") return "h3";
+  if (props.level4 || props.size === "level4") return "h4";
+  if (props.level5 || props.size === "level5") return "h5";
 
-  return 'span'
-}
+  return "span";
+};
 
 export default text
   .config({
-    name: 'base/Heading',
+    name: "base/Heading",
   })
   .attrs<{ tag?: Tag }>((props) => ({
     tag: getTag(props),
@@ -37,7 +37,7 @@ export default text
         sm: t.fontSize.xxxxLarge,
         lg: t.fontSize.jumbo,
       },
-      textTransform: 'uppercase',
+      textTransform: "uppercase",
     },
     level2: {
       fontSize: { xs: t.fontSize.xxLarge, sm: 48, lg: t.fontSize.xxxLarge },
@@ -62,4 +62,4 @@ export default text
     indentReset: {
       marginBottom: t.space.reset,
     },
-  }))
+  }));

@@ -4,9 +4,9 @@ import {
   setTheme,
   theme,
   toggleTheme,
-} from '@pyreon/zero/theme'
+} from "@pyreon/zero/theme";
 
-export { initTheme, resolvedTheme, setTheme, theme, toggleTheme }
+export { initTheme, resolvedTheme, setTheme, theme, toggleTheme };
 
-export const themeSignal = resolvedTheme
-export const isDarkSignal = () => resolvedTheme() === 'dark'
+export const themeSignal = resolvedTheme;
+export const isDarkSignal = () => resolvedTheme() === "dark";

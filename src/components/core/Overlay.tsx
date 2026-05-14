@@ -1,3 +1,3 @@
-import { Overlay } from '@pyreon/elements'
+import { Overlay } from "@pyreon/elements";
 
-export default Overlay
+export default Overlay;

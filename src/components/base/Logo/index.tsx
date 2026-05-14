@@ -1,13 +1,13 @@
-import { svgs } from '~/assets/logo'
-import { element } from '~/components/core'
+import { svgs } from "~/assets/logo";
+import { element } from "~/components/core";
 
 export default element
-  .config({ name: 'base/Logo' })
+  .config({ name: "base/Logo" })
   .attrs({
-    contentAlignX: 'left',
-    contentAlignY: 'center',
+    contentAlignX: "left",
+    contentAlignY: "center",
     dangerouslySetInnerHTML: {
-      __html: svgs['logo-vit-bokisch'],
+      __html: svgs["logo-vit-bokisch"],
     },
   })
   .theme((t, m) => ({
@@ -25,4 +25,4 @@ export default element
         }
       }
     `,
-  )
+  );

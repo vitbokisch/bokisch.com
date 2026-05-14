@@ -1,6 +1,6 @@
-import { Meta } from '@pyreon/zero/meta'
-import Resume from '~/components/pages/Resume'
-import config from '~/config'
+import { Meta } from "@pyreon/zero/meta";
+import Resume from "~/components/pages/Resume";
+import config from "~/config";
 
 export default function ResumePage() {
   return (
@@ -14,5 +14,5 @@ export default function ResumePage() {
       />
       <Resume />
     </>
-  )
+  );
 }

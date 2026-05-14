@@ -1,5 +1,5 @@
-import { createGlobalStyle } from '@pyreon/styler'
-import theme from './theme'
+import { createGlobalStyle } from "@pyreon/styler";
+import theme from "./theme";
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -20,6 +20,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${theme.color.light.base};
     font-size: ${theme.rootSize}px;
   }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

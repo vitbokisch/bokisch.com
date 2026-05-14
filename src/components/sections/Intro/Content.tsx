@@ -1,22 +1,22 @@
-import { PyreonUI } from '@pyreon/ui-core'
-import Heading from '~/components/base/Heading'
-import text from '~/components/base/Text'
-import ContactIconList from '~/components/sections/contacts/ContactIconList'
-import theme from '~/theme/theme'
+import { PyreonUI } from "@pyreon/ui-core";
+import Heading from "~/components/base/Heading";
+import text from "~/components/base/Text";
+import ContactIconList from "~/components/sections/contacts/ContactIconList";
+import theme from "~/theme/theme";
 
 const Text = text.theme((t) => ({
-  maxWidth: { sm: '80%', lg: '60%' },
+  maxWidth: { sm: "80%", lg: "60%" },
   marginBottom: t.space.xLarge,
   fontSize: {
     xs: t.fontSize.base,
     md: t.fontSize.large,
     lg: t.fontSize.xLarge,
   },
-}))
+}));
 
 type Props = {
-  heading?: string
-}
+  heading?: string;
+};
 
 const Component = (props: Props) => (
   <PyreonUI theme={theme} inversed>
@@ -28,6 +28,6 @@ const Component = (props: Props) => (
     </Text>
     <ContactIconList />
   </PyreonUI>
-)
+);
 
-export default Component
+export default Component;

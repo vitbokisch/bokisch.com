@@ -1,24 +1,24 @@
-import background from '~/components/base/Background'
-import Layout from '~/components/layouts/Base'
-import Intro from '~/components/sections/Intro'
+import background from "~/components/base/Background";
+import Layout from "~/components/layouts/Base";
+import Intro from "~/components/sections/Intro";
 
 const Background = background.theme({
-  minHeight: '100vh',
+  minHeight: "100vh",
   background: `linear-gradient(
       180deg,
       #a5aead 0%,
       #b1bab9 52.08%,
       #b0b8b7 100%
     )`,
-})
+});
 
-const component= () => (
+const component = () => (
   <Layout>
     <Background>
-      <Intro heading="Hello" variant='fullScreen' />
+      <Intro heading="Hello" variant="fullScreen" />
     </Background>
   </Layout>
-)
+);
 
-component.displayName = 'components/pages/Home'
-export default component
+component.displayName = "components/pages/Home";
+export default component;

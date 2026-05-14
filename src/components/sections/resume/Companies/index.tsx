@@ -1,12 +1,12 @@
-import Background from '~/components/base/Background'
-import { Col, Container, Row } from '~/components/base/grid'
-import Heading from '~/components/base/Heading'
-import IconLogoList from '~/components/base/IconLogoList'
-import Section, { Header } from '~/components/base/Section'
-import Text from '~/components/base/Text'
-import data from './data'
+import Background from "~/components/base/Background";
+import { Col, Container, Row } from "~/components/base/grid";
+import Heading from "~/components/base/Heading";
+import IconLogoList from "~/components/base/IconLogoList";
+import Section, { Header } from "~/components/base/Section";
+import Text from "~/components/base/Text";
+import data from "./data";
 
-const Component= () => (
+const Component = () => (
   <Background secondary>
     <Section id="years-of-shipping">
       <Header title="Years of Shipping">
@@ -31,7 +31,7 @@ const Component= () => (
           <IconLogoList
             rootElement={false}
             data={data}
-            itemProps={{ variant: 'box' }}
+            itemProps={{ variant: "box" }}
             wrapComponent={Col}
           />
         </Row>
@@ -52,7 +52,7 @@ const Component= () => (
       </Container>
     </Section>
   </Background>
-)
+);
 
-Component.displayName = 'sections/WorkExperience'
-export default Component
+Component.displayName = "sections/WorkExperience";
+export default Component;

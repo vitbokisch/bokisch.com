@@ -11,7 +11,7 @@ const theme = {
   grid: {
     columns: 12,
     container: {
-      xs: '90%',
+      xs: "90%",
       sm: 540,
       md: 700,
       lg: 940,
@@ -52,7 +52,7 @@ const theme = {
     base: 1,
   },
   borderStyle: {
-    base: 'solid',
+    base: "solid",
   },
   borderRadius: {
     base: 8,
@@ -60,53 +60,53 @@ const theme = {
     extra: 180,
   },
   transition: {
-    base: 'all .15s ease-in-out',
+    base: "all .15s ease-in-out",
   },
   gradient: {
     base: {
-      light: 'linear-gradient(180deg, #FBFBFB 0%, #FFFFFF 100%)',
-      dark: 'linear-gradient(180deg, #212121 0%, #272727 100%)',
+      light: "linear-gradient(180deg, #FBFBFB 0%, #FFFFFF 100%)",
+      dark: "linear-gradient(180deg, #212121 0%, #272727 100%)",
     },
     triangle: {
-      light: 'linear-gradient(143.05deg, #F7FCFF 22.41%, #D6F1FF 158.6%)',
-      dark: 'linear-gradient(143.05deg, #313D44 22.41%, #273034 158.6%)',
+      light: "linear-gradient(143.05deg, #F7FCFF 22.41%, #D6F1FF 158.6%)",
+      dark: "linear-gradient(143.05deg, #313D44 22.41%, #273034 158.6%)",
     },
   },
   shadow: {
     light: {
-      small: '0px 2px 16px rgba(211, 211, 211, 0.5)',
-      large: '0px 2px 44px rgba(211, 211, 211, 0.5)',
+      small: "0px 2px 16px rgba(211, 211, 211, 0.5)",
+      large: "0px 2px 44px rgba(211, 211, 211, 0.5)",
     },
     dark: {
-      small: '0px 2px 16px rgba(61, 61, 61, 0.5)',
-      large: '0px 2px 44px rgba(61, 61, 61, 0.5)',
+      small: "0px 2px 16px rgba(61, 61, 61, 0.5)",
+      large: "0px 2px 44px rgba(61, 61, 61, 0.5)",
     },
   },
   color: {
-    transparent: 'transparent',
+    transparent: "transparent",
     light: {
-      base: '#F8F8F8',
-      100: '#F0F0F0',
-      200: '#E8E8E8',
+      base: "#F8F8F8",
+      100: "#F0F0F0",
+      200: "#E8E8E8",
     },
     dark: {
-      base: '#272727',
-      100: '#212121',
-      200: '#3F3F3F',
+      base: "#272727",
+      100: "#212121",
+      200: "#3F3F3F",
     },
     primary: {
-      base: '#06B6D4',
-      medium: '#0891B2',
-      dark: '#0E7490',
+      base: "#06B6D4",
+      medium: "#0891B2",
+      dark: "#0E7490",
     },
     neutral: {
-      base: '#6B7280',
-      medium: '#4B5563',
-      dark: '#374151',
-    }
+      base: "#6B7280",
+      medium: "#4B5563",
+      dark: "#374151",
+    },
   },
-} as const
+} as const;
 
-export type Theme = typeof theme
+export type Theme = typeof theme;
 
-export default theme
+export default theme;

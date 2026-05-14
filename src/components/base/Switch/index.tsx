@@ -1,28 +1,28 @@
-import { element } from '~/components/core'
-import Icon from '~/components/base/Icon'
+import { element } from "~/components/core";
+import Icon from "~/components/base/Icon";
 
 const base = element.attrs({
-  tag: 'span',
-})
+  tag: "span",
+});
 
 const Wrapper = base
-  .config({ name: 'base/Switch/Wrapper' })
+  .config({ name: "base/Switch/Wrapper" })
   .attrs<{ onClick?: () => void }>({})
   .theme((t, m) => ({
     width: { xs: 48, md: 64 },
     height: { xs: 16, md: 24 },
     borderRadius: t.borderRadius.extra,
     borderWidth: t.borderWidth.base,
-    borderStyle: 'solid',
+    borderStyle: "solid",
     backgroundColor: m(t.color.light[200], t.color.dark[200]),
     borderColor: m(t.color.light[200], t.color.dark[200]),
     transition: t.transition.base,
-  }))
+  }));
 
 const Inner = base
-  .config({ name: 'base/Switch/Inner' })
+  .config({ name: "base/Switch/Inner" })
   .theme((t, m) => ({
-    position: 'absolute',
+    position: "absolute",
     padding: 6,
     size: { xs: 24, md: 36 },
     borderRadius: t.borderRadius.extra,
@@ -33,24 +33,28 @@ const Inner = base
   }))
   .variants({
     active: {
-      transform: 'translateX(100%)',
+      transform: "translateX(100%)",
     },
-  })
+  });
 
 type Props = {
-  active: boolean
-  onChange: () => void
-}
+  // Pass the signal accessor (or any zero-arg getter) — pyreon-lint
+  // prefers signals forwarded as function references rather than called
+  // at the parent JSX site, so the consumer can read them in its own
+  // reactive scope.
+  active: () => boolean;
+  onChange: () => void;
+};
 
 const component = (props: Props) => (
   <Wrapper onClick={props.onChange}>
     <Inner
-      active={props.active}
-      content={<Icon name={props.active ? 'moon' : 'sun'} />}
+      active={props.active()}
+      content={<Icon name={props.active() ? "moon" : "sun"} />}
       contentAlignX="center"
     />
   </Wrapper>
-)
+);
 
-component.displayName = 'base/Switch'
-export default component
+component.displayName = "base/Switch";
+export default component;

@@ -1,9 +1,9 @@
-import type { Theme } from './theme'
+import type { Theme } from "./theme";
 
-declare module '@pyreon/rocketstyle' {
+declare module "@pyreon/rocketstyle" {
   interface ThemeDefault extends Theme {}
 }
 
-declare module '@pyreon/unistyle' {
+declare module "@pyreon/unistyle" {
   interface ThemeDefault extends Theme {}
 }

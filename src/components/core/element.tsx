@@ -1,123 +1,109 @@
-import { Element } from '@pyreon/elements'
-import rocketstyle from '@pyreon/rocketstyle'
-import { makeItResponsive, styles } from '@pyreon/unistyle'
+import { Element } from "@pyreon/elements";
+import rocketstyle from "@pyreon/rocketstyle";
+import { makeItResponsive, styles } from "@pyreon/unistyle";
 
 export default rocketstyle({ useBooleans: true })({
   component: Element,
-  name: 'core/Element',
+  name: "core/Element",
 }).styles(
   (css) => css`
-      ${({ href, onClick, $rocketstyle, $rocketstate }: any) => {
-        const isDynamic = onClick || href
-        const { disabled, active, pseudo = {} } = $rocketstate
-        const { hover, pressed, focus } = pseudo
+    ${({ href, onClick, $rocketstyle, $rocketstate }: any) => {
+      const isDynamic = onClick || href;
+      const { disabled, active, pseudo = {} } = $rocketstate;
+      const { hover, pressed, focus } = pseudo;
 
-        const {
-          hover: hoverStyles = {},
-          focus: focusStyles = {},
-          active: activeStyles = {},
-          ...restStyles
-        } = $rocketstyle
+      const {
+        hover: hoverStyles = {},
+        focus: focusStyles = {},
+        active: activeStyles = {},
+        ...restStyles
+      } = $rocketstyle;
 
-        const baseTheme = makeItResponsive({
-          theme: restStyles,
-          styles,
-          css,
-        })
+      const baseTheme = makeItResponsive({
+        theme: restStyles,
+        styles,
+        css,
+      });
 
-        const hoverTheme = makeItResponsive({
-          theme: hoverStyles,
-          styles,
-          css,
-        })
+      const hoverTheme = makeItResponsive({
+        theme: hoverStyles,
+        styles,
+        css,
+      });
 
-        const focusTheme = makeItResponsive({
-          theme: focusStyles,
-          styles,
-          css,
-        })
+      const focusTheme = makeItResponsive({
+        theme: focusStyles,
+        styles,
+        css,
+      });
 
-        const activeTheme = makeItResponsive({
-          theme: activeStyles,
-          styles,
-          css,
-        })
+      const activeTheme = makeItResponsive({
+        theme: activeStyles,
+        styles,
+        css,
+      });
 
-        return css`
-          /* -------------------------------------------------------- */
-          /* BASE STATE */
-          /* -------------------------------------------------------- */
-          ${baseTheme};
+      return css`
+        /* -------------------------------------------------------- */
+        /* BASE STATE */
+        /* -------------------------------------------------------- */
+        ${baseTheme};
 
-          ${
-            !disabled &&
-            isDynamic &&
-            css`
-            cursor: pointer;
-          `
-          };
+        ${!disabled &&
+        isDynamic &&
+        css`
+          cursor: pointer;
+        `};
 
-          /* -------------------------------------------------------- */
-          /* HOVER STATE */
-          /* -------------------------------------------------------- */
-          ${
-            !disabled &&
-            !active &&
-            isDynamic &&
-            css`
-            &:hover {
-              ${hoverTheme};
-            }
-          `
-          };
-
-          ${
-            hover &&
-            css`
+        /* -------------------------------------------------------- */
+        /* HOVER STATE */
+        /* -------------------------------------------------------- */
+        ${!disabled &&
+        !active &&
+        isDynamic &&
+        css`
+          &:hover {
             ${hoverTheme};
-          `
-          };
+          }
+        `};
 
-          /* -------------------------------------------------------- */
-          /* FOCUS STATE */
-          /* -------------------------------------------------------- */
-          ${
-            !disabled &&
-            css`
-            &:focus {
-              ${focusTheme};
-            }
-          `
-          };
+        ${hover &&
+        css`
+          ${hoverTheme};
+        `};
 
-          ${
-            focus &&
-            css`
+        /* -------------------------------------------------------- */
+        /* FOCUS STATE */
+        /* -------------------------------------------------------- */
+        ${!disabled &&
+        css`
+          &:focus {
             ${focusTheme};
-          `
-          };
+          }
+        `};
 
-          /* -------------------------------------------------------- */
-          /* ACTIVE / PRESSED STATE */
-          /* -------------------------------------------------------- */
-          ${
-            !disabled &&
-            isDynamic &&
-            css`
-            &:active {
-              ${activeTheme};
-            }
-          `
-          };
+        ${focus &&
+        css`
+          ${focusTheme};
+        `};
 
-          ${
-            !disabled &&
-            (active || pressed) &&
-            css`
+        /* -------------------------------------------------------- */
+        /* ACTIVE / PRESSED STATE */
+        /* -------------------------------------------------------- */
+        ${!disabled &&
+        isDynamic &&
+        css`
+          &:active {
             ${activeTheme};
-          `
-          };
-        `
-      }};
-    `,
-)
+          }
+        `};
+
+        ${!disabled &&
+        (active || pressed) &&
+        css`
+          ${activeTheme};
+        `};
+      `;
+    }};
+  `,
+);

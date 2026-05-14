@@ -1,29 +1,29 @@
-import element from './element'
-import withLink from './withLink'
+import element from "./element";
+import withLink from "./withLink";
 
 export default element
   .config({
-    name: 'core/link',
+    name: "core/link",
   })
   .compose({
     withLink,
   })
   .attrs<{
-    href?: string
-    onClick?: MouseEvent | (() => void)
+    href?: string;
+    onClick?: MouseEvent | (() => void);
   }>(({ href, onClick }) => ({
-    tag: href ? 'a' : onClick ? 'button' : 'span',
+    tag: href ? "a" : onClick ? "button" : "span",
   }))
   .theme((t, m) => ({
     transition: t.transition.base,
-    border: 'none',
+    border: "none",
     backgroundColor: t.color.transparent,
-    textDecoration: 'none',
-    outline: 'none',
+    textDecoration: "none",
+    outline: "none",
     padding: t.space.reset,
     margin: t.space.reset,
     color: m(t.color.dark.base, t.color.light.base),
-    userSelect: 'none',
+    userSelect: "none",
 
     hover: {
       color: t.color.primary.base,
@@ -69,4 +69,4 @@ export default element
     transparent: {
       backgroundColor: t.color.transparent,
     },
-  }))
+  }));

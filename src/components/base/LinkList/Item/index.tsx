@@ -1,5 +1,5 @@
-import link from '../../Link'
-import filterProps from './hoc'
+import link from "../../Link";
+import filterProps from "./hoc";
 
 export default link
   .attrs({
@@ -7,4 +7,4 @@ export default link
   })
   .compose({
     filterProps,
-  })
+  });

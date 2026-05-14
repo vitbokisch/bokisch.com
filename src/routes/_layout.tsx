@@ -1,8 +1,8 @@
-import { RouterView } from '@pyreon/router'
-import { PyreonUI } from '@pyreon/ui-core'
-import { resolvedTheme } from '~/store'
-import GlobalStyle from '~/theme/GlobalStyles'
-import theme from '~/theme/theme'
+import { RouterView } from "@pyreon/router";
+import { PyreonUI } from "@pyreon/ui-core";
+import { resolvedTheme } from "~/store";
+import GlobalStyle from "~/theme/GlobalStyles";
+import theme from "~/theme/theme";
 
 export function layout() {
   return (
@@ -10,5 +10,5 @@ export function layout() {
       <GlobalStyle />
       <RouterView />
     </PyreonUI>
-  )
+  );
 }

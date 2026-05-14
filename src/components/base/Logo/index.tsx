@@ -12,7 +12,7 @@ export default element
 	})
 	.theme((t, m) => ({
 		width: { xs: 120, sm: 180, lg: 250 },
-		color: m(t.color.dark.base, t.color.light.base),
+		color: m(t.color.light.base, t.color.dark.base),
 	}))
 	.styles(
 		(css) => css`

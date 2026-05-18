@@ -1,5 +1,6 @@
 import { resolve } from 'node:path'
 import pyreon from '@pyreon/vite-plugin'
+import { faviconPlugin } from '@pyreon/zero/favicon'
 import { fontPlugin } from '@pyreon/zero/font'
 import { seoPlugin } from '@pyreon/zero/seo'
 import zero from '@pyreon/zero/server'
@@ -8,6 +9,15 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [
     pyreon(),
+    // Generate the full favicon set (svg + light/dark png + apple-touch +
+    // webmanifest) from a single source pair, and auto-inject the
+    // theme-aware <link>s + favicon-toggle script.
+    faviconPlugin({
+      source: 'src/assets/favicon/light.svg',
+      darkSource: 'src/assets/favicon/dark.svg',
+      themeColor: '#ffffff',
+      backgroundColor: '#ffffff',
+    }),
     // Self-host Ubuntu at build time — removes the render-blocking
     // fonts.googleapis.com request and ships @font-face + preload inline.
     fontPlugin({

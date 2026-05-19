@@ -11,7 +11,8 @@ import logoSpendee from "./logo-spendee.png?url";
 import logoStrv from "./logo-strv.png?url";
 import logoTechloop from "./logo-techloop.png?url";
 import logoUgentUni from "./logo-ugent-uni.png?url";
-import vitProfile from "./vit-profile.png?url";
+// Optimized at build time (WebP) — { src, srcset, width, height, placeholder }
+import vitProfile from "./vit-profile.png?optimize";
 
 export const images: Record<string, string> = {
   "logo-beihang-uni.png": logoBeihangUni,
@@ -27,5 +28,9 @@ export const images: Record<string, string> = {
   "logo-strv.png": logoStrv,
   "logo-techloop.png": logoTechloop,
   "logo-ugent-uni.png": logoUgentUni,
-  "vit-profile.png": vitProfile,
+  "vit-profile.png": vitProfile.src,
 };
+
+// Full optimized descriptor (srcset/width/height/placeholder) for the
+// profile photo — exposed for consumers that can use responsive sources.
+export const vitProfileImage = vitProfile;

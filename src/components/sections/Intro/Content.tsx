@@ -6,9 +6,11 @@ import text from "~/components/base/Text";
 import ContactIconList from "~/components/sections/contacts/ContactIconList";
 import theme from "~/theme/theme";
 
-// CSS-first entrance animation on first mount (~3 KB, GPU-composited).
-// `appear` triggers the leave→enter transition on the initial render.
-const Entrance = kinetic("div").preset(blurInUp);
+// CSS-first staggered entrance on first mount (~3 KB, GPU-composited).
+// `appear` triggers the leave→enter transition on the initial render;
+// `stagger` cascades each direct child (Heading → tagline → social icons)
+// with an 80 ms offset for a polished hero reveal.
+const Entrance = kinetic("div").preset(blurInUp).stagger({ interval: 80 });
 
 const Text = text.theme((t) => ({
   maxWidth: { sm: "80%", lg: "60%" },

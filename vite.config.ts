@@ -2,6 +2,7 @@ import { resolve } from 'node:path'
 import pyreon from '@pyreon/vite-plugin'
 import { faviconPlugin } from '@pyreon/zero/favicon'
 import { fontPlugin } from '@pyreon/zero/font'
+import { aiPlugin } from '@pyreon/zero/ai'
 import { imagePlugin } from '@pyreon/zero/image-plugin'
 import { seoPlugin } from '@pyreon/zero/seo'
 import zero from '@pyreon/zero/server'
@@ -38,6 +39,14 @@ export default defineConfig({
         sitemap: 'https://bokisch.com/sitemap.xml',
         host: 'bokisch.com',
       },
+    }),
+    // Emit llms.txt + AI plugin manifest for AI-crawler discoverability.
+    aiPlugin({
+      name: 'Vit Bokisch',
+      description:
+        'Personal site & resume of Vit Bokisch — frontend engineer.',
+      origin: 'https://bokisch.com',
+      contactEmail: 'vit@bokisch.cz',
     }),
     // Build-time WebP optimization for `?optimize` imports. Only the
     // 289 KB profile photo opts in; logos stay raw `?url`.

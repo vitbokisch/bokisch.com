@@ -26,6 +26,8 @@
     "@pyreon/core": "0.20.0",
     "@pyreon/elements": "0.20.0",
     "@pyreon/hooks": "0.20.0",
+    "@pyreon/kinetic": "^0.20.0",
+    "@pyreon/kinetic-presets": "^0.20.0",
     "@pyreon/reactivity": "0.20.0",
     "@pyreon/rocketstyle": "0.20.0",
     "@pyreon/router": "0.20.0",

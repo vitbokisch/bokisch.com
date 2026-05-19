@@ -1,8 +1,14 @@
+import { kinetic } from "@pyreon/kinetic";
+import { blurInUp } from "@pyreon/kinetic-presets";
 import { PyreonUI } from "@pyreon/ui-core";
 import Heading from "~/components/base/Heading";
 import text from "~/components/base/Text";
 import ContactIconList from "~/components/sections/contacts/ContactIconList";
 import theme from "~/theme/theme";
+
+// CSS-first entrance animation on first mount (~3 KB, GPU-composited).
+// `appear` triggers the leave→enter transition on the initial render.
+const Entrance = kinetic("div").preset(blurInUp);
 
 const Text = text.theme((t) => ({
   maxWidth: { sm: "80%", lg: "60%" },
@@ -20,13 +26,15 @@ type Props = {
 
 const Component = (props: Props) => (
   <PyreonUI theme={theme} inversed>
-    <Heading size="level1" label={props.heading} />
-    <Text state="base">
-      I build and deliver products that actually ship.
-      <br />
-      Efficiently and smartly.
-    </Text>
-    <ContactIconList />
+    <Entrance show={() => true} appear>
+      <Heading size="level1" label={props.heading} />
+      <Text state="base">
+        I build and deliver products that actually ship.
+        <br />
+        Efficiently and smartly.
+      </Text>
+      <ContactIconList />
+    </Entrance>
   </PyreonUI>
 );
 

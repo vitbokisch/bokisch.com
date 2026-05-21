@@ -15,6 +15,7 @@ const Component = () => {
       data={contacts}
       gap="large"
       itemProps={{ size: "medium", external: true }}
+      block
     />
   );
 };

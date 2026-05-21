@@ -25,7 +25,7 @@ const showMore = signal(false);
 const toggleShowMore = () => showMore.set(!showMore());
 
 const component = () => (
-  <Background state="secondary">
+  <Background primary>
     <Section id="work-experience">
       <Header title="Work Experience">
         Delivered solutions for startups and enterprises. From building MVPs to

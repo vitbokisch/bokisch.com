@@ -6,7 +6,13 @@ import { aiPlugin } from '@pyreon/zero/ai'
 import { imagePlugin } from '@pyreon/zero/image-plugin'
 import { seoPlugin } from '@pyreon/zero/seo'
 import zero from '@pyreon/zero/server'
+import { visualizer } from 'rollup-plugin-visualizer'
 import { defineConfig } from 'vite'
+
+// Bundle treemap is opt-in via `ANALYZE=1 bun run build` — writes
+// dist/bundle-analysis.html (interactive treemap of gzip / brotli /
+// raw byte attribution per module).
+const analyze = process.env.ANALYZE === '1'
 
 export default defineConfig({
   plugins: [
@@ -62,7 +68,15 @@ export default defineConfig({
         paths: ['/', '/resume'],
       },
     }),
-  ],
+    analyze &&
+      visualizer({
+        filename: 'dist/bundle-analysis.html',
+        template: 'treemap',
+        gzipSize: true,
+        brotliSize: true,
+        open: false,
+      }),
+  ].filter(Boolean),
   resolve: {
     alias: {
       '~': resolve(__dirname, 'src'),

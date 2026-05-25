@@ -27,7 +27,7 @@ const Section = section
   }));
 
 type Props = {
-  heading?: string;
+  heading: string;
   variant?: (typeof Section)["$$types"]["variant"];
 };
 

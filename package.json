@@ -19,24 +19,24 @@
     "make:favicon": "bun run vl_favicon"
   },
   "dependencies": {
-    "@vitus-labs/connector-styler": "2.6.1",
-    "@vitus-labs/styler": "2.6.1",
-    "@vitus-labs/coolgrid": "2.6.1",
-    "@vitus-labs/core": "2.6.1",
-    "@vitus-labs/elements": "2.6.1",
-    "@vitus-labs/hooks": "2.6.1",
-    "@vitus-labs/rocketstyle": "2.6.1",
-    "@vitus-labs/unistyle": "2.6.1",
+    "@vitus-labs/connector-styler": "2.6.2",
+    "@vitus-labs/styler": "2.6.2",
+    "@vitus-labs/coolgrid": "2.6.2",
+    "@vitus-labs/core": "2.6.2",
+    "@vitus-labs/elements": "2.6.2",
+    "@vitus-labs/hooks": "2.6.2",
+    "@vitus-labs/rocketstyle": "2.6.2",
+    "@vitus-labs/unistyle": "2.6.2",
     "next": "^16.2.6",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.15",
-    "@types/node": "^25.7.0",
+    "@types/node": "^25.9.1",
     "@types/react": "^19.2.14",
-    "@vitus-labs/tools-favicon": "2.4.0",
-    "@vitus-labs/tools-typescript": "2.4.0",
+    "@vitus-labs/tools-favicon": "2.5.0",
+    "@vitus-labs/tools-typescript": "2.5.0",
     "typescript": "^6.0.3"
   },
   "browserslist": [

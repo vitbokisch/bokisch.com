@@ -50,7 +50,11 @@ const component = (props: Props) => (
   <Wrapper onClick={props.onChange}>
     <Inner
       active={props.active()}
-      content={<Icon name={props.active() ? "moon" : "sun"} />}
+      // Function-form slot — re-evaluated reactively in @pyreon/elements
+      // 0.24.4+ (see the `resolveSlot` helper that calls `value()` for
+      // non-component functions). The Icon's `name` swaps on every
+      // `props.active` flip without an explicit <Show> boundary.
+      content={() => <Icon name={props.active() ? "moon" : "sun"} />}
       contentAlignX="center"
     />
   </Wrapper>

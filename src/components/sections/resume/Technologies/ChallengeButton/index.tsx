@@ -7,6 +7,13 @@ const Button = button.theme((t) => ({
 
 const isHover = signal(false);
 
+// Anti-spam hover-gate: scraped HTML ships `href="#"`; only real users
+// with a `mouseenter` event flip the signal to expose the mailto.
+//
+// The idiomatic form `href={isHover() ? "mailto:…" : "#"}` is auto-
+// wrapped by the pyreon compiler as `_rp(() => …)` (reactive prop
+// descriptor). The HOC chain (`withLink`) preserves that descriptor
+// via `mergeProps` + direct `h()` from `@pyreon/core`.
 const Component = () => (
   <Button
     state="primary"

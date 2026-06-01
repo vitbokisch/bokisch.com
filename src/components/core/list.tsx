@@ -1,9 +1,22 @@
 import rocketstyle from "@pyreon/rocketstyle";
 import { List } from "@pyreon/elements";
-import { styles, makeItResponsive, value } from "@pyreon/unistyle";
+import {
+  type MakeItResponsiveStyles,
+  styles,
+  makeItResponsive,
+  value,
+} from "@pyreon/unistyle";
 
-type ListStyles = Parameters<typeof makeItResponsive>[0]["styles"];
-const listStyles: ListStyles = ({ theme: t, css, rootSize }) => css`
+// `MakeItResponsiveStyles<T>` parameterizes the theme prop's shape — in
+// 0.26.0 the default theme is `Partial<Record<string, unknown>>` (gap /
+// indent typed as `unknown`, breaks arithmetic). Provide the explicit
+// shape so `t.gap / 2` is well-typed.
+type ListThemeProps = { gap?: number; indent?: number };
+const listStyles: MakeItResponsiveStyles<ListThemeProps> = ({
+  theme: t,
+  css,
+  rootSize,
+}) => css`
   ${t.gap && `margin: ${value(t.gap / 2, rootSize)} !important;`};
   ${t.indent && `padding: ${value(t.indent / 2, rootSize)} !important;`};
 `;

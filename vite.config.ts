@@ -28,31 +28,9 @@ export default defineConfig({
     }),
     // Self-host Ubuntu at build time — removes the render-blocking
     // fonts.googleapis.com request and ships @font-face + preload inline.
-    //
-    // `display: 'optional'` (was 'swap') prevents the late font-swap
-    // reflow that Lighthouse flagged as a CLS culprit on /resume. With
-    // `optional`, the browser uses fallback if Ubuntu isn't ready within
-    // its tiny render budget (~100 ms). For a self-hosted, <40 KB
-    // preloaded woff2 served from same-origin, that's essentially
-    // always true on warm caches, and the cold-cache fallback render
-    // is acceptable (text shape changes but no layout shift).
-    //
-    // `fallbacks` provides size-adjusted Arial metrics so even when
-    // the fallback ships first, line-heights match Ubuntu closely
-    // enough that the swap (when it happens on cold-cache reload) is
-    // sub-pixel.
     fontPlugin({
       google: ['Ubuntu:ital,wght@0,300;0,500;1,300;1,500'],
-      display: 'optional',
-      fallbacks: {
-        Ubuntu: {
-          fallback: 'Arial',
-          sizeAdjust: 105.2,
-          ascentOverride: 90,
-          descentOverride: 20,
-          lineGapOverride: 0,
-        },
-      },
+      display: 'swap',
     }),
     // Emit sitemap.xml + robots.txt at build time. `trailingSlash: 'always'`
     // matches the GH Pages directory-style routing — `/resume` would 301
@@ -81,10 +59,20 @@ export default defineConfig({
     }),
     // Build-time WebP optimization for `?optimize` imports. Only the
     // 289 KB profile photo opts in; logos stay raw `?url`.
+    // `placeholder: 'none'` is a temporary workaround for an upstream
+    // @pyreon/runtime-dom bug: its `setStaticProp` URL guard blocks ALL
+    // `data:` URIs uniformly (regex `/^\s*(?:javascript|data):/i`),
+    // including the `data:image/webp;base64,…` blur previews this plugin
+    // generates by default. The framework rejects its own image plugin's
+    // output, with a `[Pyreon] Blocked unsafe URL in "src" attribute`
+    // warning storm in dev. Drop `placeholder` once the runtime guard
+    // is fixed (filed upstream — should narrow to allow `data:image/*`
+    // on `<img src>` / `<source srcset>`).
     imagePlugin({
       widths: [480, 768, 1024],
       formats: ['webp'],
       quality: 80,
+      placeholder: 'none',
     }),
     zero({
       mode: 'ssg',

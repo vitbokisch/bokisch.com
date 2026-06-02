@@ -1,10 +1,10 @@
-import { Text } from '@vitus-labs/elements'
-import element from './element'
+import { Text } from "@pyreon/elements";
+import element from "./element";
 
 export default element
   .config({
     component: Text,
-    name: 'core/Element',
+    name: "core/Element",
   })
   .theme((t) => ({
     lineHeight: t.lineHeight.base,
@@ -15,12 +15,12 @@ export default element
   }))
   .multiple({
     left: {
-      textAlign: 'left',
+      textAlign: "left",
     },
     centered: {
-      textAlign: 'center',
+      textAlign: "center",
     },
     right: {
-      textAlign: 'right',
+      textAlign: "right",
     },
-  })
+  });

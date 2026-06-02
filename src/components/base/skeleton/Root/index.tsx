@@ -1,14 +1,14 @@
-import { element } from '~/components/core'
+import { element } from "~/components/core";
 
 export default element
   .config({
-    name: 'base/skeleton/Root',
+    name: "base/skeleton/Root",
   })
   .attrs({
     block: true,
-    contentAlignX: 'block',
+    contentAlignX: "block",
   })
   .theme({
-    width: '100vw',
-    overflowX: 'hidden',
-  })
+    width: "100vw",
+    overflowX: "hidden",
+  });

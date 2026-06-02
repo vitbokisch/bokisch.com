@@ -1,14 +1,14 @@
-import { element } from '~/components/core'
+import { element } from "~/components/core";
 
 export default element
-  .config({ name: 'base/Box' })
+  .config({ name: "base/Box" })
   .attrs({
     block: true,
-    contentAlignX: 'block',
-    contentAlignY: 'block',
+    contentAlignX: "block",
+    contentAlignY: "block",
   })
   .theme((t, m) => ({
-    height: '100%',
+    height: "100%",
     backgroundColor: m(t.color.light.base, t.color.dark.base),
     borderRadius: t.borderRadius.base,
     color: m(t.color.dark.base, t.color.light[100]),
@@ -16,7 +16,7 @@ export default element
   .states((t, m) => ({
     secondary: {
       backgroundColor: m(t.color.light.base, t.color.dark[100]),
-    }
+    },
   }))
   .sizes((t, m) => ({
     small: {
@@ -31,4 +31,4 @@ export default element
       padding: { xs: 24, md: 40 },
       boxShadow: m(t.shadow.light.large, t.shadow.dark.large),
     },
-  }))
+  }));

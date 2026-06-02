@@ -1,4 +1,4 @@
-import Footer from './Footer'
-import Root from './Root'
+import Footer from "./Footer";
+import Root from "./Root";
 
-export { Root, Footer }
+export { Root, Footer };

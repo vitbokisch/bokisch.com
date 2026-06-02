@@ -1,13 +1,12 @@
-import type { FC } from 'react'
-import Background from '~/components/base/Background'
-import { Col, Container, Row } from '~/components/base/grid'
-import Link from '~/components/base/Link'
-import Section, { Header } from '~/components/base/Section'
-import Text from '~/components/base/Text'
-import Badges from './Badges'
-import ChallengeButton from './ChallengeButton'
+import Background from "~/components/base/Background";
+import { Col, Container, Row } from "~/components/base/grid";
+import Link from "~/components/base/Link";
+import Section, { Header } from "~/components/base/Section";
+import Text from "~/components/base/Text";
+import Badges from "./Badges";
+import ChallengeButton from "./ChallengeButton";
 
-const component: FC = () => (
+const component = () => (
   <Background secondary>
     <Section id="technologies">
       <Header title="Favorite Tech Stack">
@@ -25,10 +24,10 @@ const component: FC = () => (
           <Col size={{ xs: 12, md: 8 }}>
             <Text base paragraph centered>
               …and many more I've collected along the way. Curious what caught
-              my eye? Check out my{' '}
+              my eye? Check out my{" "}
               <Link primary href="https://github.com/vitbokisch?tab=stars">
                 Github stars
-              </Link>{' '}
+              </Link>{" "}
               to see what's pushing my thinking forward. Always learning. Always
               building.
             </Text>
@@ -38,7 +37,7 @@ const component: FC = () => (
       <ChallengeButton />
     </Section>
   </Background>
-)
+);
 
-component.displayName = 'sections/Technologies'
-export default component
+component.displayName = "sections/Technologies";
+export default component;

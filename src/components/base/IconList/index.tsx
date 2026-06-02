@@ -1,9 +1,9 @@
-import { list } from '~/components/core'
-import Icon from '../Icon'
+import { list } from "~/components/core";
+import Icon from "../Icon";
 
-export { Icon }
+export { Icon };
 
-export default list.config({ name: 'base/IconList' }).attrs({
+export default list.config({ name: "base/IconList" }).attrs({
   component: Icon,
-  contentDirection: 'inline',
-})
+  contentDirection: "inline",
+});

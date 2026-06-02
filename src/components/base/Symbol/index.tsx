@@ -1,10 +1,10 @@
-import { element } from '~/components/core'
+import { element } from "~/components/core";
 
 const Component = element
-  .config({ name: 'base/Symbol' })
+  .config({ name: "base/Symbol" })
   .attrs<{ large?: boolean }>(({ large }) => ({
-    tag: 'span',
-    contentAlignX: 'center',
+    tag: "span",
+    contentAlignX: "center",
     content: large ? <Component medium /> : undefined,
   }))
   .theme((t) => ({
@@ -32,11 +32,11 @@ const Component = element
       size: 36,
       borderWidth: 4,
       borderColor: m(t.color.light.base, t.color.dark.base),
-      borderStyle: 'solid',
+      borderStyle: "solid",
     },
     large: {
       size: 44,
     },
-  }))
+  }));
 
-export default Component
+export default Component;

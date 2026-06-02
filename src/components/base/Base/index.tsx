@@ -1,3 +1,3 @@
-import { element } from '~/components/core'
+import { element } from "~/components/core";
 
-export default element.config({ name: 'base/Element' })
+export default element.config({ name: "base/Element" });

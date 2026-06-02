@@ -1,26 +1,26 @@
-import { element, text } from '~/components/core'
-import filterProps from './hoc'
+import { element, text } from "~/components/core";
+import filterProps from "./hoc";
 
 const base = element
   .attrs({
-    contentAlignX: 'block',
+    contentAlignX: "block",
   })
-  .theme((t) => ({ margin: t.space.reset }))
+  .theme((t) => ({ margin: t.space.reset }));
 
 const Quote = base
   .config({
-    name: 'base/Quote/Quote',
+    name: "base/Quote/Quote",
   })
   .attrs({
-    tag: 'blockquote',
+    tag: "blockquote",
   })
   .theme((t, m) => ({
     color: m(t.color.dark.base, t.color.light.base),
-  }))
+  }));
 
 const Text = text
   .config({
-    name: 'base/Quote/Text',
+    name: "base/Quote/Text",
   })
   .attrs({
     paragraph: true,
@@ -31,18 +31,18 @@ const Text = text
       sm: t.fontSize.large,
       md: t.fontSize.xxLarge,
     },
-    fontStyle: 'italic',
-    textAlign: 'center',
-  }))
+    fontStyle: "italic",
+    textAlign: "center",
+  }));
 
 export default base
-  .config({ name: 'base/Quote' })
+  .config({ name: "base/Quote" })
   .compose({ filterProps })
   .attrs<{ quote: string }>(({ quote }) => ({
-    tag: 'figure',
+    tag: "figure",
     content: () => (
       <Quote>
         <Text>{quote}</Text>
       </Quote>
     ),
-  }))
+  }));

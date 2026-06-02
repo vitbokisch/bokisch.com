@@ -1,89 +1,78 @@
-import { type ComponentType, type MouseEventHandler, useEffect } from 'react'
-import { usePathname, useRouter } from 'next/navigation'
-import routes from '~/config/routes'
+import { h, mergeProps } from "@pyreon/core";
+import { useRouter } from "@pyreon/router";
 
 type Props = Partial<{
-  href: string | (<T>(routes: T) => keyof T)
-  onClick?: MouseEventHandler
-  external: boolean
-  prefetch: boolean
-  replace: boolean
-  scroll: boolean
-}>
+  href: string;
+  onClick: (e: MouseEvent) => void;
+  external: boolean;
+  replace: boolean;
+  scroll: boolean;
+}>;
 
-type WrapProps = Partial<{
-  active: boolean
-  href: string
-  onClick?: MouseEventHandler
-  rel: string
-  target: string
-}>
+// Hrefs the browser should handle natively — never route-push these.
+const isBrowserHandled = (href: string, external?: boolean) =>
+  external === true ||
+  href.startsWith("http://") ||
+  href.startsWith("https://") ||
+  href.startsWith("mailto:") ||
+  href.startsWith("tel:") ||
+  href.startsWith("sms:");
 
-type HOC = (WrappedComponent: ComponentType<WrapProps>) => ComponentType<Props>
+// biome-ignore lint/suspicious/noExplicitAny: rocketstyle compose plumbing
+type ComponentLike = (props: any) => any;
+// biome-ignore lint/suspicious/noExplicitAny: rocketstyle compose plumbing
+type HOC = (WrappedComponent: ComponentLike) => (props: Props) => any;
 
+// HOC must preserve getter-shaped reactive props the compiler emits via
+// `_rp(() => …)`. The naive `<WrappedComponent {...props} />` triggers
+// JSX spread which is emitted as `Object.assign({}, obj)` — FIRES every
+// getter at spread time and value-copies the result. We instead build
+// a descriptor-preserving props object via `mergeProps` (from
+// `@pyreon/core`) and pass it as a single argument to `h(...)`,
+// bypassing the spread entirely. Pyreon's `h` calls `makeReactiveProps`
+// internally which honors getter descriptors downstream.
+//
+// Derived attributes (`rel` / `target`) depend on the reactive `href`
+// and are defined as getters so they re-evaluate on href change;
+// otherwise they'd capture the initial-render value and silently
+// drift out of sync from a hover-gated mailto.
 const component: HOC = (WrappedComponent) => {
-  const Enhanced = ({
-    href,
-    prefetch = false,
-    replace,
-    scroll,
-    external,
-    onClick,
-    ...props
-  }: Props) => {
-    const router = useRouter()
-    const pathname = usePathname()
+  const Enhanced = (props: Props) => {
+    const router = useRouter();
 
-    const getFinalHref = () => {
-      if (typeof href === 'string') return href
-      if (typeof href === 'function') return href<typeof routes>(routes)
+    // `mergeProps<T>` requires all sources to share the same `T`; the
+    // overrides below intentionally add HTML attributes not in `Props`
+    // (rel / target / onClick), so cast both sides to a wider shape.
+    const overrides = {
+      get rel() {
+        return props.href && isBrowserHandled(props.href, props.external)
+          ? "noopener noreferrer"
+          : undefined;
+      },
+      get target() {
+        return props.href &&
+          (props.external === true ||
+            props.href.startsWith("http://") ||
+            props.href.startsWith("https://"))
+          ? "_blank"
+          : undefined;
+      },
+      onClick: (e: MouseEvent) => {
+        if (props.onClick) props.onClick(e);
+        const href = props.href;
+        if (!href || href === "#") return;
+        if (isBrowserHandled(href, props.external)) return;
+        e.preventDefault();
+        if (props.replace) router.replace(href);
+        else router.push(href);
+      },
+    } as Record<string, unknown>;
 
-      return ''
-    }
+    const merged = mergeProps(props as Record<string, unknown>, overrides);
+    return h(WrappedComponent, merged);
+  };
 
-    const finalHref = getFinalHref()
+  return Enhanced;
+};
 
-    useEffect(() => {
-      if (prefetch) router.prefetch(finalHref)
-    }, [finalHref, prefetch, router])
-
-    if (!href) return <WrappedComponent onClick={onClick} {...props} />
-
-    const isExternal = finalHref.startsWith('http') || external
-
-    if (isExternal) {
-      return (
-        <WrappedComponent
-          href={finalHref}
-          onClick={onClick}
-          {...props}
-          rel="noopener noreferrer"
-          target="_blank"
-        />
-      )
-    }
-
-    const isActive = pathname === finalHref
-
-    return (
-      <WrappedComponent
-        active={isActive}
-        href={finalHref}
-        onClick={(e) => {
-          e.preventDefault()
-          if (onClick) onClick(e)
-          if (replace) {
-            router.replace(finalHref, { scroll })
-          } else {
-            router.push(finalHref, { scroll })
-          }
-        }}
-        {...props}
-      />
-    )
-  }
-
-  return Enhanced
-}
-
-export default component
+export default component;

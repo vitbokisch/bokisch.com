@@ -1,11 +1,11 @@
-import { link } from '~/components/core'
-import loadIcon, { type Props } from './loadIcon'
+import { link } from "~/components/core";
+import loadIcon, { type Props } from "./loadIcon";
 
 export default link
-  .config({ name: 'base/Icon' })
+  .config({ name: "base/Icon" })
   .compose({ loadIcon })
   .attrs<Props & { role?: string }>({
-    role: 'img',
+    role: "img",
   })
   .sizes({
     small: {
@@ -36,5 +36,5 @@ export default link
           fill: currentColor;
         }
       }
-    `
-  )
+    `,
+  );

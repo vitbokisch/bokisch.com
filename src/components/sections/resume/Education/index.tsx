@@ -1,18 +1,17 @@
-import type { FC } from 'react'
-import Background from '~/components/base/Background'
-import CardList from '~/components/base/CardList'
-import { Col, Container, Row } from '~/components/base/grid'
-import Section, { Header } from '~/components/base/Section'
-import data from './data'
+import Background from "~/components/base/Background";
+import CardList from "~/components/base/CardList";
+import { Col, Container, Row } from "~/components/base/grid";
+import Section, { Header } from "~/components/base/Section";
+import data from "./data";
 
 const transformedData = data.map((item) => ({
   title: item.name,
   subtitle: item.field,
   note: item.year,
   logo: item.logo,
-}))
+}));
 
-const component: FC = () => (
+const component = () => (
   <Background secondary>
     <Section id="education">
       <Header title="Education">
@@ -23,7 +22,7 @@ const component: FC = () => (
       </Header>
 
       <Container
-        width={{ xs: '90%', lg: 980 }}
+        width={{ xs: "90%", lg: 980 }}
         columns={12}
         size={{ xs: 12, sm: 8, md: 6 }}
         gap={{ xs: 24, md: 32 }}
@@ -34,13 +33,13 @@ const component: FC = () => (
           <CardList
             data={transformedData}
             wrapComponent={Col}
-            itemProps={{ state: 'secondary' }}
+            itemProps={{ state: "secondary" }}
           />
         </Row>
       </Container>
     </Section>
   </Background>
-)
+);
 
-component.displayName = 'sections/Knowledge'
-export default component
+component.displayName = "sections/Knowledge";
+export default component;

@@ -1,11 +1,11 @@
-import { element } from '~/components/core'
+import { element } from "~/components/core";
 
 export default element
-  .config({ name: 'base/Background' })
+  .config({ name: "base/Background" })
   .attrs({
     block: true,
-    contentAlignY: 'top',
-    contentAlignX: 'block',
+    contentAlignY: "top",
+    contentAlignX: "block",
   })
   .theme((t) => ({
     margin: t.space.reset,
@@ -23,17 +23,17 @@ export default element
     },
     overlay: {
       fullScreen: true,
-      position: 'absolute',
+      position: "absolute",
       background:
-        'linear-gradient(281.95deg, rgba(0, 0, 0, 0.5) 1.84%, rgba(0, 0, 0, 0.37) 98.24%)',
+        "linear-gradient(281.95deg, rgba(0, 0, 0, 0.5) 1.84%, rgba(0, 0, 0, 0.37) 98.24%)",
     },
     triangle: {
-      position: 'absolute',
+      position: "absolute",
       background: m(t.gradient.triangle.light, t.gradient.triangle.dark),
-      clipPath: 'polygon(0 0, 100% 15%, 100% 85%, 0 100%)',
-      top: '150px',
+      clipPath: "polygon(0 0, 100% 15%, 100% 85%, 0 100%)",
+      top: "150px",
       left: 0,
       right: 0,
       bottom: 0,
     },
-  }))
+  }));

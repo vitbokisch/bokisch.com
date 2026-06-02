@@ -103,6 +103,9 @@ const theme = {
       base: "#6B7280",
       medium: "#4B5563",
       dark: "#374151",
+      // Lighter gray for use on dark backgrounds — #6B7280 on #212121 only
+      // hits 3.33:1, fails WCAG AA. #9CA3AF on #212121 = 5.0:1, passes AA.
+      lighter: "#9CA3AF",
     },
   },
 } as const;

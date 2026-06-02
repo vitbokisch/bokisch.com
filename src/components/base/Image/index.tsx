@@ -6,6 +6,8 @@ type Props = {
   alt?: string;
   placeholder?: boolean;
   loading?: "eager" | "lazy";
+  width?: number;
+  height?: number;
 };
 
 export default element

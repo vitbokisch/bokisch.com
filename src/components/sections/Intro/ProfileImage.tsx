@@ -1,5 +1,6 @@
 import image from "~/components/base/Image";
 import { element } from "~/components/core";
+import { vitProfileImage } from "~/assets/images";
 
 const ProfileImage = image
   .config({
@@ -9,6 +10,11 @@ const ProfileImage = image
     src: "vit-profile.png",
     loading: "eager",
     alt: "Vit Bokisch",
+    // Intrinsic dimensions from the `?optimize` descriptor — lets the
+    // browser compute aspect-ratio pre-decode and reserve the layout
+    // slot, eliminating the CLS shift Lighthouse flagged.
+    width: vitProfileImage.width,
+    height: vitProfileImage.height,
   })
   .theme({
     width: "auto",

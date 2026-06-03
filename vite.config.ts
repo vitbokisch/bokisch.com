@@ -15,6 +15,20 @@ import { defineConfig } from 'vite'
 const analyze = process.env.ANALYZE === '1'
 
 export default defineConfig({
+  build: {
+    // Disable Vite's default 4 KB asset inlining. Three Companies logos
+    // (strv, exaforce, mews) are under the threshold → Vite inlines them
+    // as `data:image/png;base64,…` URIs → @pyreon/runtime-server's
+    // SSR URL guard blocks every `data:` URI uniformly → static HTML
+    // ships those `<img>` tags with NO src.
+    //
+    // 0.28.1's runtime-dom fix unblocks the client side, but the
+    // matching server-side fix hasn't landed yet (filed upstream).
+    // Until then, force every asset to emit as a separate file —
+    // ~8 KB total in extra HTTP requests for our case, paid back in
+    // working static HTML for crawlers + no first-paint flash.
+    assetsInlineLimit: 0,
+  },
   plugins: [
     pyreon(),
     // Generate the full favicon set (svg + light/dark png + apple-touch +
@@ -59,20 +73,10 @@ export default defineConfig({
     }),
     // Build-time WebP optimization for `?optimize` imports. Only the
     // 289 KB profile photo opts in; logos stay raw `?url`.
-    // `placeholder: 'none'` is a temporary workaround for an upstream
-    // @pyreon/runtime-dom bug: its `setStaticProp` URL guard blocks ALL
-    // `data:` URIs uniformly (regex `/^\s*(?:javascript|data):/i`),
-    // including the `data:image/webp;base64,…` blur previews this plugin
-    // generates by default. The framework rejects its own image plugin's
-    // output, with a `[Pyreon] Blocked unsafe URL in "src" attribute`
-    // warning storm in dev. Drop `placeholder` once the runtime guard
-    // is fixed (filed upstream — should narrow to allow `data:image/*`
-    // on `<img src>` / `<source srcset>`).
     imagePlugin({
       widths: [480, 768, 1024],
       formats: ['webp'],
       quality: 80,
-      placeholder: 'none',
     }),
     zero({
       mode: 'ssg',

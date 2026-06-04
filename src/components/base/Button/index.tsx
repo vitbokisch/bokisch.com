@@ -12,17 +12,20 @@ export default link
     textAlign: "center",
   }))
   .states((t) => ({
-    // Resting bg uses `primary.dark` (#0E7490 = 5.27:1 against light.base)
-    // instead of `primary.base` (#06B6D4 = 2.28:1 — fails WCAG AA).
-    // Hover lifts to `primary.medium` for a "lighten on hover" cue that
-    // still hits AA on the typical button focus dwell time.
+    // Brand-cyan bg + dark text — the convention for bright accent buttons
+    // (Stripe/Linear/Vercel pattern). Light text on `primary.base` is the
+    // visually obvious pairing but only hits 2.28:1 (fails WCAG AA); dark
+    // text on the same brand cyan reaches 6.12:1 (close to AAA) and keeps
+    // the recognizable color. Hover darkens the bg one step; active (the
+    // brief mousedown state) goes to `primary.dark` with light text, where
+    // the high-contrast pressed cue justifies the swap.
     primary: {
-      color: t.color.light.base,
-      backgroundColor: t.color.primary.dark,
-      borderColor: t.color.primary.dark,
+      color: t.color.dark.base,
+      backgroundColor: t.color.primary.base,
+      borderColor: t.color.primary.base,
 
       hover: {
-        color: t.color.light.base,
+        color: t.color.dark.base,
         backgroundColor: t.color.primary.medium,
         borderColor: t.color.primary.medium,
       },

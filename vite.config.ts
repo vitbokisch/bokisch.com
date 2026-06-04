@@ -1,9 +1,7 @@
 import { resolve } from 'node:path'
 import pyreon from '@pyreon/vite-plugin'
 import { faviconPlugin } from '@pyreon/zero/favicon'
-import { fontPlugin } from '@pyreon/zero/font'
 import { aiPlugin } from '@pyreon/zero/ai'
-import { imagePlugin } from '@pyreon/zero/image-plugin'
 import { seoPlugin } from '@pyreon/zero/seo'
 import zero from '@pyreon/zero/server'
 import { visualizer } from 'rollup-plugin-visualizer'
@@ -25,12 +23,6 @@ export default defineConfig({
       darkSource: 'src/assets/favicon/dark.svg',
       themeColor: '#ffffff',
       backgroundColor: '#ffffff',
-    }),
-    // Self-host Ubuntu at build time — removes the render-blocking
-    // fonts.googleapis.com request and ships @font-face + preload inline.
-    fontPlugin({
-      google: ['Ubuntu:ital,wght@0,300;0,500;1,300;1,500'],
-      display: 'swap',
     }),
     // Emit sitemap.xml + robots.txt at build time. `trailingSlash: 'always'`
     // matches the GH Pages directory-style routing — `/resume` would 301
@@ -57,19 +49,16 @@ export default defineConfig({
       origin: 'https://bokisch.com',
       contactEmail: 'vit@bokisch.cz',
     }),
-    // Build-time WebP optimization for `?optimize` imports. Only the
-    // 289 KB profile photo opts in; logos stay raw `?url`.
-    imagePlugin({
-      widths: [480, 768, 1024],
-      formats: ['webp'],
-      quality: 80,
-    }),
     zero({
       mode: 'ssg',
       adapter: 'static',
       ssg: {
         paths: ['/', '/resume'],
       },
+      // Auto-wired (0.30.0+): folds imagePlugin + fontPlugin config
+      // into zero() — no separate plugin calls needed.
+      image: { widths: [480, 768, 1024], formats: ['webp'], quality: 80 },
+      font: { google: ['Ubuntu:ital,wght@0,300;0,500;1,300;1,500'], display: 'swap' },
     }),
     analyze &&
       visualizer({

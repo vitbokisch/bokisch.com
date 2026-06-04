@@ -1,19 +1,20 @@
-import image from "~/components/base/Image";
+import { OptimizedImage } from "@pyreon/zero/image";
+import { vitProfileImage } from "~/assets/images";
 import { element } from "~/components/core";
 
-const ProfileImage = image
-  .config({
-    name: "sections/Intro/ProfileImage",
-  })
-  .attrs({
-    src: "vit-profile.png",
-    loading: "eager",
-    alt: "Vit Bokisch",
-  })
-  .theme({
-    width: "auto",
-    height: "100%",
-  });
+// `<OptimizedImage source={…}>` spreads every field from the `?optimize`
+// descriptor (src + srcset + width + height + placeholder + formats) onto
+// `<Image>` — no hand-rolled `<img>` wrapper can silently drop any of them.
+// The Image runtime reserves `aspect-ratio` + `max-width` on its container
+// pre-decode → no CLS when the WebP arrives.
+const ProfileImage = () => (
+  <OptimizedImage
+    source={vitProfileImage}
+    alt="Vit Bokisch"
+    priority
+    style="width: auto; height: 100%;"
+  />
+);
 
 export default element
   .config({

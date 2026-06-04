@@ -35,7 +35,7 @@ const Component = (props: Props) => (
       <Show when={() => props.logo}>
         <IconLogo circle src={props.logo} />
       </Show>
-      <Heading tag="h1" level3 centered label={props.title} />
+      <Heading tag="h3" level3 centered label={props.title} />
       <Show when={() => props.subtitle}>
         <SubHeading centered label={props.subtitle} />
       </Show>

@@ -15,7 +15,9 @@ export default text
       color: t.color.primary.base,
     },
     neutral: {
-      color: t.color.neutral.base,
+      // Mode-aware: dark gray on light bg, lighter gray on dark bg. The
+      // single `neutral.base` value would fail WCAG AA on dark bg.
+      color: m(t.color.neutral.base, t.color.neutral.lighter),
     },
   }))
   .sizes((t) => ({

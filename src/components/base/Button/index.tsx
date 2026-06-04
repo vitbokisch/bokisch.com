@@ -12,10 +12,13 @@ export default link
     textAlign: "center",
   }))
   .states((t) => ({
+    // White text on `primary.dark` (#0E7490) reaches 5.27:1 — comfortably
+    // AA. Brand reads slightly darker than cyan-500 but keeps the classic
+    // "white-on-cyan" pairing. Hover/active step through the palette.
     primary: {
       color: t.color.light.base,
-      backgroundColor: t.color.primary.base,
-      borderColor: t.color.primary.base,
+      backgroundColor: t.color.primary.dark,
+      borderColor: t.color.primary.dark,
 
       hover: {
         color: t.color.light.base,

@@ -1,5 +1,5 @@
 import { routes } from "virtual:zero/routes";
-import { createServer } from "@pyreon/zero";
+import { createServer } from "@pyreon/zero/server";
 
 export default createServer({
   routes,

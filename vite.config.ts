@@ -32,13 +32,16 @@ export default defineConfig({
       google: ['Ubuntu:ital,wght@0,300;0,500;1,300;1,500'],
       display: 'swap',
     }),
-    // Emit sitemap.xml + robots.txt at build time.
+    // Emit sitemap.xml + robots.txt at build time. `trailingSlash: 'always'`
+    // matches the GH Pages directory-style routing — `/resume` would 301
+    // to `/resume/` otherwise (-160 ms Lighthouse penalty per crawl).
     seoPlugin({
       sitemap: {
         origin: 'https://bokisch.com',
         changefreq: 'monthly',
         priority: 0.7,
         exclude: ['/_not-found'],
+        trailingSlash: 'always',
       },
       robots: {
         rules: [{ userAgent: '*', allow: ['/'] }],

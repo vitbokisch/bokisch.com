@@ -58,7 +58,7 @@ export default defineConfig({
       // Auto-wired (0.30.0+): folds imagePlugin + fontPlugin config
       // into zero() — no separate plugin calls needed.
       image: { widths: [480, 768, 1024], formats: ['webp'], quality: 80 },
-      font: { google: ['Ubuntu:ital,wght@0,300;0,500;1,300;1,500'], display: 'swap' },
+      font: { google: ['Ubuntu:wght@300;500'], display: 'swap' },
     }),
     analyze &&
       visualizer({

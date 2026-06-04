@@ -23,7 +23,7 @@ type Props = {
 // optimized descriptor (see `vitProfileImage` in `~/assets/images`).
 const Component = (props: Props) => () => {
   if (!props.src) return null;
-  const url = images[props.src];
+  const url = images(props.src)?.src;
   if (!url) return null;
   return (
     <img

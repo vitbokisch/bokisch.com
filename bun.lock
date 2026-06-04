@@ -5,14 +5,14 @@
     "": {
       "name": "@vitbokisch/personal-web",
       "dependencies": {
-        "@vitus-labs/connector-styler": "2.7.0",
-        "@vitus-labs/coolgrid": "2.7.0",
-        "@vitus-labs/core": "2.7.0",
-        "@vitus-labs/elements": "2.7.0",
-        "@vitus-labs/hooks": "2.7.0",
-        "@vitus-labs/rocketstyle": "2.6.2",
-        "@vitus-labs/styler": "2.7.0",
-        "@vitus-labs/unistyle": "2.7.0",
+        "@vitus-labs/connector-styler": "2.7.1",
+        "@vitus-labs/coolgrid": "2.7.1",
+        "@vitus-labs/core": "2.7.1",
+        "@vitus-labs/elements": "2.7.1",
+        "@vitus-labs/hooks": "2.7.1",
+        "@vitus-labs/rocketstyle": "2.7.1",
+        "@vitus-labs/styler": "2.7.1",
+        "@vitus-labs/unistyle": "2.7.1",
         "next": "^16.2.7",
         "react": "^19.2.7",
         "react-dom": "^19.2.7",
@@ -125,19 +125,19 @@
 
     "@types/react": ["@types/react@19.2.16", "", { "dependencies": { "csstype": "^3.2.2" } }, "sha512-esJiCAnl0kfpNdE69f3So4WJUXy95dLZydX0KwK46riIHDzHM7O9Vtf9xCHW0PXIqvgqNrswl522kA/5yx+F4w=="],
 
-    "@vitus-labs/connector-styler": ["@vitus-labs/connector-styler@2.7.0", "", { "peerDependencies": { "@vitus-labs/core": "^2.7.0", "@vitus-labs/styler": "^2.7.0", "react": ">= 19" } }, "sha512-wm55dVHkEZ6rmIh2Gr5StvTUMMUGVmEoqmLgdngLx1BGeoV34nKh6a21tAflwfdISCxOLBG9SZe8bcy+zN98NQ=="],
+    "@vitus-labs/connector-styler": ["@vitus-labs/connector-styler@2.7.1", "", { "peerDependencies": { "@vitus-labs/core": "^2.7.1", "@vitus-labs/styler": "^2.7.1", "react": ">= 19" } }, "sha512-MsUzvwc3IiMSodjqUl/m6uOXAtEO2rdD1DdvDJZQGboHik9UlDbrohTCjPxyBE9tz5zBFuVky94tH2Ri9McLDQ=="],
 
-    "@vitus-labs/coolgrid": ["@vitus-labs/coolgrid@2.7.0", "", { "peerDependencies": { "@vitus-labs/core": "^2.7.0", "@vitus-labs/unistyle": "^2.7.0", "react": ">= 19", "react-native": ">= 0.76" }, "optionalPeers": ["react-native"] }, "sha512-G8zaPnbT3Pj3xeFvs9fJWuFh63bbuxSt7SvFncVgdTPRd0AqOlAzWcY3+QId5oRzLpiQN+Pocs2QQofFNCDmSw=="],
+    "@vitus-labs/coolgrid": ["@vitus-labs/coolgrid@2.7.1", "", { "peerDependencies": { "@vitus-labs/core": "^2.7.1", "@vitus-labs/unistyle": "^2.7.1", "react": ">= 19", "react-native": ">= 0.76" }, "optionalPeers": ["react-native"] }, "sha512-88q6+FmPp9EaaAp01BFwK49UrVVVF2Ario/pimdkQhBpY1raD8cIr3LLh7Se31c4v2aGz3c20oPqy8BBF6sgZg=="],
 
-    "@vitus-labs/core": ["@vitus-labs/core@2.7.0", "", { "dependencies": { "react-is": "^19.2.4" }, "peerDependencies": { "react": ">= 19" } }, "sha512-quAfCD8owlYTSixKrSy7WhDDfo3ptB8Lm1mIyouOgbWRKy8mW9N5zvKJ3d3EUoXsc8VvYXCDp5kcpfi5EfwWfg=="],
+    "@vitus-labs/core": ["@vitus-labs/core@2.7.1", "", { "dependencies": { "react-is": "^19.2.4" }, "peerDependencies": { "react": ">= 19" } }, "sha512-FGPtjJINd8OQmdPMIP1RJb9q8tD71SB/wy3pXXaBSVwrJxv8qvqENy+B8gVK0FIN+4w1fj1xPcGJXmtsVETVuw=="],
 
-    "@vitus-labs/elements": ["@vitus-labs/elements@2.7.0", "", { "dependencies": { "react-is": "^19.2.4" }, "peerDependencies": { "@vitus-labs/core": "^2.7.0", "@vitus-labs/unistyle": "^2.7.0", "react": ">= 19", "react-dom": ">= 19" }, "optionalPeers": ["react-dom"] }, "sha512-ZbgjI+1zh2WiDdFd/M466jhhJgRJUBwjmYAKbbhRCHrLdxbpKk7mcZrjKeaVa8SJBnpuQP71JZTMb14POSu2Vw=="],
+    "@vitus-labs/elements": ["@vitus-labs/elements@2.7.1", "", { "dependencies": { "react-is": "^19.2.4" }, "peerDependencies": { "@vitus-labs/core": "^2.7.1", "@vitus-labs/unistyle": "^2.7.1", "react": ">= 19", "react-dom": ">= 19" }, "optionalPeers": ["react-dom"] }, "sha512-wZMqC9CbYwXZSd2h/vSSrmegMtf8mJiDdhSoS1vXp3toqzmElu4KxffJbptOXSP1r5DEaxxwPgX2wNcMzvn+Uw=="],
 
-    "@vitus-labs/hooks": ["@vitus-labs/hooks@2.7.0", "", { "peerDependencies": { "@vitus-labs/core": "^2.7.0", "react": ">= 19", "react-native": ">= 0.76" }, "optionalPeers": ["react-native"] }, "sha512-s3e8Zf8UDN0toNUHo9fAeENdJI9BX3DFj/kZg0aQQHGzyIlrCv+m7U75+XqrrQBsG3TwF7J1MySplojH6lwnmA=="],
+    "@vitus-labs/hooks": ["@vitus-labs/hooks@2.7.1", "", { "peerDependencies": { "@vitus-labs/core": "^2.7.1", "react": ">= 19", "react-native": ">= 0.76" }, "optionalPeers": ["react-native"] }, "sha512-fGe/wlen3k4zAJ3aKnxUS2beDJkOH0qy7VehnABzavjtOvfRFVco88WeHbJmb/st6jNptTw8Q/4Es0/ZgOaNhQ=="],
 
-    "@vitus-labs/rocketstyle": ["@vitus-labs/rocketstyle@2.6.2", "", { "peerDependencies": { "@vitus-labs/core": "^2.6.2", "react": ">= 19" } }, "sha512-Oz2calLRumBmMjo71HvUtQhKhWWqxDSoD6PO+U/sfZHhVZ3wQ/fc/shx7wt7jFIKUTqREnAPRfuVpl6DJjV46A=="],
+    "@vitus-labs/rocketstyle": ["@vitus-labs/rocketstyle@2.7.1", "", { "peerDependencies": { "@vitus-labs/core": "^2.7.1", "react": ">= 19" } }, "sha512-qYe/J5BnK4GSQWPITMyFUbsgnN3kYOtFirakKH0ap9SvybO6kkWi1eNJKrG3uzw+oT2NxzCGz2kjc0rmjad1vw=="],
 
-    "@vitus-labs/styler": ["@vitus-labs/styler@2.7.0", "", { "peerDependencies": { "@vitus-labs/core": "^2.7.0", "react": ">= 19" } }, "sha512-CnEn0YWjg5s1Z4R7QzszMa7K4BbniE5KEwBc65gbv05Oph2pMNAdO0rwmxZE1rCych7kt/nlMmpihjedf5oKrw=="],
+    "@vitus-labs/styler": ["@vitus-labs/styler@2.7.1", "", { "peerDependencies": { "@vitus-labs/core": "^2.7.1", "react": ">= 19" } }, "sha512-aZUyDfqgKkjjoGaMk2/pCvDF08bu9/cxxpmqMpNt6NrxXIdmkFhPVb4jpY0anG/aMj/5Pkgz6Fq0pm7X55PP3g=="],
 
     "@vitus-labs/tools-core": ["@vitus-labs/tools-core@2.3.0", "", {}, "sha512-2IYCWE3rWsgkqHwqxhB32Beeh1vUpr5Np4EDMLAM7o78jlQXYwmVK2FSK78nTDncEIu81JMVJ945DXs4TIEOsg=="],
 
@@ -145,7 +145,7 @@
 
     "@vitus-labs/tools-typescript": ["@vitus-labs/tools-typescript@2.5.0", "", { "peerDependencies": { "typescript": "^6.0.3" } }, "sha512-VFMZd4ZCL3XEB26IJF89XjONO5BxE7yvKWbmHHjtaz14QW8J2EVafOzhFYpYuavDysz7T20OeOZOLCTIQf+SsA=="],
 
-    "@vitus-labs/unistyle": ["@vitus-labs/unistyle@2.7.0", "", { "peerDependencies": { "@vitus-labs/core": "^2.7.0", "react": ">= 19" } }, "sha512-Njj/ghw/xvV3tAtB3lsoCexi+FspGlDb1jwRY84OTCBnhoEYzBjgoA5SBWynZivMb5QlqNQhxm4iEfkjVkhHSQ=="],
+    "@vitus-labs/unistyle": ["@vitus-labs/unistyle@2.7.1", "", { "peerDependencies": { "@vitus-labs/core": "^2.7.1", "react": ">= 19" } }, "sha512-nINLqbtM2hN687rCs1cGEWKb6slw6R9u9CPCuzxZjtfurJLvalO8Jf/R+J5kytbvfvc8zpD9ZUe9ecY031AOxA=="],
 
     "ansi-regex": ["ansi-regex@5.0.1", "", {}, "sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ=="],
 

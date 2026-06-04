@@ -15,20 +15,6 @@ import { defineConfig } from 'vite'
 const analyze = process.env.ANALYZE === '1'
 
 export default defineConfig({
-  build: {
-    // Disable Vite's default 4 KB asset inlining. Three Companies logos
-    // (strv, exaforce, mews) are under the threshold → Vite inlines them
-    // as `data:image/png;base64,…` URIs → @pyreon/runtime-server's
-    // SSR URL guard blocks every `data:` URI uniformly → static HTML
-    // ships those `<img>` tags with NO src.
-    //
-    // 0.28.1's runtime-dom fix unblocks the client side, but the
-    // matching server-side fix hasn't landed yet (filed upstream).
-    // Until then, force every asset to emit as a separate file —
-    // ~8 KB total in extra HTTP requests for our case, paid back in
-    // working static HTML for crawlers + no first-paint flash.
-    assetsInlineLimit: 0,
-  },
   plugins: [
     pyreon(),
     // Generate the full favicon set (svg + light/dark png + apple-touch +

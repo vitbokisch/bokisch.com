@@ -19,8 +19,8 @@ export default defineConfig({
     // webmanifest) from a single source pair, and auto-inject the
     // theme-aware <link>s + favicon-toggle script.
     faviconPlugin({
-      source: 'src/assets/favicon/light.svg',
-      darkSource: 'src/assets/favicon/dark.svg',
+      source: 'src/assets/favicon/dark.svg',
+      darkSource: 'src/assets/favicon/light.svg',
       themeColor: '#ffffff',
       backgroundColor: '#ffffff',
     }),

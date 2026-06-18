@@ -33,9 +33,12 @@ export default element
       color: t.color.primary.medium,
     },
   }))
-  .states((t) => ({
+  .states((t, m) => ({
+    // Light surface: cyan-700 (5.27:1 AA). Dark surface: brand cyan-500
+    // (passes contrast against dark). `primary.base` on light bg only
+    // hits 2.28:1 — Lighthouse flagged OpenSource GitHub/Docs links.
     primary: {
-      color: t.color.primary.base,
+      color: m(t.color.primary.dark, t.color.primary.base),
 
       hover: {
         color: t.color.primary.medium,

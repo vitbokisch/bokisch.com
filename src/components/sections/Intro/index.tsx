@@ -12,7 +12,10 @@ const Element = element.theme({ height: "inherit" });
 const Section = section
   .theme({
     height: "100vh",
-    minHeight: { xl: 640 },
+    // Pin min + max so the hero slot is reserved at hydration regardless
+    // of font swap — siblings below (Quote, Companies) can't be pushed.
+    // Eliminates the CLS shift Lighthouse flagged on "Years of Shipping".
+    minHeight: { xs: 640, md: 840 },
     maxHeight: { xs: 640, md: 840 },
     overflow: "hidden",
     background:

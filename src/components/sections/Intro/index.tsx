@@ -24,7 +24,7 @@ const Section = section
   .variants(() => ({
     fullScreen: {
       height: "100vh",
-      minHeight: { xl: 640 },
+      minHeight: { xs: 640, md: 800, lg: 1400 },
       maxHeight: { xs: 640, md: 800, lg: 1400 },
     },
   }));

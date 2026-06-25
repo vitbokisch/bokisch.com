@@ -29,12 +29,7 @@ const theme = {
     xxLarge: 64,
   },
   fontFamily: {
-    // 'Ubuntu Fallback' is a system-font (Arial) face with size-adjust /
-    // ascent-override / descent-override metrics matched to Ubuntu (see
-    // font.fallbacks in vite.config.ts). Wiring it INTO the family chain
-    // is the consumer's job — Pyreon emits the @font-face but doesn't
-    // modify font-family. Result: during Ubuntu load, browser paints with
-    // metric-matched Arial, so no shift when Ubuntu swaps in.
+    // 'Ubuntu Fallback' is defined in vite.config.ts font.fallbacks.
     base: "'Ubuntu', 'Ubuntu Fallback', sans-serif",
   },
   fontSize: {

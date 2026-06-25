@@ -66,10 +66,6 @@ export default defineConfig({
       font: {
         google: ['Ubuntu:wght@300;500'],
         display: 'swap',
-        // Eliminate font-swap CLS: ship a fallback @font-face with metrics
-        // matched to Ubuntu so the system-font fallback occupies the same
-        // box dimensions until the real font loads. Metrics from capsizecss
-        // for Ubuntu Regular vs Arial.
         fallbacks: {
           Ubuntu: {
             fallback: 'Arial',

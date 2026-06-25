@@ -29,7 +29,7 @@ const theme = {
     xxLarge: 64,
   },
   fontFamily: {
-    base: "'Ubuntu', sans-serif",
+    base: "var(--pyreon-font-ubuntu)",
   },
   fontSize: {
     small: 14,

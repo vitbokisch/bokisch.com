@@ -23,17 +23,21 @@ type Props = {
 // optimized descriptor (see `vitProfileImage` in `~/assets/images`).
 const Component = (props: Props) => () => {
   if (!props.src) return null;
-  const url = images(props.src)?.src;
-  if (!url) return null;
+  const optimized = images(props.src);
+  if (!optimized?.src) return null;
   return (
     <img
-      src={url}
+      src={optimized.src}
       alt={props.alt ?? ""}
       loading={props.loading ?? "lazy"}
       class={props.class}
       style={props.style as string | undefined}
-      width={props.width}
-      height={props.height}
+      // Fall back to the registry's intrinsic dimensions so every <img>
+      // ships explicit width/height — browser reserves the layout slot
+      // pre-decode, eliminating CLS from progressive image load (was the
+      // dominant /resume CLS contributor: 13 company logos with no dims).
+      width={props.width ?? optimized.width}
+      height={props.height ?? optimized.height}
     />
   );
 };

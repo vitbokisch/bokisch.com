@@ -58,8 +58,28 @@ export default defineConfig({
       },
       // Auto-wired (0.30.0+): folds imagePlugin + fontPlugin config
       // into zero() — no separate plugin calls needed.
-      image: { widths: [480, 768, 1024], formats: ['webp'], quality: 80 },
-      font: { google: ['Ubuntu:wght@300;500'], display: 'swap' },
+      image: {
+        widths: [480, 768, 1024],
+        formats: ['webp'],
+        quality: 75,
+      },
+      font: {
+        google: ['Ubuntu:wght@300;500'],
+        display: 'swap',
+        // Eliminate font-swap CLS: ship a fallback @font-face with metrics
+        // matched to Ubuntu so the system-font fallback occupies the same
+        // box dimensions until the real font loads. Metrics from capsizecss
+        // for Ubuntu Regular vs Arial.
+        fallbacks: {
+          Ubuntu: {
+            fallback: 'Arial',
+            sizeAdjust: 0.99,
+            ascentOverride: 95,
+            descentOverride: 21,
+            lineGapOverride: 0,
+          },
+        },
+      },
     }),
     analyze &&
       visualizer({

@@ -14,7 +14,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && bun run scripts/emit-html-siblings.ts",
+    "build": "vite build",
     "preview": "vite preview",
     "analyze": "ANALYZE=1 vite build",
     "lint": "pyreon-lint src/ && oxlint src/",

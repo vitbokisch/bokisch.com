@@ -54,6 +54,7 @@ export default defineConfig({
       adapter: 'static',
       ssg: {
         paths: ['/', '/resume'],
+        format: 'both',
       },
       // Auto-wired (0.30.0+): folds imagePlugin + fontPlugin config
       // into zero() — no separate plugin calls needed.

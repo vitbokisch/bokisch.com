@@ -66,15 +66,6 @@ export default defineConfig({
       font: {
         google: ['Ubuntu:wght@300;500'],
         display: 'swap',
-        fallbacks: {
-          Ubuntu: {
-            fallback: 'Arial',
-            sizeAdjust: 0.99,
-            ascentOverride: 95,
-            descentOverride: 21,
-            lineGapOverride: 0,
-          },
-        },
       },
     }),
     analyze &&

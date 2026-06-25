@@ -29,8 +29,7 @@ const theme = {
     xxLarge: 64,
   },
   fontFamily: {
-    // 'Ubuntu Fallback' is defined in vite.config.ts font.fallbacks.
-    base: "'Ubuntu', 'Ubuntu Fallback', sans-serif",
+    base: "var(--pyreon-font-ubuntu)",
   },
   fontSize: {
     small: 14,

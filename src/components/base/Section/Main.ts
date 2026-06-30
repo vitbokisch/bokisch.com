@@ -13,6 +13,7 @@ export default element
   .theme((t) => ({
     paddingY: { xs: t.space.xLarge, md: t.space.xxLarge },
     contentVisibility: "auto",
+    containIntrinsicSize: "auto 800px",
   }))
   .variants({
     fullScreen: {

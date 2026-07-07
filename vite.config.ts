@@ -53,7 +53,6 @@ export default defineConfig({
       mode: 'ssg',
       adapter: 'static',
       ssg: {
-        paths: ['/', '/resume'],
         format: 'both',
       },
       // Auto-wired (0.30.0+): folds imagePlugin + fontPlugin config

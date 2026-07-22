@@ -23,8 +23,14 @@ export default element
   .attrs({ content: ProfileImage })
   .theme({
     position: "absolute",
-    right: { xs: -200, sm: -180, lg: -100, xxl: "initial" },
+    right: { xs: -160, sm: -180, lg: -100, xxl: "initial" },
     bottom: { xs: -70, md: 0 },
-    height: { xs: 460, md: 640 },
+    // Explicit width matches image aspect (~1:1) — without it the
+    // OptimizedImage's inner container (aspect-ratio + max-width: 614)
+    // sizes itself off content, ignoring the wrapper's intended footprint.
+    // Scaled down on xs so the profile peeks in gracefully instead of
+    // dominating the mobile viewport.
+    width: { xs: 380, md: 640 },
+    height: { xs: 380, md: 640 },
     left: { xxl: "55%" },
   });

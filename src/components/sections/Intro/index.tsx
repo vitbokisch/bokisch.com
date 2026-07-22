@@ -24,8 +24,12 @@ const Section = section
   .variants(() => ({
     fullScreen: {
       height: "100vh",
-      minHeight: { xs: 640, md: 800, lg: 1400 },
-      maxHeight: { xs: 640, md: 800, lg: 1400 },
+      // Keep hero within viewport at lg+ — the previous `lg: 1400` made
+      // the section taller than typical laptop viewports (1440x900 has
+      // ~820px of usable height after browser chrome), pushing the
+      // content + profile photo below the fold on the homepage.
+      minHeight: { xs: 640, md: 800 },
+      maxHeight: { xs: 640, md: 800 },
     },
   }));
 

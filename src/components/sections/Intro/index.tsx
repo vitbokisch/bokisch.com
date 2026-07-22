@@ -23,13 +23,14 @@ const Section = section
   })
   .variants(() => ({
     fullScreen: {
-      height: "100vh",
-      // Keep hero within viewport at lg+ — the previous `lg: 1400` made
-      // the section taller than typical laptop viewports (1440x900 has
-      // ~820px of usable height after browser chrome), pushing the
-      // content + profile photo below the fold on the homepage.
-      minHeight: { xs: 640, md: 800 },
-      maxHeight: { xs: 640, md: 800 },
+      // Dynamic viewport height — fills the visible viewport at any size,
+      // smoothly adjusts when mobile URL bar collapses (no scroll-driven
+      // hero jump like `100vh` produces).
+      height: "100dvh",
+      maxHeight: "100dvh",
+      // Floor for tight landscape phones (~375px tall) so HELLO +
+      // description + contacts stay breathable instead of cramping.
+      minHeight: 640,
     },
   }));
 
